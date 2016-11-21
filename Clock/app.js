@@ -20,3 +20,10 @@ var myTimer = setInterval(setClock,1000);
 function setClock(){	
 	   document.getElementById("time").innerHTML=new Date().toLocaleTimeString();
 }
+
+// Switch button
+function change(){
+	var elem = document.getElementById("btn")
+	if (elem.value=="Digital") elem.value = "Analog";
+	else elem.value = "Digital";
+}
