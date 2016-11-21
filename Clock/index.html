@@ -4,11 +4,12 @@
 <head>
   <title>Clock</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" />
 </head>
   
 <body>
   
-  <div class="clock">
+  <div class="analog-clock">
     <div id="hours"></div>
     <div id="minutes"></div>
     <div id="seconds"></div>
@@ -18,7 +19,16 @@
     <div class="twelve"></div>
     <div class="center"></div>
   </div>
+  
+   <div class="clock-case">
+	<div class="clock-face">
+		<div id="time"></div>
+	</div>
+	</div>
 
+
+ <input onclick="showHide()" type="button" value="Digital" id="btn"></button>
+  
   <script type="text/javascript" src="app.js"></script>
 
 </body>
