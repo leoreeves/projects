@@ -21,9 +21,13 @@ function setClock(){
 	   document.getElementById("time").innerHTML=new Date().toLocaleTimeString();
 }
 
-// Switch button
-function change(){
-	var elem = document.getElementById("btn")
-	if (elem.value=="Digital") elem.value = "Analog";
-	else elem.value = "Digital";
+
+function changeClock() {
+	if (document.getElementById('digital').style.display === 'block') {
+		document.getElementById('digital').style.display = 'none';
+		document.getElementById('analog').style.display = 'block';
+	} else {
+		document.getElementById('digital').style.display = 'block';
+		document.getElementById('analog').style.display = 'none';
+	}
 }
