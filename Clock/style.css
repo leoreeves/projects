@@ -1,1 +1,165 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
 
+body {
+	background-color: #000;
+}
+
+/* Analog clock */
+
+.analog-clock {
+	height: 500px;
+	width: 500px;
+	background-color: #DDDDDD;
+	border-radius: 100%;
+	border: 3px solid #AAAAAA;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/* Hour positions */
+
+.twelve {
+	position: absolute;
+	width: 3px;
+	height: 15px;
+	background: #111111;
+	left: 0;
+	top: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.three {
+	position: absolute;
+	width: 15px;
+	height: 3px;
+	background: #111111;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto 0;
+}
+
+.six {
+	position: absolute;
+	width: 3px;
+	height: 15px;
+	background: #111111;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.nine {
+	position: absolute;
+	width: 15px;
+	height: 3px;
+	background: #111111;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto 0;
+}
+
+/* Clock hands */
+
+.center {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	left: 0; right: 0; bottom: 0; top: 0;
+	margin: auto;
+	background: #000;
+	border-radius: 100%;
+}
+
+#seconds {
+	position: absolute;
+	height: 160px;
+	width: 2px;
+	left: 0; right: 0; bottom: 160px; top: 0px;
+	margin: auto;
+	background: #000;
+	-webkit-transform-origin: bottom;
+	background: #FF4136;
+}
+
+#minutes {
+	position: absolute;
+	height: 200px;
+	width: 2px;
+	left: 0; right: 0; bottom: 200px; top: 0px;
+	margin: auto;
+	background: #000;
+	-webkit-transform-origin: bottom;
+}
+
+#hours {
+	position: absolute;
+	height: 80px;
+	width: 6px;
+	left: 0; right: 0; bottom: 80px; top: 0px;
+	margin: auto;
+	background: #000;
+	-webkit-transform-origin: bottom;
+}
+
+/* Digital clock */
+
+/* font from http://www.ffonts.net/alarm-clock.font */
+
+@font-face {
+    font-family: alarm-clock;
+    src: url(digital-7-mono.ttf);
+    font-weight: bold;
+}
+
+.clock-face{
+	width: 700px;
+	height: 150px;
+	background-color: #DDDDDD;
+	border-radius: 25px;
+	border: 3px solid #AAAAAA;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	display: table-cell;
+	text-align: center;
+	line-height: 150px;
+	font-size: 800%;
+	color: #474747;
+	font-weight: bold;
+	font-family: alarm-clock;
+}
+
+.clock-case{
+	width: 730px;
+	height: 200px;
+	background-color: #595959;
+	border-radius: 25px;
+	border: 3px solid #3a3a3a;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	display: table;
+	display:none;
+}
+
+/* Button */
+
+#btn {
+	position: absolute;
+	bottom: 0;
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+	display: table-cell;
+	vertical-align: middle;
+}
