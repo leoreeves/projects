@@ -1,5 +1,5 @@
-Generates a random hex color.
+Generates a random hex color with option to copy hex color to clipboard.
 
 To add:
 
-- Change color depending on background-color
+- Change text color depending on background-brightness.
