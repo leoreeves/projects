@@ -3,7 +3,6 @@
 	padding: 0;
 	border: 0;
 }
-
 body {
 	background-color: #d4d8dd;
 }
@@ -16,12 +15,19 @@ body {
 	background-color: #DDDDDD;
 	border-radius: 100%;
 	border: 10px solid #AAAAAA;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
 	-moz-box-shadow: inset 0 0 50px #000000;
 	-webkit-box-shadow: inset 0 0 50px #000000;
 	box-shadow: inset 0 0 20px #000000;
+	margin-bottom: 150px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: auto;
 }
 
 /* Hour positions */
@@ -36,7 +42,6 @@ body {
 	right: 0;
 	margin: 0 auto;
 }
-
 .three {
 	position: absolute;
 	width: 15px;
@@ -47,7 +52,6 @@ body {
 	right: 0;
 	margin: auto 0;
 }
-
 .six {
 	position: absolute;
 	width: 3px;
@@ -58,7 +62,6 @@ body {
 	right: 0;
 	margin: 0 auto;
 }
-
 .nine {
 	position: absolute;
 	width: 15px;
@@ -76,40 +79,49 @@ body {
 	width: 10px;
 	height: 10px;
 	position: absolute;
-	left: 0; right: 0; bottom: 0; top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
 	margin: auto;
 	background: #000;
 	border-radius: 100%;
 }
-
 #seconds {
 	position: absolute;
 	height: 180px;
 	width: 2px;
-	left: 0; right: 0; bottom: 180px; top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 180px;
+	top: 0px;
 	margin: auto;
 	background: #000;
 	-webkit-transform-origin: bottom;
 	transform-origin: bottom;
 	background: #FF4136;
 }
-
 #minutes {
 	position: absolute;
 	height: 200px;
 	width: 7px;
-	left: 0; right: 0; bottom: 200px; top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 200px;
+	top: 0px;
 	margin: auto;
 	background: #000;
 	-webkit-transform-origin: bottom;
 	transform-origin: bottom;
 }
-
 #hours {
 	position: absolute;
 	height: 130px;
 	width: 10px;
-	left: 0; right: 0; bottom: 130px; top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 130px;
+	top: 0px;
 	margin: auto;
 	background: #000;
 	-webkit-transform-origin: bottom;
@@ -119,12 +131,11 @@ body {
 /* Digital clock */
 
 @font-face {
-    font-family: alarm-clock;
-    src: url(digital-7-mono.ttf);
-    font-weight: bold;
+	font-family: alarm-clock;
+	src: url(digital-7-mono.ttf);
+	font-weight: bold;
 }
-
-.clock-face{
+.clock-face {
 	width: 700px;
 	height: 150px;
 	background-color: #DDDDDD;
@@ -132,7 +143,10 @@ body {
 	border: 3px solid #AAAAAA;
 	margin: auto;
 	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 	display: table-cell;
 	text-align: center;
 	line-height: 150px;
@@ -144,8 +158,7 @@ body {
 	-webkit-box-shadow: inset 0 0 10px #000000;
 	box-shadow: inset 0 0 10px #000000;
 }
-
-.digital-clock{
+.digital-clock {
 	width: 730px;
 	height: 200px;
 	background-color: #595959;
@@ -153,49 +166,86 @@ body {
 	border: 3px solid #3a3a3a;
 	margin: auto;
 	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 	display: table;
 	display: none;
-}
-
-@media screen and (max-width: 841px) {
-    .digital-clock {
-		zoom: 0.9; /* Old IE only */
-		-moz-transform: scale(0.9);
-		-webkit-transform: scale(0.9);
-		transform: scale(0.9);
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .digital-clock {
-		zoom: 0.8; /* Old IE only */
-		-moz-transform: scale(0.8);
-		-webkit-transform: scale(0.8);
-		transform: scale(0.8);
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .digital-clock {
-		zoom: 0.6; /* Old IE only */
-		-moz-transform: scale(0.6);
-		-webkit-transform: scale(0.6);
-		transform: scale(0.6);
-    }
 }
 
 /* Button */
 
 #btn {
 	background-color: #425168;
-    border: none;
-    color: white;
+	border: none;
+	color: white;
 	font-size: 150%;
-    padding: 15px 32px;
+	padding: 15px 32px;
 	position: absolute;
-  	bottom: 5%;
+	bottom: 5%;
 	border-radius: 5px;
-  	left: 50%;
-  	transform: translate(-50%, -50%)
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+
+/* Responsive */
+
+@media screen and (max-width: 841px) {
+	.digital-clock {
+		zoom: 0.9;
+		/* Old IE only */
+		-moz-transform: scale(0.9);
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+@media screen and (max-width: 650px) {
+	.digital-clock {
+		zoom: 0.8;
+		-moz-transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+}
+@media screen and (max-width: 550px) {
+	.digital-clock {
+		zoom: 0.6;
+		-moz-transform: scale(0.6);
+		-webkit-transform: scale(0.6);
+		transform: scale(0.6);
+	}
+}
+@media screen and (max-width: 560px) {
+	.analog-clock {
+		-moz-transform: scale(0.7);
+		-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+		height: 400px;
+		width: 400px;
+	}
+	#hours {
+		height: 100px;
+		left: 0;
+		right: 0;
+		bottom: 100px;
+		top: 0px;
+	}
+	#minutes {
+		height: 160px;
+		left: 0;
+		right: 0;
+		bottom: 160px;
+		top: 0px;
+	}
+	#seconds {
+		height: 140px;
+		left: 0;
+		right: 0;
+		bottom: 140px;
+		top: 0px;
+	}
+	#btn {
+		font-size: 120%;
+	}
 }
