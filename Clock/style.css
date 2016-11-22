@@ -5,6 +5,8 @@
 }
 body {
 	background-color: #d4d8dd;
+	height: 100%;
+	width: 100%;
 }
 
 /* Analog clock */
@@ -26,7 +28,6 @@ body {
 	bottom: 0;
 	margin: auto;
 	max-width: 100%;
-	max-height: 100%;
 	overflow: auto;
 }
 
@@ -136,7 +137,7 @@ body {
 	font-weight: bold;
 }
 .clock-face {
-	width: 700px;
+	width: 650px;
 	height: 150px;
 	background-color: #DDDDDD;
 	border-radius: 25px;
@@ -147,7 +148,7 @@ body {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	display: table-cell;
+	max-width: 100%;
 	text-align: center;
 	line-height: 150px;
 	font-size: 800%;
@@ -170,7 +171,8 @@ body {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	display: table;
+	margin: auto;
+	max-width: 100%;
 	display: none;
 }
 
@@ -182,11 +184,9 @@ body {
 	color: white;
 	font-size: 150%;
 	padding: 15px 32px;
-	position: absolute;
-	bottom: 5%;
-	border-radius: 5px;
-	left: 50%;
-	transform: translate(-50%, -50%)
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 /* Responsive */
@@ -194,13 +194,12 @@ body {
 @media screen and (max-width: 841px) {
 	.digital-clock {
 		zoom: 0.9;
-		/* Old IE only */
 		-moz-transform: scale(0.9);
 		-webkit-transform: scale(0.9);
 		transform: scale(0.9);
 	}
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 620px) {
 	.digital-clock {
 		zoom: 0.8;
 		-moz-transform: scale(0.8);
@@ -210,10 +209,13 @@ body {
 }
 @media screen and (max-width: 550px) {
 	.digital-clock {
-		zoom: 0.6;
-		-moz-transform: scale(0.6);
-		-webkit-transform: scale(0.6);
-		transform: scale(0.6);
+		zoom: 0.7;
+		-moz-transform: scale(0.7);
+		-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+	}
+	.clock-face {
+		width: 520px;
 	}
 }
 @media screen and (max-width: 560px) {
