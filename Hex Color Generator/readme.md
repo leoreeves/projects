@@ -1,4 +1,11 @@
-Generates a random hex color with option to copy hex color to clipboard.
+Generates a random hex colour based on user input, with option to copy hex reference to clipboard.
+
+Technologies used:
+
+- HTML
+- CSS
+- jQuery
+
 
 Changes to make:
 
