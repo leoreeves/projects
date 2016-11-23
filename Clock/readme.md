@@ -1,5 +1,3 @@
-An in-browser clock which lets you switch between analog and digital.
-
-To add:
+Changes to make:
 
 - Fix CSS formatting on mobile.
