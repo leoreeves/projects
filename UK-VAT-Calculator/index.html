@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UK VAT Calculator</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport"><!-- Latest compiled and minified CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- jQuery library -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+	</script><!-- Latest compiled JavaScript -->
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<link href="style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="app.js" type="text/javascript">
+	</script>
+</head>
+<body>
+	<div class="main container">
+		<div class="wrapper">
+			<h1><b>UK VAT Calculator</b></h1>
+			<p><b>Enter Amount (£)</b></p>
+			<form>
+				<input class="form-control" id="user-input" placeholder="Amount" required="" type="number" value=""><br>
+				<br>
+				<label class="radio-inline"><input id="add" name="radAnswer" type="radio" value="Add VAT">Add VAT</label> <label class="radio-inline"><input id="exclude" name="radAnswer" type="radio" value="Exclude VAT">Exclude VAT</label><br>
+				<br>
+				<p>VAT Rate = <select id="VAT-rate">
+					<option value="1.2">
+						20% Standard
+					</option>
+					<option value="1.05">
+						5% Reduced
+					</option>
+				</select></p><br>
+				<input class="btn btn-primary" onclick="calculate()" type="button" value="Submit">
+			</form><br>
+			<div id="add-VAT" style="display: none;">
+				<p><b>Net Amount (excl. VAT)</b></p>
+				<p id="plus-net"><i>£200</i></p>
+				<p><b>VAT Amount</b></p>
+				<p id="plus-VAT"><i>£40</i></p>
+				<p><b>Gross Amount (inc. VAT)</b></p>
+				<p id="plus-gross"><i>£240</i></p>
+			</div>
+			<div id="exclude-VAT" style="display: none;">
+				<p><b>Amount (inc. VAT)</b></p>
+				<p id="minus-net"><i>£200</i></p>
+				<p><b>VAT amount</b></p>
+				<p id="minus-VAT"><i>£40</i></p>
+				<p><b>Amount minus VAT</b></p>
+				<p id="minus-gross"><i>£240</i></p>
+			</div>
+			<p id="info"><a href="https://www.gov.uk/vat-rates">VAT Rates - GOV.UK</a></p>
+		</div>
+	</div>
+</body>
+</html>
