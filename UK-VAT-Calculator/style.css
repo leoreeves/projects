@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+}
+
+body {
+	background-color: #FAFAFA;
+	color: #212121;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 175%;
+}
+
+h1 {
+	font-size: 200%;
+}
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+	text-align: center;
+}
+
+.form-control {
+    min-width: 0;
+    width: 50%;
+    display: inline;
+}
+
+#add-VAT, #exclude-VAT {
+	font-size: large;
+	background-color: #EEEEEE;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	width: 30%;
+	padding: 15px;
+	margin: auto;
+	border-radius: 20px;
+}
+
+#add-VAT:hover , #exclude-VAT:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
