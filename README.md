@@ -19,7 +19,7 @@ Technologies used:
 - CSS
 - JavaScript
 
-## H3 [UK VAT Calculator](https://leoreeves.github.io/Projects/UK-VAT-Calculator/)
+## [UK VAT Calculator](https://leoreeves.github.io/Projects/UK-VAT-Calculator/)
 
 A minimal calculator for quickly calculating VAT from an input amount.
 
