@@ -5,4 +5,4 @@ A collection of personal projects I've worked on:
 
 [Clock](https://leoreeves.github.io/Projects/Clock/) - Inspired by this [enlight.ml project](https://enlight.ml/projects/clock/clock.html)
 
-[UK VAT Calculator](https://leoreeves.github.io/Projects/UK-VAT-Calculator/)
+[UK VAT Calculator](https://leoreeves.github.io/Projects/UK-VAT-Calculator/) - A minimal calculator for quickly calculating VAT
