@@ -4,13 +4,13 @@ function calculate() {
 	if(x === '') {
 		alert('Please enter an amount');
 	}
-	if(document.getElementById("add").checked && (document.getElementById("user-input").value !== '')) {
+	if(document.getElementById("add").checked && x !== '') {
 		document.getElementById('exclude-VAT').style.display = 'none';
 		document.getElementById('add-VAT').style.display = 'block';
 		document.getElementById("plus-net").innerHTML = '£' + parseFloat(x).toFixed(2);
 		document.getElementById("plus-VAT").innerHTML = '£' + (x * vatRate - x).toFixed(2);
 		document.getElementById("plus-gross").innerHTML = '£' + (x * vatRate).toFixed(2);	
-	} else if(document.getElementById("exclude").checked && (document.getElementById("user-input").value !== '')) {
+	} else if(document.getElementById("exclude").checked && x !== '') {
 		document.getElementById('add-VAT').style.display = 'none';
 		document.getElementById('exclude-VAT').style.display = 'block';
 		document.getElementById("minus-net").innerHTML = '£' + parseFloat(x).toFixed(2);
