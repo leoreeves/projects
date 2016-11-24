@@ -10,7 +10,8 @@ body {
 }
 
 h1 {
-	font-size: 200%;
+	font-size: 250%;
+	padding-bottom: 10px;
 }
 .main {
     height: 100%;
@@ -31,11 +32,11 @@ h1 {
 }
 
 #add-VAT, #exclude-VAT {
-	font-size: large;
+	font-size: x-large;
 	background-color: #EEEEEE;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-	width: 30%;
+	width: 40%;
 	padding: 15px;
 	margin: auto;
 	border-radius: 20px;
@@ -43,6 +44,15 @@ h1 {
 
 #add-VAT:hover , #exclude-VAT:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.result {
+	background-color: white;
+	border-radius: 5px;
+}
+
+.result-head {
+	color: #7d7d7d;
 }
 
 #info {
