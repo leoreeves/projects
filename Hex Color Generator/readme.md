@@ -9,8 +9,3 @@ Technologies used:
 - HTML
 - CSS
 - jQuery
-
-
-Changes to make:
-
-- Change text color depending on background-brightness.
