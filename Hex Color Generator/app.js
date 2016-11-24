@@ -30,7 +30,7 @@ $(function() {
 		if (e.target.className === 'btn') {
 			$('#success').css('display', '');
 			$('#success').fadeOut(2000);
-            $('button').blur()
+            $('button').blur();
 			document.getSelection().removeAllRanges();
 		} else {
 			setBackground();
