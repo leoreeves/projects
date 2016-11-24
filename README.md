@@ -5,7 +5,7 @@ A collection of personal projects I've worked on.
 
 Randomly generates a hex colour based on user input - inspired by this [enlight.ml project](https://enlight.ml/projects/color/color-generator.html).
 
-Technologies used: 
+Built using:
 - HTML
 - CSS
 - jQuery
@@ -14,7 +14,7 @@ Technologies used:
 
 A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/projects/clock/clock.html).
 
-Technologies used:
+Built using:
 - HTML
 - CSS
 - JavaScript
@@ -23,7 +23,7 @@ Technologies used:
 
 A minimal calculator for quickly calculating VAT from an input amount.
 
-Technologies used:
+Built using:
 - HTML
 - CSS
 - Bootstrap
