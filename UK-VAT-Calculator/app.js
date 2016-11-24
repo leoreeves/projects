@@ -1,7 +1,7 @@
 function calculate() {
 	var x = document.getElementById("user-input").value;
 	var vatRate = document.getElementById("VAT-rate").value;
-	if(document.getElementById("user-input").value === '') {
+	if(x === '') {
 		alert('Please enter an amount');
 	}
 	if(document.getElementById("add").checked && (document.getElementById("user-input").value !== '')) {
