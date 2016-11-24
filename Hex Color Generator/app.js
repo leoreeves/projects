@@ -2,10 +2,10 @@
 function getColor() {
 	return '#' + Math.random().toString(16).slice(2, 8);
 }
-// set background color style - based on this stackoverflow script http://stackoverflow.com/a/11868398/2588066
+// set background color style - based on this script http://stackoverflow.com/a/11868398/2588066
 function setBackground() {
 	var bgColor = getColor();
-	var hex = bgColor.slice(1,7); // removes # from Hex reference
+	var hex = bgColor.slice(1,7); // removes '#' from Hex code
 	document.body.style.background = bgColor;
 	document.getElementById("hex").innerHTML = bgColor;
 	var r = parseInt(hex.substr(0,2),16);
