@@ -19,7 +19,7 @@ Built using:
 - CSS
 - JavaScript
 
-## [UK VAT Calculator](https://leoreeves.github.io/projects/UK-VAT-Calculator/)
+## [UK VAT Calculator](https://leoreeves.github.io/projects/UK%20VAT%20Calculator/)
 
 A minimal calculator for quickly calculating VAT from an input amount.
 
