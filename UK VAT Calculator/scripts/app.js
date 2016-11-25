@@ -20,25 +20,25 @@ $(document).ready(function(){
 		}
 	});
 	$('#add-VAT-select').change(function() {
-		if ($("#add-VAT-select").val() === 0) {
+		if ($("#add-VAT-select").val() == 1) {
 			$("#copy").attr('data-clipboard-target',"#plus-net");
 			console.log('0');
-		} else if ($("#add-VAT-select").val() == 1) {
+		} else if ($("#add-VAT-select").val() == 2) {
 			$("#copy").attr('data-clipboard-target',"#plus-VAT");
 			console.log('1');
-		} else if ($("#add-VAT-select").val() == 2) {
+		} else if ($("#add-VAT-select").val() == 3) {
 			$("#copy").attr('data-clipboard-target',"#plus-gross");
 			console.log('2');
 		} 
 	});
 	$('#minus-VAT-select').change(function() {
-		if ($("#minus-VAT-select").val() === 0) {
+		if ($("#minus-VAT-select").val() == 1) {
 			$("#m-copy").attr('data-clipboard-target',"#minus-net");
 			console.log('0');
-		} else if ($("#minus-VAT-select").val() == 1) {
+		} else if ($("#minus-VAT-select").val() == 2) {
 			$("#m-copy").attr('data-clipboard-target',"#minus-VAT");
 			console.log('1');
-		} else if ($("#minus-VAT-select").val() == 2) {
+		} else if ($("#minus-VAT-select").val() == 3) {
 			$("#m-copy").attr('data-clipboard-target',"#minus-gross");
 			console.log('2');
 		} 
@@ -54,11 +54,5 @@ $(document).ready(function(){
 	clipboard.on('error', function(e) {
 		console.error('Action:', e.action);
 		console.error('Trigger:', e.trigger);
-	});
-		
-	$('#add-VAT-select option').each(function() {
-    if($("one").is(':selected')) {
-		console.log('one');
-	}});
-		
+	});		
 });
