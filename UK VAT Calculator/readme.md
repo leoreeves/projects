@@ -9,5 +9,6 @@ Built using:
 
 
 Changes to make:
+- Fix copy Net Amount issue.
 - Fix formatting on mobile.
 - Add successfully copied notification.
