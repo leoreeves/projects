@@ -36,11 +36,18 @@ h1 {
 	background-color: #EEEEEE;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-	width: 40%;
+	width: 30%;
+	min-width: 300px;
 	padding: 15px;
 	margin: auto;
 	border-radius: 20px;
 }
+
+#add-VAT-select, #minus-VAT-select {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
 
 #add-VAT:hover , #exclude-VAT:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -56,8 +63,6 @@ h1 {
 }
 
 #info {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+	position: relative;
+	margin-top: 50px;
 }
