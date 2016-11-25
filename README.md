@@ -28,3 +28,4 @@ Built using:
 - CSS
 - Bootstrap
 - JavaScript
+- jQuery
