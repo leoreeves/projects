@@ -191,6 +191,7 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	opacity: 0.8;
 }
 
 /* Responsive */
