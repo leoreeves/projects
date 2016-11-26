@@ -7,3 +7,7 @@ Built using:
 - HTML
 - CSS
 - JavaScript
+
+Changes to make:
+
+- Fix text align on mobile
