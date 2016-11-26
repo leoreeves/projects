@@ -20,15 +20,15 @@ body {
 	-moz-box-shadow: inset 0 0 50px #000000;
 	-webkit-box-shadow: inset 0 0 50px #000000;
 	box-shadow: inset 0 0 20px #000000;
-	margin-bottom: 150px;
 	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	max-width: 100%;
-	overflow: auto;
+ 	top: 50%;
+  	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	overflow: hidden;
 }
 
 /* Hour positions */
@@ -144,11 +144,14 @@ body {
 	border: 3px solid #AAAAAA;
 	margin: auto;
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	max-width: 100%;
+ 	top: 50%;
+  	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	overflow: hidden;
 	text-align: center;
 	line-height: 150px;
 	font-size: 800%;
@@ -165,14 +168,15 @@ body {
 	background-color: #595959;
 	border-radius: 25px;
 	border: 3px solid #3a3a3a;
-	margin: auto;
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto;
-	max-width: 100%;
+ 	top: 50%;
+  	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	overflow: hidden;
 	display: none;
 }
 
@@ -191,63 +195,74 @@ body {
 
 /* Responsive */
 
-@media screen and (max-width: 841px) {
-	.digital-clock {
-		zoom: 0.9;
-		-moz-transform: scale(0.9);
-		-webkit-transform: scale(0.9);
-		transform: scale(0.9);
-	}
-}
-@media screen and (max-width: 620px) {
-	.digital-clock {
-		zoom: 0.8;
-		-moz-transform: scale(0.8);
-		-webkit-transform: scale(0.8);
-		transform: scale(0.8);
-	}
-}
-@media screen and (max-width: 550px) {
-	.digital-clock {
-		zoom: 0.7;
-		-moz-transform: scale(0.7);
-		-webkit-transform: scale(0.7);
-		transform: scale(0.7);
-	}
-	.clock-face {
-		width: 520px;
-	}
-}
 @media screen and (max-width: 560px) {
 	.analog-clock {
-		-moz-transform: scale(0.7);
-		-webkit-transform: scale(0.7);
-		transform: scale(0.7);
-		height: 400px;
-		width: 400px;
+		height: 300px;
+		width: 300px;
 	}
+	
 	#hours {
-		height: 100px;
-		left: 0;
-		right: 0;
-		bottom: 100px;
-		top: 0px;
+		height: 70px;
+		bottom: 70px;
+		width: 8px;
 	}
 	#minutes {
-		height: 160px;
-		left: 0;
-		right: 0;
-		bottom: 160px;
-		top: 0px;
+		height: 120px;
+		bottom: 120px;
+		width: 5px;
 	}
 	#seconds {
-		height: 140px;
-		left: 0;
-		right: 0;
-		bottom: 140px;
-		top: 0px;
+		height: 100px;
+		bottom: 100px;
 	}
 	#btn {
 		font-size: 120%;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.analog-clock {
+		height: 200px;
+		width: 200px;
+	}
+	#hours {
+		height: 50px;
+		bottom: 50px;
+		width: 6px;
+	}
+	#minutes {
+		height: 80px;
+		bottom: 80px;
+		width: 4px;
+	}
+	#seconds {
+		height: 80px;
+		bottom: 80px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+.digital-clock {
+		width: 430px;
+		height: 150px;
+	}
+	.clock-face {
+		width: 380px;
+		height: 100px;
+		font-size: 500%;
+		line-height: 100px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+.digital-clock {
+		width: 230px;
+		height: 120px;
+	}
+	.clock-face {
+		width: 190px;
+		height: 80px;
+		font-size: 300%;
+		line-height: 80px;
 	}
 }
