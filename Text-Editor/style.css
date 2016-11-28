@@ -1,0 +1,60 @@
+html {
+	font-family: 'Helvetica', sans-serif;
+}
+
+body {
+	color: #333;
+	font-weight: 100;
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+div:focus {
+	outline: none;
+}
+
+#heading {
+	font-size: 48px;
+	padding-top: 30px;
+	padding-left: 20px;
+}
+
+#content {
+	padding-top: 10px;
+	padding-left: 20px;
+	font-size: 24px;
+}
+
+.footer {
+	text-align:center;
+
+	padding-top: 15px;
+	vertical-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0;
+	margin: 0 auto;
+	width: 100%;
+	background: rgba(240, 240, 240, 0.6);
+}
+
+button {
+	font-size: 50px;
+	border-radius: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #333;
+}
+
+
+button:hover {
+	color: #6b6b6b;
+}
+
+
+button:focus {
+	outline: none;
+}
