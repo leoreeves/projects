@@ -10,6 +10,16 @@ Built using:
 - CSS
 - jQuery
 
+## [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
+
+Generates a random quote about design - inspired by this [enlight.ml project](https://enlight.ml/projects/quote/quote.html)
+
+Built using:
+
+- HTML
+- CSS
+- jQuery
+
 ## [Clock](https://leoreeves.github.io/projects/Clock/)
 
 A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/projects/clock/clock.html).
