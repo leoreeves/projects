@@ -1,0 +1,45 @@
+html,body{
+	font-family: 'Yrsa', serif;
+	background: #FAFAFA;
+	font-size: 110%;
+	color: #212121;
+}
+
+body {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+h1 {
+	text-align: center;
+}
+
+#name {
+	color: #888888;
+}
+
+#plug {
+	color: #888888;
+}
+
+table {
+	width: 100%;
+	border-collapse:collapse;
+	border: #d4d6d8;
+}
+
+.green {
+	background: #3fc667;
+}
+
+.purple{
+	background: #8574f2;
+}
+
+.pink {
+	background: #d4b385;
+}
+
+.red {
+	background: #ea6464;
+}
