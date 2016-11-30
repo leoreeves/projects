@@ -1,0 +1,49 @@
+html, body {
+    height: 100%;
+	overflow: hidden;
+}
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 120%;
+	text-align: center;
+}
+
+input {
+	font-size: 120%;
+	text-align: center;
+}
+
+button {
+	border-radius: 5px;
+	padding: 10px;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+button:focus {
+	outline: 0;
+}
+
+button:hover {
+	background: #c2c3c4;
+}
+
+#num {
+	width: 20%;
+}
+
+#char {
+	font-size: 150%;
+	font-weight: bold;
+}
