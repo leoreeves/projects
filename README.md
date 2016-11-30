@@ -32,7 +32,7 @@ Built using:
 
 ## [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
 
-Paint in-browser, using HTML5's canvas feature.
+Paint in-browser, using HTML5's canvas feature - inspired by this [enlight.ml project](https://enlight.ml/projects/web-paint/web-paint.html)
 
 Built using:
 
