@@ -1,7 +1,7 @@
 # Projects
 A collection of personal projects I've worked on.
 
-## Projects List:
+## List:
 
 - [Clock](https://leoreeves.github.io/projects/Clock/)
 - [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
