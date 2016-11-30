@@ -32,9 +32,19 @@ Built using:
 
 ## [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
 
-Minimal in-browser text editor that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/projects/text-editor/text-editor.html)
+Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/projects/text-editor/text-editor.html)
 
-Built using: 
+Built using:
+
+- HTML
+- CSS
+- JavaScript
+
+## [To-do List](https://leoreeves.github.io/projects/to-do-list/)
+
+Minimal to-do list - inspired by this [enlight.ml project](https://enlight.ml/projects/to-do/to-do.html)
+
+Built using:
 
 - HTML
 - CSS
