@@ -22,7 +22,7 @@ Built using:
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
 
-Generates a random quote about design - inspired by this [enlight.ml project](https://enlight.ml/projects/quote/quote.html)
+Generates a random quote about design - inspired by this [enlight.ml project](https://enlight.ml/projects/quote/quote.html).
 
 Built using:
 
@@ -32,7 +32,7 @@ Built using:
 
 ## [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
 
-Paint in-browser, using HTML5's canvas feature - inspired by this [enlight.ml project](https://enlight.ml/projects/web-paint/web-paint.html)
+Paint in-browser, using HTML5's canvas feature - inspired by this [enlight.ml project](https://enlight.ml/projects/web-paint/web-paint.html).
 
 Built using:
 
@@ -51,7 +51,7 @@ Built using:
 
 ## [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
 
-Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/projects/text-editor/text-editor.html)
+Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/projects/text-editor/text-editor.html).
 
 Built using:
 
@@ -61,7 +61,7 @@ Built using:
 
 ## [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 
-Minimal to-do list - inspired by this [enlight.ml project](https://enlight.ml/projects/to-do/to-do.html)
+Minimal to-do list - inspired by this [enlight.ml project](https://enlight.ml/projects/to-do/to-do.html).
 
 Built using:
 
