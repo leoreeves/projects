@@ -3,6 +3,7 @@ A collection of personal projects I've worked on.
 
 ### List:
 
+- [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Clock](https://leoreeves.github.io/projects/Clock/)
 - [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
@@ -11,6 +12,16 @@ A collection of personal projects I've worked on.
 - [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/UK%20VAT%20Calculator/)
 - [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
+
+
+## [Character Finder](https://leoreeves.github.io/projects/character-finder/)
+
+Finds a character in a word for you.
+
+Built using:
+- HTML
+- CSS
+- JavaScript
 
 ## [Clock](https://leoreeves.github.io/projects/Clock/)
 
