@@ -30,6 +30,15 @@ Built using:
 - CSS
 - jQuery
 
+## [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
+
+Gave the [original site](http://nickdraketabs.co.uk/) a facelift using CSS, replaced much of the original HTML and made it mobile-friendly.
+
+Built using:
+
+- HTML
+- CSS
+
 ## [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
 
 Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/projects/text-editor/text-editor.html)
