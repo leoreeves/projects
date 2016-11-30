@@ -1,6 +1,17 @@
 # Projects
 A collection of personal projects I've worked on.
 
+## Projects List:
+
+- [Clock](https://leoreeves.github.io/projects/Clock/)
+- [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
+- [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
+- [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
+- [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
+- [To-do List](https://leoreeves.github.io/projects/to-do-list/)
+- [UK VAT Calculator](https://leoreeves.github.io/projects/UK%20VAT%20Calculator/)
+- [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
+
 ## [Clock](https://leoreeves.github.io/projects/Clock/)
 
 A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/projects/clock/clock.html).
