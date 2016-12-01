@@ -4,6 +4,7 @@
 	<title>Character Finder</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -11,7 +12,7 @@
 	<div class = "wrapper">
 		<h1>Character Finder</h1>
 		<label>Enter word below:<br>
-		<input type="text" id="change" onchange="charFind()">
+		<input type="text" id="change" onchange="charFind()"><button id="pass" onclick="secure()"><i class="fa fa-key" aria-hidden="true"></i></button>
 		</label>
 		<br>
 		<p id="count">&nbsp;</p>
@@ -19,8 +20,8 @@
 		<input type="number" id="num" min="1" onchange="charFind()">
 		</label>
 		<p id="char" class="copy-char">&nbsp;</p>
-		<button class="copyBtn" data-clipboard-action="copy" data-clipboard-target="#char">Copy to Clipboard</button>
-		<p id="success" style="display: none;">Successfully Copied</p>
+		<button class="copyBtn" onclick="show()" data-clipboard-action="copy" data-clipboard-target="#char">Copy to Clipboard</button>
+		<p id="success" style="visibility: hidden;">Successfully Copied</p>
 	</div>
 </div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js" type="text/javascript"></script>
