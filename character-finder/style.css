@@ -27,8 +27,9 @@ input {
 #pass {
 	vertical-align: bottom;
 	vertical-align: top;
-	height: 33px;
+	height: 32.5px;
 	border: none;
+	border-radius: 0 5px 5px 0;
 }
 
 .copyBtn{
