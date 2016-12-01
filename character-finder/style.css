@@ -24,26 +24,59 @@ input {
 	text-align: center;
 }
 
-button {
+#pass {
+	vertical-align: bottom;
+	vertical-align: top;
+	height: 33px;
+	border: none;
+}
+
+.copyBtn{
 	border-radius: 5px;
 	padding: 10px;
 	border: none;
 	font-family: 'Open Sans', sans-serif;
 }
-
-button:focus {
+.copyBtn:focus {
 	outline: 0;
 }
 
-button:hover {
+.copyBtn:hover {
 	background: #c2c3c4;
 }
 
 #num {
-	width: 20%;
+	width: 100px;
 }
 
 #char {
-	font-size: 150%;
+	font-size: 180%;
 	font-weight: bold;
+	background: transparent;
+}
+
+#char::-moz-selection {background: transparent; }
+#char::selection { background: transparent; }
+
+
+#success {
+	font-size: 80%;
+	color: gray;
+}
+
+/* Fade out from http://stackoverflow.com/a/28662971 */
+
+@-webkit-keyframes fadeout {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+@keyframes fadeout {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+.fadeOut {
+  opacity:0;
+  -moz-animation   : fadeout 2s linear;
+  -webkit-animation: fadeout 2s linear;
+  animation        : fadeout 2s linear;
 }
