@@ -5,6 +5,7 @@ html {
 
 body {
 	margin: 0 auto;
+    font-size: 120%;
 }
 
 .outer {
@@ -31,4 +32,19 @@ h1, h2 {
 
 #weather-icon {
 	font-size: 600%;
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black !important;
+}
+
+#api {
+    font-size: 90%;
+}
+
+#minutely {
+    opacity: 0.7;
+    font-size: 80%;
 }
