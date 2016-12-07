@@ -5,6 +5,7 @@ A collection of personal projects I've worked on.
 
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Clock](https://leoreeves.github.io/projects/Clock/)
+- [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation_weather_app/)
 - [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
@@ -19,6 +20,7 @@ A collection of personal projects I've worked on.
 Finds a character in a word for you.
 
 Built using:
+
 - HTML
 - CSS
 - JavaScript
@@ -28,16 +30,28 @@ Built using:
 A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/projects/clock/clock.html).
 
 Built using:
+
 - HTML
 - CSS
 - JavaScript
 
+## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation_weather_app/)
+
+Minimal app that displays the local weather for the user based on browser geolocation - inspired by this [enlight.ml project](https://enlight.ml/projects/weather/weather.html).
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
+- jQuery
 
 ##  [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
 
 Randomly generates a hex colour based on user input - inspired by this [enlight.ml project](https://enlight.ml/projects/color/color-generator.html).
 
 Built using:
+
 - HTML
 - CSS
 - jQuery
@@ -86,6 +100,7 @@ Built using:
 A minimal calculator for quickly calculating VAT from an input amount.
 
 Built using:
+
 - HTML
 - CSS
 - Bootstrap
