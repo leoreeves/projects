@@ -3,9 +3,14 @@ html {
 	text-align: center;
 }
 
+* {
+	font-weight: normal;
+}
+
 body {
 	margin: 0 auto;
     font-size: 120%;
+	font-weight: normal;
 }
 
 .outer {
@@ -23,24 +28,37 @@ body {
 .inner {
     margin-left: auto;
     margin-right: auto; 
-    width: /*whatever width you want*/;
-}
-
-h1, h2 {
-	font-weight: 300;
 }
 
 #weather-icon {
 	font-size: 600%;
-    padding-bottom: 20px;
+	padding-top: 30px;
+    padding-bottom: 5px;
 }
 
-a {
-    text-decoration: none;
-    color: black !important;
-}
-
-#minutely {
+#minutely{
     opacity: 0.7;
     font-size: 80%;
+}
+
+#location {
+	opacity: 0.7;
+}
+
+#temp {
+	font-size: 165%;
+}
+
+#measure {
+	font-weight: normal;
+	font-size: 40%;
+	vertical-align: top;
+}
+
+#switch {
+	font-size: 140%;
+}
+
+#conv {
+	font-size: 40%;
 }
