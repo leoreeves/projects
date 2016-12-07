@@ -9,8 +9,6 @@ function weather() {
 		latitude = position.coords.latitude;
 		longitude = position.coords.longitude;
 		
-		// Latitude and longitude - location.innerHTML = 'Latitiude is ' + String(latitude).slice(0,5) + '° Longitude is ' + String(longitude).slice(0,5) + '°';
-		
 		// Place and country
 		$.getJSON({ url:'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true',
          success: function(data){
@@ -19,8 +17,9 @@ function weather() {
 		});
 		
 		// Weather measurements
-		$.getJSON(url + apiKey + '/' + latitude + ',' + longitude  + '?callback=?' + '&units=auto', function(data) {
-			$('#temp').html(Math.round(data.currently.temperature) + '°C');
+		$.getJSON(url + apiKey + '/' + latitude + ',' + longitude  + '?callback=?' + '&units=si', function(data) {
+			$('#temp').html(Math.round(data.currently.temperature) + '<span id="measure">°C </span>');
+			$('#switch').html('<label id="conv"><input type="checkbox" id="fahr" onclick="convert()"/>Change units</label>')
 			$('#minutely').html(String(data.minutely.summary).slice(0, -1));
 			$("#weather-icon").html("<i class=\"wi wi-forecast-io-"+data.currently.icon+"\"<\/i>");
 		});
@@ -29,8 +28,15 @@ function weather() {
 	function error() {
 		location.innerHTML = "Unable to retrieve your location";
 	}
-	//location.innerHTML = "Location..."
 }
 
 weather();
 
+function convert() {
+	var c = parseInt($('#temp').text());
+	if (document.getElementById('fahr').checked) {
+		document.getElementById('temp').innerHTML = (Math.round((c * 9/5) + 32) + '<span id="measure">°F </span>');
+	} else {
+		document.getElementById('temp').innerHTML = (Math.round((c - 32) * 5/9) + '<span id="measure">°C </span>');
+	}
+}
