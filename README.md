@@ -5,6 +5,7 @@ A collection of personal projects I've worked on.
 
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Clock](https://leoreeves.github.io/projects/Clock/)
+- [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott%20smith%20tribute%20page/)
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation_weather_app/)
 - [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
@@ -34,6 +35,16 @@ Built using:
 - HTML
 - CSS
 - JavaScript
+
+## [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott%20smith%20tribute%20page/)
+
+A tribute page project built for Free Code Camp.
+
+Built using:
+
+- HTML
+- CSS
+- Bootstrap
 
 ## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation_weather_app/)
 
