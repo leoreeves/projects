@@ -18,7 +18,7 @@ A collection of personal projects I've worked on.
 
 ## [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 
-Finds a character in a word for you.
+Finds a specified character in a word.
 
 Built using:
 
