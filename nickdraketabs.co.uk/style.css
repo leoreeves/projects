@@ -1,13 +1,13 @@
 html,body{
 	font-family: 'Yrsa', serif;
 	background: #FAFAFA;
-	font-size: 110%;
 	color: #212121;
 }
 
 body {
 	padding-left: 10px;
 	padding-right: 10px;
+	font-size: 1.2em;
 }
 
 h1 {
