@@ -4,10 +4,11 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	overflow-x: hidden;
+	font-size: 100%;
 }
 h1 {
 	font-family: 'Merriweather', sans-serif;
-	font-size: 450%;
+	font-size: 4.5em;
 	text-align: center;
 	margin-bottom: 5px;
 	margin-top: 0;
@@ -15,14 +16,14 @@ h1 {
 }
 h3, h4 {
 	font-family: 'Merriweather', serif;
-	font-size: 220%;
+	font-size: 2.2em;
 	text-align: center;
 	margin-top: 5px;
 	margin-bottom: 20px;
 }
 h2 {
 	font-family: 'Merriweather', serif;
-	font-size: 350%;
+	font-size: 3.5em;
 	font-weight: bold;
 	text-align: center;
 	padding-top: 0;
@@ -31,7 +32,7 @@ h2 {
 }
 p {
 	font-family: 'Merriweather', serif;
-	font-size: 120%;
+	font-size: 1.2em;
 	font-weight: bold;
 	text-align: center;
 	margin: 10px;
@@ -44,7 +45,7 @@ p {
 	background-color: white;
 }
 .external {
-	font-size: medium;
+	font-size: 1em;
 	text-align: center;
 	padding-top: 5px;
 	padding-left: 10px;
@@ -52,7 +53,7 @@ p {
 }
 #quote {
 	font-family: 'Indie Flower', cursive;
-	font-size: 225%;
+	font-size: 2.25em;
 	margin: auto;
 	padding-top: 25px;
 	text-align: center;
@@ -60,7 +61,7 @@ p {
 }
 #quote-name {
 	font-family: 'Indie Flower', cursive;
-	font-size: 225%;
+	font-size: 2.25em;
 	margin: auto;
 	padding-top: 0;
 	text-align: center;
@@ -69,7 +70,7 @@ p {
 }
 .references {
 	font-weight: normal;
-	font-size: 80%;
+	font-size: 0.8em;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -81,7 +82,7 @@ a:visited {
     color: #204b70;
 }  
 div.footer {
-	font-size: 120%;
+	font-size: 1.2em;
 	color: gray;
 	text-align: center;
 	padding-top: 5px;
