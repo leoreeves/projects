@@ -3,6 +3,7 @@ A collection of personal projects I've worked on.
 
 ### List:
 
+- [2D Breakout Game](https://leoreeves.github.io/projects/2D%20Breakout%20Game/)
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Clock](https://leoreeves.github.io/projects/Clock/)
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott%20smith%20tribute%20page/)
@@ -15,6 +16,15 @@ A collection of personal projects I've worked on.
 - [UK VAT Calculator](https://leoreeves.github.io/projects/UK%20VAT%20Calculator/)
 - [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
 
+## [2D Breakout Game](https://leoreeves.github.io/projects/2D%20Breakout%20Game/)
+
+Based on the classic game [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game)).
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
 
 ## [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 
