@@ -1,5 +1,5 @@
 # Projects
-A collection of personal projects I've worked on.
+A collection of personal projects.
 
 ### List:
 
@@ -9,6 +9,7 @@ A collection of personal projects I've worked on.
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott%20smith%20tribute%20page/)
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation_weather_app/)
 - [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
+- [Live Code Editor](https://leoreeves.github.io/projects/Live%20Code%20Editor/)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
 - [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
@@ -76,6 +77,16 @@ Built using:
 - HTML
 - CSS
 - jQuery
+
+## [Live Code Editor](https://leoreeves.github.io/projects/Live%20Code%20Editor/)
+
+An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [enlight.ml project](https://enlight.ml/projects/code-editor/code-editor.html).
+
+Built using: 
+
+- HTML
+- CSS
+- JavaScript
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
 
