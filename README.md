@@ -1,7 +1,7 @@
 # Projects
 A collection of personal projects.
 
-### List:
+### Contents
 
 - [2D Breakout Game](https://leoreeves.github.io/projects/2D%20Breakout%20Game/)
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
