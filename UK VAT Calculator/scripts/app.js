@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".submit").click(function(){
+	$('.submit').click(function(){
 		var x = document.getElementById("user-input").value;
 		var vatRate = document.getElementById("VAT-rate").value;
 		if (document.getElementById("user-input").value === '') {
