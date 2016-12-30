@@ -12,7 +12,7 @@ A collection of personal projects.
 - [Live Code Editor](https://leoreeves.github.io/projects/Live%20Code%20Editor/)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
-- [Simple Canvas Game]
+- [Simple Canvas Game](https://leoreeves.github.io/projects/simple%20canvas%20game/)
 - [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
 - [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/UK%20VAT%20Calculator/)
