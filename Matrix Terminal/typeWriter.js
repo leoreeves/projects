@@ -55,7 +55,7 @@ var typeWriter = function (selector, type, interval) {
 
                 style.sheet.insertRule("@keyframes cursor {0% { opacity : 1;}100% { opacity : 0;}}", 0);
 
-                cursor.style.fontSize = "10px";
+                cursor.style.fontSize = "1em";
 
                 cursor.style.fontWeight = "bold";
 
