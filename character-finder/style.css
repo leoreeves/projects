@@ -15,16 +15,16 @@ html, body {
 
 body{
 	font-family: 'Open Sans', sans-serif;
-	font-size: 120%;
+	font-size: 1.2em;
 	text-align: center;
 }
 
 input {
-	font-size: 120%;
+	font-size: 1.2em;
 	text-align: center;
 }
 
-#pass {
+#hide-word {
 	vertical-align: bottom;
 	vertical-align: top;
 	height: 32.5px;
@@ -32,33 +32,35 @@ input {
 	border-radius: 0 5px 5px 0;
 }
 
-.copyBtn{
+.copy-button{
 	border-radius: 5px;
 	padding: 10px;
 	border: none;
 	font-family: 'Open Sans', sans-serif;
 }
-.copyBtn:focus {
+
+.copy-button:focus {
 	outline: 0;
 }
 
-.copyBtn:hover {
+.copy-button:hover {
 	background: #c2c3c4;
+	cursor: pointer;
 }
 
-#num {
+#character-number {
 	width: 100px;
 }
 
-#char {
+#character {
 	font-size: 180%;
 	font-weight: bold;
 	background: transparent;
 }
 
-#char::-moz-selection {background: transparent; }
-#char::selection { background: transparent; }
-
+#character::-moz-selection, #character::selection {
+	background: transparent;
+}
 
 #success {
 	font-size: 80%;

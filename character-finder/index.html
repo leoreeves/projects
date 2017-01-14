@@ -8,22 +8,22 @@
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
-<div class="main">
-	<div class = "wrapper">
+<main class="main">
+	<div class="wrapper">
 		<h1>Character Finder</h1>
 		<label>Enter word below:<br>
-		<input type="text" id="change" onchange="charFind()"><button id="pass" onclick="secure()"><i class="fa fa-key" aria-hidden="true"></i></button>
+		<input type="text" id="user-input" onchange="findCharacter()"><button id="hide-word" onclick="secure()"><i class="fa fa-key" aria-hidden="true"></i></button>
 		</label>
 		<br>
-		<p id="count">&nbsp;</p>
+		<p id="count-of-characters">&nbsp;</p>
 		<label>Enter character you require:<br>
-		<input type="number" id="num" min="1" onchange="charFind()">
+		<input type="number" id="character-number" min="1" onchange="findCharacter()">
 		</label>
-		<p id="char" class="copy-char">&nbsp;</p>
-		<button class="copyBtn" onclick="show()" data-clipboard-action="copy" data-clipboard-target="#char">Copy to Clipboard</button>
+		<p id="character">&nbsp;</p>
+		<button class="copy-button" onclick="confirmTextCopied()" data-clipboard-action="copy" data-clipboard-target="#character">Copy to Clipboard</button>
 		<p id="success" style="visibility: hidden;">Successfully Copied</p>
 	</div>
-</div>
+</main>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js" type="text/javascript"></script>
 	<script src="app.js" type="text/javascript"></script>
 </body>
