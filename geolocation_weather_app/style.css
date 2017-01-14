@@ -1,10 +1,10 @@
+* {
+	font-weight: normal;
+}
+
 html {
 	font-family: "Avenir Next", Helvetica, sans-serif;
 	text-align: center;
-}
-
-* {
-	font-weight: normal;
 }
 
 body {
