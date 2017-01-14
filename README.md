@@ -17,7 +17,6 @@ A collection of personal projects.
 - [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
 - [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/UK%20VAT%20Calculator/)
-- [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
 
 ## [2D Breakout Game](https://leoreeves.github.io/projects/2D%20Breakout%20Game/)
 
@@ -163,13 +162,3 @@ Built using:
 - Bootstrap
 - JavaScript
 - jQuery
-
-## [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
-
-Paint in-browser, using HTML5's canvas feature - inspired by this [enlight.ml project](https://enlight.ml/demo/web-paint-project/index.html).
-
-Built using:
-
-- HTML
-- CSS
-- JavaScript
