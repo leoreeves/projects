@@ -10,6 +10,7 @@ A collection of personal projects.
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation_weather_app/)
 - [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
 - [Live Code Editor](https://leoreeves.github.io/projects/Live%20Code%20Editor/)
+- [Matrix Terminal](https://leoreeves.github.io/projects/Matrix%20Terminal/)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
 - [Simple Canvas Game](https://leoreeves.github.io/projects/simple%20canvas%20game/)
@@ -42,7 +43,7 @@ Built using:
 
 ## [Clock](https://leoreeves.github.io/projects/Clock/)
 
-A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/projects/clock/clock.html).
+A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/demo/clock-project/index.html).
 
 Built using:
 
@@ -62,7 +63,7 @@ Built using:
 
 ## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation_weather_app/)
 
-Minimal app that displays the local weather for the user based on browser geolocation - inspired by this [enlight.ml project](https://enlight.ml/projects/weather/weather.html).
+Minimal app that displays the local weather for the user based on browser geolocation - inspired by this [enlight.ml project](https://enlight.ml/demo/weather-project/index.html).
 
 Built using:
 
@@ -73,7 +74,7 @@ Built using:
 
 ##  [Hex Color Generator](https://leoreeves.github.io/projects/Hex%20Color%20Generator/)
 
-Randomly generates a hex colour based on user input - inspired by this [enlight.ml project](https://enlight.ml/projects/color/color-generator.html).
+Randomly generates a hex colour based on user input - inspired by this [enlight.ml project](https://enlight.ml/demo/color-project/index.html).
 
 Built using:
 
@@ -83,7 +84,7 @@ Built using:
 
 ## [Live Code Editor](https://leoreeves.github.io/projects/Live%20Code%20Editor/)
 
-An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [enlight.ml project](https://enlight.ml/projects/code-editor/code-editor.html).
+An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [enlight.ml project](https://enlight.ml/demo/code-editor-project/index.html).
 
 Built using: 
 
@@ -91,9 +92,21 @@ Built using:
 - CSS
 - JavaScript
 
+## [Matrix Terminal](https://leoreeves.github.io/projects/Matrix%20Terminal/)
+
+Inspired by [this](https://www.youtube.com/watch?v=Smwrw4sNCxE) scene from the movie The Matrix, a simulation of Neo's terminal.
+To achieve the typewriter effect I used the script [typewriter.js](https://github.com/ckm100/typeWriter.js).
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
+
+
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/Quotes-on-Design-Generator/)
 
-Generates a random quote about design - inspired by this [enlight.ml project](https://enlight.ml/projects/quote/quote.html).
+Generates a random quote about design - inspired by this [enlight.ml project](https://enlight.ml/demo/quote-project/index.html).
 
 Built using:
 
@@ -121,7 +134,7 @@ Built using:
 
 ## [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
 
-Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/projects/text-editor/text-editor.html).
+Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/demo/text-editor-project/index.html).
 
 Built using:
 
@@ -131,7 +144,7 @@ Built using:
 
 ## [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 
-Minimal to-do list - inspired by this [enlight.ml project](https://enlight.ml/projects/to-do/to-do.html).
+Minimal to-do list - inspired by this [enlight.ml project](https://enlight.ml/demo/to-do-project/index.html).
 
 Built using:
 
@@ -153,7 +166,7 @@ Built using:
 
 ## [Web Paint App](https://leoreeves.github.io/projects/web-paint-app/)
 
-Paint in-browser, using HTML5's canvas feature - inspired by this [enlight.ml project](https://enlight.ml/projects/web-paint/web-paint.html).
+Paint in-browser, using HTML5's canvas feature - inspired by this [enlight.ml project](https://enlight.ml/demo/web-paint-project/index.html).
 
 Built using:
 
