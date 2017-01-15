@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wikipedia Viewer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="container">
+            <div class="col s12">
+                <h1><strong>Wikipedia Viewer</strong></h1>
+                <nav>
+                    <!--Search Box-->
+                    <div class="nav-wrapper">
+                        <div class="input-field">
+                            <input class="wiki-search" placeholder="Search Wikipedia" type="search" data-mode="simple" required>
+                            <label for="search"><i class="material-icons searchbar-search-icon">search</i></label>
+                            <i class="material-icons searchbar-close-icon">close</i>
+                        </div>
+                        <!--Buttons-->
+                        <div class="buttons">
+                            <button class="waves-effect waves-light indigo lighten-2 btn-large" id="search-btn" name="action" type="submit"><i class="material-icons left btn-icon" id="button-search-icon">search</i>Search</button>
+                            <a class="waves-effect waves-light indigo lighten-2 btn-large" href="https://en.wikipedia.org/wiki/Special:Random"><i class="material-icons left" id="button-random-icon">shuffle</i> Random</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--Card Search Results-->
+        <main id="results">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s12 cards-container">
+                                <article class="articles"></article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--Scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <script src="app.js"></script>   
+    </body>
+</html>

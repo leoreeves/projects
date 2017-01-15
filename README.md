@@ -17,6 +17,7 @@ A collection of personal projects.
 - [Text Editor](https://leoreeves.github.io/projects/Text-Editor/)
 - [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/UK%20VAT%20Calculator/)
+- [Wikipedia Viewer](https://leoreeves.github.io/projects/Wikipedia%20Viewer/)
 
 ## [2D Breakout Game](https://leoreeves.github.io/projects/2D%20Breakout%20Game/)
 
@@ -52,7 +53,7 @@ Built using:
 
 ## [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott%20smith%20tribute%20page/)
 
-A tribute page project built for Free Code Camp.
+A tribute page built for Free Code Camp.
 
 Built using:
 
@@ -162,3 +163,15 @@ Built using:
 - Bootstrap
 - JavaScript
 - jQuery
+
+## [Wikipedia Viewer](https://leoreeves.github.io/projects/Wikipedia%20Viewer/)
+
+A Wikipedia viewer built for Free Code Camp, it returns search results in card format with an image if the article has one.
+
+Built using: 
+
+- HTML
+- CSS
+- Materialize.css
+- jQuery
+- AJAX

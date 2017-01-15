@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+body {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #EEEEEE;
+  color: #212121;
+}
+
+header {
+  padding-bottom: 140px;
+}
+
+@media screen and (max-width: 451px) {
+  header {
+    padding-bottom: 220px;
+  }
+}
+
+h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+nav {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.buttons {
+  padding-bottom: 20px;
+}
+
+.btn-large {
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.searchbar-close-icon,
+.searchbar-search-icon,
+.wiki-search {
+  color: #424242 !important;
+}
+
+#button-search-icon,
+#button-random-icon {
+  line-height: 55px;
+}
+
+/*Search Result Cards*/
+.card {
+  margin-top: 20px;
+  cursor: pointer;
+  border-left: 10px solid;
+  border-color: transparent;
+}
+
+.card:hover {
+  border-left: 10px solid;
+  border-color: #7986cb;
+}
+
+.card-content a {
+  color: #212121 !important;
+}
+
+.card .card-content {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+img {
+  margin-bottom: 20px;
+}
