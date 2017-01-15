@@ -36,7 +36,7 @@ $(document).ready(function() {
 			success: function(json) {
 				const pages = json.query.pages;
 				$.map(pages, function(page) {
-					const pageElement = $(`<div class="card hoverable" onclick="location.href=\'http://en.wikipedia.org/wiki/${page.title}'";><div class="card-content left-align"><a href="http://en.wikipedia.org/wiki/'${page.title}"><span class="card-title">${page.title}</span><p>${page.extract}</p>`);
+					const pageElement = $(`<div class="card hoverable" onclick="location.href=\http://en.wikipedia.org/wiki/${page.title}";><div class="card-content left-align"><a href="http://en.wikipedia.org/wiki/${page.title}"><span class="card-title">${page.title}</span><p>${page.extract}</p>`);
 					// Get the article image if it exists
 					if (page.thumbnail) pageElement.append($('<img>').attr('src', page.thumbnail.source));
 					articles.append(pageElement);

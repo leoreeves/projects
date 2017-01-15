@@ -9,3 +9,7 @@ Built using:
 - Materialize.css
 - jQuery
 - AJAX
+
+To do:
+
+- Make page jump down to search results on mobile
