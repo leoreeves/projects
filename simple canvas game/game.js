@@ -16,7 +16,7 @@ bgImage.src = "img/background.png";
 // Hero image
 var heroReady = false;
 var heroImage = new Image();
-heroImage.onload = function () {
+heroImage.onload = function() {
 	heroReady = true;
 };
 heroImage.src = "img/hero.png";
@@ -24,7 +24,7 @@ heroImage.src = "img/hero.png";
 // Monster image
 var monsterReady = false;
 var monsterImage = new Image();
-monsterImage.onload = function () {
+monsterImage.onload = function() {
 	monsterReady = true;
 };
 monsterImage.src = "img/monster.png";
@@ -102,6 +102,24 @@ var render = function () {
 	if (monsterReady) {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
 	}
+	
+	// Collision detection
+	// http://stackoverflow.com/a/21482699/2588066
+
+	if (hero.x + heroImage.width > canvas.width) {
+    	hero.x = canvas.width - heroImage.width;
+	}
+	if (hero.y + heroImage.height > canvas.height) {
+    	hero.y = canvas.height - heroImage.height;
+	}
+	if (hero.x < 0) {
+    	hero.x = 0;
+	}
+	if (hero.y < 0) {
+		hero.y = 0;
+	}
+
+	
 	
 	// Score
 	ctx.fillStyle = "rgb(250, 250, 250)";
