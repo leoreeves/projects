@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// $('body').hide().fadeIn(3000);
-	const unit = "si";
+	let unit = "si";
 	getLocation();
 	//Switch from F to C
 	$(".unit").on("click", function() {
@@ -55,7 +55,7 @@ $(document).ready(function() {
 					} else if (data.flags.units == "si") {
 						$(".unit").html("C");
 						$(".unit").css({
-							"color": "#90CAF9"
+							"color": "#1565C0"
 						});
 					}
 				},
