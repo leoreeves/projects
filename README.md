@@ -12,7 +12,7 @@ A collection of personal projects.
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
-- [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-Generator/)
+- [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 - [Text Editor](https://leoreeves.github.io/projects/text-editor/)
 - [To-do List](https://leoreeves.github.io/projects/to-do-list/)
