@@ -1,0 +1,82 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	background: #f4f4f4;
+	display: table;
+	overflow: hidden;
+}
+
+/* Font CSS */
+
+p {
+	font-size: 2em;
+}
+
+/* Main Container CSS */
+
+.contain{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 3em;
+}
+
+/* Quote CSS */
+
+#quote {
+	color: #303030;
+	font-family: Inconsolata;
+	position: relative;
+}
+
+/* Source CSS */
+
+#writer {
+	opacity: 1;
+	font-size: 1em;
+	padding-right: 2em;
+	text-align: right;
+	color: #303030;
+	font-family: Inconsolata;
+	position: relative;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+/* For the after stage of the source. */
+
+.fade {
+	opacity:0 !important;
+}
+
+/* For the after stage of the quote.*/
+
+.executed {
+	opacity: 1;
+	right: 0;
+	-webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+}
+
+/* For the before stage of the quote; should slide right when presented and left when removed. */
+
+.reset {
+	opacity: 0;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+/* For the instructions at the bottom. */
+
+.bottom {
+	bottom: 10;
+	position: absolute;
+	color: #303030;
+	font-family: Inconsolata;
+}
