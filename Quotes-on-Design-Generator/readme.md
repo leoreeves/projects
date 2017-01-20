@@ -1,13 +1,7 @@
-## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
+# Quotes on Design Generator
 
-Generates a random quote about design - inspired by this [enlight.ml project](https://enlight.ml/demo/quote-project/index.html).
+Powered by [Quotes on Design API](https://quotesondesign.com/api-v4-0/)
 
-Built using:
-
-- HTML
-- CSS
-- jQuery
-
-Changes to implement:
+Changes to make:
 
 - Make responsive
