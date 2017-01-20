@@ -8,7 +8,7 @@ A collection of personal projects.
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
-- [Hex Color Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
+- [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
@@ -72,7 +72,7 @@ Built using:
 - jQuery
 - AJAX
 
-##  [Hex Color Generator](https://leoreeves.github.io/projects/hex-color-generator/)
+##  [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
 
 Randomly generates a hex colour based on user input - inspired by this [enlight.ml project](https://enlight.ml/demo/color-project/index.html).
 
