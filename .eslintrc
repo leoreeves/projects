@@ -1,0 +1,20 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "document": true,
+    "browser": true,
+    "foo": true,
+    "node": true,
+    "window": true,
+    "alert": true,
+    "Image": true,
+    "requestAnimationFrame": true,
+    "$": true,
+    "thrownError": true,
+    "errorHandler": true,
+    "navigator": true,
+    "showLocation": true,
+    "cursor": true,
+    "localStorage": true
+  }
+}

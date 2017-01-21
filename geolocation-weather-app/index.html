@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1" name="viewport">
-	<title>Geolocation Weather App</title>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
-</head>
-<body>
-	<main class="container">
-		<div class="row-fluid center-row">
-			<div class="col-xs-12 center centering text-center">
-				<h1 id="location">&nbsp;</h1>
-				<h2 id="day-and-time">&nbsp;</h2>
-				<div class="icon" id="weather_icon">&nbsp;</div>
-				<p><span id="temp">&nbsp;</span><span class="unit">&nbsp;</span></p>
-				<summary id="summary">&nbsp;</summary>
-			</div>
-		</div>
-	</main>
-	<footer>
-		<a class="text-muted" href="https://darksky.net/poweredby/">
-		<img src="https://darksky.net/dev/img/attribution/poweredby-oneline.png" id="attributation" alt="Powered by Dark Sky" width="160">
-		</a>
-	</footer>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-	</script> 
-	<script src="app.js">
-	</script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Geolocation Weather App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <main class="container">
+      <div class="row-fluid center-row">
+        <div class="col-xs-12 center centering text-center">
+          <h1 id="location">&nbsp;</h1>
+          <h2 id="day-and-time">&nbsp;</h2>
+          <p id="error-message"></p>
+          <div class="icon" id="weather_icon">&nbsp;</div>
+          <p><span id="temp">&nbsp;</span><span class="unit">&nbsp;</span></p>
+          <summary id="summary">&nbsp;</summary>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <a class="text-muted" href="https://darksky.net/poweredby/">
+      <img src="https://darksky.net/dev/img/attribution/poweredby-oneline.png" id="attributation" alt="Powered by Dark Sky" width="160">
+      </a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <script src="app.js"></script>
+  </body>
 </html>

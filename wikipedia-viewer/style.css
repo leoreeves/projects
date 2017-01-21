@@ -16,12 +16,6 @@ header {
   padding-bottom: 140px;
 }
 
-@media screen and (max-width: 451px) {
-  header {
-    padding-bottom: 220px;
-  }
-}
-
 h1 {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -54,7 +48,7 @@ nav {
   line-height: 55px;
 }
 
-/*Search Result Cards*/
+/* Search result cards */
 .card {
   margin-top: 20px;
   cursor: pointer;
@@ -78,4 +72,10 @@ nav {
 
 img {
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 451px) {
+  header {
+    padding-bottom: 220px;
+  }
 }

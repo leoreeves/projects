@@ -1,10 +1,12 @@
 html, body {
 	height: 100%;
 }
+
 html {
 	display: table;
 	width: 100%;
 }
+
 body {
 	display: table-cell;
 	text-align: center;
@@ -12,16 +14,17 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	transition: all .5s ease;
 }
+
 h1, h2 {
 	opacity: 0.7;
 }
-#success {
+
+.success {
 	position: fixed;
 	width: 100%;
 }
 
-/* Button generated using http://www.bestcssbuttongenerator.com/*/
-
+/* Button generated using http://www.bestcssbuttongenerator.com/ */
 .btn {
 	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -47,6 +50,7 @@ h1, h2 {
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #ffffff;
 }
+
 .btn:hover {
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
 	background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
@@ -57,6 +61,7 @@ h1, h2 {
 	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0);
 	background-color: #f6f6f6;
 }
+
 .btn:active {
 	position: relative;
 	top: 1px;

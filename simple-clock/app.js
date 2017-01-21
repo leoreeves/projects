@@ -1,33 +1,43 @@
 // Analog Clock
 function moveHands() {
-	with(new Date()) {
-		h = 30 * (getHours() % 12 + getMinutes() / 60); // 30 degrees hour
-		m = 6 * getMinutes(); // 6 degrees every minute
-		s = 6 * getSeconds(); // 6 degrees every second
-		document.getElementById('seconds').style.cssText = "-webkit-transform:rotate(" + s + "deg);"; //setting the rotate CSS attribute to those degree values
-		document.getElementById('minutes').style.cssText = "-webkit-transform:rotate(" + m + "deg);";
-		document.getElementById('hours').style.cssText = "-webkit-transform:rotate(" + h + "deg);";
-		
-		setTimeout(moveHands, 1000); // calling the function every second
-	}
+  const today = new Date();
+
+  // 30 degrees hour
+  const h = 30 * ((today.getHours() % 12) + (today.getMinutes() / 60));
+  // 6 degrees every minute
+  const m = 6 * today.getMinutes();
+  // 6 degrees every second
+  const s = 6 * today.getSeconds();
+
+  // setting the rotate CSS attribute to those degree values
+  document.getElementById('seconds').style.cssText = `-webkit-transform:rotate(${s}deg);`;
+  document.getElementById('minutes').style.cssText = `-webkit-transform:rotate(${m}deg);`;
+  document.getElementById('hours').style.cssText = `-webkit-transform:rotate(${h}deg);`;
+
+  // calls the function every second
+  setTimeout(moveHands, 1000);
 }
 
-window.onload = moveHands; // making sure the function starts on load of webpage
+// make sure the function starts on load of webpage
+window.onload = moveHands;
 
 // Digital Clock
-
-var myTimer = setInterval(setClock,1000);
-function setClock(){	
-	   document.getElementById("time").innerHTML=new Date().toLocaleTimeString();
+function setClock() {
+  document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
 }
 
+const myTimer = setInterval(setClock, 1000);
+
+// Clock elements
+const digital = document.getElementById('digital');
+const analog = document.getElementById('analog');
 
 function changeClock() {
-	if (document.getElementById('digital').style.display === 'block') {
-		document.getElementById('digital').style.display = 'none';
-		document.getElementById('analog').style.display = 'block';
-	} else {
-		document.getElementById('digital').style.display = 'block';
-		document.getElementById('analog').style.display = 'none';
-	}
+  if (digital.style.display === 'block') {
+    digital.style.display = 'none';
+    analog.style.display = 'block';
+  } else {
+    digital.style.display = 'block';
+    analog.style.display = 'none';
+  }
 }

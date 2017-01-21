@@ -1,4 +1,5 @@
-html,body{
+html,
+body {
 	font-family: 'Yrsa', serif;
 	background: #FAFAFA;
 	color: #212121;
@@ -12,13 +13,11 @@ body {
 
 h1 {
 	text-align: center;
+  text-transform: uppercase;
 }
 
-#name {
-	color: #888888;
-}
-
-#plug {
+#name,
+footer {
 	color: #888888;
 }
 
@@ -28,6 +27,7 @@ table {
 	border: #d4d6d8;
 }
 
+/* Table colours */
 .green {
 	background: #3fc667;
 }
@@ -42,4 +42,11 @@ table {
 
 .red {
 	background: #ea6464;
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 1em; 
+  }
 }
