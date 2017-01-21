@@ -1,4 +1,5 @@
-html, body {
+html, 
+body {
 	height: 100%;
 	width: 100%;
 	background: #f4f4f4;
@@ -12,7 +13,7 @@ p {
 }
 
 /* Main Container CSS */
-.contain{
+.contain {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
