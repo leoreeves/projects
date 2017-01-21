@@ -20,12 +20,14 @@ const brickOffsetLeft = 30;
 let score = 0;
 let lives = 3;
 const bricks = [];
+
 for (let c = 0; c < brickColumnCount; c += 1) {
   bricks[c] = [];
   for (let r = 0; r < brickRowCount; r += 1) {
     bricks[c][r] = { x: 0, y: 0, status: 1 };
   }
 }
+
 function drawBricks() {
   for (let c = 0; c < brickColumnCount; c += 1) {
     for (let r = 0; r < brickRowCount; r += 1) {
@@ -43,6 +45,7 @@ function drawBricks() {
     }
   }
 }
+
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -58,6 +61,7 @@ function keyDownHandler(e) {
     leftPressed = true;
   }
 }
+
 function keyUpHandler(e) {
   if (e.keyCode === 39 || e.keyCode === 68) {
     rightPressed = false;
@@ -87,16 +91,19 @@ function collisionDetection() {
     }
   }
 }
+
 function drawScore() {
   ctx.font = '16px Arial';
   ctx.fillStyle = '#2196F3';
   ctx.fillText(`Score: ${score}`, 8, 20);
 }
+
 function drawLives() {
   ctx.font = '16px Arial';
   ctx.fillStyle = '#2196F3';
   ctx.fillText(`Lives: ${lives}`, canvas.width - 65, 20);
 }
+
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
@@ -104,6 +111,7 @@ function drawPaddle() {
   ctx.fill();
   ctx.closePath();
 }
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
