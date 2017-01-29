@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Issue Tracker</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Flatly Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
+    
+    <!-- Vertically center on wider screens -->
+    <style>
+      @media screen and (min-width: 700px) {
+        body {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+          min-height: 60em;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+        }
+
+        .jumbotron {
+          -webkit-box-flex: 0;
+          -webkit-flex: none;
+          flex: none;
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body onload="fetchIssues()">
+
+    <main class="container">
+      <h1 class="text-center"><strong>Issue Tracker</strong></h1>
+      <div class="jumbotron">
+        <h3><strong>Add New Issue:</strong></h3>
+        <form id="issueInputForm">
+          <div class="form-group">
+            <label for="issueDescInput">Description</label>
+            <textarea class="form-control" id="issueDescInput" placeholder="Describe the issue..." minlength="10" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="issueDescInput">Severity</label>
+            <select id="issueSeverityInput" class="form-control">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="issueDescInput">Assigned To</label>
+            <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Enter who is responsible..." required>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="issuesList">
+          </div>
+        </div>
+      </div>
+      
+      <footer class="footer">
+        <p class="text-center">&copy; Leo Reeves</p>
+      </footer>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://chancejs.com/chance.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>

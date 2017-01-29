@@ -9,6 +9,7 @@ A collection of personal projects.
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 - [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
+- [Issue Tracker](https://leoreeves.github.io/projects/issue-tracker/)
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
@@ -81,6 +82,19 @@ Built using:
 - HTML
 - CSS
 - jQuery
+
+## [Issue Tracker](https://leoreeves.github.io/projects/issue-tracker/)
+
+A small tracker app that allows a user to track issues which are then saved to their browser's local storage.
+
+Inspired by [this](http://codingthesmartway.com/pure-javascript-building-a-real-world-application-from-scratch/) tutorial.
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
 
 ## [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 
