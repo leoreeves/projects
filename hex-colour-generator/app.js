@@ -34,8 +34,8 @@ document.body.onkeyup = (e) => {
 $(() => {
   $(document).on('click', (e) => {
     if (e.target.className === 'btn') {
-      $('#success').css('display', '');
-      $('#success').fadeOut(2000);
+      $('.success').css('display', 'block');
+      $('.success').fadeOut(2000);
       $('button').blur();
       document.getSelection().removeAllRanges();
     } else {
