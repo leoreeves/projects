@@ -1,164 +1,148 @@
-html, body {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	font-size: 1em;
+html, 
+body {
+  height:100%;
+  overflow-x: hidden;
+}
+
+body {
   font-family: 'Merriweather', sans-serif;
-  text-align: center;
-  color: black;
+  font-weight: bold;
+  min-height: 100vh;
+  background: url("img/photos/piano.jpg") center 0 fixed;
+  background-size: cover;
+}
+
+.white-overlay {
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 header {
-	background: rgba(255, 255, 255, 0.6);
-  padding: 5px 30px 5px 30px;
-	height: 100vh;
-	display: flex;
+  min-height: 100vh;
+  background-size: cover;
+}
+
+header .col-md-12 {
+  min-height: 100vh;
+  display: flex;
 	justify-content: center;
 	align-content: center;
-	flex-direction: column;
-	font-size: 1.1em;
+  flex-direction: column;
 }
 
-
-body {
-	background: url("img/piano.jpg");
-	background-attachment: fixed;
-	background-position: center 0;
-	background-repeat: no-repeat;
-	background-size: cover;
+header h1 {
+  font-size: 5em;
 }
 
-h1 {
-	font-size: 4.5em;
-  margin-top: 0;
-	margin-bottom: 5px;
-	padding-top: 20px;
+header h2 {
+  font-size: 4em;
 }
 
-h2 {
-	font-size: 3.5em;
-	font-weight: bold;
-  padding-top: 0;
-	margin-top: 0;
-	margin-bottom: 10px;
+header h3 {
+  font-size: 2.5em;
 }
 
-h3, h4 {
-	font-size: 2.2em;
-	margin-top: 5px;
-	margin-bottom: 20px;
+.biography {
+  min-height: 100vh;
+  background: white;
+  padding: 50px 0;
 }
 
-h3 {
-	padding-top: 10px;
+.biography .col-md-12 {
+  min-height: 100vh;
+  display: flex;
+	justify-content: center;
+	align-content: center;
+  flex-direction: column;
+  font-size: 1.1em;
+  padding: 5px 30px;
 }
 
-hr {
-	width: 100%;
-	margin-bottom: 0;
-	margin: 0;
+.biography .img-fluid {
+  padding-top: 30px;
 }
 
-p {
-	font-size: 1.2em;
-	font-weight: bold;
-	margin: 10px;
-}
-
-main {
-  padding: 10px 20px 30px 20px;
-	background-color: white;
-}
-
-.external {
-	font-size: 1em;
-  padding: 5px 10px 0 10px;
-}
-
-.quote {
-	font-family: 'Indie Flower', cursive;
-	font-size: 2.25em;
-	margin: auto;
-	padding-top: 25px;
-  border-left: 0;
-  font-weight: bold;
-}
-
-.quote-name {
-	font-family: 'Indie Flower', cursive;
-  font-weight: bold;
-	font-size: 2.25em;
-	margin: auto;
-	padding-top: 0;
+.heading {
+  font-size: 3em;
   padding-bottom: 20px;
-	width: 60%;
 }
 
-.album-art {
-	padding: 5px;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
-	margin: 0 auto;
+.discography {
+  min-height: 100vh;
+  background: #FFF;
+  padding: 50px 0;
 }
 
-.figure {
-	padding: 10px;
+.discography a {
+  font-size: 1.2em;
+  color: #292b2c;
 }
 
-.portrait {
-	margin: 0 auto;
-	width: 100%;
+.discography .img-fluid {
+  margin-bottom: 10px;
 }
 
-#portrait-2 {
-	padding-top: 20px;
-	padding-bottom: 10px;
-	margin: 0 auto;
-	width: 100%;
+.influences {
+  min-height: 100vh;
+  background: #FFF;
+  padding: 50px 0;
+  padding-bottom: 50px;
 }
 
-#portrait-6 {
-	padding-bottom: 10px;
-	margin: 0 auto;
-	width: 50%;
+.influences p {
+  font-size: 1.1em;
 }
 
-#last-portrait {
-	padding-top: 2px;
-	padding-bottom: 20px;
+.influences p:last-child {
+  padding-bottom: 30px;
 }
 
-.photo {
-	padding-top: 10px;
-	padding-bottom: 20px;
-	color: rgba(0, 0, 0, 0.7);
+.influences .img-fluid {
+  padding-bottom: 30px;
 }
 
-a:link {
-	color: #337ab7;
+.first-photo {
+  min-height: 100vh;
+  background: url("img/photos/young-with-guitar.jpg") center 0 fixed;
+  background-size: cover;
 }
 
-a:visited {
-  color: #204b70;
+.second-photo {
+  min-height: 100vh;
+  background: url("img/photos/live-electric.jpg") center 0 fixed;
+  background-size: cover;
 }
 
-.recommended {
-	padding-top: 5px;
+.final-photo {
+  min-height: 100vh;
+  background: url("img/photos/seated.jpg") center fixed;
+  background-size: cover;
 }
 
-footer {
-	font-size: 0.7em;
-  padding: 20px 10px 0 10px;
-  color: rgba(0, 0, 0, 0.6);
+.final-photo .container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Indie Flower', cursive;
+  font-size: 2.25em;
+}
+
+@media screen and (max-width: 600px) {
+  .influences .img-fluid {
+    padding-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 400px) {
-  header {
+  header .col-md-12 {
     font-size: 0.7em;
   }
-  body {
-    font-size: 0.8em;
+  header h1, header h2 {
+    font-size: 4em;
+  }
+  .third-photo .container {
+    font-size: 1.8em;
   }
 }
