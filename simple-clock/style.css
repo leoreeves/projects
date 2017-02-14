@@ -30,6 +30,7 @@ body {
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	overflow: hidden;
+  display: none;
 }
 
 /* Hour positions */
@@ -156,7 +157,7 @@ body {
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	overflow: hidden;
-	display: none;
+	/*display: none;*/
 }
 
 .clock-face {
@@ -188,7 +189,7 @@ body {
 }
 
 /* Button */
-#btn {
+button {
 	background-color: #425168;
 	border: none;
 	color: white;

@@ -15,7 +15,7 @@ function moveHands() {
   document.getElementById('hours').style.cssText = `-webkit-transform:rotate(${h}deg);`;
 
   // calls the function every second
-  setTimeout(moveHands, 1000);
+  setTimeout(moveHands, 10);
 }
 
 // make sure the function starts on load of webpage
@@ -26,7 +26,7 @@ function setClock() {
   document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
 }
 
-const myTimer = setInterval(setClock, 1000);
+window.setInterval(setClock, 10);
 
 // Clock elements
 const digital = document.getElementById('digital');
