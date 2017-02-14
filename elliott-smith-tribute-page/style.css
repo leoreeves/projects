@@ -93,12 +93,16 @@ header h3 {
   font-size: 1.1em;
 }
 
+.influences figure {
+  font-size: 1.3em;
+}
+
 .influences p:last-child {
   padding-bottom: 30px;
 }
 
 .influences .img-fluid {
-  padding-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .first-photo {
