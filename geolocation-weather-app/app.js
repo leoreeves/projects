@@ -100,10 +100,10 @@ $(document).ready(() => {
 const today = new Date();
 const hour = today.getHours();
 if (hour > 5 && hour < 19) {
-  document.body.style.background = 'url(img/bluesky.png)';
+  document.body.style.background = 'url(img/bluesky.jpg)';
   document.body.style.backgroundSize = 'cover';
 } else {
-  document.body.style.background = 'url(img/nightsky.png)';
+  document.body.style.background = 'url(img/nightsky.jpg)';
   document.body.style.backgroundSize = 'cover';
   document.getElementById('attributation').src = 'https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png';
 }
