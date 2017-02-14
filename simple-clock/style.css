@@ -22,7 +22,7 @@ body {
 	-webkit-box-shadow: inset 0 0 50px #000000;
 	box-shadow: inset 0 0 20px #000000;
 	position: absolute;
- 	top: 50%;
+ 	top: 46%;
   left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
@@ -200,7 +200,7 @@ body {
 	opacity: 0.8;
 }
 
-/* Responsive */
+/* Responsive Queries */
 @media screen and (max-width: 560px) {
 	.analog-clock {
 		height: 300px;
