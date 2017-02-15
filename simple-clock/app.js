@@ -33,11 +33,11 @@ const digital = document.getElementById('digital');
 const analog = document.getElementById('analog');
 
 function changeClock() {
-  if (digital.style.display === 'block') {
-    digital.style.display = 'none';
-    analog.style.display = 'block';
-  } else {
-    digital.style.display = 'block';
+  if (analog.style.display === 'block') {
     analog.style.display = 'none';
+    digital.style.display = 'block';
+  } else {
+    analog.style.display = 'block';
+    digital.style.display = 'none';
   }
 }
