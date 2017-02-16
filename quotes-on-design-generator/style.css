@@ -1,82 +1,41 @@
-html, 
+html,
 body {
-	height: 100%;
-	width: 100%;
-	background: #f4f4f4;
-	display: table;
-	overflow: hidden;
-  font-family: 'Inconsolata', monospace;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-p {
-	font-size: 2em;
+body {
+  font-family: 'Libre Baskerville', serif;
+  color: #292b2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-/* Main Container CSS */
-.contain {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	padding: 3em;
+.quote {
+  font-weight: 100;
+  max-width: 80%;
+  font-weight: bold;
 }
 
-/* Quote CSS */
-#quote {
-	color: #303030;
-	position: relative;
+.quote h2 {
+  font-weight: bold;
+  font-size: 1.6em;
 }
 
-/* Source CSS */
-#writer {
-	opacity: 1;
-	font-size: 1.3em;
-	padding-right: 2em;
-	text-align: right;
-	color: rgba(48, 48, 48, 0.8);
-	font-family: Inconsolata;
-	position: relative;
-	-webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-
-/* For the after stage of the source. */
-.fade {
-	opacity: 0 !important;
-}
-
-/* For the after stage of the quote.*/
-.executed {
-	opacity: 1;
-	right: 0;
-	-webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-}
-
-/* For the before stage of the quote; should slide right when presented and left when removed. */
-.reset {
-	opacity: 0;
-	-webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-
-/* For the instructions at the bottom. */
-.bottom {
-  position: absolute;
-  bottom: 10px;
-  left: 40px;
-  font-size: 0.8em;
-	color: #303030;
-	font-family: Inconsolata;
-}
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 960px) {
   body {
-    font-size: 0.8em;
+    font-size: 0.9em;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 0.7em;
   }
 }
