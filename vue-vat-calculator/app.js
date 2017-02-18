@@ -1,19 +1,20 @@
-// Result pane
+// Result pane variables
 const result = document.querySelector('.result');
 const netAmount = document.querySelector('.net-amount');
 const vatAmount = document.querySelector('.vat-amount');
 const grossAmount = document.querySelector('.gross-amount');
 
-// Copy results
+// Variables for copy results function
 const range = document.createRange();
 const selection = window.getSelection();
 const calculatorResults = [netAmount, vatAmount, grossAmount];
 const copyMessage = document.querySelector('.copy-text');
 
-// Calculator
+// Vue object
 const form = new Vue({
   el: '#calculate-vat',
   data: {
+    // Inputs
     inputAmount: '',
     addOrMinusVat: '',
     vatRate: 1.2,
@@ -35,7 +36,7 @@ const form = new Vue({
         grossAmount.innerHTML = `£${(inputAmount / vatRate).toFixed(2)}`;
       }
     },
-    // copy function original scripts http://stackoverflow.com/a/25456308/2588066
+    // copy function based on: http://stackoverflow.com/a/25456308/2588066
     // & https://jsfiddle.net/ourcodeworld/wrL0j3xu/1/?utm_source=website&utm_medium=embed&utm_campaign=wrL0j3xu
     copyResults: calculatorResults.forEach((item) => {
       item.addEventListener('click', () => {

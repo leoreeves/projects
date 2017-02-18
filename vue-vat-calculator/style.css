@@ -101,7 +101,7 @@ input[type=radio]:focus {
   outline: 0;
 }
 
-/* Result pane */
+/* Results pane */
 .result {
   background-color: #EEEEEE;
   margin-top: 20px;
