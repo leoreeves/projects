@@ -1,0 +1,140 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 1.4em;
+  color: #292b2c;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%; 
+}
+
+label {
+  font-size: .85em;
+  margin-bottom: 10px;
+}
+
+br {
+  line-height: 40px;
+}
+
+input[type=text],
+input[type=number] {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 1em;
+}
+
+input[type=number] {
+  min-width: 100px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.character-length {
+  font-weight: bold;
+}
+
+.character-result {
+  font-size: 1.4em;
+  margin: 20px 0;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.character-number {
+  display: flex;
+  justify-content: center;
+}
+
+.character-number button,
+.character-number .flex input {
+  font-size: 1em;
+}
+
+.character-number button {
+  cursor: pointer;
+  border: 0;
+  min-width: 35px;
+}
+
+.character-number button:hover {
+  background-color: #c9cacc;
+}
+
+.character-number button:active {
+  background-color: #babbbc;
+}
+
+.character-number button:focus {
+  outline: none;
+}
+
+.character-number button:first-child {
+  border-top-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
+}
+
+.character-number button:last-child {
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
+}
+
+.character-result {
+  height: 40px;
+}
+
+.copy-button {
+  font-size: .65em;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+}
+
+.copy-button:hover {
+  background-color: #c9cacc;
+}
+
+.copy-button:active {
+  background-color: #babbbc;
+  outline: none;
+}
+
+.successful-copy {
+  height: 40px;
+  font-size: .8em;
+}
+
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+@media screen and (max-width: 412px) {
+  h1 {
+    font-size: 1.8em;
+  }
+}
