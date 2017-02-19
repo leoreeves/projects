@@ -1,3 +1,8 @@
+/* Hide vue.js elements till fully loaded */
+[v-cloak] {
+  display: none;
+}
+
 html,
 body {
   margin: 0;
@@ -133,6 +138,7 @@ input[type=number] {
   transition: visibility 0s 2s, opacity 2s linear;
 }
 
+/* Responsive media queries */
 @media screen and (max-width: 412px) {
   h1 {
     font-size: 1.8em;
