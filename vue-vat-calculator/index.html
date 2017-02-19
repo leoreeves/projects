@@ -12,54 +12,56 @@
   </head>
 
   <body>
-    <h1>UK VAT Calculator</h1>
-    <main>
-      <!-- Calculator Inputs -->
-      <form id="calculate-vat" v-on:submit.prevent="calculateVat">
-        <span class="currency">£</span>
-        <input class="user-input" type="number" min="0.01" step="0.01" placeholder="Enter Amount" v-model.number="inputAmount" required>
-        <br>
-        <br>
-        <div class="add-or-minus-vat">
-          <label>
-            <input id="add-vat" type="radio" name="vat-option" value="add" v-model="addOrMinusVat" required>
-            Add VAT
-          </label>
-          <label>
-            <input class="remove-vat" id="remove-vat" type="radio" name="vat-option" value="minus" v-model="addOrMinusVat">
-            Remove VAT
-          </label>
+    <div class="flex-container">
+      <main>
+        <h1>UK VAT Calculator</h1>
+        <!-- Calculator Inputs -->
+        <form id="calculate-vat" v-on:submit.prevent="calculateVat">
+          <span class="currency">£</span>
+          <input class="user-input" type="number" min="0.01" step="0.01" placeholder="Enter Amount" v-model.number="inputAmount" required>
+          <br>
+          <br>
+          <div class="add-or-minus-vat">
+            <label>
+              <input id="add-vat" type="radio" name="vat-option" value="add" v-model="addOrMinusVat" required>
+              Add VAT
+            </label>
+            <label>
+              <input class="remove-vat" id="remove-vat" type="radio" name="vat-option" value="minus" v-model="addOrMinusVat">
+              Remove VAT
+            </label>
+          </div>
+          <div class="percentages">
+            <label>
+              <input class="increased-rate" id="20-percent" type="radio" name="vat-rate" value="1.2" v-model="vatRate" required>
+              20% Standard Rate
+            </label>
+            <label>
+              <input class="reduced-rate" id="5-percent" type="radio" name="vat-rate" value="1.05" v-model="vatRate">
+              5% Reduced Rate
+            </label>
+          </div>
+          <br>
+          <input class="btn" type="submit" value="Calculate">
+        </form>
+        <!-- Result Pane -->
+        <div class="result" id="results-pane">
+          <h3>Net Amount (exc. VAT)</h3>
+          <p class="net-amount">&nbsp;</p>
+          <h3>VAT Amount</h3>
+          <p class="vat-amount">&nbsp;</p>
+          <h3>VAT Amount (exc. VAT)</h3>
+          <p class="gross-amount">&nbsp;</p>
+          <div class="copy-message">
+            <small class="copy-text">Click an amount to copy</small>
+          </div>
         </div>
-        <div class="percentages">
-          <label>
-            <input class="increased-rate" id="20-percent" type="radio" name="vat-rate" value="1.2" v-model="vatRate" required>
-            20% Standard Rate
-          </label>
-          <label>
-            <input class="reduced-rate" id="5-percent" type="radio" name="vat-rate" value="1.05" v-model="vatRate">
-            5% Reduced Rate
-          </label>
-        </div>
-        <br>
-        <input class="btn" type="submit" value="Calculate">
-      </form>
-      <!-- Result Pane -->
-      <div class="result" id="results-pane">
-        <h3>Net Amount (exc. VAT)</h3>
-        <p class="net-amount">&nbsp;</p>
-        <h3>VAT Amount</h3>
-        <p class="vat-amount">&nbsp;</p>
-        <h3>VAT Amount (exc. VAT)</h3>
-        <p class="gross-amount">&nbsp;</p>
-        <div class="copy-message">
-          <small class="copy-text">Click an amount to copy</small>
-        </div>
-      </div>
-    </main>
-    <!-- Footer Link -->
-    <footer>
-      <p><a href="https://www.gov.uk/vat-rates">VAT Rates - GOV.UK</a></p>
-    </footer>
+      </main>
+      <!-- Footer Link -->
+      <footer>
+        <p><a href="https://www.gov.uk/vat-rates">VAT Rates - GOV.UK</a></p>
+      </footer>
+    </div>
     <!-- Scripts -->
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="app.js"></script>  

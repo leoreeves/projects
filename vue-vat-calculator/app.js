@@ -14,7 +14,7 @@ const copyMessage = document.querySelector('.copy-text');
 const form = new Vue({
   el: '#calculate-vat',
   data: {
-    // Inputs
+    // User inputs
     inputAmount: '',
     addOrMinusVat: '',
     vatRate: 1.2,
@@ -25,6 +25,9 @@ const form = new Vue({
       const vatRate = form.vatRate;
       const netAmountCalculation = `£${(inputAmount).toFixed(2)}`;
       const vatAmountCalculation = `£${((inputAmount * vatRate) - inputAmount).toFixed(2)}`;
+      if (window.matchMedia('(max-width: 414px').matches) {
+        document.querySelector('body').style.display = 'inline';
+      }
       result.style.display = 'block';
       if (form.addOrMinusVat === 'add') {
         netAmount.innerHTML = netAmountCalculation;
@@ -35,6 +38,8 @@ const form = new Vue({
         vatAmount.innerHTML = vatAmountCalculation;
         grossAmount.innerHTML = `£${(inputAmount / vatRate).toFixed(2)}`;
       }
+      // Jump to bottom on smaller widths to show result
+      window.scrollTo(0, document.body.scrollHeight);
     },
     // copy function based on: http://stackoverflow.com/a/25456308/2588066
     // & https://jsfiddle.net/ourcodeworld/wrL0j3xu/1/?utm_source=website&utm_medium=embed&utm_campaign=wrL0j3xu
