@@ -104,6 +104,7 @@ input[type=radio]:focus {
 /* Results pane */
 .result {
   background-color: #EEEEEE;
+  max-width: 280px;
   border-radius: 20px;
   padding: 5px 20px;
   margin: 30px auto 0;
@@ -164,6 +165,9 @@ a:visited {
   }
   .user-input {
     width: 90%;
+  }
+  .result {
+    font-size: .8em;
   }
 }
 
