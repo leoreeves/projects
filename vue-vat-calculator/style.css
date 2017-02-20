@@ -61,7 +61,6 @@ label {
 }
 
 label:hover {
-  cursor: pointer;
   background-color: #EEEEEE;
 }
 
@@ -69,7 +68,6 @@ input[type=radio] {
   width: 18px;
   height: 18px;
   vertical-align: baseline;
-  cursor: pointer;
 }
 
 input[type=radio]:focus {
@@ -86,7 +84,6 @@ input[type=radio]:focus {
   border: 1px solid #37474F;
   border-radius: 5px;
   color: #FFF;
-  cursor: pointer;
   font-size: .9em;
   margin-top: 10px;
   padding: 12px;
@@ -109,7 +106,6 @@ input[type=radio]:focus {
   background-color: #EEEEEE;
   border-radius: 20px;
   padding: 5px 20px;
-  /*min-width: 280px;*/
   margin: 30px auto 0;
   display: none;
 }
@@ -160,9 +156,6 @@ a:visited {
 
 /* Responsive media queries */
 @media screen and (max-width: 512px) {
-  /*body {
-    display: inline;
-  }*/
   h1 {
     font-size: 2.5em;
   }
