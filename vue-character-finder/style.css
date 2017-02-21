@@ -132,7 +132,7 @@ input[type=number] {
   font-size: .8em;
 }
 
-.fade-out {
+.fade {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;

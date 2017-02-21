@@ -1,17 +1,28 @@
 const characterFinder = new Vue({
   el: '#character-finder',
   data: {
-    input: '',
+    textInput: '',
     characterNumber: 1,
+    isActive: false,
+    copySuccess: '',
   },
   methods: {
+    minusCharacter() {
+      if (this.characterNumber > 1) {
+        this.characterNumber -= 1;
+      }
+    },
+    plusCharacter() {
+      if (this.characterNumber < this.textInput.length) {
+        this.characterNumber += 1;
+      }
+    },
     copyMessage() {
-      const copySuccess = document.querySelector('.successful-copy');
-      copySuccess.innerHTML = '<small>Sucessfully copied</small>';
-      copySuccess.classList.add('fade-out');
+      this.copySuccess = 'Successfully copied';
+      this.isActive = true;
       setTimeout(() => {
-        copySuccess.innerHTML = '';
-        copySuccess.classList.remove('fade-out');
+        this.copySuccess = '';
+        this.active = false;
       }, 2000);
     },
   },

@@ -17,21 +17,18 @@
         <h1>Character Finder</h1>
         <label for="text-input">Enter your word:</label>
         <br>
-        <input id="text-input" type="text" v-model="input">
-        <p class="character-length">{{ input.length }} characters</p>
-        <!--<br>-->
-        <label for="number-input">Required character:</label>   
+        <input id="text-input" type="text" v-model="textInput">
+        <p class="character-length">{{ textInput.length }} characters</p>
+        <label for="number-input">Required character:</label>
         <br>
         <div class="character-number">
-          <button v-on:click="characterNumber > 1 ? characterNumber-- : characterNumber">-</button>
-          <input id="number-input" type="number" min="1" v-bind:max="input.length" v-model="characterNumber">
-          <button v-on:click="characterNumber < input.length ? characterNumber++ : characterNumber">+</button>
+          <button v-on:click="minusCharacter">-</button>
+          <input id="number-input" type="number" min="1" v-bind:max="textInput.length" v-model="characterNumber">
+          <button v-on:click="plusCharacter">+</button>
         </div>
-        <p class="character-result" id="text">{{ input[characterNumber - 1] }}</p>
+        <p class="character-result" id="text">{{ textInput[characterNumber - 1] }}</p>
         <button class="copy-button" data-clipboard-action="copy" data-clipboard-target="#text" v-on:click="copyMessage">Copy to clipboard</button>
-        <transition name="fade">
-          <p class="successful-copy"></p>
-        </transition>
+        <p class="successful-copy" v-model="copySuccess" v-bind:class="{ fade: isActive }">{{ copySuccess }}</p>
       </main>
     </div>
     <!-- Scripts -->
