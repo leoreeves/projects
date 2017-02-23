@@ -1,90 +1,144 @@
-html, 
+/* Hide vue.js elements till fully loaded */
+[v-cloak] {
+  display: none;
+}
+
+html,
 body {
+  margin: 0;
+  padding: 0;
   height: 100%;
-	overflow: hidden;
-}
-
-.main {
-  height: 100%;
-  width: 100%;
-  display: table;
-}
-
-.wrapper {
-  display: table-cell;
-  height: 100%;
-  vertical-align: middle;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1.2em;
-	text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 1.4em;
+  color: #292b2c;
 }
 
-input {
-	font-size: 1.2em;
-	text-align: center;
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%; 
 }
 
-#hide-word {
-	vertical-align: bottom;
-	vertical-align: top;
-	height: 32.5px;
-	border: 0;
-	border-radius: 0 5px 5px 0;
+label {
+  font-size: .85em;
+  margin-bottom: 10px;
+}
+
+br {
+  line-height: 40px;
+}
+
+input[type=text],
+input[type=number] {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 1em;
+}
+
+input[type=number] {
+  min-width: 100px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.character-length {
+  font-weight: bold;
+}
+
+.character-result {
+  font-size: 1.4em;
+  margin: 20px 0;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.character-number {
+  display: flex;
+  justify-content: center;
+}
+
+.character-number button,
+.character-number .flex input {
+  font-size: 1em;
+}
+
+.character-number button {
+  border: 0;
+  min-width: 35px;
+}
+
+.character-number button:hover {
+  background-color: #c9cacc;
+}
+
+.character-number button:active {
+  background-color: #babbbc;
+}
+
+.character-number button:focus {
+  outline: none;
+}
+
+.character-number button:first-child {
+  border-top-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
+}
+
+.character-number button:last-child {
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
+}
+
+.character-result {
+  height: 40px;
 }
 
 .copy-button {
-	border-radius: 5px;
-	padding: 10px;
-	border: 0;
-	font-family: 'Open Sans', sans-serif;
-}
-
-.copy-button:focus {
-	outline: 0;
+  font-size: .65em;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
 }
 
 .copy-button:hover {
-	background: #c2c3c4;
-	cursor: pointer;
+  background-color: #c9cacc;
 }
 
-#character-number {
-	width: 100px;
+.copy-button:active {
+  background-color: #babbbc;
+  outline: none;
 }
 
-#character {
-	font-size: 1.8em;
-	font-weight: bold;
-	background: transparent;
+.successful-copy {
+  height: 40px;
+  font-size: .8em;
 }
 
-#character::-moz-selection, 
-#character::selection {
-	background: transparent;
+.fade {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }
 
-#success {
-	font-size: 80%;
-	color: gray;
-}
-
-/* Fade out from http://stackoverflow.com/a/28662971 */
-@-webkit-keyframes fadeout {
-  0% {opacity:1;}
-  100% {opacity:0;}
-}
-
-@keyframes fadeout {
-  0% {opacity:1;}
-  100% {opacity:0;}
-}
-
-.fadeOut {
-  opacity:0;
-  -moz-animation   : fadeout 2s linear;
-  -webkit-animation: fadeout 2s linear;
-  animation        : fadeout 2s linear;
+/* Responsive media queries */
+@media screen and (max-width: 412px) {
+  h1 {
+    font-size: 1.8em;
+  }
 }

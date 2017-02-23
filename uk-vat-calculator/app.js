@@ -29,6 +29,12 @@ const calculateVat = new Vue({
         this.grossAmount = `£${(inputAmount / vatRate).toFixed(2)}`;
       }
       // Jump to bottom on smaller widths to show result
+      // Added delay to allow time to render
+      setTimeout(() => {
+        this.scrollToBottom();
+      }, 1);
+    },
+    scrollToBottom() {
       window.scrollTo(0, document.body.scrollHeight);
     },
     copyText() {

@@ -1,76 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>UK VAT Calculator</title>
     <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="style.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UK VAT Calculator</title>
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <main class="main container">
-      <div class="wrapper">
-        <h1><strong>UK VAT Calculator</strong></h1>
-        <p><strong>Enter Amount (£)</strong></p>
-        <form>
-          <input class="form-control" id="user-input" placeholder="Amount" required="" type="number" value=""><br>
+
+  <body v-bind:style="{ display: bodyStyle }">
+    <div class="flex-container">
+      <main id="calculate-vat">
+        <h1>UK VAT Calculator</h1>
+        <!-- Calculator Inputs -->
+        <form v-on:submit.prevent="calculateVat">
+          <span class="currency">£</span>
+          <input class="user-input" type="number" min="0.01" step="0.01" placeholder="Enter Amount" v-model.number="inputAmount" required>
           <br>
-          <label class="radio-inline"><input id="add" name="radAnswer" type="radio" value="Add VAT">Add VAT</label> <label class="radio-inline"><input id="exclude" name="radAnswer" type="radio" value="Exclude VAT">Exclude VAT</label><br>
           <br>
-          <p>VAT Rate = <select id="VAT-rate">
-            <option value="1.2">
-              20% Standard
-            </option>
-            <option value="1.05">
-              5% Reduced
-            </option>
-          </select></p>
+          <div class="add-or-minus-vat">
+            <label>
+              <input id="add-vat" type="radio" name="vat-option" value="add" v-model="addOrMinusVat" required>
+              Add VAT
+            </label>
+            <label>
+              <input class="remove-vat" id="remove-vat" type="radio" name="vat-option" value="minus" v-model="addOrMinusVat">
+              Remove VAT
+            </label>
+          </div>
+          <div class="percentages">
+            <label>
+              <input class="increased-rate" id="20-percent" type="radio" name="vat-rate" value="1.2" v-model="vatRate" required>
+              20% Standard Rate
+            </label>
+            <label>
+              <input class="reduced-rate" id="5-percent" type="radio" name="vat-rate" value="1.05" v-model="vatRate">
+              5% Reduced Rate
+            </label>
+          </div>
           <br>
-          <input class="btn btn-primary submit" type="button" value="Submit">
+          <input class="btn" type="submit" value="Calculate">
         </form>
-        <br>
-        <!-- Result card -->
-        <div id="add-VAT" style="display: none;">
-          <p class="result-head"><strong>Net Amount (excl. VAT)</strong></p>
-          <p id="plus-net" class="result"><em>£200</em></p>
-          <p class="result-head"><strong>VAT Amount</strong></p>
-          <p id="plus-VAT" class="result"><em>£40</em></p>
-          <p class="result-head"><strong>Gross Amount (inc. VAT)</strong></p>
-          <p id="plus-gross" class="result"><em>£240</em></p>
-          <select id="add-VAT-select">
-            <option value="1">Net Amount (excl. VAT)</p></option>
-            <option value="2">VAT Amount</option>
-            <option value="3">Gross Amount (inc. VAT)</option>
-          </select>
-          <button class="btn copyButton" id="copy" data-clipboard-target="#plus-net">Copy to clipboard</button>
+        <!-- Result Card -->
+        <div class="result" v-bind:style="{ display: resultVisibility }">
+          <h3>Net Amount (exc. VAT)</h3>
+          <p class="net-amount" :data-clipboard-text="netAmount" v-on:click="copyText">{{ netAmount }}</p>
+          <h3>VAT Amount</h3>
+          <p class="vat-amount" :data-clipboard-text="vatAmount" v-on:click="copyText">{{ vatAmount }}</p>
+          <h3>VAT Amount (exc. VAT)</h3>
+          <p class="gross-amount" :data-clipboard-text="grossAmount" v-on:click="copyText">{{ grossAmount }}</p>
+          <div class="copy-message">
+            <small class="copy-text">{{ copyMessage }}</small>
+          </div>
         </div>
-        <div id="exclude-VAT" style="display: none;">
-          <p class="result-head"><strong>Net Amount (inc. VAT)</strong></p>
-          <p id="minus-net" class="result"><em>£200</em></p>
-          <p class="result-head"><strong>VAT amount</strong></p>
-          <p id="minus-VAT" class="result"><em>£40</em></p>
-          <p class="result-head"><strong>Gross Amount (exc. VAT)</strong></p>
-          <p id="minus-gross" class="result"><em>£240</em></p>
-          <select id="minus-VAT-select" class="selectpicker">
-            <option value="1">Net Amount (inc. VAT)</option>
-            <option value="2">VAT Amount</option>
-            <option value="3">Gross Amount (exc. VAT)</option>
-          </select>
-          <button class="btn copyButton" id="m-copy" data-clipboard-target="#minus-net">Copy to clipboard</button>
-        </div>
-        <footer>
-          <p id="info"><a href="https://www.gov.uk/vat-rates">VAT Rates - GOV.UK</a></p>
-        </footer>
-      </div>
-    </main>
-    <script src="scripts/clipboard.min.js"></script>
-    <script src="scripts/app.js" type="text/javascript"></script>
+      </main>
+      <!-- Footer Link -->
+      <footer>
+        <p><a href="https://www.gov.uk/vat-rates">VAT Rates - GOV.UK</a></p>
+      </footer>
+    </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script src="app.js"></script>  
   </body>
 </html>
