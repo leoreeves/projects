@@ -20,20 +20,20 @@ const form = new Vue({
     vatRate: 1.2,
   },
   methods: {
-    calculateVat: () => {
-      const inputAmount = form.inputAmount;
-      const vatRate = form.vatRate;
+    calculateVat() {
+      const inputAmount = this.inputAmount;
+      const vatRate = this.vatRate;
       const netAmountCalculation = `£${(inputAmount).toFixed(2)}`;
       const vatAmountCalculation = `£${((inputAmount * vatRate) - inputAmount).toFixed(2)}`;
       if (window.matchMedia('(max-width: 414px').matches) {
         document.querySelector('body').style.display = 'inline';
       }
       result.style.display = 'block';
-      if (form.addOrMinusVat === 'add') {
+      if (this.addOrMinusVat === 'add') {
         netAmount.innerHTML = netAmountCalculation;
         vatAmount.innerHTML = vatAmountCalculation;
         grossAmount.innerHTML = `£${(inputAmount * vatRate).toFixed(2)}`;
-      } else if (form.addOrMinusVat === 'minus') {
+      } else if (this.addOrMinusVat === 'minus') {
         netAmount.innerHTML = netAmountCalculation;
         vatAmount.innerHTML = vatAmountCalculation;
         grossAmount.innerHTML = `£${(inputAmount / vatRate).toFixed(2)}`;

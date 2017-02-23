@@ -78,7 +78,6 @@ input[type=number] {
 }
 
 .character-number button {
-  cursor: pointer;
   border: 0;
   min-width: 35px;
 }
@@ -113,7 +112,6 @@ input[type=number] {
   font-size: .65em;
   border: 0;
   padding: 10px;
-  cursor: pointer;
   border-radius: 5px;
   outline: none;
 }
