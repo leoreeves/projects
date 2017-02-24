@@ -50,6 +50,7 @@ Built using:
 - HTML
 - CSS
 - JavaScript
+- Vue.js
 
 ## [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 
@@ -174,9 +175,8 @@ Built using:
 
 - HTML
 - CSS
-- Bootstrap
 - JavaScript
-- jQuery
+- Vue.js
 
 ## [Wikipedia Viewer](https://leoreeves.github.io/projects/wikipedia-viewer/)
 
