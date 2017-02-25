@@ -54,7 +54,7 @@ main {
 label {
   border: 1px solid transparent;
   border-radius: 5px;
-  margin-left: 10px;
+  margin: 5px;
   background-color: #F5F5F5;
   padding: 10px;
   white-space: nowrap;
@@ -168,6 +168,9 @@ a:visited {
   }
   .result {
     font-size: .8em;
+  }
+  label {
+    font-size: .7em;
   }
 }
 
