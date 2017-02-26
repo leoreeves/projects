@@ -11,6 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #292b2c;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 .calculator {
@@ -68,7 +69,7 @@ button {
   height: 50px;
   width: 50px;
   margin: 5px;
-  font-size: 1.1em;
+  font-size: 1.05em;
   color: #292b2c;
   background-color: #E0E0E0;
   font-weight: bold;
@@ -84,7 +85,7 @@ button:active {
 }
 
 .all-clear,
-.clear-entry {
+.delete-entry {
   background-color: #EF9A9A;
   /*color: white;*/
 }

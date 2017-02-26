@@ -1,6 +1,8 @@
 const screen = document.querySelector('.screen');
+
 // Clear buttons
 const allClear = document.querySelector('.all-clear');
+const deleteEntry = document.querySelector('.delete-entry');
 
 // Number buttons
 const one = document.querySelector('.one');
@@ -13,7 +15,9 @@ const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 const zero = document.querySelector('.zero');
-const period = document.querySelector('.period');
+
+// Array for event listeners
+const numberButtons = [one, two, three, four, five, six, seven, eight, nine, zero];
 
 // Operator buttons
 const minus = document.querySelector('.minus');
@@ -21,13 +25,19 @@ const plus = document.querySelector('.plus');
 const divide = document.querySelector('.divide');
 const multiply = document.querySelector('.multiply');
 const equals = document.querySelector('.equals');
-
-const numberButtons = [one, two, three, four, five, six, seven, eight, nine, zero, minus, plus,
-  divide, multiply];
+const period = document.querySelector('.period');
 
 // Event listeners
 allClear.addEventListener('click', () => {
   screen.innerHTML = 0;
+});
+
+deleteEntry.addEventListener('click', () => {
+  if (screen.innerHTML.length === 1) {
+    screen.innerHTML = 0;
+  } else {
+    screen.innerHTML = screen.innerHTML.slice(0, -1);
+  }
 });
 
 numberButtons.forEach((item) => {
@@ -37,8 +47,33 @@ numberButtons.forEach((item) => {
     } else {
       screen.innerHTML += item.innerHTML;
     }
+    // Unfocus button after click
     item.blur();
   });
+});
+
+minus.addEventListener('click', () => {
+  if (screen.innerHTML.slice(-1) !== '-') {
+    screen.innerHTML += '-';
+  }
+});
+
+plus.addEventListener('click', () => {
+  if (screen.innerHTML.slice(-1) !== '+') {
+    screen.innerHTML += '+';
+  }
+});
+
+divide.addEventListener('click', () => {
+  if (screen.innerHTML.slice(-1) !== '÷') {
+    screen.innerHTML += '÷';
+  }
+});
+
+multiply.addEventListener('click', () => {
+  if (screen.innerHTML.slice(-1) !== 'x') {
+    screen.innerHTML += 'x';
+  }
 });
 
 period.addEventListener('click', () => {
@@ -51,7 +86,6 @@ equals.addEventListener('click', () => {
   let calc = screen.innerHTML;
   calc = calc.replace(/[x]/g, '*').replace(/[÷]/g, '/');
   const calculation = eval(calc);
-  console.log(calculation);
   if (String(calculation).length > 7) {
     screen.innerHTML = calculation.toExponential(1);
   } else {
