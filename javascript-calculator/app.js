@@ -56,30 +56,35 @@ minus.addEventListener('click', () => {
   if (screen.innerHTML.slice(-1) !== '-') {
     screen.innerHTML += '-';
   }
+  minus.blur();
 });
 
 plus.addEventListener('click', () => {
   if (screen.innerHTML.slice(-1) !== '+') {
     screen.innerHTML += '+';
   }
+  plus.blur();
 });
 
 divide.addEventListener('click', () => {
   if (screen.innerHTML.slice(-1) !== '÷') {
     screen.innerHTML += '÷';
   }
+  divide.blur();
 });
 
 multiply.addEventListener('click', () => {
   if (screen.innerHTML.slice(-1) !== 'x') {
     screen.innerHTML += 'x';
   }
+  multiply.blur();
 });
 
 period.addEventListener('click', () => {
   if (screen.innerHTML.slice(-1) !== '.') {
     screen.innerHTML += '.';
   }
+  period.blur();
 });
 
 equals.addEventListener('click', () => {
