@@ -48,10 +48,17 @@ numberButtons.forEach((item) => {
 
 operatorButtons.forEach((item) => {
   item.addEventListener('click', () => {
+    // Stop if error message displayed
+    if (screen.innerHTML === 'Error') {
+      return 'Error';
+    }
     // Allows minus numbers to be entered
     if (screen.innerHTML === '0' && item.innerHTML === '-') {
       screen.innerHTML = '-';
     // Disallow chaining and duplicate operators
+    } else if ((screen.innerHTML.slice(-1)).match(/[÷x+-]/g)) {
+      screen.innerHTML = screen.innerHTML.slice(0, -1);
+      screen.innerHTML += item.innerHTML;
     } else if (!(screen.innerHTML.slice(-1)).match(/[\.÷x+-]/g)) {
       screen.innerHTML += item.innerHTML;
     }
@@ -62,11 +69,24 @@ operatorButtons.forEach((item) => {
 equals.addEventListener('click', () => {
   let calc = screen.innerHTML;
   calc = calc.replace(/[x]/g, '*').replace(/[÷]/g, '/');
-  const calculation = eval(calc);
-  if (String(calculation).length > 7) {
+  try {
+    const calculation = eval(calc);
     // Makes the result fit the screen
-    screen.innerHTML = calculation.toExponential(1);
-  } else {
-    screen.innerHTML = calculation;
+    if (String(calculation).length > 7) {
+      if (String(calculation.toFixed(2)).length > 7) {
+        screen.innerHTML = calculation.toExponential(1);
+      } else {
+        screen.innerHTML = calculation.toFixed(2);
+      }
+    } else {
+      screen.innerHTML = calculation;
+    }
   }
+  catch(err) {
+    const errorEntry = screen.innerHTML;
+    screen.innerHTML = 'Error';
+    setTimeout(() => {
+      screen.innerHTML = errorEntry;
+    }, 1000);
+  }  
 });
