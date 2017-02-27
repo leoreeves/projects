@@ -1,10 +1,6 @@
 const screen = document.querySelector('.screen');
-
-// Clear buttons
 const allClear = document.querySelector('.all-clear');
 const deleteEntry = document.querySelector('.delete-entry');
-
-// Number buttons
 const one = document.querySelector('.one');
 const two = document.querySelector('.two');
 const three = document.querySelector('.three');
@@ -15,19 +11,17 @@ const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 const zero = document.querySelector('.zero');
-
-// Array for event listeners
-const numberButtons = [one, two, three, four, five, six, seven, eight, nine, zero];
-
-// Operator buttons
 const minus = document.querySelector('.minus');
 const plus = document.querySelector('.plus');
 const divide = document.querySelector('.divide');
 const multiply = document.querySelector('.multiply');
-const equals = document.querySelector('.equals');
 const period = document.querySelector('.period');
+const equals = document.querySelector('.equals');
 
-// Event listeners
+// Arrays for adding event listeners
+const numberButtons = [one, two, three, four, five, six, seven, eight, nine, zero];
+const operatorButtons = [minus, plus, divide, multiply, period];
+
 allClear.addEventListener('click', () => {
   screen.innerHTML = 0;
 });
@@ -47,44 +41,22 @@ numberButtons.forEach((item) => {
     } else {
       screen.innerHTML += item.innerHTML;
     }
-    // Unfocus button after click
+    // Prevent double clicking - unfocus button after click
     item.blur();
   });
 });
 
-minus.addEventListener('click', () => {
-  if (screen.innerHTML.slice(-1) !== '-') {
-    screen.innerHTML += '-';
-  }
-  minus.blur();
-});
-
-plus.addEventListener('click', () => {
-  if (screen.innerHTML.slice(-1) !== '+') {
-    screen.innerHTML += '+';
-  }
-  plus.blur();
-});
-
-divide.addEventListener('click', () => {
-  if (screen.innerHTML.slice(-1) !== '÷') {
-    screen.innerHTML += '÷';
-  }
-  divide.blur();
-});
-
-multiply.addEventListener('click', () => {
-  if (screen.innerHTML.slice(-1) !== 'x') {
-    screen.innerHTML += 'x';
-  }
-  multiply.blur();
-});
-
-period.addEventListener('click', () => {
-  if (screen.innerHTML.slice(-1) !== '.') {
-    screen.innerHTML += '.';
-  }
-  period.blur();
+operatorButtons.forEach((item) => {
+  item.addEventListener('click', () => {
+    // Allows minus numbers to be entered
+    if (screen.innerHTML === '0' && item.innerHTML === '-') {
+      screen.innerHTML = '-';
+    // Disallow chaining and duplicate operators
+    } else if (!(screen.innerHTML.slice(-1)).match(/[\.÷x+-]/g)) {
+      screen.innerHTML += item.innerHTML;
+    }
+    item.blur();
+  });
 });
 
 equals.addEventListener('click', () => {
@@ -92,6 +64,7 @@ equals.addEventListener('click', () => {
   calc = calc.replace(/[x]/g, '*').replace(/[÷]/g, '/');
   const calculation = eval(calc);
   if (String(calculation).length > 7) {
+    // Makes the result fit the screen
     screen.innerHTML = calculation.toExponential(1);
   } else {
     screen.innerHTML = calculation;
