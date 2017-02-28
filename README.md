@@ -4,12 +4,14 @@ A collection of personal projects.
 ### Contents
 
 - [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
+- [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
 - [Catch the Monster Game](https://leoreeves.github.io/projects/catch-the-monster-game/)
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 - [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
 - [Issue Tracker](https://leoreeves.github.io/projects/issue-tracker/)
+- [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
@@ -25,6 +27,16 @@ A collection of personal projects.
 Based on the classic game [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game)).
 
 Inspired by [this](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) tutorial.
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
+
+## [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
+
+Works out how old you will be in the year entered and what day of the week your birthday is.
 
 Built using:
 
@@ -96,6 +108,16 @@ Built using:
 - CSS
 - JavaScript
 - Bootstrap
+
+## [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
+
+A simple calculator built in the style of a pocket calculator.
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
 
 ## [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 
