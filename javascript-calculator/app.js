@@ -88,5 +88,6 @@ equals.addEventListener('click', () => {
     setTimeout(() => {
       screen.innerHTML = errorEntry;
     }, 1000);
-  }  
+  }
+  equals.blur();
 });
