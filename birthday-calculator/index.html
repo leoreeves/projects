@@ -8,16 +8,16 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <!-- <h1>Birthday Calculator</h1> -->
+     <h1>Birthday Calculator</h1>
     <label>
       Please enter your date of birth
-      <input type="date" min="1900-01-01" max="2099-01-31" class="date-of-birth" onChange="getBirthdayDay()">
+      <input type="date" min="1900-01-01" max="2099-01-31" class="date-of-birth" onchange="getBirthdayDay()">
     </label>
     <br>
     <br>
     <label>
       Please choose a year
-      <input type="number" min="1900" max="2099" step="1" value="2017" class="birthday-year" onChange="getBirthdayDay()">
+      <input type="number" min="1900" max="2099" step="1" value="2017" class="birthday-year" onchange="getBirthdayDay()">
     </label>
     <p>Your birthday is a <span class="birthday-weekday"></span></p>
     <p>You will be <span class="age"></span> years old</p>
