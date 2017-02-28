@@ -1,6 +1,6 @@
 # [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
 
-A simple calculator built in the style of a pocket calculator.
+A simple calculator built for Free Code Camp.
 
 Built using:
 
