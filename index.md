@@ -76,7 +76,7 @@ Built using:
 
 ## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 
-Minimal app that displays the local weather for the user based on browser geolocation.
+Minimal app built for Free Code Camp, it displays the local weather for the user based on browser geolocation.
 
 Built using:
 
@@ -151,7 +151,7 @@ Built using:
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
-Generates a random quote about design.
+Generates a random quote about design, built for Free Code Camp.
 
 Built using:
 
