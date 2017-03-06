@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.7em;
+}
+
+.equals {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+input {
+  font-size: 1em;
+  margin: 5px 10px 10px 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline: none;
+}
