@@ -27,6 +27,12 @@ input {
   margin: 5px 10px 10px 10px;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 3px solid #9E9E9E;
   outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.3em;
+  }
 }
