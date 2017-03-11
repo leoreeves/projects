@@ -16,6 +16,7 @@ A collection of personal projects.
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
+- [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 - [Text Editor](https://leoreeves.github.io/projects/text-editor/)
 - [To-do List](https://leoreeves.github.io/projects/to-do-list/)
@@ -158,6 +159,16 @@ Built using:
 - HTML
 - CSS
 - jQuery
+
+## [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
+
+Convert between weekly and monthly rental rates.
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
 
 ## [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 
