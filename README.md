@@ -77,7 +77,7 @@ Built using:
 
 ## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 
-Minimal app built for Free Code Camp, it displays the local weather for the user based on browser geolocation.
+Simple weather app built for Free Code Camp, it displays the local weather for the user based on browser geolocation.
 
 Built using:
 
@@ -89,7 +89,7 @@ Built using:
 
 ##  [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
 
-Randomly generates a hex colour based on user input - inspired by this [enlight.ml project](https://enlight.ml/demo/color-project/index.html).
+Randomly generates a hex colour on user input - inspired by this [enlight.ml project](https://enlight.ml/demo/color-project/index.html).
 
 Built using:
 
@@ -132,7 +132,7 @@ Built using:
 
 ## [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 
-Inspired by [this](https://www.youtube.com/watch?v=Smwrw4sNCxE) scene from the movie *The Matrix*, it's a simulation of Neo's terminal.
+Inspired by [this](https://www.youtube.com/watch?v=Smwrw4sNCxE) scene from the movie *The Matrix*, a simulation of Neo's terminal.
 To achieve the typewriter effect I used [this](https://github.com/ckm100/typeWriter.js) script.
 
 Built using:
