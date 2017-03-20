@@ -25,7 +25,7 @@ A collection of personal projects.
 
 ## [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
 
-Based on the classic game [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game)).
+Based on the classic game [*Breakout*](https://en.wikipedia.org/wiki/Breakout_(video_game)).
 
 Inspired by [this](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) tutorial.
 
@@ -77,7 +77,7 @@ Built using:
 
 ## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 
-Simple weather app built for Free Code Camp, it displays the local weather for the user based on browser geolocation.
+Simple weather app built for *Free Code Camp*, it displays the local weather for the user based on browser geolocation.
 
 Built using:
 
@@ -112,7 +112,7 @@ Built using:
 
 ## [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
 
-A simple calculator built for Free Code Camp.
+A simple calculator built for *Free Code Camp*.
 
 Built using:
 
@@ -152,7 +152,7 @@ Built using:
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
-Generates a random quote about design, built for Free Code Camp.
+Generates a random quote about design, built for *Free Code Camp*.
 
 Built using:
 
@@ -213,7 +213,7 @@ Built using:
 
 ## [Wikipedia Viewer](https://leoreeves.github.io/projects/wikipedia-viewer/)
 
-A Wikipedia viewer built for Free Code Camp, it returns search results in card format with an image if available.
+A *Wikipedia* viewer built for *Free Code Camp*, it returns search results in card format with an image if available.
 
 Built using: 
 
