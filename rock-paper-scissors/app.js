@@ -11,7 +11,6 @@ const cpuChoiceSpan = document.querySelector('.cpu-choice');
 const result = document.querySelector('.result');
 const cpuWin = 'CPU wins';
 const userWin = 'You win';
-let count = 3;
 let userScore = 0;
 let cpuScore = 0;
 
