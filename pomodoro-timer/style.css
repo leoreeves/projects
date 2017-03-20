@@ -3,6 +3,7 @@ body {
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  font-size: 1.1em;
 }
 body {
   font-family: 'Helvetica', sans-serif;
@@ -10,16 +11,21 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  /* width: 20%; */
 }
 
 h1 {
   margin: 5px;
 }
 
-button,
+button{
+  font-size: 1.1em;
+  text-align: center;
+  outline: none;
+}
+
 input {
-  font-size: 1.2em;
+  width: 240px;
+  font-size: 1.1em;
   text-align: center;
 }
 
@@ -34,6 +40,11 @@ input {
   border: 1px solid black;
   outline: none;
   margin: 10px;
+  padding: 10px;
+}
+
+.start-button:hover {
+  background-color: #43A047;
 }
 
 .stop-button {
@@ -41,12 +52,22 @@ input {
   border: 1px solid black;
   outline: none;
   margin: 10px;
+  padding: 10px;
+}
+
+.stop-button:hover {
+  background-color: #E53935;
 }
 
 .reset-button {
   background-color: #E0E0E0;
   border: 1px solid black;
   margin: 10px;
+  padding: 10px;
+}
+
+.reset-button:hover {
+  background-color: #BDBDBD;
 }
 
 .change-pomodoro {
