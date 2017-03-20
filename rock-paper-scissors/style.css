@@ -1,0 +1,43 @@
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.cpu-choice {
+  font-size: 1.2em;
+}
+
+.rock,
+.paper,
+.scissors {
+  font-size: 4em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  color: #F44336;
+}
+
+.result {
+  font-weight: bold;
+  font-size: 2em;
+  margin: 0;
+}
