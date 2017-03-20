@@ -4,7 +4,7 @@ const stopButton = document.querySelector('.stop-button');
 const resetButton = document.querySelector('.reset-button');
 const customMinutes = document.querySelector('.custom-minutes');
 const changePomodoro = document.querySelector('.change-pomodoro');
-const timerVar = setInterval(countTimer, 1);
+const timerVar = setInterval(countTimer, 1000);
 let totalSeconds = 1500;
 let counting = false;
 
