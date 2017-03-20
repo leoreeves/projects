@@ -15,23 +15,12 @@ let count = 3;
 let userScore = 0;
 let cpuScore = 0;
 
-// Countdown
-playButton.addEventListener('click', () => {
-  setInterval(() => {
-    console.log('Function Called');
-    if (countdown.innerHTML > 0) {
-      countdown.innerHTML -= 1;
-    }
-  }, 1000)
-});
-
 choiceButtons.forEach(e => e.addEventListener('click', () => {
   const tools = ['rock', 'paper', 'scissors'];
   const randomNum = Math.floor(Math.random() * 3);
   const cpuChoice = tools[randomNum];
-  const userChoice = e.innerHTML.toLowerCase();
-  userChoiceSpan.innerHTML = userChoice;
-  cpuChoiceSpan.innerHTML = cpuChoice;
+  const userChoice = e.value;
+  cpuChoiceSpan.innerHTML = `<i class="fa fa-hand-${cpuChoice}-o" aria-hidden="true"></i>`;
   // Game logic
   if (cpuChoice === userChoice) {
     result.innerHTML = 'Draw';
@@ -64,5 +53,3 @@ choiceButtons.forEach(e => e.addEventListener('click', () => {
   userScoreSpan.innerHTML = userScore;
   cpuScoreSpan.innerHTML = cpuScore;
 }));
-
-// Play again?
