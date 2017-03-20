@@ -25,7 +25,7 @@ A collection of personal projects.
 
 ## [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
 
-Based on the classic game [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game)).
+Based on the classic game [*Breakout*](https://en.wikipedia.org/wiki/Breakout_(video_game)).
 
 Inspired by [this](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) tutorial.
 
@@ -37,7 +37,7 @@ Built using:
 
 ## [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
 
-Works out how old you will be in the year entered and what day of the week your birthday is.
+Work out how old you will be in the year entered and what day of the week your birthday is.
 
 Built using:
 
@@ -67,7 +67,7 @@ Built using:
 
 ## [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 
-A tribute page for the musician Elliott Smith built for Free Code Camp.
+A tribute page for the musician Elliott Smith built for *Free Code Camp*.
 
 Built using:
 
@@ -77,7 +77,7 @@ Built using:
 
 ## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 
-Simple weather app built for Free Code Camp, it displays the local weather for the user based on browser geolocation.
+Simple weather app built for *Free Code Camp*, it displays the local weather for the user based on browser geolocation.
 
 Built using:
 
@@ -89,7 +89,7 @@ Built using:
 
 ##  [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
 
-Randomly generates a hex colour on user input - inspired by this [enlight.ml project](https://enlight.ml/demo/color-project/index.html).
+Randomly generates a hex colour on user input - inspired by this [*enlight.ml* project](https://enlight.ml/demo/color-project/index.html).
 
 Built using:
 
@@ -112,7 +112,7 @@ Built using:
 
 ## [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
 
-A simple calculator built for Free Code Camp.
+A simple calculator built for *Free Code Camp*.
 
 Built using:
 
@@ -122,7 +122,7 @@ Built using:
 
 ## [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 
-An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [enlight.ml project](https://enlight.ml/demo/code-editor-project/index.html).
+An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [*enlight.ml* project](https://enlight.ml/demo/code-editor-project/index.html).
 
 Built using: 
 
@@ -152,7 +152,7 @@ Built using:
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
-Generates a random quote about design, built for Free Code Camp.
+Generates a random quote about design, built for *Free Code Camp*.
 
 Built using:
 
@@ -172,7 +172,7 @@ Built using:
 
 ## [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 
-A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/demo/clock-project/index.html).
+A clock that switches between analog and digital - inspired by this [*enlight.ml* project](https://enlight.ml/demo/clock-project/index.html).
 
 Built using:
 
@@ -182,7 +182,7 @@ Built using:
 
 ## [Text Editor](https://leoreeves.github.io/projects/text-editor/)
 
-Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/demo/text-editor-project/index.html).
+Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [*enlight.ml* project](https://enlight.ml/demo/text-editor-project/index.html).
 
 Built using:
 
@@ -192,7 +192,7 @@ Built using:
 
 ## [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 
-Minimal to-do list - inspired by this [enlight.ml project](https://enlight.ml/demo/to-do-project/index.html).
+Minimal to-do list - inspired by this [*enlight.ml* project](https://enlight.ml/demo/to-do-project/index.html).
 
 Built using:
 
@@ -213,7 +213,7 @@ Built using:
 
 ## [Wikipedia Viewer](https://leoreeves.github.io/projects/wikipedia-viewer/)
 
-A Wikipedia viewer built for Free Code Camp, it returns search results in card format with an image if available.
+A *Wikipedia* viewer built for *Free Code Camp*, it returns search results in card format with an image if available.
 
 Built using: 
 
