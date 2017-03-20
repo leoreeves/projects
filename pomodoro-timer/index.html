@@ -7,13 +7,19 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <h1 class="timer">25:00</h1>
-    <button class="start-button">Start</button>
-    <button class="reset-button">Reset</button>
+    <h1>Pomodoro Timer</h1>
+    <p class="timer">25:00</p>
+    <div class="buttons">
+      <button class="start-button">Start</button>
+      <button class="stop-button">Stop</button>
+      <button class="reset-button">Reset</button>
+    </div>
     <br>
-    <br>    
-    <input class="custom-minutes" type="number" min="1" placeholder="How many minutes?">
-    <button class="change-pomodoro">Change Pomodoro Length</button>
+    <div class="custom"> 
+      <input class="custom-minutes" type="number" min="1" placeholder="How many minutes?">
+      <br>
+      <button class="change-pomodoro">Change Pomodoro Length</button>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
