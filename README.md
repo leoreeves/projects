@@ -89,7 +89,7 @@ Built using:
 
 ##  [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
 
-Randomly generates a hex colour on user input - inspired by this [*enlight.ml* project](https://enlight.ml/demo/color-project/index.html).
+Randomly generates a hex colour on user input - inspired by this [enlight.ml project](https://enlight.ml/demo/color-project/index.html).
 
 Built using:
 
@@ -122,7 +122,7 @@ Built using:
 
 ## [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 
-An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [*enlight.ml* project](https://enlight.ml/demo/code-editor-project/index.html).
+An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [enlight.ml project](https://enlight.ml/demo/code-editor-project/index.html).
 
 Built using: 
 
@@ -172,7 +172,7 @@ Built using:
 
 ## [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 
-A clock that switches between analog and digital - inspired by this [*enlight.ml* project](https://enlight.ml/demo/clock-project/index.html).
+A clock that switches between analog and digital - inspired by this [enlight.ml project](https://enlight.ml/demo/clock-project/index.html).
 
 Built using:
 
@@ -182,7 +182,7 @@ Built using:
 
 ## [Text Editor](https://leoreeves.github.io/projects/text-editor/)
 
-Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [*enlight.ml* project](https://enlight.ml/demo/text-editor-project/index.html).
+Minimal in-browser text editor with autosave that allows you to save to a HTML file - inspired by this [enlight.ml project](https://enlight.ml/demo/text-editor-project/index.html).
 
 Built using:
 
@@ -192,7 +192,7 @@ Built using:
 
 ## [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 
-Minimal to-do list - inspired by this [*enlight.ml* project](https://enlight.ml/demo/to-do-project/index.html).
+Minimal to-do list - inspired by this [enlight.ml project](https://enlight.ml/demo/to-do-project/index.html).
 
 Built using:
 
