@@ -56,10 +56,10 @@ operatorButtons.forEach((item) => {
     if (screen.innerHTML === '0' && item.innerHTML === '-') {
       screen.innerHTML = '-';
     // Disallow chaining and duplicate operators
-    } else if ((screen.innerHTML.slice(-1)).match(/[÷x+-]/g)) {
+    } else if ((screen.innerHTML.slice(-1)).match(/[÷×+-]/g)) {
       screen.innerHTML = screen.innerHTML.slice(0, -1);
       screen.innerHTML += item.innerHTML;
-    } else if (!(screen.innerHTML.slice(-1)).match(/[\.÷x+-]/g)) {
+    } else if (!(screen.innerHTML.slice(-1)).match(/[\.÷×+-]/g)) {
       screen.innerHTML += item.innerHTML;
     }
     item.blur();
@@ -68,7 +68,7 @@ operatorButtons.forEach((item) => {
 
 equals.addEventListener('click', () => {
   let calc = screen.innerHTML;
-  calc = calc.replace(/[x]/g, '*').replace(/[÷]/g, '/');
+  calc = calc.replace(/[×]/g, '*').replace(/[÷]/g, '/');
   try {
     const calculation = eval(calc);
     // Makes the result fit the screen
@@ -81,8 +81,7 @@ equals.addEventListener('click', () => {
     } else {
       screen.innerHTML = calculation;
     }
-  }
-  catch(err) {
+  } catch (err) {
     const errorEntry = screen.innerHTML;
     screen.innerHTML = 'Error';
     setTimeout(() => {

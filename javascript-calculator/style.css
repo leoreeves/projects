@@ -73,6 +73,12 @@ button {
   box-shadow: 2px 2px 3px #888888;
   border: none;
   border-radius: 5px;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 button:active {
@@ -90,4 +96,8 @@ button:active {
 
 .zero {
   width: 113px;
+}
+
+.operator {
+  font-size: 1.3em;
 }
