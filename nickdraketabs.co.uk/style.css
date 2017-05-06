@@ -3,55 +3,162 @@ body {
 	font-family: 'Yrsa', serif;
 	background: #FAFAFA;
 	color: #212121;
+	margin: 0;
+	padding: 0;
+	font-size: 1.2em;
 }
 
-body {
-	padding-left: 10px;
-	padding-right: 10px;
-	font-size: 1.2em;
+.wrapper {
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0 50px 50px 50px;
 }
 
 h1 {
 	text-align: center;
-  text-transform: uppercase;
 	font-size: 1.8em;
 }
 
 h2 {
-	font-size: 1.15em;
+	text-align: center;
 }
 
-.name,
+a {
+	text-decoration: none;
+}
+
+nav {
+	background: #fff;
+	width: 100%;
+	-webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+	box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+	position: relative;
+	top: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+nav li {
+	/*float: left;*/
+	display: inline-block;
+	text-align: center;
+}
+
+nav li a {
+	color: #333;
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+nav li a:hover {
+	background-color: #ECEFF1;
+}
+
+.introduction,
+.tabs {
+	margin: 20px;
+}
+
+.tabs-heading {
+	position: relative;
+	top: 10px;
+}
+
 footer {
 	color: #888888;
 }
 
 table {
-	width: 100%;
 	border-collapse: collapse;
 	border: #d4d6d8;
+	margin: 0 auto;
 }
 
-/* Table colours */
-.green {
-	background: #3fc667;
+table a {
+	text-decoration: none;
+	padding: 2px;
 }
 
-.purple{
-	background: #8574f2;
+td {
+	padding: 3px;
 }
 
-.pink {
-	background: #d4b385;
+.headings {
+	text-align: center;
 }
 
-.red {
-	background: #ea6464;
+.table-comments {
+	margin-top: 15px;
+	text-align: center;
 }
+
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.tabs h3 {
+	text-align: center;
+}
+
+.album {
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	-webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+	box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+	min-width: 200px;
+	max-width: 400px;
+	min-height: 1160px;
+	flex: 1;
+}
+
+.album img {
+	width: 100%;
+}
+
+.album li {
+	padding: 1px;
+}
+
+
+/* Footer */
+
+.plug {
+	text-align: center;
+}
+
 
 /* Responsive */
-@media screen and (max-width: 400px) {
-  body {
-    font-size: 1em; 
-  }
+
+@media screen and (max-width: 1119px) {
+	.album {
+		min-height: 770px;
+	}
+}
+
+@media screen and (min-width: 660px) and (max-width: 899px) {
+	.third,
+	.last {
+		min-height: 1160px;
+	}
+}
+
+@media screen and (min-width: 899px) and (max-width: 1139px) {
+	.last {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 300px;
+	}
 }
