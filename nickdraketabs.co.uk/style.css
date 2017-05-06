@@ -14,16 +14,21 @@ body {
 h1 {
 	text-align: center;
   text-transform: uppercase;
+	font-size: 1.8em;
 }
 
-#name,
+h2 {
+	font-size: 1.15em;
+}
+
+.name,
 footer {
 	color: #888888;
 }
 
 table {
 	width: 100%;
-	border-collapse:collapse;
+	border-collapse: collapse;
 	border: #d4d6d8;
 }
 
