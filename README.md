@@ -149,6 +149,7 @@ Built using:
 
 - HTML
 - CSS
+- Bootstrap
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
