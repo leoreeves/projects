@@ -9,6 +9,11 @@ body {
 	padding-top: 90px;
 }
 
+nav {
+	-webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+	box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+}
+
 .album ol,
 .album ul {
 	margin-top: 15px;
@@ -19,6 +24,41 @@ body {
 }
 
 .container {
-	padding-top: 70px;
-	margin-top: -70px;
+	padding-top: 85px;
+	margin-top: -85px;
+}
+
+pre {
+	font-size: .8em;
+}
+
+footer {
+	background-color: #f7f7f7;
+	padding-top: 20px;
+	margin-top: 20px;
+	color: rgba(0,0,0,.5);
+}
+
+footer small a {
+	color: rgba(0,0,0,.5);
+}
+
+/* Tunings */
+
+.tunings h2 {
+	position: relative;
+	left: 25px;
+	font-size: 1.5em;
+}
+
+.tunings .row {
+	margin-top: 10px;
+}
+
+/* Responsive fixes */
+@media screen and (max-width: 400px) {
+	.container {
+		padding-top: 65px;
+		margin-top: -65px;
+	}
 }
