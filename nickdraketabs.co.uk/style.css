@@ -28,10 +28,6 @@ nav {
 	margin-top: -85px;
 }
 
-pre {
-	font-size: .8em;
-}
-
 footer {
 	background-color: #f7f7f7;
 	padding-top: 20px;
@@ -55,10 +51,23 @@ footer small a {
 	margin-top: 10px;
 }
 
+/* Tabs */
+pre {
+	font-size: .8em;
+}
+
 /* Responsive fixes */
 @media screen and (max-width: 400px) {
 	.container {
 		padding-top: 65px;
 		margin-top: -65px;
 	}
+}
+
+/* Anchors - fixes for sticky navbar */
+a.anchor {
+  display: block; 
+  position: relative; 
+  top: -80px; 
+  visibility: hidden; 
 }
