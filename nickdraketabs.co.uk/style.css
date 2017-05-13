@@ -1,3 +1,4 @@
+/* Global */
 html,
 body {
 	font-family: 'Yrsa', serif;
@@ -9,11 +10,60 @@ body {
 	padding-top: 90px;
 }
 
+/* Navbar */
 nav {
 	-webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
 	box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
 }
 
+/* Tunings */
+.tunings {
+	padding-bottom: 15px;
+}
+
+.tunings h2 {
+	position: relative;
+	left: 25px;
+	font-size: 1.5em;
+}
+
+.tunings .row {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Tabs */
+pre {
+	font-size: 1em;
+	font-family: 'Inconsolata', monospace;
+}
+
+.time-signature {
+	font-size: 1.1em;
+}
+
+.tab-header h1 {
+	margin-top: 10px;
+}
+
+.tab-section h2 {
+	font-size: 1.1em;
+	font-weight: 600;
+}
+
+.tab-section .row {
+	margin-bottom: 10px;
+}
+
+hr {
+	margin-bottom: 2.15rem;
+}
+
+.variation-highlight {
+	background-color: #EEEEEE;
+}
+
+/* Tabs Home */
 .album ol,
 .album ul {
 	margin-top: 15px;
@@ -23,11 +73,7 @@ nav {
 	margin: 0 auto;
 }
 
-.container {
-	padding-top: 85px;
-	margin-top: -85px;
-}
-
+/* Footer */
 footer {
 	background-color: #f7f7f7;
 	padding-top: 20px;
@@ -39,35 +85,23 @@ footer small a {
 	color: rgba(0,0,0,.5);
 }
 
-/* Tunings */
-
-.tunings h2 {
-	position: relative;
-	left: 25px;
-	font-size: 1.5em;
+/* Scroll anchors */
+#revisions,
+#tabs,
+#standard {
+	padding-top: 85px;
+	margin-top: -85px;
 }
 
-.tunings .row {
-	margin-top: 10px;
-}
-
-/* Tabs */
-pre {
-	font-size: .8em;
-}
-
-/* Responsive fixes */
+/* Responsiveness */
 @media screen and (max-width: 400px) {
-	.container {
-		padding-top: 65px;
-		margin-top: -65px;
+	#revisions,
+	#standard,
+	#tabs {
+		padding-top: 75px;
+		margin-top: -75px;
 	}
-}
-
-/* Anchors - fixes for sticky navbar */
-a.anchor {
-  display: block; 
-  position: relative; 
-  top: -80px; 
-  visibility: hidden; 
+	.tab-section .col-md-6 {
+		margin-bottom: 15px;
+	}
 }
