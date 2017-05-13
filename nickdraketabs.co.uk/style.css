@@ -25,6 +25,10 @@ nav {
 	padding-bottom: 15px;
 }
 
+.tunings h1 {
+	margin-top: 0;
+}
+
 .tunings h2 {
 	position: relative;
 	left: 25px;
