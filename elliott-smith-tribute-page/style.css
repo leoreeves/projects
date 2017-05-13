@@ -12,10 +12,6 @@ body {
 body {
   font-family: 'Merriweather', sans-serif;
   font-weight: bold;
-  min-height: 100vh;
-  background: url("img/photos/piano.jpg") center 0 fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /**
@@ -29,6 +25,9 @@ body {
 
 header {
   min-height: 100vh;
+  background: url("img/photos/piano.jpg") center 0 fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-size: cover;
 }
 
