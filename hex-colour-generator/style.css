@@ -17,10 +17,6 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	-webkit-transition: all .5s ease;
 	transition: all .5s ease;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 }
 
 .header--instruction,
@@ -32,6 +28,10 @@ body {
 .header--instruction {
 	font-weight: 300;
 	margin-bottom: 30px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .container--hex-colour-code {
@@ -53,6 +53,10 @@ body {
 	font-weight: 600;
 	color: #333;
 	opacity: 0.9;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .button--copy-to-clipboard:hover {

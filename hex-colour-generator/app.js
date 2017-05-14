@@ -45,4 +45,4 @@ $(() => {
 });
 
 // clipboard button
-const clipboard = new Clipboard('.btn');
+const clipboard = new Clipboard('.button--copy-to-clipboard');
