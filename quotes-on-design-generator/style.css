@@ -2,18 +2,21 @@ html,
 body {
   box-sizing: border-box;
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
+  overflow: scroll;
 }
 
 body {
   font-family: 'Libre Baskerville', serif;
-  color: #292b2c;
+  color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  /*text-align: center;*/
+  line-height: 50px;
 }
 
 main {
@@ -25,6 +28,11 @@ main {
 main h2 {
   font-weight: bold;
   font-size: 1.6em;
+  text-align: center;
+}
+
+main h1 p {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 960px) {
