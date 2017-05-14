@@ -1,41 +1,41 @@
-// generate color
 function getColor() {
   return `#${Math.random().toString(16).slice(2, 8)}`;
 }
-// set background color style - based on this script http://stackoverflow.com/a/11868398/2588066
+
+// set background color style based on this script http://stackoverflow.com/a/11868398/2588066
 function setBackground() {
-  const bgColor = getColor();
+  const backgroundColour = getColor();
 
-   // removes '#' from Hex code
-  const hex = bgColor.slice(1, 7);
-  document.body.style.background = bgColor;
-  document.getElementById('hex').innerHTML = bgColor;
+  // removes the '#' from hex code
+  const hexCode = backgroundColour.slice(1, 7);
+  $('body').css('background-color', backgroundColour);
+  $('.container--hex-colour-code').text(backgroundColour);
 
-  // detects background brightness
-  const r = parseInt(hex.substr(0, 2), 16);
-  const g = parseInt(hex.substr(2, 2), 16);
-  const b = parseInt(hex.substr(4, 2), 16);
+  // change text colour based on background brightness
+  const r = parseInt(hexCode.substr(0, 2), 16);
+  const g = parseInt(hexCode.substr(2, 2), 16);
+  const b = parseInt(hexCode.substr(4, 2), 16);
   const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
   if (yiq >= 128) {
-    document.getElementById('cmd').style.color = 'black';
+    $('.container--colour-generator').css('color', '#000');
   } else {
-    document.getElementById('cmd').style.color = 'white';
+    $('.container--colour-generator').css('color', '#fff');
   }
 }
 
-// change color on spacebar press
+// change colour on spacebar press
 document.body.onkeyup = (e) => {
   if (e.keyCode === 32) {
     setBackground();
   }
 };
 
-// change color on mouse click
+// change colour on mouse click
 $(() => {
   $(document).on('click', (e) => {
-    if (e.target.className === 'btn') {
-      $('.success').css('display', 'block');
-      $('.success').fadeOut(2000);
+    if (e.target.className === 'button--copy-to-clipboard') {
+      $('.container--success-message').css('display', 'block');
+      $('.container--success-message').fadeOut(2000);
       $('button').blur();
       document.getSelection().removeAllRanges();
     } else {

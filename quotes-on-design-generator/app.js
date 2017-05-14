@@ -30,7 +30,7 @@ $(document).on('click', () => {
 function mycallback(json) {
   const quote = json[0];
   $('.quote-body').html(`${quote.content}`).fadeIn();
-  $('.quote-author').html(`- ${quote.title}`).fadeIn();
+  $('.quote-author').html(`― ${quote.title}`).fadeIn();
 }
 
 // Change click to tap on mobiles/tablets
