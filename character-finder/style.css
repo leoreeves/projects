@@ -1,6 +1,6 @@
 /* Hide vue.js elements till fully loaded */
 [v-cloak] {
-  display: none;
+  visibility: hidden;
 }
 
 html,
@@ -19,11 +19,20 @@ body {
 }
 
 .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  min-height: 100%; 
+  min-height: 100%;
 }
 
 label {
@@ -53,7 +62,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-  -moz-appearance:textfield;
+  -moz-appearance: textfield;
 }
 
 .character-length {
@@ -68,7 +77,11 @@ input[type=number] {
 }
 
 .character-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -95,12 +108,12 @@ input[type=number] {
 }
 
 .character-number button:first-child {
-  border-top-left-radius: 5px; 
+  border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 .character-number button:last-child {
-  border-top-right-radius: 5px; 
+  border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
@@ -133,10 +146,13 @@ input[type=number] {
 .fade {
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: visibility 0s 2s, opacity 2s linear;
   transition: visibility 0s 2s, opacity 2s linear;
 }
 
+
 /* Responsive media queries */
+
 @media screen and (max-width: 412px) {
   h1 {
     font-size: 1.8em;
