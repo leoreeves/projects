@@ -11,7 +11,7 @@ body {
 
 body {
   font-family: 'Merriweather', sans-serif;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
 /**
@@ -194,11 +194,12 @@ header h3 {
   -ms-flex-direction: column;
   flex-direction: column;
   font-family: 'Indie Flower', cursive;
+  font-weight: 600;
   font-size: 2.25em;
 }
 
 .final-photo .white-overlay {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 /**
