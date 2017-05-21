@@ -6,26 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text|Work+Sans" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <!-- CSS -->
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
     <div class="flex-container">
-      <main id="character-finder">
+      <main class="character-finder">
         <h1>Character Finder</h1>
-        <label for="text-input">Enter your word:</label>
+        <p>Find a specific character in any word.</p>
+        <input id="text-input" type="text" v-model="textInput" placeholder="Enter your word" autofocus>
+        <!--<p class="character-length" v-cloak>{{ textInput.length }} characters</p>-->
         <br>
-        <input id="text-input" type="text" v-model="textInput">
-        <p class="character-length" v-cloak>{{ textInput.length }} characters</p>
-        <label for="number-input">Required character:</label>
         <br>
         <div class="character-number">
-          <button v-on:click="minusCharacter">-</button>
+          <button v-on:click="minusCharacterIndex">-</button>
           <input id="number-input" type="number" min="1" v-bind:max="textInput.length" v-model="characterNumber">
-          <button v-on:click="plusCharacter">+</button>
+          <button v-on:click="plusCharacterIndex">+</button>
         </div>
+        <!--<label for="number-input">Required character</label>-->
         <p class="character-result" id="text" v-cloak>{{ textInput[characterNumber - 1] }}</p>
         <button class="copy-button" data-clipboard-action="copy" data-clipboard-target="#text" v-on:click="copyMessage">Copy to clipboard</button>
         <p class="successful-copy" v-cloak v-model="copySuccess" v-bind:class="{ fade: isActive }">{{ copySuccess }}</p>

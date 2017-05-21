@@ -1,5 +1,5 @@
 const characterFinder = new Vue({
-  el: '#character-finder',
+  el: '.character-finder',
   data: {
     textInput: '',
     characterNumber: 1,
@@ -7,14 +7,16 @@ const characterFinder = new Vue({
     copySuccess: '',
   },
   methods: {
-    minusCharacter() {
+    minusCharacterIndex() {
+      const originalCharacterIndex = this.characterNumber;
       if (this.characterNumber > 1) {
-        this.characterNumber -= 1;
+        this.characterNumber = Number(originalCharacterIndex) - 1;
       }
     },
-    plusCharacter() {
+    plusCharacterIndex() {
+      const originalCharacterIndex = this.characterNumber;
       if (this.characterNumber < this.textInput.length) {
-        this.characterNumber += 1;
+        this.characterNumber = Number(originalCharacterIndex) + 1;
       }
     },
     copyMessage() {

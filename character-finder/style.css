@@ -12,10 +12,24 @@ body {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   text-align: center;
   font-size: 1.4em;
   color: #292b2c;
+}
+
+label {
+  font-size: .85em;
+  margin-bottom: 10px;
+}
+
+br {
+  line-height: 40px;
+}
+
+h1 {
+  font-family: 'Fanwood Text', serif;
+  font-size: 1.9em;
 }
 
 .flex-container {
@@ -35,24 +49,18 @@ body {
   min-height: 100%;
 }
 
-label {
-  font-size: .85em;
-  margin-bottom: 10px;
-}
-
-br {
-  line-height: 40px;
-}
-
 input[type=text],
 input[type=number] {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
+  font-family: 'Work Sans', sans-serif;
   font-size: 1em;
+  outline: none;
+  padding: 5px;
 }
 
 input[type=number] {
   min-width: 100px;
+  border: 1px solid lightgray;
+  text-align: center;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -66,14 +74,19 @@ input[type=number] {
 }
 
 .character-length {
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
 .character-result {
-  font-size: 1.4em;
-  margin: 20px 0;
-  font-weight: bold;
+  font-size: 1.8em;
+  margin-left: auto;
+  margin-right: auto;
+  /*font-weight: bold;*/
   border-radius: 10px;
+  height: 50px;
+  background-color: #eee;
+  width: 40px;
+  padding: 10px 15px;
 }
 
 .character-number {
@@ -115,10 +128,6 @@ input[type=number] {
 .character-number button:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-}
-
-.character-result {
-  height: 40px;
 }
 
 .copy-button {
