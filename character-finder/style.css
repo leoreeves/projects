@@ -15,7 +15,8 @@ body {
   font-family: 'Work Sans', sans-serif;
   text-align: center;
   font-size: 1.4em;
-  color: #292b2c;
+  padding: 10px;
+  color: #333;
 }
 
 label {
@@ -30,6 +31,7 @@ br {
 h1 {
   font-family: 'Fanwood Text', serif;
   font-size: 1.9em;
+  margin-bottom: 0;
 }
 
 .flex-container {
@@ -55,6 +57,7 @@ input[type=number] {
   font-size: 1em;
   outline: none;
   padding: 5px;
+  color: #333;
 }
 
 input[type=number] {
@@ -73,20 +76,16 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.character-length {
-  /*font-weight: bold;*/
-}
-
 .character-result {
   font-size: 1.8em;
   margin-left: auto;
   margin-right: auto;
-  /*font-weight: bold;*/
   border-radius: 10px;
   height: 50px;
   background-color: #eee;
   width: 40px;
   padding: 10px 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .character-number {
@@ -106,6 +105,8 @@ input[type=number] {
 .character-number button {
   border: 0;
   min-width: 35px;
+  background-color: #E0E0E0;
+  color: #333;
 }
 
 .character-number button:hover {
@@ -131,6 +132,8 @@ input[type=number] {
 }
 
 .copy-button {
+  background-color: #E0E0E0;
+  color: #333;
   font-size: .65em;
   border: 0;
   padding: 10px;
@@ -149,21 +152,12 @@ input[type=number] {
 
 .successful-copy {
   height: 40px;
-  font-size: .8em;
+  font-size: 0.7em;
 }
 
-.fade {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: visibility 0s 2s, opacity 2s linear;
-  transition: visibility 0s 2s, opacity 2s linear;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
 }
-
-
-/* Responsive media queries */
-
-@media screen and (max-width: 412px) {
-  h1 {
-    font-size: 1.8em;
-  }
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
 }

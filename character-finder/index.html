@@ -15,20 +15,19 @@
     <div class="flex-container">
       <main class="character-finder">
         <h1>Character Finder</h1>
-        <p>Find a specific character in any word.</p>
-        <input id="text-input" type="text" v-model="textInput" placeholder="Enter your word" autofocus>
-        <!--<p class="character-length" v-cloak>{{ textInput.length }} characters</p>-->
-        <br>
-        <br>
+        <p>Find a specific character in a word.</p>
+        <input id="text-input" type="text" v-model="textInput" placeholder="Type a word to search" autofocus>
+          <p>Character required:</p>
         <div class="character-number">
           <button v-on:click="minusCharacterIndex">-</button>
           <input id="number-input" type="number" min="1" v-bind:max="textInput.length" v-model="characterNumber">
           <button v-on:click="plusCharacterIndex">+</button>
         </div>
-        <!--<label for="number-input">Required character</label>-->
         <p class="character-result" id="text" v-cloak>{{ textInput[characterNumber - 1] }}</p>
         <button class="copy-button" data-clipboard-action="copy" data-clipboard-target="#text" v-on:click="copyMessage">Copy to clipboard</button>
-        <p class="successful-copy" v-cloak v-model="copySuccess" v-bind:class="{ fade: isActive }">{{ copySuccess }}</p>
+        <transition name="fade">
+          <p class="successful-copy" v-cloak v-if="show">Succesfully copied</p>
+        </transition>
       </main>
     </div>
     <!-- Scripts -->

@@ -4,7 +4,7 @@ const characterFinder = new Vue({
     textInput: '',
     characterNumber: 1,
     isActive: false,
-    copySuccess: '',
+    show: false,
   },
   methods: {
     minusCharacterIndex() {
@@ -20,12 +20,10 @@ const characterFinder = new Vue({
       }
     },
     copyMessage() {
-      this.copySuccess = 'Successfully copied';
-      this.isActive = true;
+      this.show = true;
       setTimeout(() => {
-        this.copySuccess = '';
-        this.active = false;
-      }, 2000);
+        this.show = false;
+      }, 1000);
     },
   },
 });
