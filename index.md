@@ -67,7 +67,7 @@ Built using:
 
 ## [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 
-A tribute page for the musician Elliott Smith built for *Free Code Camp*.
+A tribute page for the musician Elliott Smith built for *freeCodeCamp*.
 
 Built using:
 
@@ -77,7 +77,7 @@ Built using:
 
 ## [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 
-Simple weather app built for *Free Code Camp*, it displays the local weather for the user based on browser geolocation.
+Simple weather app built for *freeCodeCamp*, it displays the local weather for the user based on browser geolocation.
 
 Built using:
 
@@ -112,7 +112,7 @@ Built using:
 
 ## [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
 
-A simple calculator built for *Free Code Camp*.
+A simple calculator built for *freeCodeCamp*.
 
 Built using:
 
@@ -124,7 +124,7 @@ Built using:
 
 An editor that lets you write HTML/CSS/JavaScript and see the results live in browser - inspired by this [enlight.ml project](https://enlight.ml/demo/code-editor-project/index.html).
 
-Built using: 
+Built using:
 
 - HTML
 - CSS
@@ -153,7 +153,7 @@ Built using:
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
-Generates a random quote about design, built for *Free Code Camp*.
+Generates a random quote about design, built for *freeCodeCamp*.
 
 Built using:
 
@@ -214,9 +214,9 @@ Built using:
 
 ## [Wikipedia Viewer](https://leoreeves.github.io/projects/wikipedia-viewer/)
 
-A *Wikipedia* viewer built for *Free Code Camp*, it returns search results in card format with an image (if available).
+A *Wikipedia* viewer built for *freeCodeCamp*, it returns search results in card format with an image (if available).
 
-Built using: 
+Built using:
 
 - HTML
 - CSS
