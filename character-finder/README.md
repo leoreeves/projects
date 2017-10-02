@@ -1,4 +1,4 @@
-# [Character Finder](https://leoreeves.github.io/projects/vue-character-finder/)
+# [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 
 Find specific characters in a word.
 
