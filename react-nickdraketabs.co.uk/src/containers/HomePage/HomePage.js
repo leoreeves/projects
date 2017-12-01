@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import React from 'react';
 import Introduction from './Introduction';
 import Revisions from './Revisions';
 import Tabs from './Tabs'
