@@ -1,0 +1,10 @@
+.footer {
+	background-color: #f7f7f7;
+	padding-top: 20px;
+	margin-top: 20px;
+  color: rgba(0,0,0,0.6);
+}
+
+.footer small a {
+	color: rgba(0,0,0,0.6);
+}
