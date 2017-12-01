@@ -1,6 +1,6 @@
 import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import './navbar.css';
+import './Navbar.css';
 
 export default class AppNavbar extends React.Component {
   constructor(props) {
