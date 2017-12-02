@@ -2,8 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en"
 title = "Nick Drake Tabs"
 publishDir = "public"
-disableSitemap = true
-disableRSS = true
+disableKinds=["RSS", "sitemap"]
 [taxonomies]
   category = ""
   tag = ""
