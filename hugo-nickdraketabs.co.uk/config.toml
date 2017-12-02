@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en"
+title = "Nick Drake Tabs"
+publishDir = "public"
+disableSitemap = true
+disableRSS = true
+[taxonomies]
+  category = ""
+  tag = ""
