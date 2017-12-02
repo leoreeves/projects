@@ -6,6 +6,8 @@
     "bootstrap": "^4.0.0-beta.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-hash-link": "^1.1.1",
     "react-scripts": "1.0.17",
     "reactstrap": "^5.0.0-alpha.4"
   },

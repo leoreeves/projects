@@ -1,5 +1,8 @@
 import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashLinkLink, HashLink } from 'react-router-hash-link';
+
 import './Navbar.css';
 
 export default class AppNavbar extends React.Component {
@@ -19,18 +22,18 @@ export default class AppNavbar extends React.Component {
   render() {
     return (
       <Navbar color="faded" fixed="top" light expand="sm">
-        <NavbarBrand href="/">Nick Drake Tabs</NavbarBrand>
+        <NavbarBrand tag={HashLink} to="/">Nick Drake Tabs</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="#revisions">Revisions</NavLink>
+              <NavLink tag={HashLink} to="/#revisions">Revisions</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#tabs">Tabs</NavLink>
+              <NavLink tag={HashLink} to="/#tabs">Tabs</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/tunings/">Tunings</NavLink>
+              <NavLink tag={Link} to="/tunings/">Tunings</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
