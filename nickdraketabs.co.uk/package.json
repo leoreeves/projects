@@ -1,0 +1,17 @@
+{
+  "name": "nickdraketabs.co.uk",
+  "version": "1.0.0",
+  "description": "Gave the [original site](http://nickdraketabs.co.uk/) a facelift using CSS, replaced much of the original HTML and made it mobile-friendly.",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-nunjucks-render": "^2.2.1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

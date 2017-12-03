@@ -1,8 +1,0 @@
-baseURL = "http://example.org/"
-languageCode = "en"
-title = "Nick Drake Tabs"
-publishDir = "public"
-disableKinds=["RSS", "sitemap"]
-[taxonomies]
-  category = ""
-  tag = ""
