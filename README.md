@@ -150,6 +150,8 @@ Built using:
 - HTML
 - CSS
 - Bootstrap
+- Nunjucks
+- Gulp
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
