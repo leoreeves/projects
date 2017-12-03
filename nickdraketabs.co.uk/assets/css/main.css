@@ -25,14 +25,11 @@ nav {
 	padding-bottom: 15px;
 }
 
-.tunings h1 {
-	position: relative;
-	left: 25px;
+.tunings ul {
+	padding-left: 20px;
 }
 
 .tunings h2 {
-	position: relative;
-	left: 25px;
 	font-size: 1.5em;
 }
 
