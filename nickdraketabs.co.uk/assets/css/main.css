@@ -21,15 +21,15 @@ nav {
 }
 
 /* Tunings */
-.tunings {
+.tunings-container {
 	padding-bottom: 15px;
 }
 
-.tunings ul {
+.tunings-container ul {
 	padding-left: 20px;
 }
 
-.tunings h2 {
+.tunings-container h2 {
 	font-size: 1.5em;
 }
 
