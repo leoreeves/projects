@@ -7,7 +7,11 @@ body {
 }
 
 body {
-	padding-top: 90px;
+	padding-top: 100px;
+}
+
+h1 {
+	font-size: 2.2em;
 }
 
 /* Navbar */
@@ -22,18 +26,14 @@ nav {
 }
 
 .tunings h1 {
-	margin-top: 0;
+	position: relative;
+	left: 25px;
 }
 
 .tunings h2 {
 	position: relative;
 	left: 25px;
 	font-size: 1.5em;
-}
-
-.tunings .row {
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 /* Tabs */
@@ -94,7 +94,11 @@ footer small a {
 }
 
 /* Responsiveness */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
+	body {
+		padding-top: 90px;
+	}
+
 	#revisions,
 	#tabs {
 		padding-top: 75px;
