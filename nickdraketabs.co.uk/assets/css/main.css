@@ -85,7 +85,8 @@ footer small a {
 
 /* Scroll anchors */
 #revisions,
-#tabs {
+#tabs,
+#tunings {
 	padding-top: 30px;
 	margin-top: -30px;
 }
@@ -97,7 +98,8 @@ footer small a {
 	}
 
 	#revisions,
-	#tabs {
+	#tabs,
+	#tunings {
 		padding-top: 40px;
 		margin-top: -40px;
 	}
