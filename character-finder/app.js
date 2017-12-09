@@ -19,11 +19,13 @@ const characterFinder = new Vue({
         this.characterNumber = Number(originalCharacterIndex) + 1;
       }
     },
-    copyMessage() {
-      this.show = true;
-      setTimeout(() => {
-        this.show = false;
-      }, 1000);
+    showCopyMessage() {
+      if (this.textInput != '') {
+        this.show = true;
+        setTimeout(() => {
+          this.show = false;
+        }, 1000);
+      }
     },
   },
 });
