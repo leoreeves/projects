@@ -62,6 +62,7 @@ label {
 
 label:hover {
   background-color: #EEEEEE;
+  cursor: pointer;
 }
 
 input[type=radio] {
@@ -87,6 +88,7 @@ input[type=radio]:focus {
   font-size: .9em;
   margin-top: 10px;
   padding: 12px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -122,6 +124,7 @@ input[type=radio]:focus {
   border-radius: 5px;
   font-size: 1.2em;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .result small {
@@ -157,6 +160,9 @@ a:visited {
 
 /* Responsive media queries */
 @media screen and (max-width: 512px) {
+  body {
+    display: inline-block;
+  }
   h1 {
     font-size: 2.5em;
   }
@@ -172,7 +178,18 @@ a:visited {
   label {
     font-size: .7em;
   }
+  .percentages {
+    margin-top: 10px;
+  }
 }
+
+@media screen and (min-width: 366px) and (max-width: 398px) {
+  .percentages {
+    margin-top: 40px;
+  }
+}
+
+
 
 @media screen and (max-width: 365px) {
   h1 {
@@ -180,6 +197,10 @@ a:visited {
   }
   .reduced-rate,
   .remove-vat {
+    margin-top: 40px;
+  }
+
+  .percentages {
     margin-top: 40px;
   }
 }
