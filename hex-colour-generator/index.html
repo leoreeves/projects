@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Hex Colour Generator</title>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Normalize -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <!-- Styling -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="container--colour-generator">
+    <h1 class="header--instruction">Press the spacebar or click to generate a new colour</h1>
+    <h2 class="container--hex-colour-code" id="hex-colour-code">#ffffff</h2>
+    <button class="button--copy-to-clipboard" data-clipboard-target="#hex-colour-code">Copy to clipboard</button>
+    <p class="container--success-message">Successfully copied</p>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
