@@ -40,7 +40,6 @@ document.addEventListener('click', (e) => {
 
   if (e.target.className === 'button--copy-to-clipboard') {
     successMessageContainer.style.display = 'block';
-    successMessageContainer.classList.remove('fade-out');
     successMessageContainer.classList.add('fade-out');
     document.querySelector('button').blur();
     document.getSelection().removeAllRanges();
