@@ -64,6 +64,9 @@ body {
 	user-select: none;
 	transition: all .15s ease;
 	-webkit-transition: all .5s ease;
+	text-transform: uppercase;
+	letter-spacing: .025em;
+	font-weight: 600;
 }
 
 .button--copy-to-clipboard:hover {

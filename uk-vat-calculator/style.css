@@ -78,8 +78,9 @@ label:hover {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: .1em;
+  letter-spacing: .025em;
   transition: all .15s ease;
+  -webkit-transition: all .5s ease;
   box-shadow: 0 4px 6px rgba(50,50,93,.11),
               0 1px 3px rgba(0,0,0,.08);
 }
@@ -87,10 +88,15 @@ label:hover {
 .btn:hover {
   background-color: #546e7a;
   transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1),
+               0 3px 6px rgba(0,0,0,.08);
 }
 
 .btn:active {
   background-color: #263238;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),
+              0 1px 3px rgba(0,0,0,.08);
 }
 
 .btn:focus {
