@@ -193,16 +193,42 @@ body {
 }
 
 /* Button */
-button {
-	background-color: #425168;
-	border: none;
-	color: white;
-	font-size: 1.5em;
-	padding: 15px 32px;
-	position: fixed;
-	bottom: 0;
+.button-container {
 	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	background-color: #29434e;
+	border: none;
+	color: #fff;
+	padding: 16px;
+	position: absolute;
+	bottom: 32px;
 	opacity: 0.8;
+	border-radius: 5px;
+	margin: 0 auto;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.25em;
+	cursor: pointer;
+	outline: 0;
+	transition: all .15s ease;
+	-webkit-transition: all .5s ease;
+}
+
+button:hover {
+	background-color: #546e7a;
+	box-shadow: 0 7px 14px rgba(50,50,93,.1),
+							0 3px 6px rgba(0,0,0,.08);
+	transform: translateY(-1px);
+}
+
+button:focus {
+	box-shadow: 0 4px 6px rgba(50,50,93,.11),
+							0 1px 3px rgba(0,0,0,.08);
+	transform: translateY(-1px);
 }
 
 /* Responsive Queries */
