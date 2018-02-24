@@ -45,7 +45,7 @@ document.addEventListener('click', (e) => {
     document.getSelection().removeAllRanges();
     setTimeout(function () {
       successMessageContainer.classList.remove('fade-out');
-    }, 1500);
+    }, 1800);
   } else {
     setBackground();
   }
