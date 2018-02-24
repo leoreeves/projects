@@ -27,6 +27,7 @@ function getQuote() {
   }, 200);
 }
 
+// Callback method in JSON
 function createQuote(json) {
   const quote = json[0];
   $('.quote-body').html(`${quote.content}`).fadeIn();
