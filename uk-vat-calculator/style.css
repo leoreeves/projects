@@ -10,54 +10,52 @@ body {
 body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-}
-
-h1 {
-  font-weight: bold;
-  font-size: 2.2em;
-}
-
-h2 {
-  font-size: 1.8em;
-  padding-bottom: 10px;
-}
-
-h3 {
+  padding: 16px;
   font-size: 1.2em;
 }
 
 .flex-container {
   display: flex;
-  align-items: center;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   min-height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* Main container and calculator inputs */
-main {
-  font-size: 1.3em;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.currency {
-  font-size: 1.3em;
-}
-
+/* Input */
 .user-input {
-  text-indent: 5px;
-  font-size: 1.1em;
-  margin-bottom: 5px;
+  text-indent: 7px;
+  font-size: 1em;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  border: 1px solid #e4e9ec;
+  padding: 5px 0;
+}
+
+/* Labels */
+.label-container {
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 label {
-  border: 1px solid transparent;
+  background: lightgoldenrodyellow;
   border-radius: 5px;
-  margin: 5px;
   background-color: #F5F5F5;
-  padding: 10px;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  margin: 10px 5px;
   white-space: nowrap;
+  box-shadow: 0 4px 2px rgba(50,50,93,.05),
+              0 1px 2px rgba(0,0,0,.08);
+  transition: all .15s ease;
+}
+
+input[type="radio"] {
+  cursor: pointer;
 }
 
 label:hover {
@@ -65,34 +63,30 @@ label:hover {
   cursor: pointer;
 }
 
-input[type=radio] {
-  width: 18px;
-  height: 18px;
-  vertical-align: baseline;
+.currency {
+  font-size: 1.1em;
 }
 
-input[type=radio]:focus {
-  outline: none;
-}
-
-.percentages {
-  margin-top: 40px;
-}
-
-/* Submit button */
+/* Button */
 .btn {
-  background-color: #37474F;
-  border: 1px solid #37474F;
+  background-color: #455a64;
+  border: 1px solid #455a64;
   border-radius: 5px;
   color: #FFF;
-  font-size: .9em;
   margin-top: 10px;
   padding: 12px;
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .1em;
+  transition: all .15s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),
+              0 1px 3px rgba(0,0,0,.08);
 }
 
 .btn:hover {
-  background-color: #2d3b42;
+  background-color: #546e7a;
+  transform: translateY(-1px);
 }
 
 .btn:active {
@@ -107,10 +101,11 @@ input[type=radio]:focus {
 .result {
   background-color: #EEEEEE;
   max-width: 280px;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 5px 20px;
   margin: 30px auto 0;
   display: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
 }
 
 .result h3 {
@@ -136,7 +131,7 @@ input[type=radio]:focus {
   padding-bottom: 20px;
 }
 
-/* Footer Link */
+/* Footer */
 footer {
   padding-top: 10px;
 }
@@ -145,8 +140,8 @@ a {
   color: #337ab7;
   margin-top: 20px;
   text-decoration: none;
-  font-size: 1.2em;
-  padding-bottom: 20px;
+  font-size: 1em;
+  text-align: center;
 }
 
 a:hover {
@@ -156,63 +151,4 @@ a:hover {
 
 a:visited {
   text-decoration: none;
-}
-
-/* Responsive media queries */
-@media screen and (max-width: 512px) {
-  body {
-    display: inline-block;
-  }
-  h1 {
-    font-size: 2.5em;
-  }
-  .reduced-rate {
-    margin-top: 40px;
-  }
-  .user-input {
-    width: 90%;
-  }
-  .result {
-    font-size: .8em;
-  }
-  label {
-    font-size: .7em;
-  }
-  .percentages {
-    margin-top: 10px;
-  }
-}
-
-@media screen and (min-width: 366px) and (max-width: 398px) {
-  .percentages {
-    margin-top: 40px;
-  }
-}
-
-
-
-@media screen and (max-width: 365px) {
-  h1 {
-    font-size: 2.5em;
-  }
-  .reduced-rate,
-  .remove-vat {
-    margin-top: 40px;
-  }
-
-  .percentages {
-    margin-top: 40px;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .reduced-rate {
-    margin-left: 10px;
-  }
-  .result {
-    width: 200px;
-  }
-  .currency {
-    font-size: 1.2em;
-  }
 }

@@ -9,7 +9,7 @@ const calculateVat = new Vue({
     vatAmount: 0,
     grossAmount: 0,
     resultVisibility: 'none',
-    copyMessage: 'Click an amount to copy',
+    copyMessage: 'Click an amount to copy it',
   },
   methods: {
     calculateVat() {
@@ -38,7 +38,7 @@ const calculateVat = new Vue({
     copyText() {
       this.copyMessage = 'Successfully copied';
       setTimeout(() => {
-        this.copyMessage = 'Click an amount to copy';
+        this.copyMessage = 'Click an amount to copy it';
       }, 1000);
     },
   },
