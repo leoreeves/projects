@@ -7,3 +7,4 @@ Built using:
 - HTML
 - CSS
 - jQuery
+- AJAX
