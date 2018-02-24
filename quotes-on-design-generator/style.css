@@ -5,7 +5,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: scroll;
+  font-size: 0.98em;
 }
 
 body {
@@ -16,16 +16,17 @@ body {
   justify-content: center;
   flex-direction: column;
   line-height: 50px;
+  min-height: -webkit-min-content;
+  min-height: min-content;
 }
 
 main {
   font-weight: 100;
   max-width: 80%;
-  font-weight: bold;
+  /* margin: 16px; */
 }
 
 main h2 {
-  font-weight: bold;
   font-size: 1.6em;
   text-align: center;
 }
