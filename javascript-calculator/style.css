@@ -21,7 +21,7 @@ body {
   width: 250px;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #888888;
+  box-shadow: 1px 5px 5px rgba(0,0,0,.3);
 }
 
 .screen {
@@ -35,7 +35,8 @@ body {
   text-indent: 15px;
   padding-right: 10px;
   border-radius: 5px;
-  box-shadow: inset 2px 2px 5px #888888;
+  box-shadow: inset 1px 3px 5px rgba(0,0,0,.2);
+
   color: rgba(41, 43, 44, 0.8);
   display:flex;
   justify-content:flex-end;
@@ -69,8 +70,8 @@ button {
   color: #292b2c;
   background-color: #E0E0E0;
   font-weight: bold;
-  outline:none;
-  box-shadow: 2px 2px 3px #888888;
+  outline: none;
+  box-shadow: 1px 3px 3px rgba(0,0,0,.3);
   border: none;
   border-radius: 5px;
   -webkit-touch-callout: none; /* iOS Safari */
