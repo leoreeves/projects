@@ -38,6 +38,6 @@ function createQuote(json) {
 $(document).ready(() => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
-    $('#input-type').html('tap');
+    $('.quote-body').html('Press the spacebar or tap to inspire');
   }
 });
