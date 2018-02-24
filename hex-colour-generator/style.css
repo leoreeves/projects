@@ -20,13 +20,11 @@ body {
 	text-align: center;
 	vertical-align: middle;
 	font-family: 'Quicksand', sans-serif;
-	-webkit-transition: all .5s ease;
-	transition: all .5s ease;
 }
 
 .header--instruction,
 .container--hex-colour-code {
-	opacity: 0.7;
+	opacity: 0.8;
 	font-size: 2em;
 }
 
@@ -49,31 +47,38 @@ body {
 	cursor: pointer;
 	margin-top: 5px;
 	border-radius: 5px;
-	background-color: #EEEEEE;
-	border: 1px solid #EEEEEE;
+	background-color: rgba(238, 238, 238, 0.9);
+	border: 1px solid rgba(238, 238, 238, 0.9);
 	padding: 0 10px;
 	padding-bottom: 2px;
-	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+	box-shadow: 0 4px 6px rgba(50,50,93,.11),
+							0 1px 3px rgba(0,0,0,.08);
 	outline: none;
 	font-size: 1em;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 500;
 	color: #333;
-	opacity: 0.9;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	transition: all .15s ease;
+	-webkit-transition: all .5s ease;
 }
 
 .button--copy-to-clipboard:hover {
-	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-	opacity: 1;
+	box-shadow: 0 7px 14px rgba(50,50,93,.1),
+							0 3px 6px rgba(0,0,0,.08);
+	background-color: #eee;
+	border-color: #eee;
 	transform: translateY(-1px);
 }
 
 .button--copy-to-clipboard:active {
-	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+	box-shadow: 0 4px 6px rgba(50,50,93,.11),
+							0 1px 3px rgba(0,0,0,.08);
+	background-color: #eee;
+	border-color: #eee;
 	transform: translateY(1px);
 }
 
