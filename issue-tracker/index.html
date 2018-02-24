@@ -5,34 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Flatly Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
-    
-    <!-- Vertically center on wider screens -->
-    <style>
-      @media screen and (min-width: 700px) {
-        body {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-align: center;
-          -webkit-align-items: center;
-          align-items: center;
-          min-height: 60em;
-          -webkit-box-pack: center;
-          -webkit-justify-content: center;
-          justify-content: center;
-        }
+    <link href="style.css" rel="stylesheet">
 
-        .jumbotron {
-          -webkit-box-flex: 0;
-          -webkit-flex: none;
-          flex: none;
-          max-width: 100%;
-        }
-      }
-    </style>
   </head>
   <body onload="fetchIssues()">
 
@@ -67,10 +44,6 @@
           </div>
         </div>
       </div>
-      
-      <footer class="footer">
-        <p class="text-center">&copy; Leo Reeves</p>
-      </footer>
 
     </main>
 

@@ -1,0 +1,27 @@
+h1 {
+  margin-bottom: 20px;
+}
+
+
+/* Vertically center on wider screens */
+@media screen and (min-width: 700px) {
+  body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    min-height: 60em;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .jumbotron {
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    flex: none;
+    max-width: 100%;
+  }
+}
