@@ -32,7 +32,7 @@ $(document).ready(() => {
         dataType: 'jsonp',
         success(data) {
           $('.icon_unit, .weather');
-          $('#temp').html(`${Math.round(data.currently.temperature)} &#176`);
+          $('#temp').html(`${Math.round(data.currently.temperature)}&#176`);
           $('#weather_icon').html(`<i class="wi wi-forecast-io-${data.currently.icon}"<\/i>`);
           $('#summary').html(String(data.minutely.summary).slice(0, -1));
           if (data.flags.units === 'us') {

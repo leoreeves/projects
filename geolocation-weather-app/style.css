@@ -5,6 +5,7 @@ body {
   padding: 0;
   overflow: hidden;
   color: white;
+  text-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 
 .container {
@@ -16,8 +17,9 @@ body {
 
 .row-fluid {
   height: 100%;
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .centering {
@@ -25,13 +27,8 @@ body {
   margin: 0 auto;
 }
 
-#location {
-  font-size: 3.5em;
-  opacity: 0.9;
-}
-
 .icon {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .wi {
@@ -45,14 +42,30 @@ body {
   color: black;
 }
 
-#temp,
-.unit {
-  font-size: 2.5em;
-}
-
-#day-and-time, #summary {
+#location {
   font-size: 2.5em;
   opacity: 0.9;
+  letter-spacing: .15em;
+}
+
+#temp {
+  font-size: 3.5em;
+}
+
+.unit {
+  font-size: 2.3em;
+}
+
+#day-and-time {
+  font-size: 2em;
+  opacity: 0.8;
+  letter-spacing: .1em;
+}
+
+#summary {
+  font-size: 2.2em;
+  opacity: 0.9;
+  letter-spacing: .05em;
 }
 
 footer {
@@ -60,11 +73,8 @@ footer {
   margin-left: 10px;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 375px) {
   body {
-    font-size: 1em;
-  }
-  .wi {
-    font-size: 100px;
+    font-size: 1.2em;
   }
 }
