@@ -1,5 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  padding: 16px;
 }
 
 input {
@@ -10,21 +11,4 @@ input {
 button {
   outline: none;
   font-size: 1em;
-}
-
-.minus {
-  /*border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;*/
-  height: 25px;
-  width: 20px;
-  border: 0;
-}
-
-.plus {
-  /*border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;*/
-  height: 25px;
-  width: 20px;
-  border: 0;
-  position: relative;
 }
