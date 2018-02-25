@@ -1,6 +1,8 @@
-* { 
-  padding: 0; 
-  margin: 0; 
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
 }
 
 html {
@@ -11,12 +13,36 @@ html {
 }
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   margin-bottom: 20px;
+  letter-spacing: 0.05em;
 }
 
 canvas {
   background: #eee;
   border-radius: 5px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.pause-button {
+  background-color: #455a64;
+  border: 1px solid #455a64;
+  border-radius: 5px;
+  color: #FFF;
+  margin-top: 10px;
+  padding: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .2em;
+  transition: all .15s ease;
+  -webkit-transition: all .5s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  outline: none;
 }
