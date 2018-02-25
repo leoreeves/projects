@@ -110,11 +110,17 @@ const render = function render() {
   /** Collision detection
   * http://stackoverflow.com/a/21482699/2588066
   */
-  if (hero.x + heroImage.width > canvas.width) {
-    hero.x = canvas.width - heroImage.width;
+  if (hero.x >= canvas.width - heroImage.width * 2) {
+    hero.x = canvas.width - heroImage.width * 2;
   }
-  if (hero.y + heroImage.height > canvas.height) {
-    hero.y = canvas.height - heroImage.height;
+  if (hero.x <= heroImage.width) {
+    hero.x = heroImage.width + 10;
+  }
+  if (hero.y >= canvas.height - heroImage.height * 2) {
+    hero.y = canvas.height - heroImage.height * 2;
+  }
+  if (hero.y <= heroImage.height) {
+    hero.y = heroImage.height + 10;
   }
   if (hero.x < 0) {
     hero.x = 0;
