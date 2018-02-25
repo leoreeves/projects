@@ -165,3 +165,9 @@ function pauseGame() {
     draw();
   }
 }
+
+document.body.onkeydown = (e) => {
+  if (e.keyCode == 32){
+    pauseGame();
+  }
+}
