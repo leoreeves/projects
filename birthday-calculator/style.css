@@ -70,3 +70,15 @@ span {
   letter-spacing: .04em;
   text-align: center;
 }
+
+@media screen and (max-width: 375px) {
+  .wrapper {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  content {
+    height: 100%;
+    padding-top: 50%;
+  }
+}
