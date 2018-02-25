@@ -1,14 +1,72 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: url('birthday-candles.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #111;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
-  padding: 16px;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
 }
 
 input {
   font-family: 'Open Sans', sans-serif;
   font-size: .9em;
+  padding: 5px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  min-width: 50px;
+  margin-top: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-button {
-  outline: none;
-  font-size: 1em;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.3);
+  min-height: 100%;
+}
+
+content {
+  width: 600px;
+  background: rgba(255,255,255,0.5);
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  color: #333;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.8em;
+  padding: 0 16px;
+  text-align: left;
+}
+
+span {
+  font-weight: 600;
+}
+
+.result {
+  font-size: 1.4em;
+  letter-spacing: .04em;
+  text-align: center;
 }
