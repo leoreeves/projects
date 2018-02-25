@@ -1,5 +1,7 @@
 const canvas = document.querySelector('#my-canvas');
 const ctx = canvas.getContext('2d');
+const pauseButton = document.querySelector('button');
+let pause = false;
 let x = canvas.width / 2;
 let y = canvas.height - 30;
 let dx = 2;
@@ -113,42 +115,53 @@ function drawPaddle() {
 }
 
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBricks();
-  drawBall();
-  drawPaddle();
-  drawLives();
-  drawScore();
-  collisionDetection();
-  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-    dx = -dx;
-  }
-  if (y + dy < ballRadius) {
-    dy = -dy;
-  } else if (y + dy > canvas.height - ballRadius) {
-    if (x > paddleX && x < paddleX + paddleWidth) {
+  if (!pause) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBricks();
+    drawBall();
+    drawPaddle();
+    drawLives();
+    drawScore();
+    collisionDetection();
+    if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+      dx = -dx;
+    }
+    if (y + dy < ballRadius) {
       dy = -dy;
-    } else {
-      lives -= 1;
-      if (!lives) {
-        alert('GAME OVER');
-        document.location.reload();
+    } else if (y + dy > canvas.height - ballRadius) {
+      if (x > paddleX && x < paddleX + paddleWidth) {
+        dy = -dy;
       } else {
-        x = canvas.width / 2;
-        y = canvas.height - 30;
-        dx = 2;
-        dy = -2;
-        paddleX = (canvas.width - paddleWidth) / 2;
+        lives -= 1;
+        if (!lives) {
+          alert('GAME OVER');
+          document.location.reload();
+        } else {
+          x = canvas.width / 2;
+          y = canvas.height - 30;
+          dx = 2;
+          dy = -2;
+          paddleX = (canvas.width - paddleWidth) / 2;
+        }
       }
     }
+    if (rightPressed && paddleX < canvas.width - paddleWidth) {
+      paddleX += 7;
+    } else if (leftPressed && paddleX > 0) {
+      paddleX -= 7;
+    }
+    x += dx;
+    y += dy;
+    requestAnimationFrame(draw);
   }
-  if (rightPressed && paddleX < canvas.width - paddleWidth) {
-    paddleX += 7;
-  } else if (leftPressed && paddleX > 0) {
-    paddleX -= 7;
-  }
-  x += dx;
-  y += dy;
-  requestAnimationFrame(draw);
 }
 draw();
+
+function pauseGame() {
+  if (!pause) {
+    pause = true;
+  } else {
+    pause = false;
+    draw();
+  }
+}
