@@ -12,6 +12,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   padding: 16px;
   font-size: 1.2em;
+  color: #333;
+}
+
+h1 {
+  letter-spacing: 0.05em;
 }
 
 .flex-container {
@@ -118,6 +123,7 @@ label:hover {
   color: #7d7d7d;
   font-weight: bold;
   margin: 10px 0;
+  letter-spacing: 0.05em;
 }
 
 .result p {
