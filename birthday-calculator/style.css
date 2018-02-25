@@ -82,4 +82,8 @@ span {
     height: 100%;
     padding-top: 50%;
   }
+
+  p {
+    padding: 0 16px;
+  }
 }
