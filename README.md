@@ -95,7 +95,7 @@ Built using:
 
 - HTML
 - CSS
-- jQuery
+- JavaScript
 
 ## [Issue Tracker](https://leoreeves.github.io/projects/issue-tracker/)
 
