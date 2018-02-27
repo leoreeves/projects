@@ -24,7 +24,8 @@ $(document).ready(() => {
       const locationURL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location}`;
       $(document).ajaxStop(() => {
         $.getJSON(locationURL, (json) => {
-          $('#location').html(`${json.results[0].address_components[2].long_name}, ${json.results[0].address_components[6].short_name}`);
+          console.log(json.results[0])
+          $('#location').html(`${json.results[0].address_components[2].long_name}, ${json.results[0].address_components[7].short_name}`);
         });
       });
       $.ajax({
