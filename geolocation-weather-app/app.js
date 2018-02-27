@@ -22,10 +22,8 @@ $(document).ready(() => {
       const location = `${lat},${lon}`;
       const webURL = baseURL + APPID + location + units + unit;
       const locationURL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location}`;
-      $(document).ajaxStop(() => {
-        $.getJSON(locationURL, (json) => {
-          $('#location').html(`${json.results[0].address_components[2].long_name}, ${json.results[0].address_components[7].short_name}`);
-        });
+      $.getJSON(locationURL, (json) => {
+        $('#location').html(`${json.results[0].address_components[3].long_name}`);
       });
       $.ajax({
         url: webURL,
@@ -33,7 +31,7 @@ $(document).ready(() => {
         success(data) {
           $('.icon_unit, .weather');
           $('#temp').html(`${Math.round(data.currently.temperature)}&#176`);
-          $('#weather_icon').html(`<i class="wi wi-forecast-io-${data.currently.icon}"<\/i>`);
+          $('#weather_icon').html(`<i class="wi wi-forecast-io-${data.minutely.icon}"<\/i>`);
           $('#summary').html(String(data.minutely.summary).slice(0, -1));
           if (data.flags.units === 'us') {
             $('.unit').html('F');
