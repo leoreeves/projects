@@ -43,22 +43,19 @@ $(document).ready(() => {
 
           if (hour >= times[2] && hour <= times[0]) {
             document.body.classList.add('dawn');
-            console.log('dawn');
+            document.getElementById('attributation').src = 'https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png';
           }
 
           if (hour > times[0] && hour < times[1]) {
             document.body.classList.add('day');
-            console.log('day');
           }
 
           if (hour >= times[1] && hour <= times[3]) {
             document.body.classList.add('dusk');
-            console.log('dusk');
           }
 
           if (hour < times[0] || hour > times[3]) {
             document.body.classList.add('night');
-            console.log('night');
             document.getElementById('attributation').src = 'https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png';
           }
         });
@@ -143,8 +140,12 @@ $(document).ready(() => {
     $(document).ajaxStop(() => {
       document.getElementById('time').innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
     });
+
+    console.log('1');
   }
 
   getTime();
   getLocation();
+
+  setInterval()
 });
