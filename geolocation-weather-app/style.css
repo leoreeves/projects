@@ -7,6 +7,7 @@ body {
   color: white;
   text-shadow: 0 0 2px rgba(0,0,0,0.2);
   font-family: 'Open Sans', sans-serif;
+  background-color: #3f4b50;
 }
 
 .container {
@@ -19,7 +20,7 @@ body {
 .centering {
   display: flex;
   width: 450px;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.5);
   padding: 16px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -83,6 +84,7 @@ content {
   font-size: 1.3em;
   opacity: 0.9;
   letter-spacing: .1em;
+  margin-right: 20px;
 }
 
 footer {
@@ -109,7 +111,7 @@ footer {
   background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.sunset {
+.dusk {
   background: #355C7D;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

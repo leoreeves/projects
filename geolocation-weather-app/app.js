@@ -15,16 +15,55 @@ $(document).ready(() => {
 
     function showLocation(position) {
       const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
+      const lng = position.coords.longitude;
       const baseURL = 'https://api.darksky.net/forecast/';
       const APPID = '3338c55b94a58007e0bf4195c5ab1548/';
       const units = '?units=';
-      const location = `${lat},${lon}`;
+      const location = `${lat},${lng}`;
       const webURL = baseURL + APPID + location + units + unit;
+      const sunsetSunriseURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
       const locationURL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location}`;
+
+      // get location
       $.getJSON(locationURL, (json) => {
         $('#location').html(`${json.results[0].address_components[3].long_name}`);
       });
+
+      // get times of day to set background
+      $.getJSON(sunsetSunriseURL, (json) => {
+        const today = new Date();
+        const hour = today.getHours();
+        let sunrise = new Date(json.results.sunrise);
+        let sunset = new Date(json.results.sunset);
+        let twilightBegin = new Date(json.results.civil_twilight_begin);
+        let twilightEnd = new Date(json.results.civil_twilight_end);
+
+        let times = [sunrise, sunset, twilightBegin, twilightEnd];
+        times = times.map(time => time = time.getUTCHours());
+
+        if (hour >= times[2] && hour <= times[0]) {
+          document.body.classList.add('dawn');
+          console.log('dawn');
+        }
+
+        if (hour > times[0] && hour < times[1]) {
+          document.body.classList.add('day');
+          console.log('day');
+        }
+
+        if (hour >= times[1] && hour <= times[3]) {
+          document.body.classList.add('dusk');
+          console.log('dusk');
+        }
+
+        if (hour < times[0] || hour > times[3]) {
+          document.body.classList.add('night');
+          console.log('night');
+          document.getElementById('attributation').src = 'https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png';
+        }
+      });
+
+      // get forecast
       $.ajax({
         url: webURL,
         dataType: 'jsonp',
@@ -82,10 +121,8 @@ $(document).ready(() => {
     }
   });
 
-  // Time
+  // get time
   const now = new Date();
-  // const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  // const day = days[now.getDay()];
   const hours = now.getHours();
   const minutes = now.getMinutes();
 
@@ -93,16 +130,3 @@ $(document).ready(() => {
     document.getElementById('time').innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
   });
 });
-
-
-// Background change for time of day
-const today = new Date();
-const hour = today.getHours();
-
-if (hour > 5 && hour < 18) {
-  document.body.classList.add('day');
-  console.log('hour');
-} else {
-  document.body.classList.add('night');
-  document.getElementById('attributation').src = 'https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png';
-}
