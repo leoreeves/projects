@@ -62,8 +62,8 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	transition: all .15s ease;
-	-webkit-transition: all .5s ease;
+	transition: all .1s ease;
+	-webkit-transition: all .1s ease;
 	text-transform: uppercase;
 	letter-spacing: .025em;
 	font-weight: 600;
