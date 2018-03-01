@@ -84,12 +84,16 @@ content {
   font-size: 1.3em;
   opacity: 0.9;
   letter-spacing: .1em;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 footer {
   margin-top: -50px;
   margin-left: 10px;
+}
+
+#error-message {
+  display: none;
 }
 
 /* Day and night */
