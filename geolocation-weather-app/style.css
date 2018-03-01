@@ -7,7 +7,6 @@ body {
   color: white;
   text-shadow: 0 0 2px rgba(0,0,0,0.2);
   font-family: 'Open Sans', sans-serif;
-  background-color: #3f4b50;
 }
 
 .container {
@@ -73,7 +72,7 @@ content {
 }
 
 #temp {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 #time {
@@ -92,6 +91,7 @@ footer {
   margin-left: 10px;
 }
 
+.dark-sky,
 #error-message {
   display: none;
 }
