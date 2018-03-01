@@ -82,7 +82,7 @@ body {
 							0 1px 3px rgba(0,0,0,.08);
 	background-color: #eee;
 	border-color: #eee;
-	transform: translateY(1px);
+	transform: translateY(-1px);
 }
 
 .container--success-message {
