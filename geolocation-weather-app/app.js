@@ -36,12 +36,12 @@ $(document).ready(() => {
           if (data.flags.units === 'us') {
             $('.unit').html('F');
             $('.unit').css({
-              color: '#ef5350',
+              color: '#ff6e40',
             });
           } else if (data.flags.units === 'si') {
             $('.unit').html('C');
             $('.unit').css({
-              color: '#1565C0',
+              color: '#4fc3f7',
             });
           }
         },
@@ -70,6 +70,7 @@ $(document).ready(() => {
 
   let unit = 'si';
   getLocation();
+
   // Switch from F to C
   $('.unit').on('click', () => {
     if (unit === 'us') {
@@ -81,15 +82,15 @@ $(document).ready(() => {
     }
   });
 
-  // Fix time display function
+  // Time
   const now = new Date();
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const day = days[now.getDay()];
+  // const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  // const day = days[now.getDay()];
   const hours = now.getHours();
   const minutes = now.getMinutes();
 
   $(document).ajaxStop(() => {
-    document.getElementById('day-and-time').innerHTML = `${day} ${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
+    document.getElementById('time').innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
   });
 });
 
@@ -97,11 +98,11 @@ $(document).ready(() => {
 // Background change for time of day
 const today = new Date();
 const hour = today.getHours();
-if (hour > 5 && hour < 19) {
-  document.body.style.background = 'url(img/bluesky.jpg)';
-  document.body.style.backgroundSize = 'cover';
+
+if (hour > 5 && hour < 18) {
+  document.body.classList.add('day');
+  console.log('hour');
 } else {
-  document.body.style.background = 'url(img/nightsky.jpg)';
-  document.body.style.backgroundSize = 'cover';
+  document.body.classList.add('night');
   document.getElementById('attributation').src = 'https://darksky.net/dev/img/attribution/poweredby-oneline-darkbackground.png';
 }

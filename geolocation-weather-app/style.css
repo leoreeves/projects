@@ -6,76 +6,117 @@ body {
   overflow: hidden;
   color: white;
   text-shadow: 0 0 2px rgba(0,0,0,0.2);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
-  height: 96%;
-  display: table;
-  width: 100%;
-  padding: 0;
-}
-
-.row-fluid {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100%;
 }
 
 .centering {
-  float: none;
-  margin: 0 auto;
+  display: flex;
+  width: 450px;
+  background-color: rgba(0,0,0,0.4);
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  min-height: 240px;
+  height: 100%;
+  margin: 16px;
 }
 
-.icon {
-  padding: 20px 0;
+content {
+  display: flex;
+  padding: 16px;
+  width: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.col-right {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .wi {
-  font-size: 150px;
-  padding: 10px;
-  padding-bottom: 20px;
+  font-size: 6em;
 }
 
 .unit {
   cursor: pointer;
   color: black;
+  font-size: 2em;
+  padding-left: 0.1em;
 }
 
 #location {
-  font-size: 2.5em;
   opacity: 0.9;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
+  margin: 0 0 10px 0;
+}
+
+.temp-p {
+  margin-top: auto;
+  position: relative;
+  top: 10px;
 }
 
 #temp {
-  font-size: 3.5em;
-  letter-spacing: .1em;
+  font-size: 3em;
 }
 
-.unit {
-  font-size: 2.3em;
-}
-
-#day-and-time {
-  font-size: 2em;
-  opacity: 0.8;
+#time {
   letter-spacing: .1em;
 }
 
 #summary {
-  font-size: 2.2em;
+  font-size: 1.3em;
   opacity: 0.9;
   letter-spacing: .1em;
 }
 
 footer {
-  margin-top: -10px;
+  margin-top: -50px;
   margin-left: 10px;
+}
+
+/* Day and night */
+.day {
+  background: #b3e5fc;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #e6ffff, #b3e5fc);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #e6ffff, #b3e5fc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.night {
+  background: #455a64;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #1c313a, #455a64);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #1c313a, #455a64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dawn {
+  background: #F3904F;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3B4371, #F3904F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sunset {
+  background: #355C7D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @media screen and (max-width: 375px) {
   body {
-    font-size: 1.2em;
+    font-size: .8em;
   }
 }
