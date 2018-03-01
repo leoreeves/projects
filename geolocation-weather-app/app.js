@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('body').hide().fadeIn(4000);
+  $('body').hide().fadeIn(5000);
   // Begin Function getLocation
   function getLocation() {
     if (navigator.geolocation) {
@@ -137,15 +137,15 @@ $(document).ready(() => {
     const hours = now.getHours();
     const minutes = now.getMinutes();
 
-    $(document).ajaxStop(() => {
-      document.getElementById('time').innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
-    });
-
-    console.log('1');
+    document.getElementById('time').innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
   }
 
-  getTime();
-  getLocation();
+  function updatePage() {
+    getTime();
+    getLocation();
+  }
 
-  setInterval()
+  updatePage();
+  // update page every minute
+  setInterval(() => updatePage(), 60000);
 });
