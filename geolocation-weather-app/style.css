@@ -9,6 +9,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: center;

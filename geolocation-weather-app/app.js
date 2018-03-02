@@ -1,6 +1,5 @@
 $(document).ready(() => {
-  $('body').hide().fadeIn(5000);
-  // Begin Function getLocation
+  $('body').fadeIn(5000);
   function getLocation() {
     if (navigator.geolocation) {
       // timeout at 60000 milliseconds (60 seconds)
@@ -98,6 +97,7 @@ $(document).ready(() => {
       setPlace();
       setBackground();
       getForecast();
+      getTime();
     }
 
     function errorMessage(message) {
@@ -108,12 +108,13 @@ $(document).ready(() => {
 
     function errorHandler(err) {
       if (err.code === 1) {
+        alert('Error: Position is unavailable!');
+        $('#error-message').addClass('animated fadeIn');
+        errorMessage('Enable geolocation to load weather');
+      } else if (err.code === 2) {
         alert('Error: Make sure to use HTTPS when loading this page. Essential resources depend on this.');
         $('#error-message').addClass('animated fadeIn');
         errorMessage('Unable to load weather over HTTP.');
-      } else if (err.code === 2) {
-        alert('Error: Position is unavailable!');
-        errorMessage('Enable geolocation to load weather');
       }
     }
   }
@@ -141,7 +142,6 @@ $(document).ready(() => {
   }
 
   function updatePage() {
-    getTime();
     getLocation();
   }
 
