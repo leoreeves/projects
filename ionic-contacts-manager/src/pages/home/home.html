@@ -2,12 +2,12 @@
   <ion-navbar color="primary">
     <ion-grid>
       <ion-row>
-        <ion-col class="title-col" col-4>
-          <ion-title item-left>
+        <ion-col class="title-col" col-3>
+          <ion-title>
             Contacts
           </ion-title>
         </ion-col>
-        <ion-col col-sm-4>
+        <ion-col col-sm-4 offset-1>
           <ion-searchbar item-end (ionInput)="filterContacts($event)"></ion-searchbar>
         </ion-col>
       </ion-row>
