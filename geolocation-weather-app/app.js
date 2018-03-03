@@ -32,10 +32,10 @@ $(document).ready(() => {
         $.getJSON(sunsetSunriseURL, (json) => {
           const today = new Date();
           const hour = today.getHours();
-          let sunrise = new Date(json.results.sunrise);
-          let sunset = new Date(json.results.sunset);
-          let twilightBegin = new Date(json.results.civil_twilight_begin);
-          let twilightEnd = new Date(json.results.civil_twilight_end);
+          const sunrise = new Date(json.results.sunrise);
+          const sunset = new Date(json.results.sunset);
+          const twilightBegin = new Date(json.results.civil_twilight_begin);
+          const twilightEnd = new Date(json.results.civil_twilight_end);
 
           let times = [sunrise, sunset, twilightBegin, twilightEnd];
           times = times.map(time => time = time.getUTCHours());
