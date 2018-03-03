@@ -137,4 +137,8 @@ content {
   .change-timer-button {
     margin-top: 25px;
   }
+
+  h1 {
+    font-size: 1.85em;
+  }
 }
