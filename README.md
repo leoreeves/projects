@@ -97,6 +97,16 @@ Built using:
 - CSS
 - JavaScript
 
+# [Ionic Contacts Manager](https://manage-contact-app.herokuapp.com/)
+
+A contacts manager that allows users to create, edit and view contacts.
+
+Built using:
+
+- HTML
+- Sass
+- Ionic
+
 ## [Issue Tracker](https://leoreeves.github.io/projects/issue-tracker/)
 
 A small tracker app that allows a user to track issues which are then saved to their browser's local storage.
