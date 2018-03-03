@@ -5,6 +5,12 @@ page-home {
 
     ion-title {
       letter-spacing: 0.03em;
+      position: relative;
+      left: 8px;
+    }
+
+    .toolbar-title {
+      overflow: inherit;
     }
   }
 
