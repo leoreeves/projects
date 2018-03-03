@@ -16,6 +16,7 @@ export class ManageContactModalPage {
   contactData: any;
   name: string;
   existingContact: boolean = false;
+  invalidForm: boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -41,6 +42,9 @@ export class ManageContactModalPage {
       } else {
         this.viewCtrl.dismiss(this.contactForm.value);
       }
+    } else {
+      this.invalidForm = true;
+      setTimeout(() => this.invalidForm = false, 2000);
     }
   }
 
