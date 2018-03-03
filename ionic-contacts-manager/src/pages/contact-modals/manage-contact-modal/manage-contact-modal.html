@@ -11,6 +11,7 @@
         <ion-icon item-start name="contact"></ion-icon>
         <ion-input item-end formControlName="name" type="text" required></ion-input>
       </ion-item>
+      <p ion-text class="error-message" *ngIf="invalidForm" color="danger">Name is required</p>
       <ion-item>
         <ion-icon item-start name="mail"></ion-icon>
         <ion-input item-end formControlName="email" type="email"></ion-input>
