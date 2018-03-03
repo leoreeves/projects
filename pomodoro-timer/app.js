@@ -3,7 +3,7 @@ const startButton = document.querySelector('.start-button');
 const stopButton = document.querySelector('.stop-button');
 const resetButton = document.querySelector('.reset-button');
 const customMinutes = document.querySelector('.custom-minutes');
-const changePomodoro = document.querySelector('.change-pomodoro');
+const changePomodoro = document.querySelector('.change-timer-button');
 const timerVar = setInterval(countTimer, 1000);
 let totalSeconds = 1500;
 let counting = false;
@@ -12,7 +12,7 @@ let counting = false;
 // http://stackoverflow.com/questions/2271156/chrome-desktop-notification-example
 document.addEventListener('DOMContentLoaded', function () {
   if (!Notification) {
-    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    alert('Desktop notifications not available in your browser. Try Chromium.');
     return;
   }
   if (Notification.permission !== "granted")
@@ -80,7 +80,7 @@ function countTimer() {
     hour = Math.floor(totalSeconds / 3600);
     minute = Math.floor((totalSeconds - hour * 3600) / 60);
     seconds = totalSeconds - (hour * 3600 + minute * 60);
-    
+
     if (totalSeconds < 3600) {
       timer.innerHTML = `${minute < 10 ? '0' : ''}${minute}:${seconds < 10 ? '0' : ''}${seconds}`;
     } else {
