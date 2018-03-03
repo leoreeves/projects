@@ -37,6 +37,10 @@ page-home {
     font-size: 1.2em;
   }
 
+  .toolbar-ios ion-title {
+    padding: inherit;
+  }
+
   @media screen and (max-width: 1250px) {
     .contact-phone-col {
       display: none;
