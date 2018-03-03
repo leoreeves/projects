@@ -2,8 +2,8 @@ const timer = document.querySelector('.timer');
 const startButton = document.querySelector('.start-button');
 const stopButton = document.querySelector('.stop-button');
 const resetButton = document.querySelector('.reset-button');
-const customMinutes = document.querySelector('.custom-minutes');
-const changePomodoro = document.querySelector('.change-timer-button');
+const changeTimerButton = document.querySelector('.change-timer-button');
+const customMinuteInput = document.querySelector('.custom-minute-input');
 const timerVar = setInterval(countTimer, 1000);
 let totalSeconds = 1500;
 let counting = false;
@@ -15,18 +15,21 @@ document.addEventListener('DOMContentLoaded', function () {
     alert('Desktop notifications not available in your browser. Try Chromium.');
     return;
   }
-  if (Notification.permission !== "granted")
+  if (Notification.permission !== "granted") {
     Notification.requestPermission();
+  }
 });
 
-function notifyMe() {
-  if (Notification.permission !== "granted")
+function notifyUser() {
+  if (Notification.permission !== "granted") {
     Notification.requestPermission();
-  else {
-    const notification = new Notification('Notification title', {
-      icon: 'http://www.iconsdb.com/icons/preview/soylent-red/tomato-xxl.png',
+  } else {
+    const notification = new Notification('Timer finished', {
+      icon: './img/tomato.png',
       body: "Timer finished!",
     });
+
+    setTimeout(() => notification.close(), 5000);
   }
 }
 
@@ -39,21 +42,21 @@ startButton.addEventListener('click', () => {
 stopButton.addEventListener('click', () => {
   if (counting === true) {
     counting = false;
-  } else {
-    counting = true;
   }
 });
 
 
 resetButton.addEventListener('click', () => {
-  counting = false;
-  if (customMinutes.value > 0) {
-    totalSeconds = customMinutes.value * 60
+  if (customMinuteInput.value > 0) {
+    totalSeconds = customMinuteInput.value * 60;
   } else {
     totalSeconds = 1500;
   }
+
+  counting = false;
   hour = Math.floor(totalSeconds / 3600);
   minute = Math.floor((totalSeconds - hour * 3600) / 60);
+
   if (totalSeconds < 3600) {
     timer.innerHTML = `${minute < 10 ? '0' : ''}${minute}:00`;
   } else {
@@ -61,12 +64,13 @@ resetButton.addEventListener('click', () => {
   }
 });
 
-changePomodoro.addEventListener('click', () => {
+changeTimerButton.addEventListener('click', () => {
   counting = false;
   startButton.innerHTML = 'Start';
-  totalSeconds = customMinutes.value * 60;
+  totalSeconds = customMinuteInput.value * 60;
   hour = Math.floor(totalSeconds / 3600);
   minute = Math.floor((totalSeconds - hour * 3600) / 60);
+
   if (totalSeconds < 3600) {
     timer.innerHTML = `${minute < 10 ? '0' : ''}${minute}:00`;
   } else {
@@ -86,10 +90,11 @@ function countTimer() {
     } else {
       timer.innerHTML = `${hour < 10 ? '0' : ''}${hour}:${minute < 10 ? '0' : ''}${minute}:${seconds < 10 ? '0' : ''}${seconds}`;
     }
+
     if (totalSeconds === 0) {
       counting = false;
       startButton.innerHTML = 'Start';
-      notifyMe();
+      notifyUser();
     }
   }
 }

@@ -22,7 +22,7 @@ h1 {
   font-weight: 300;
 }
 
-input {
+.custom-minute-input {
   font-family: 'Open Sans', sans-serif;
   width: 240px;
   font-size: 1.05em;
@@ -54,6 +54,7 @@ content {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .timer {
@@ -88,13 +89,16 @@ content {
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1),
+              0 3px 6px rgba(0,0,0,.08);
+}
+
+.btn-focus {
   box-shadow: 0 7px 14px rgba(50,50,93,.1),
               0 3px 6px rgba(0,0,0,.08);
 }
 
 .btn:active {
-  transform: translateY(1px);
   box-shadow: 0 4px 6px rgba(50,50,93,.11),
               0 1px 3px rgba(0,0,0,.08);
 }
@@ -103,11 +107,34 @@ content {
   background-color: #00c652;
 }
 
+.start-button:hover,
+.start-button:focus {
+  background-color: #00b14a;
+}
+
 .stop-button {
   background-color: #F44336;
+}
+
+.stop-button:hover,
+.stop-button:focus {
+  background-color: #df3e33;
 }
 
 .change-timer-button,
 .reset-button {
   background-color: #757575;
+}
+
+.change-timer-button:hover,
+.change-timer-button:focus,
+.reset-button:hover,
+.reset-button:focus {
+  background-color: #636363;
+}
+
+@media screen and (max-width: 484px) {
+  .change-timer-button {
+    margin-top: 25px;
+  }
 }
