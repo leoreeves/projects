@@ -42,6 +42,8 @@ body {
 }
 
 .button--copy-to-clipboard {
+	font-size: 1em;
+	font-family: 'Quicksand', sans-serif;
 	height: 35px;
 	letter-spacing: .025em;
 	cursor: pointer;
@@ -54,8 +56,6 @@ body {
 	box-shadow: 0 4px 6px rgba(50,50,93,.11),
 							0 1px 3px rgba(0,0,0,.08);
 	outline: none;
-	font-size: 1em;
-	font-family: 'Quicksand', sans-serif;
 	font-weight: 500;
 	color: #333;
 	-webkit-user-select: none;
@@ -69,20 +69,17 @@ body {
 	font-weight: 600;
 }
 
-.button--copy-to-clipboard:hover {
+.button--copy-to-clipboard:hover,
+.button--copy-to-clipboard:focus, {
 	box-shadow: 0 7px 14px rgba(50,50,93,.1),
 							0 3px 6px rgba(0,0,0,.08);
-	background-color: #eee;
-	border-color: #eee;
 	transform: translateY(-1px);
 }
 
 .button--copy-to-clipboard:active {
 	box-shadow: 0 4px 6px rgba(50,50,93,.11),
 							0 1px 3px rgba(0,0,0,.08);
-	background-color: #eee;
-	border-color: #eee;
-	transform: translateY(-1px);
+	transform: translateY(1px);
 }
 
 .container--success-message {
