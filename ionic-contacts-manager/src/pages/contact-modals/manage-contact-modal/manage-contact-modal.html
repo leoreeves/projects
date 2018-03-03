@@ -9,7 +9,7 @@
     <ion-list>
       <ion-item>
         <ion-icon item-start name="contact"></ion-icon>
-        <ion-input item-end formControlName="name" type="text" required></ion-input>
+        <ion-input item-end formControlName="name" type="text" autofocus required></ion-input>
       </ion-item>
       <p ion-text class="error-message" *ngIf="invalidForm" color="danger">Name is required</p>
       <ion-item>
@@ -32,6 +32,6 @@
 <ion-footer>
   <ion-buttons end padding-right>
     <button ion-button item-end clear (click)="closeModal()">Cancel</button>
-    <button ion-button item-end clear (click)="saveContact()">Save</button>
+    <button ion-button item-end clear [disabled]="!contactForm.valid" (click)="saveContact()">Save</button>
   </ion-buttons>
 </ion-footer>
