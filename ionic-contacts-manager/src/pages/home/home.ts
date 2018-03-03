@@ -50,7 +50,7 @@ export class HomePage {
   }
 
   sortContacts() {
-    this.contacts = this.contacts.sort((a, b) => a.name.localeCompare(b));
+    this.contacts = this.contacts.sort((a, b) => a.name.localeCompare(b.name));
   }
 
   openAddContactModal() {
@@ -88,8 +88,8 @@ export class HomePage {
   addContact(details) {
     if (details) {
       this.contacts.push(details);
-      this.setContactsData();
       this.sortContacts();
+      this.setContactsData();
     }
   }
 
