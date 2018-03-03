@@ -17,16 +17,28 @@
 
 <ion-content padding>
   <div class="empty-state" *ngIf="contacts.length === 0">
-    <p>No contacts right now</p>
+    <p class="empty-state-message">No contacts found</p>
   </div>
   <ion-list>
     <button class="contact-button" (click)="openViewContactModal(contact)" ion-item *ngFor="let contact of contacts">
-      {{ contact.name }}
-      <button ion-button (click)="openEditContactModal(contact); $event.stopPropagation()" clear item-end>
-        <ion-icon class="contact-tool-buttons" color="dark" name="create"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            {{ contact.name }}
+          </ion-col>
+          <ion-col class="contact-email-col" col-3>
+            {{ contact.email}}
+          </ion-col>
+          <ion-col class="contact-phone-col" col-3>
+            {{ contact.phone}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <button class="contact-tool-buttons" ion-button (click)="openEditContactModal(contact); $event.stopPropagation()" clear item-end>
+        <ion-icon color="dark" name="create"></ion-icon>
       </button>
-      <button ion-button (click)="deleteContact(contact); $event.stopPropagation()" clear item-end>
-        <ion-icon class="contact-tool-buttons" color="dark" name="trash"></ion-icon>
+      <button class="contact-tool-buttons" ion-button (click)="deleteContact(contact); $event.stopPropagation()" clear item-end>
+        <ion-icon color="dark" name="trash"></ion-icon>
       </button>
     </button>
   </ion-list>

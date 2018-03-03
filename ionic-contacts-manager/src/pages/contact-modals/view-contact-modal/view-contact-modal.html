@@ -2,14 +2,14 @@
   <ion-navbar>
     <ion-title>{{ contact?.name }} </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="editContact(contact)" clear>
-        <ion-icon class="modal-button-icons" name="create"></ion-icon>
+      <button class="modal-button-icons" ion-button (click)="editContact(contact)" clear>
+        <ion-icon name="create"></ion-icon>
       </button>
-      <button ion-button (click)="deleteContact(contact)" clear>
-        <ion-icon class="modal-button-icons" name="trash"></ion-icon>
+      <button class="modal-button-icons" ion-button (click)="deleteContact(contact)" clear>
+        <ion-icon name="trash"></ion-icon>
       </button>
-      <button ion-button (click)="closeModal()" clear>
-        <ion-icon class="modal-button-icons" name="close"></ion-icon>
+      <button class="modal-button-icons" ion-button (click)="closeModal()" clear>
+        <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
