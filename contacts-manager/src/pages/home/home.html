@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Contacts
+    </ion-title>
+    <ion-searchbar (ionInput)="filterContacts($event)"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="empty-state" *ngIf="contacts.length === 0">
+    <p>No contacts right now</p>
+  </div>
+  <ion-list>
+    <button class="contact-button" (click)="openViewContactModal(contact)" ion-item *ngFor="let contact of contacts">
+      {{ contact.name }}
+      <button ion-button (click)="openEditContactModal(contact); $event.stopPropagation()" clear item-end>
+        <ion-icon class="contact-tool-buttons" color="dark" name="create"></ion-icon>
+      </button>
+      <button ion-button (click)="deleteContact(contact); $event.stopPropagation()" clear item-end>
+        <ion-icon class="contact-tool-buttons" color="dark" name="trash"></ion-icon>
+      </button>
+    </button>
+  </ion-list>
+  <ion-fab bottom right (click)="openAddContactModal()">
+    <button ion-fab color="danger">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ contact?.name }} </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="editContact(contact)" clear>
+        <ion-icon class="modal-button-icons" name="create"></ion-icon>
+      </button>
+      <button ion-button (click)="deleteContact(contact)" clear>
+        <ion-icon class="modal-button-icons" name="trash"></ion-icon>
+      </button>
+      <button ion-button (click)="closeModal()" clear>
+        <ion-icon class="modal-button-icons" name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Contact details</h1>
+  <ion-list>
+    <ion-item>
+      <ion-icon item-start name="mail"></ion-icon>
+      {{ contact?.email }}
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="call"></ion-icon>
+      {{ contact?.phone }}
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="pin"></ion-icon>
+      {{ contact?.address }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
