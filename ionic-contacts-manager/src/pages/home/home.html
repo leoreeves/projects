@@ -1,9 +1,17 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>
-      Contacts
-    </ion-title>
-    <ion-searchbar (ionInput)="filterContacts($event)"></ion-searchbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="title-col" col-4>
+          <ion-title item-left>
+            Contacts
+          </ion-title>
+        </ion-col>
+        <ion-col col-sm-4>
+          <ion-searchbar item-end (ionInput)="filterContacts($event)"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-navbar>
 </ion-header>
 

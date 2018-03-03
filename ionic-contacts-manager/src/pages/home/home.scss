@@ -1,4 +1,13 @@
 page-home {
+  .title-col {
+    display: flex;
+    justify-content: center;
+
+    ion-title {
+      letter-spacing: 0.03em;
+    }
+  }
+
   .contact-button {
     transition: ease all 0.05s;
 
