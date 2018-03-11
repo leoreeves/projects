@@ -21,7 +21,7 @@ A collection of personal projects.
 - [Text Editor](https://leoreeves.github.io/projects/text-editor/)
 - [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)
-- [Wikipedia Viewer](https://leoreeves.github.io/projects/wikipedia-viewer/)
+- [Wikipedia Search](https://leoreeves.github.io/projects/wikipedia-search/)
 
 ## [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
 
