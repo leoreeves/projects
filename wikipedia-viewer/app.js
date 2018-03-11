@@ -3,13 +3,17 @@ $(document).ready(() => {
   const input = $('input');
   const button = $('button');
   const searchUrl = 'https://en.wikipedia.org/w/api.php';
+  const borderColours = ['#F44336', '#E91E63', '#9C27B0', '#673AB7',
+    '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4',
+    '#009688', '#4CAF50', '#8BC34A', '#CDDC39',
+    '#FFEB3B', '#FFC107', '#FF9800', '#FF5722',
+    '#795548', '#9E9E9E', '#607D8B'];
+  let index = 0;
   let toSearch = '';
+
   input.focus();
-  $('.searchbar-close-icon').click(() => {
-    input.val('');
-    input.focus();
-  });
-  const ajaxArticleData = () => {
+
+  function getArticleData() {
     $.ajax({
       url: searchUrl,
       dataType: 'jsonp',
@@ -29,39 +33,95 @@ $(document).ready(() => {
         explaintext: true,
         exintro: true,
         // Parameters for pageimages
-        piprop: 'thumbnail',
-        pilimit: 'max',
-        pithumbsize: 200,
+        piprop: 'original',
+        width: '800',
+        // pilimit: 'max',
+        // pithumbsize: 200,
       },
       success(json) {
-        const pages = json.query.pages;
+        const { ...pages } = json.query.pages;
+
         $.map(pages, (page) => {
-          const pageElement = $(`<div class="card hoverable" onclick="location.href=http://en.wikipedia.org/wiki/${page.title}";><div class="card-content left-align"><a href="http://en.wikipedia.org/wiki/${page.title}"><span class="card-title">${page.title}</span><p>${page.extract}</p>`);
-          // Get the article image if it exists
-          if (page.thumbnail) pageElement.append($('<img>').attr('src', page.thumbnail.source));
-          articles.append(pageElement);
+          const pageTitle = page.title;
+          const underscoredTitle = pageTitle.split(' ').join('_');
+          const underScoredLink = `http://en.wikipedia.org/wiki/${underscoredTitle}`;
+          let cardImage = '<div class="card-image"></div>';
+
+          if (page.original) {
+            cardImage = `
+              <div class="card-image">
+                <img src="${page.original.source}" alt="${pageTitle}">
+              </div>
+            `;
+          } else {
+            cardImage = '';
+          }
+
+          const x = function () {
+            console.log('binding');
+            // articles.append(pageElement);
+          };
+
+          cardImage.load(x());
+
+          const pageElement = $(`
+            <div class="card hoverable" onclick="window.location.href='${underScoredLink}'">
+            ${cardImage}
+            <div class="card-content left-align">
+            <span class="card-title">${page.title}</span>
+            <p>${page.extract}</p>
+          `);
+
+            // articles.append(pageElement);
+        });
+
+
+        $('.card').each(function assignBorderColour() {
+          index = Math.floor(Math.random() * borderColours.length) + 1;
+          if (index < borderColours.length) {
+            index += 1;
+          }
+
+          if (index >= borderColours.length) {
+            index = 0;
+          }
+
+          $(this).css('border-left', `5px solid ${borderColours[index]}`);
         });
       },
+      error(xhr) {
+        Materialize.toast(`Request Status: ${xhr.status} Status Text: ${xhr.statusText} ${xhr.responseText}`, 2000);
+      },
     });
-  };
+  }
+
+  $('.searchbar-close-icon').click(() => {
+    input.val('');
+    input.focus();
+  });
+
   // Search on enter
   input.keyup((e) => {
     toSearch = input.val();
+
     if (e.keyCode === 13) {
       if (toSearch !== '') {
         articles.empty();
-        ajaxArticleData();
+        getArticleData();
         $('body').css('display', 'block');
       }
     }
   });
+
   // Search button
   button.click(() => {
     toSearch = input.val();
+
     if (toSearch !== '') {
       articles.empty();
-      ajaxArticleData();
+      getArticleData();
       $('body').css('display', 'block');
     }
   });
 });
+
