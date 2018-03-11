@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('body').fadeIn(5000);
+  $('body').fadeIn(8000);
   function getLocation() {
     if (navigator.geolocation) {
       // timeout at 60000 milliseconds (60 seconds)
