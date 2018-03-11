@@ -1,7 +1,7 @@
 $(document).ready(() => {
   const articles = $('.articles');
   const input = $('input');
-  const button = $('button');
+  const searchButton = $('#search-btn');
   const searchUrl = 'https://en.wikipedia.org/w/api.php';
   const borderColours = ['#F44336', '#E91E63', '#9C27B0', '#673AB7',
     '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4',
@@ -9,7 +9,7 @@ $(document).ready(() => {
     '#FFEB3B', '#FFC107', '#FF9800', '#FF5722',
     '#795548', '#9E9E9E', '#607D8B'];
   let index = 0;
-  let toSearch = '';
+  let searchInput = '';
 
   input.focus();
 
@@ -23,7 +23,7 @@ $(document).ready(() => {
         format: 'json',
         generator: 'search',
         // Parameters for generator
-        gsrsearch: toSearch,
+        gsrsearch: searchInput,
         gsrnamespace: 0,
         gsrlimit: 20,
         prop: 'extracts|pageimages',
@@ -34,7 +34,7 @@ $(document).ready(() => {
         exintro: true,
         // Parameters for pageimages
         piprop: 'thumbnail',
-        pithumbsize: 1000,
+        pithumbsize: 800,
       },
       success(json) {
         const { ...pages } = json.query.pages;
@@ -55,25 +55,15 @@ $(document).ready(() => {
             cardImage = '';
           }
 
-          const pageElement = $(`
+          const articleCard = $(`
             <div class="card hoverable" onclick="window.location.href='${underScoredLink}'">
             ${cardImage}
             <div class="card-content left-align">
-            <span class="card-title">${page.title}</span>
+            <span class="card-title">${pageTitle}</span>
             <p>${page.extract}</p>
           `);
 
-          // Lazy load images
-          const images = document.querySelectorAll('img[data-src]');
-
-          images.forEach((img) => {
-            img.setAttribute('src', img.getAttribute('data-src'));
-            img.onload = () => {
-              img.removeAttribute('data-src');
-            };
-          });
-
-          articles.append(pageElement);
+          articles.append(articleCard);
         });
 
         $('.card').each(function assignBorderColour() {
@@ -102,10 +92,10 @@ $(document).ready(() => {
 
   // Search on enter
   input.keyup((e) => {
-    toSearch = input.val();
+    searchInput = input.val().trim();
 
     if (e.keyCode === 13) {
-      if (toSearch !== '') {
+      if (searchInput !== '') {
         articles.empty();
         getArticleData();
         $('body').css('display', 'block');
@@ -113,11 +103,10 @@ $(document).ready(() => {
     }
   });
 
-  // Search button
-  button.click(() => {
-    toSearch = input.val();
+  searchButton.click(() => {
+    searchInput = input.val().trim();
 
-    if (toSearch !== '') {
+    if (searchInput !== '') {
       articles.empty();
       getArticleData();
       $('body').css('display', 'block');
