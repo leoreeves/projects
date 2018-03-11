@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  padding-bottom: 140px;
+  padding-bottom: 110px;
 }
 
 .logo {
@@ -74,12 +74,7 @@ img[data-src] {
 .card {
   margin-top: 20px;
   cursor: pointer;
-  /* border-left: 5px solid transparent; */
   border-left: 5px solid #7986cb;
-}
-
-
-.card:hover {
 }
 
 .card-content a {
@@ -96,10 +91,9 @@ img[data-src] {
   object-fit: cover;
 }
 
-
-@media screen and (max-width: 375px) {
-  .logo {
-    max-width: 100px;
+@media screen and (max-width: 545px) {
+  header {
+    padding-bottom: 40px;
   }
 
   h1 {
@@ -108,5 +102,34 @@ img[data-src] {
 
   main {
     margin-top: 40px;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  .btn-large {
+    margin-left: 0;
+    margin-right: 0;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+
+  #button-search-icon, #button-random-icon {
+    line-height: 32px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  header {
+    padding-bottom: 100px;
   }
 }
