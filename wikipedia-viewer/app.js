@@ -33,10 +33,8 @@ $(document).ready(() => {
         explaintext: true,
         exintro: true,
         // Parameters for pageimages
-        piprop: 'original',
-        width: '800',
-        // pilimit: 'max',
-        // pithumbsize: 200,
+        piprop: 'thumbnail',
+        pithumbsize: 1000,
       },
       success(json) {
         const { ...pages } = json.query.pages;
@@ -47,22 +45,15 @@ $(document).ready(() => {
           const underScoredLink = `http://en.wikipedia.org/wiki/${underscoredTitle}`;
           let cardImage = '<div class="card-image"></div>';
 
-          if (page.original) {
+          if (page.thumbnail) {
             cardImage = `
               <div class="card-image">
-                <img src="${page.original.source}" alt="${pageTitle}">
+                <img src="${page.thumbnail.source}" alt="${pageTitle}">
               </div>
             `;
           } else {
             cardImage = '';
           }
-
-          const x = function () {
-            console.log('binding');
-            // articles.append(pageElement);
-          };
-
-          cardImage.load(x());
 
           const pageElement = $(`
             <div class="card hoverable" onclick="window.location.href='${underScoredLink}'">
@@ -72,9 +63,18 @@ $(document).ready(() => {
             <p>${page.extract}</p>
           `);
 
-            // articles.append(pageElement);
-        });
+          // Lazy load images
+          const images = document.querySelectorAll('img[data-src]');
 
+          images.forEach((img) => {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.onload = () => {
+              img.removeAttribute('data-src');
+            };
+          });
+
+          articles.append(pageElement);
+        });
 
         $('.card').each(function assignBorderColour() {
           index = Math.floor(Math.random() * borderColours.length) + 1;
