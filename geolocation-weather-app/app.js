@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  $('body').fadeIn(8000);
   function getLocation() {
     if (navigator.geolocation) {
       // timeout at 60000 milliseconds (60 seconds)
@@ -80,6 +79,8 @@ $(document).ready(() => {
                 color: '#4fc3f7',
               });
             }
+
+            $('#loading').fadeOut();
           },
           error(xhr, ajaxOptions, thrownError) {
             $('.icon').css({
@@ -88,8 +89,9 @@ $(document).ready(() => {
             $('.weather').css({
               display: 'none',
             });
+            $('#loading').fadeOut();
             errorMessage('Oh No! Something went wrong with our weather app.</br>Please try again later');
-            console.log(`Error code ${xhr.status}`);
+            console.error(`Error code ${xhr.status}`);
           },
         });
       }
