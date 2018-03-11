@@ -1,33 +1,43 @@
-html {
-    height: 100%;
-    width: 100%;
-    display: table;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
-body {
-  display: table-cell;
+.valign-wrapper {
+  min-height: 100%;
+  justify-content: center;
   text-align: center;
-  vertical-align: middle;
-  background-color: #EEEEEE;
+  flex-direction: column;
+  background-color: #f3f3f3;
   color: #212121;
 }
 
 header {
-  padding-bottom: 140px;
+  padding-bottom: 120px;
+}
+
+.logo {
+  max-width: 120px;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 h1 {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-size: 3.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Libre Baskerville', serif;
 }
 
 nav {
   background-color: white;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
 }
 
 .buttons {
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 
@@ -48,17 +58,19 @@ nav {
   line-height: 55px;
 }
 
+.images-heading {
+  font-size: 1em;
+}
+
+.row {
+  margin-bottom: 6px;
+}
+
 /* Search result cards */
 .card {
   margin-top: 20px;
   cursor: pointer;
-  border-left: 10px solid;
-  border-color: transparent;
-}
-
-.card:hover {
-  border-left: 10px solid;
-  border-color: #7986cb;
+  border-left: 5px solid #7986cb;
 }
 
 .card-content a {
@@ -70,12 +82,51 @@ nav {
   padding-bottom: 20px;
 }
 
-img {
-  margin-bottom: 20px;
+.card .card-image img {
+  height: 200px;
+  object-fit: cover;
+  object-position: 100% 30%;
 }
 
-@media screen and (max-width: 451px) {
+@media screen and (max-width: 545px) {
   header {
-    padding-bottom: 220px;
+    padding-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  main {
+    margin-top: 40px;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  .btn-large {
+    margin-left: 0;
+    margin-right: 0;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+
+  #button-search-icon, #button-random-icon {
+    line-height: 32px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  header {
+    padding-bottom: 100px;
   }
 }
