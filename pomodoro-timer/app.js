@@ -10,23 +10,23 @@ let counting = false;
 
 // Desktop Notifications
 // http://stackoverflow.com/questions/2271156/chrome-desktop-notification-example
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.');
     return;
   }
-  if (Notification.permission !== "granted") {
+  if (Notification.permission !== 'granted') {
     Notification.requestPermission();
   }
 });
 
 function notifyUser() {
-  if (Notification.permission !== "granted") {
+  if (Notification.permission !== 'granted') {
     Notification.requestPermission();
   } else {
     const notification = new Notification('Timer finished', {
       icon: './img/tomato.png',
-      body: "Timer finished!",
+      body: 'Timer finished!',
     });
 
     setTimeout(() => notification.close(), 5000);
@@ -45,7 +45,6 @@ stopButton.addEventListener('click', () => {
   }
 });
 
-
 resetButton.addEventListener('click', () => {
   if (customMinuteInput.value > 0) {
     totalSeconds = customMinuteInput.value * 60;
@@ -54,8 +53,8 @@ resetButton.addEventListener('click', () => {
   }
 
   counting = false;
-  hour = Math.floor(totalSeconds / 3600);
-  minute = Math.floor((totalSeconds - hour * 3600) / 60);
+  const hour = Math.floor(totalSeconds / 3600);
+  const minute = Math.floor((totalSeconds - hour * 3600) / 60);
 
   if (totalSeconds < 3600) {
     timer.innerHTML = `${minute < 10 ? '0' : ''}${minute}:00`;
@@ -68,8 +67,8 @@ changeTimerButton.addEventListener('click', () => {
   counting = false;
   startButton.innerHTML = 'Start';
   totalSeconds = customMinuteInput.value * 60;
-  hour = Math.floor(totalSeconds / 3600);
-  minute = Math.floor((totalSeconds - hour * 3600) / 60);
+  const hour = Math.floor(totalSeconds / 3600);
+  const minute = Math.floor((totalSeconds - hour * 3600) / 60);
 
   if (totalSeconds < 3600) {
     timer.innerHTML = `${minute < 10 ? '0' : ''}${minute}:00`;
@@ -81,9 +80,9 @@ changeTimerButton.addEventListener('click', () => {
 function countTimer() {
   if (counting === true && totalSeconds > 0) {
     totalSeconds -= 1;
-    hour = Math.floor(totalSeconds / 3600);
-    minute = Math.floor((totalSeconds - hour * 3600) / 60);
-    seconds = totalSeconds - (hour * 3600 + minute * 60);
+    const hour = Math.floor(totalSeconds / 3600);
+    const minute = Math.floor((totalSeconds - hour * 3600) / 60);
+    const seconds = totalSeconds - (hour * 3600 + minute * 60);
 
     if (totalSeconds < 3600) {
       timer.innerHTML = `${minute < 10 ? '0' : ''}${minute}:${seconds < 10 ? '0' : ''}${seconds}`;
