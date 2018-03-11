@@ -1,8 +1,8 @@
-# [Wikipedia Viewer](https://leoreeves.github.io/projects/wikipedia-viewer/)
+# [Wikipedia Search](https://leoreeves.github.io/projects/wikipedia-search/)
 
-A Wikipedia viewer built for *Free Code Camp*, it returns search results in card format with an image (if available).
+A *Wikipedia* search built for *Free Code Camp*, it returns search results in card format with an image (if available).
 
-Built using: 
+Built using:
 
 - HTML
 - CSS

@@ -224,9 +224,9 @@ Built using:
 - JavaScript
 - Vue.js
 
-## [Wikipedia Viewer](https://leoreeves.github.io/projects/wikipedia-viewer/)
+## [Wikipedia Search](https://leoreeves.github.io/projects/wikipedia-search/)
 
-A *Wikipedia* viewer built for *freeCodeCamp*, it returns search results in card format with an image (if available).
+A *Wikipedia* search viewer built for *freeCodeCamp*, it returns search results in card format with an image (if available).
 
 Built using:
 
