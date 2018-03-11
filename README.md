@@ -18,8 +18,6 @@ A collection of personal projects.
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 - [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
-- [Text Editor](https://leoreeves.github.io/projects/text-editor/)
-- [To-do List](https://leoreeves.github.io/projects/to-do-list/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)
 - [Wikipedia Search](https://leoreeves.github.io/projects/wikipedia-search/)
 
@@ -193,25 +191,6 @@ Built using:
 - CSS
 - JavaScript
 
-## [Text Editor](https://leoreeves.github.io/projects/text-editor/)
-
-Minimal in-browser text editor with autosave that allows you to save to a HTML file.
-
-Built using:
-
-- HTML
-- CSS
-- JavaScript
-
-## [To-do List](https://leoreeves.github.io/projects/to-do-list/)
-
-Minimal to-do list.
-
-Built using:
-
-- HTML
-- CSS
-- JavaScript
 
 ## [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)
 
