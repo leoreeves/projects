@@ -76,12 +76,6 @@ label:hover {
   cursor: pointer;
 }
 
-label:focus {
-  background-color: blue;
-  /* cursor: pointer; */
-}
-
-
 .currency {
   font-size: 1.1em;
 }
@@ -244,5 +238,6 @@ a:visited {
 
   .toast-message {
     width: 100%;
+    border-radius: 0;
   }
 }
