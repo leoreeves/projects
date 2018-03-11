@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  padding-bottom: 110px;
+  padding-bottom: 120px;
 }
 
 .logo {
@@ -37,6 +37,7 @@ nav {
 }
 
 .buttons {
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 
@@ -61,13 +62,8 @@ nav {
   font-size: 1em;
 }
 
-img {
-  opacity: 1;
-  transition: opacity 5s;
-}
-
-img[data-src] {
-  opacity: 0;
+.row {
+  margin-bottom: 6px;
 }
 
 /* Search result cards */
@@ -89,6 +85,7 @@ img[data-src] {
 .card .card-image img {
   height: 200px;
   object-fit: cover;
+  object-position: 100% 30%;
 }
 
 @media screen and (max-width: 545px) {
@@ -97,7 +94,7 @@ img[data-src] {
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 1.7em;
   }
 
   main {
