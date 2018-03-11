@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   overflow: hidden;
+  color: #252525;
 }
 
 body {
@@ -12,23 +13,38 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  font-size: 1.1em;
+  background: #3a7bd5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3b8db6, #3a7bd5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3b8db6, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 h1 {
   font-size: 1.7em;
+  font-family: 'Karma', serif;
+  margin: 0;
 }
 
-.equals {
-  font-weight: bold;
-  font-size: 1.2em;
+.container {
+  max-width: 520px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  padding: 32px 16px;
+}
+
+.card {
+  padding: 16px;
 }
 
 input {
-  font-size: 1em;
+  font-size: 1.1em;
   margin: 5px 10px 10px 10px;
+  padding: 2px;
   text-align: center;
-  border-radius: 5px;
-  border: 3px solid #9E9E9E;
+  border-radius: 4px;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
   outline: none;
 }
 

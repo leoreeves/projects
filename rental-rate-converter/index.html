@@ -4,19 +4,23 @@
     <title>Per Week/Month Rent Caclulator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karma|Open+Sans" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Convert between weekly rate and monthly rate</h1>
-    <div>
-      <label for="week">Per Week</label>
-      <input class="per-week" id="week" type="number" min="1" placeholder="Enter an amount">
-      <br>
-      <label for="month">Per Month</label>
-      <input class="per-month" id="month" type="number" min="1" placeholder="Enter an amount">
+    <div class="container">
+      <div class="card">
+        <h1>Per Week/Month Rent Caclulator</h1>
+        <p>Convert between weekly and monthly rates.</p>
+        <div>
+          <label for="week">Per Week</label>
+          <input class="per-week" id="week" type="number" min="1" placeholder="Enter an amount">
+          <br>
+          <label for="month">Per Month</label>
+          <input class="per-month" id="month" type="number" min="1" placeholder="Enter an amount">
+        </div>
+      </div>
     </div>
-    <p>Enter your rental rate in the appropriate box above to convert.</p>
     <script src="app.js"></script>
   </body>
 </html>
