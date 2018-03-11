@@ -15,6 +15,7 @@ A collection of personal projects.
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
+- [pomodoro-timer](https://leoreeves.github.io/projects/pomodoro-timer)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 - [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
@@ -160,6 +161,16 @@ Built using:
 - Bootstrap
 - Nunjucks
 - Gulp
+
+## [Pomodoro Timer](https://leoreeves.github.io/projects/pomodoro-timer/)
+
+A pomodoro timer built for *freeCodeCamp*.
+
+Built using:
+
+- HTML
+- CSS
+- JavaScript
 
 ## [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
