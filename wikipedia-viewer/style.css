@@ -57,6 +57,19 @@ nav {
   line-height: 55px;
 }
 
+.images-heading {
+  font-size: 1em;
+}
+
+img {
+  opacity: 1;
+  transition: opacity 5s;
+}
+
+img[data-src] {
+  opacity: 0;
+}
+
 /* Search result cards */
 .card {
   margin-top: 20px;
