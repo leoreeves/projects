@@ -22,13 +22,13 @@ body {
 	font-family: 'Quicksand', sans-serif;
 }
 
-.header--instruction,
-.container--hex-colour-code {
+.container__instruction-header,
+.container__hex-colour-header {
 	opacity: 0.8;
 	font-size: 2em;
 }
 
-.header--instruction {
+.container__instruction-header {
 	font-weight: 300;
 	margin-bottom: 30px;
 	-webkit-user-select: none;
@@ -37,11 +37,11 @@ body {
 	user-select: none;
 }
 
-.container--hex-colour-code {
+.container__hex-colour-header {
 	margin-bottom: 30px;
 }
 
-.button--copy-to-clipboard {
+.container__copy-to-clipboard-button {
 	font-size: 1em;
 	font-family: 'Quicksand', sans-serif;
 	height: 35px;
@@ -69,20 +69,20 @@ body {
 	font-weight: 600;
 }
 
-.button--copy-to-clipboard:hover,
-.button--copy-to-clipboard:focus, {
+.container__copy-to-clipboard-button:hover,
+.container__copy-to-clipboard-button:focus, {
 	box-shadow: 0 7px 14px rgba(50,50,93,.1),
 							0 3px 6px rgba(0,0,0,.08);
 	transform: translateY(-1px);
 }
 
-.button--copy-to-clipboard:active {
+.container__copy-to-clipboard-button:active {
 	box-shadow: 0 4px 6px rgba(50,50,93,.11),
 							0 1px 3px rgba(0,0,0,.08);
 	transform: translateY(1px);
 }
 
-.container--success-message {
+.container__success-message {
 	margin-top: 30px;
 	display: none;
 	position: fixed;
@@ -93,15 +93,15 @@ body {
 }
 
 @-webkit-keyframes fadeout {
-	0% {opacity:1;}
-	100% {opacity:0;}
+	0% { opacity:1; }
+	100% { opacity:0; }
 }
 @keyframes fadeout {
-	0% {opacity:1;}
-	100% {opacity:0;}
+	0% { opacity:1; }
+	100% { opacity:0; }
 }
 
-.fade-out {
+.container__success-message--fade-out {
 	opacity: 0;
 	-moz-animation   : fadeout 1.5s linear;
 	-webkit-animation: fadeout 1.5s linear;
