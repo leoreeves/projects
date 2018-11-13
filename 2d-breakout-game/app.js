@@ -1,7 +1,7 @@
 const canvas = document.querySelector('#my-canvas');
 const ctx = canvas.getContext('2d');
 const pauseButton = document.querySelector('button');
-let pause = false;
+let paused = false;
 let x = canvas.width / 2;
 let y = canvas.height - 30;
 let dx = 2;
@@ -19,9 +19,9 @@ const brickHeight = 20;
 const brickPadding = 10;
 const brickOffsetTop = 40;
 const brickOffsetLeft = 30;
+const bricks = [];
 let score = 0;
 let lives = 3;
-const bricks = [];
 
 for (let c = 0; c < brickColumnCount; c += 1) {
   bricks[c] = [];
@@ -72,9 +72,6 @@ function keyUpHandler(e) {
   }
 }
 
-document.addEventListener('keydown', keyDownHandler, false);
-document.addEventListener('keyup', keyUpHandler, false);
-
 function collisionDetection() {
   for (let c = 0; c < brickColumnCount; c += 1) {
     for (let r = 0; r < brickRowCount; r += 1) {
@@ -85,7 +82,7 @@ function collisionDetection() {
           b.status = 0;
           score += 1;
           if (score === brickRowCount * brickColumnCount) {
-            alert('YOU WIN, CONGRATULATIONS!');
+            alert('You Win, Congratulations!');
             document.location.reload();
           }
         }
@@ -115,7 +112,7 @@ function drawPaddle() {
 }
 
 function draw() {
-  if (!pause) {
+  if (!paused) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
     drawBall();
@@ -134,7 +131,7 @@ function draw() {
       } else {
         lives -= 1;
         if (!lives) {
-          alert('GAME OVER');
+          alert('Game Over');
           document.location.reload();
         } else {
           x = canvas.width / 2;
@@ -155,19 +152,24 @@ function draw() {
     requestAnimationFrame(draw);
   }
 }
+
 draw();
 
 function pauseGame() {
-  if (!pause) {
-    pause = true;
+  if (!paused) {
+    paused = true;
   } else {
-    pause = false;
+    paused = false;
     draw();
   }
 }
 
+document.addEventListener('keydown', keyDownHandler, false);
+document.addEventListener('keyup', keyUpHandler, false);
+
+// pause game on spacebar press
 document.body.onkeydown = (e) => {
-  if (e.keyCode == 32){
+  if (e.keyCode === 32) {
     pauseGame();
   }
-}
+};
