@@ -4,7 +4,6 @@ const stopButton = document.querySelector('.stop-button');
 const resetButton = document.querySelector('.reset-button');
 const changeTimerButton = document.querySelector('.change-timer-button');
 const customMinuteInput = document.querySelector('.custom-minute-input');
-const timerVar = setInterval(countTimer, 1000);
 let totalSeconds = 1500;
 let counting = false;
 
@@ -29,23 +28,23 @@ function notifyUser() {
       body: 'Timer finished!',
     });
 
-    setTimeout(() => notification.close(), 5000);
+    setTimeout(() => notification.close(), 4000);
   }
 }
 
-startButton.addEventListener('click', () => {
+function startTimer() {
   if (counting === false && totalSeconds > 0) {
     counting = true;
   }
-});
+}
 
-stopButton.addEventListener('click', () => {
+function stopTimer() {
   if (counting === true) {
     counting = false;
   }
-});
+}
 
-resetButton.addEventListener('click', () => {
+function resetTimer() {
   if (customMinuteInput.value > 0) {
     totalSeconds = customMinuteInput.value * 60;
   } else {
@@ -61,9 +60,9 @@ resetButton.addEventListener('click', () => {
   } else {
     timer.innerHTML = `${hour < 10 ? '0' : ''}${hour}:${minute < 10 ? '0' : ''}${minute}:00`;
   }
-});
+}
 
-changeTimerButton.addEventListener('click', () => {
+function changeTimer() {
   counting = false;
   startButton.innerHTML = 'Start';
   totalSeconds = customMinuteInput.value * 60;
@@ -75,7 +74,7 @@ changeTimerButton.addEventListener('click', () => {
   } else {
     timer.innerHTML = `${hour < 10 ? '0' : ''}${hour}:${minute < 10 ? '0' : ''}${minute}:00`;
   }
-});
+}
 
 function countTimer() {
   if (counting === true && totalSeconds > 0) {
@@ -97,3 +96,21 @@ function countTimer() {
     }
   }
 }
+
+setInterval(countTimer, 1000);
+
+startButton.addEventListener('click', () => {
+  startTimer();
+});
+
+stopButton.addEventListener('click', () => {
+  stopTimer();
+});
+
+resetButton.addEventListener('click', () => {
+  resetTimer();
+});
+
+changeTimerButton.addEventListener('click', () => {
+  changeTimer();
+});
