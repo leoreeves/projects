@@ -89,7 +89,7 @@ const update = function update(modifier) {
     && monster.x <= (hero.x + 32)
     && hero.y <= (monster.y + 32)
     && monster.y <= (hero.y + 32)
-    ) {
+  ) {
     monstersCaught += 1;
     reset();
   }

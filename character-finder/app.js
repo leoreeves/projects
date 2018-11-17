@@ -20,7 +20,7 @@ const characterFinder = new Vue({
       }
     },
     showCopyMessage() {
-      if (this.textInput != '') {
+      if (this.textInput !== '') {
         this.show = true;
         setTimeout(() => {
           this.show = false;
