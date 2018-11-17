@@ -3,11 +3,11 @@ function typeWriter(selector, type, interval) {
   document.addEventListener('DOMContentLoad', typeWriter, false);
   // Getting elements in the DOM
   const el = document.querySelectorAll(selector);
-  let i = 0;
   // Length of element on the page
   const len = el.length;
   // List of elements on the page in the DOM
   const list = [];
+  let typingInterval = interval;
   let a;
   let all;
   let text;
@@ -16,7 +16,7 @@ function typeWriter(selector, type, interval) {
   let style;
   let clear;
 
-  for (; i < len; i += 1) {
+  for (let i = 0; i < len; i += 1) {
     // Pushing the element in the list array
     list.push(el[i]);
   }
@@ -24,7 +24,8 @@ function typeWriter(selector, type, interval) {
   for (a = 0; a < list.length; a += 1) {
     all = list[a];
     // List of all element
-    text = all.innerHTML += "<span id='cursor'>|</span>";
+    text = all.innerHTML;
+    text += "<span id='cursor'>|</span>";
     // InnerHTML of the elements
     start = 0;
     // Start index of the text in the elements
@@ -33,13 +34,12 @@ function typeWriter(selector, type, interval) {
     style = document.createElement('style');
     document.head.appendChild(style);
 
-
     // Setting the default interval to 100 when interval is not set by the user
-    if (typeof interval === 'undefined') {
-      interval = 100;
+    if (!interval) {
+      typingInterval = 100;
     }
 
-    if (arguments[1] === 'true') {
+    if (type) {
       clear = setInterval(() => { // Animation start
         let newText = text.substr(start, end);
         all.innerHTML = newText += "<span id='cursor'>|</span>";
@@ -56,7 +56,7 @@ function typeWriter(selector, type, interval) {
         if (newText === text) {
           clearInterval(clear); // Animation end
         }
-      }, interval);
+      }, typingInterval);
     }
   }
   return all;
