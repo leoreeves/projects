@@ -101,7 +101,6 @@ $(document).ready(() => {
     $('body').css('display', 'block');
   }
 
-
   $('.searchbar-close-icon').click(() => {
     input.val('');
     input.focus();
