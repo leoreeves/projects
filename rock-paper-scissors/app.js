@@ -1,14 +1,11 @@
-const playButton = document.querySelector('.play');
-const countdown = document.querySelector('.countdown');
 const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
-const choiceButtons = [rockButton, paperButton, scissorsButton];
 const userScoreSpan = document.querySelector('.user-score');
 const cpuScoreSpan = document.querySelector('.cpu-score');
-const userChoiceSpan = document.querySelector('.user-choice');
 const cpuChoiceSpan = document.querySelector('.cpu-choice');
 const result = document.querySelector('.result');
+const choiceButtons = [rockButton, paperButton, scissorsButton];
 const cpuWin = 'CPU wins';
 const userWin = 'You win';
 let userScore = 0;
@@ -25,26 +22,26 @@ choiceButtons.forEach(e => e.addEventListener('click', () => {
     result.innerHTML = 'Draw';
   } else if (cpuChoice === 'rock') {
     if (userChoice === 'scissors') {
-      cpuScore++;
+      cpuScore += 1;
       result.innerHTML = cpuWin;
     } else if (userChoice === 'paper') {
-      userScore++;
+      userScore += 1;
       result.innerHTML = userWin;
     }
   } else if (cpuChoice === 'paper') {
     if (userChoice === 'rock') {
-      cpuScore++;
+      cpuScore += 1;
       result.innerHTML = cpuWin;
     } else if (userChoice === 'scissors') {
-      userScore++;
+      userScore += 1;
       result.innerHTML = userWin;
     }
   } else if (cpuChoice === 'scissors') {
     if (userChoice === 'paper') {
-      cpuScore++;
+      cpuScore += 1;
       result.innerHTML = cpuWin;
     } else if (userChoice === 'rock') {
-      userScore++;
+      userScore += 1;
       result.innerHTML = userWin;
     }
   }
