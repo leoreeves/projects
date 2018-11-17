@@ -13,11 +13,11 @@ body {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .cpu-choice {
-  font-size: 1.2em;
+  font-size: 2em;
 }
 
 .rock,
@@ -38,6 +38,6 @@ p {
 
 .result {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 4em;
   margin: 0;
 }
