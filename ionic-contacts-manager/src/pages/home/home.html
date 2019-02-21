@@ -37,7 +37,7 @@
       <button class="contact-tool-buttons" ion-button (click)="openManageContactModal('Edit', contact); $event.stopPropagation()" clear item-end>
         <ion-icon color="dark" name="create"></ion-icon>
       </button>
-      <button class="contact-tool-buttons" ion-button (click)="deleteContact(contact); $event.stopPropagation()" clear item-end>
+      <button class="contact-tool-buttons" ion-button (click)="presentDeleteAlert(contact); $event.stopPropagation()" clear item-end>
         <ion-icon color="dark" name="trash"></ion-icon>
       </button>
     </button>

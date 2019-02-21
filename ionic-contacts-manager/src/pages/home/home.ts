@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, ToastController } from 'ionic-angular';
+import { AlertController, ModalController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { Contact } from '../../models/contact';
@@ -12,6 +12,7 @@ export class HomePage implements OnInit {
   contacts: Contact[] = [];
 
   constructor(
+    private alertCtrl: AlertController,
     private modalCtrl: ModalController,
     private storage: Storage,
     private toastCtrl: ToastController,
@@ -95,12 +96,30 @@ export class HomePage implements OnInit {
     viewContactModal.onDidDismiss((data) => {
       if (data) {
         if (data.method === 'delete') {
-          this.deleteContact(data.contact);
+          this.presentDeleteAlert(data.contact);
         } else if (data.method === 'edit') {
           this.openManageContactModal(data.contact);
         }
       }
     })
+  }
+
+  presentDeleteAlert(contact: Contact): Promise<any> {
+    const prompt = this.alertCtrl.create({
+      title: 'Delete this contact?',
+      buttons: [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.deleteContact(contact);
+          }
+        }
+      ]
+    });
+    return prompt.present();
   }
 
   async addContact(contact: Contact, existingContact: boolean) {
