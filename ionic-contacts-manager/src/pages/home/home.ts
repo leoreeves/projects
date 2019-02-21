@@ -81,11 +81,13 @@ export class HomePage implements OnInit {
     const openManageContactModal = this.modalCtrl.create('manage-contact-modal', { modalType, contactData });
     openManageContactModal.present();
     openManageContactModal.onDidDismiss((data) => {
-      if (data.updatedContactData) {
-        this.updateContact(data.originalContactData, data.updatedContactData);
-      }
-      if (data.newContactData) {
-        this.addContact(data.newContactData, false);
+      if (data) {
+        if (data.updatedContactData) {
+          this.updateContact(data.originalContactData, data.updatedContactData);
+        }
+        if (data.newContactData) {
+          this.addContact(data.newContactData, false);
+        }
       }
     });
   }
