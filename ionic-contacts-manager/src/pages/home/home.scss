@@ -47,11 +47,26 @@ page-home {
     justify-content: center;
     align-items: center;
     height: 100%;
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ececec;
+      border-radius: 100%;
+      width: 100px;
+      height: 100px;
+    }
+
+    .book-icon {
+      font-size: 6em;
+    }
+
+    .empty-state-message {
+      font-size: 1.2em;
+    }
   }
 
-  .empty-state-message {
-    font-size: 1.2em;
-  }
 
   .toolbar-ios ion-title {
     padding: inherit;
