@@ -76,22 +76,15 @@ export class HomePage implements OnInit {
       )
   }
 
-  openAddContactModal() {
-    const addContactModal = this.modalCtrl.create('manage-contact-modal', { modalType: 'Add', contactData: '' });
-    addContactModal.present();
-    addContactModal.onDidDismiss(data => {
-      if (data) {
-        this.addContact(data);
-      }
-    });
-  }
-
-  openManageContactModal(contact) {
-    const openManageContactModal = this.modalCtrl.create('manage-contact-modal', { modalType: 'Edit', contactData: contact });
+  openManageContactModal(modalType: string, contactData?: Contact) {
+    const openManageContactModal = this.modalCtrl.create('manage-contact-modal', { modalType, contactData });
     openManageContactModal.present();
     openManageContactModal.onDidDismiss((data) => {
-      if (data) {
-        this.updateContact(data.originalContact, data.updatedContact);
+      if (data.updatedContactData) {
+        this.updateContact(data.originalContactData, data.updatedContactData);
+      }
+      if (data.newContactData) {
+        this.addContact(data.newContactData);
       }
     });
   }
@@ -100,10 +93,12 @@ export class HomePage implements OnInit {
     const viewContactModal = this.modalCtrl.create('view-contact-modal', { contactData: contact });
     viewContactModal.present();
     viewContactModal.onDidDismiss((data) => {
-      if (data.method === 'delete') {
-        this.deleteContact(data.contact);
-      } else if (data.method === 'edit') {
-        this.openManageContactModal(data.contact);
+      if (data) {
+        if (data.method === 'delete') {
+          this.deleteContact(data.contact);
+        } else if (data.method === 'edit') {
+          this.openManageContactModal(data.contact);
+        }
       }
     })
   }
@@ -113,7 +108,7 @@ export class HomePage implements OnInit {
       this.contacts.push(contact);
       this.sortContactsByName();
       this.setContactsStorageData();
-      this.presentToast('Loading').then(() => this.presentToast('New contact created'));
+      this.presentToast('Loading...').then(() => this.presentToast('New contact created'));
     }
   }
 

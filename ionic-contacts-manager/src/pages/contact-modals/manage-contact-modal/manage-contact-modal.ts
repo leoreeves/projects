@@ -63,11 +63,13 @@ export class ManageContactModalPage implements OnInit {
   }
 
   saveContact() {
+    const contactFormValues = this.contactForm.value;
+
     if (this.contactForm.valid) {
       if (this.existingContact) {
-        this.viewCtrl.dismiss({originalContactData: this.contactData, updatedContactData: this.contactForm.value});
+        this.viewCtrl.dismiss({originalContactData: this.contactData, updatedContactData: contactFormValues});
       } else {
-        this.viewCtrl.dismiss();
+        this.viewCtrl.dismiss({newContactData: contactFormValues});
       }
     } else {
       this.invalidForm = true;

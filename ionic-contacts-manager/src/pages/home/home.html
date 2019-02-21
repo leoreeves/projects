@@ -34,7 +34,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <button class="contact-tool-buttons" ion-button (click)="openEditContactModal(contact); $event.stopPropagation()" clear item-end>
+      <button class="contact-tool-buttons" ion-button (click)="openManageContactModal('Edit', contact); $event.stopPropagation()" clear item-end>
         <ion-icon color="dark" name="create"></ion-icon>
       </button>
       <button class="contact-tool-buttons" ion-button (click)="deleteContact(contact); $event.stopPropagation()" clear item-end>
@@ -42,7 +42,7 @@
       </button>
     </button>
   </ion-list>
-  <ion-fab bottom right (click)="openAddContactModal()">
+  <ion-fab bottom right (click)="openManageContactModal('Add', '')">
     <button ion-fab color="danger">
       <ion-icon name="add"></ion-icon>
     </button>
