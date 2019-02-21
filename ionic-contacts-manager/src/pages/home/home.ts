@@ -59,7 +59,7 @@ export class HomePage implements OnInit {
         address: ''
       },
       {
-        name: 'Ludie Straley',
+        name: 'Joan White',
         email: '',
         phone: '07340 933542',
         address: ''
