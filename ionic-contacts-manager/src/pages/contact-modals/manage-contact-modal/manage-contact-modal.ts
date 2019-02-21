@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+
+import { IonicPage, NavParams, ViewController } from 'ionic-angular';
+import { Contact } from '../../../models/contact';
 
 @IonicPage({
   name: 'manage-contact-modal',
@@ -10,48 +12,37 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   selector: 'page-manage-contact-modal',
   templateUrl: 'manage-contact-modal.html',
 })
-export class ManageContactModalPage {
+export class ManageContactModalPage implements OnInit {
   modalType: string;
   contactForm: FormGroup;
-  contactData: any;
+  contactData: Contact;
   name: string;
-  existingContact: boolean = false;
-  invalidForm: boolean = false;
+  existingContact = false;
+  invalidForm = false;
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public viewCtrl: ViewController,
-  ) {
+    private navParams: NavParams,
+    private viewCtrl: ViewController,
+  ) {}
+
+  ngOnInit() {
+    this.initialiseContactForm();
+    this.setModalType();
+  }
+
+  initialiseContactForm() {
     this.contactForm = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl(''),
       phone: new FormControl(''),
       address: new FormControl(''),
-    })
-  }
-
-  closeModal() {
-    this.viewCtrl.dismiss();
-  }
-
-  saveContact() {
-    if (this.contactForm.valid) {
-      if (this.existingContact) {
-        this.viewCtrl.dismiss(this.contactData, this.contactForm.value);
-      } else {
-        this.viewCtrl.dismiss(this.contactForm.value);
-      }
-    } else {
-      this.invalidForm = true;
-      setTimeout(() => this.invalidForm = false, 2000);
-    }
+    });
   }
 
   setModalType() {
     this.modalType = this.navParams.get('modalType');
 
-    if (this.modalType == 'Edit') {
+    if (this.modalType === 'Edit') {
       this.setContactFormValues();
     }
   }
@@ -63,11 +54,26 @@ export class ManageContactModalPage {
       name: this.contactData.name,
       email: this.contactData.email,
       phone: this.contactData.phone,
-      address: this.contactData.email,
+      address: this.contactData.address,
     })
   }
 
-  ionViewDidLoad() {
-    this.setModalType();
+  closeModal() {
+    this.viewCtrl.dismiss();
+  }
+
+  saveContact() {
+    const contactFormValues = this.contactForm.value;
+
+    if (this.contactForm.valid) {
+      if (this.existingContact) {
+        this.viewCtrl.dismiss({originalContactData: this.contactData, updatedContactData: contactFormValues});
+      } else {
+        this.viewCtrl.dismiss({newContactData: contactFormValues});
+      }
+    } else {
+      this.invalidForm = true;
+      setTimeout(() => this.invalidForm = false, 2000);
+    }
   }
 }

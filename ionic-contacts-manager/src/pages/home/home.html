@@ -17,7 +17,14 @@
 
 <ion-content padding>
   <div class="empty-state" *ngIf="contacts.length === 0">
-    <p class="empty-state-message">No contacts found</p>
+    <div class="icon-container">
+      <ion-icon name="book" class="book-icon"></ion-icon>
+    </div>
+    <p class="empty-state-message">No contacts yet</p>
+    <button ion-button clear (click)="openManageContactModal('Add', '')">
+      <ion-icon name="person" margin-right></ion-icon>
+      Create contact
+    </button>
   </div>
   <ion-list>
     <button class="contact-button" (click)="openViewContactModal(contact)" ion-item *ngFor="let contact of contacts">
@@ -34,15 +41,15 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <button class="contact-tool-buttons" ion-button (click)="openEditContactModal(contact); $event.stopPropagation()" clear item-end>
+      <button class="contact-tool-buttons" ion-button (click)="openManageContactModal('Edit', contact); $event.stopPropagation()" clear item-end>
         <ion-icon color="dark" name="create"></ion-icon>
       </button>
-      <button class="contact-tool-buttons" ion-button (click)="deleteContact(contact); $event.stopPropagation()" clear item-end>
+      <button class="contact-tool-buttons" ion-button (click)="presentDeleteAlert(contact); $event.stopPropagation()" clear item-end>
         <ion-icon color="dark" name="trash"></ion-icon>
       </button>
     </button>
   </ion-list>
-  <ion-fab bottom right (click)="openAddContactModal()">
+  <ion-fab bottom right (click)="openManageContactModal('Add', '')">
     <button ion-fab color="danger">
       <ion-icon name="add"></ion-icon>
     </button>

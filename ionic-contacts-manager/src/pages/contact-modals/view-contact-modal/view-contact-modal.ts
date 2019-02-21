@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, NavParams, ViewController } from 'ionic-angular';
+
+import { Contact } from '../../../models/contact';
 
 @IonicPage({
   name: 'view-contact-modal',
@@ -9,36 +11,35 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   selector: 'page-view-contact-modal',
   templateUrl: 'view-contact-modal.html',
 })
-export class ViewContactModalPage {
-  contact: any;
+export class ViewContactModalPage implements OnInit {
+  contact: Contact;
+  contactNameOnly: boolean;
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public viewCtrl: ViewController,
-  ) {
+    private navParams: NavParams,
+    private viewCtrl: ViewController,
+  ) {}
+
+  ngOnInit() {
+    this.getModalData();
   }
 
-  deleteContact(contact) {
-    this.viewCtrl.dismiss('delete', contact);
+  getModalData() {
+    this.contact = this.navParams.get('contactData');
+    if (this.contact.email === '' && this.contact.phone === '' && this.contact.address === '') {
+      this.contactNameOnly = true;
+    }
   }
 
-  editContact(contact) {
-    this.viewCtrl.dismiss('edit', contact);
+  deleteContact(contact: Contact) {
+    this.viewCtrl.dismiss({ method: 'delete', contact });
   }
 
+  editContact(contact: string) {
+    this.viewCtrl.dismiss({method: 'edit', contact});
+  }
 
   closeModal() {
     this.viewCtrl.dismiss();
   }
-
-  setModalData() {
-    this.contact = this.navParams.get('contactData');
-  }
-
-  ionViewDidLoad() {
-    this.setModalData();
-    console.log(this.contact);
-  }
-
 }
