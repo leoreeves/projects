@@ -84,7 +84,7 @@ export class HomePage implements OnInit {
         this.updateContact(data.originalContactData, data.updatedContactData);
       }
       if (data.newContactData) {
-        this.addContact(data.newContactData);
+        this.addContact(data.newContactData, false);
       }
     });
   }
@@ -103,19 +103,25 @@ export class HomePage implements OnInit {
     })
   }
 
-  addContact(contact: Contact) {
+  async addContact(contact: Contact, existingContact: boolean) {
     if (contact) {
       this.contacts.push(contact);
       this.sortContactsByName();
       this.setContactsStorageData();
-      this.presentToast('Loading...').then(() => this.presentToast('New contact created'));
+    }
+    await this.presentToast('Loading...');
+
+    if (existingContact) {
+      this.presentToast('Contact details updated');
+    } else {
+      this.presentToast('New contact created');
     }
   }
 
   updateContact(originalContact: Contact, updatedContact: Contact) {
     if (updatedContact) {
       this.contacts = this.contacts.filter(contact => contact !== originalContact);
-      this.addContact(updatedContact);
+      this.addContact(updatedContact, true);
     }
   }
 
