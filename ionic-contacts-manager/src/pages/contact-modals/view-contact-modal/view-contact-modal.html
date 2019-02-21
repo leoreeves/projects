@@ -16,7 +16,8 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>Contact details</h1>
+  <h1 *ngIf="!contactNameOnly">Contact details</h1>
+  <h1 *ngIf="contactNameOnly">No contact info</h1>
   <ion-list>
     <ion-item *ngIf="contact?.email">
       <ion-icon item-start name="mail"></ion-icon>

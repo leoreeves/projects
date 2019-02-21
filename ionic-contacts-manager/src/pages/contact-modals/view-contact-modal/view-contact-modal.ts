@@ -13,6 +13,7 @@ import { Contact } from '../../../models/contact';
 })
 export class ViewContactModalPage implements OnInit {
   contact: Contact;
+  contactNameOnly: boolean;
 
   constructor(
     private navParams: NavParams,
@@ -25,6 +26,9 @@ export class ViewContactModalPage implements OnInit {
 
   getModalData() {
     this.contact = this.navParams.get('contactData');
+    if (this.contact.email === '' && this.contact.phone === '' && this.contact.address === '') {
+      this.contactNameOnly = true;
+    }
   }
 
   deleteContact(contact: Contact) {
