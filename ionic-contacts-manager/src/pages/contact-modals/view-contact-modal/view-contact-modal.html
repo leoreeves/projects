@@ -18,18 +18,17 @@
 <ion-content padding>
   <h1>Contact details</h1>
   <ion-list>
-    <ion-item>
+    <ion-item *ngIf="contact?.email">
       <ion-icon item-start name="mail"></ion-icon>
       {{ contact?.email }}
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="contact?.phone">
       <ion-icon item-start name="call"></ion-icon>
       {{ contact?.phone }}
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="contact?.address">
       <ion-icon item-start name="pin"></ion-icon>
       {{ contact?.address }}
     </ion-item>
   </ion-list>
-
 </ion-content>
