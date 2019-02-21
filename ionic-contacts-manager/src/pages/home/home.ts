@@ -100,7 +100,7 @@ export class HomePage implements OnInit {
         if (data.method === 'delete') {
           this.presentDeleteAlert(data.contact);
         } else if (data.method === 'edit') {
-          this.openManageContactModal(data.contact);
+          this.openManageContactModal('Edit', data.contact);
         }
       }
     })
