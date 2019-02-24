@@ -76,6 +76,7 @@ $(document).ready(() => {
       },
       success(json) {
         const { ...pages } = json.query.pages;
+        console.log(pages);
 
         $.map(pages, (page) => {
           const pageTitle = page.title;

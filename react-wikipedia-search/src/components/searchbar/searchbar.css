@@ -1,0 +1,25 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 32px 16px;
+}
+
+.searchbar {
+  border-radius: 4px 0 0 4px;
+  border: 1px solid lightgray;
+  padding: 8px 16px;
+  font-size: 1.1em;
+  outline-color: #1976d2;
+  font-family: 'Lato', sans-serif;
+}
+
+.search-button {
+  background-color: #1976d2;
+  border: 0;
+  padding: 8px 16px;
+  font-size: 1.1em;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+}
