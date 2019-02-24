@@ -22,9 +22,7 @@ class App extends Component {
       const response = await fetch(url);
       const result = await response.json();
       const pages = result.query.pages;
-      const pagesArray = Object.keys(pages).map((key) => {
-        return pages[key];
-      })
+      const pagesArray = Object.keys(pages).map(key => pages[key]);
       this.setState({pages: pagesArray});
     }
   }
