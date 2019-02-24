@@ -33,7 +33,7 @@ class Searchbar extends Component {
           placeholder="Enter search..."
           value={this.state.inputField}
           onChange={this.setInputSearchState}
-          autoFocus="true"
+          autoFocus={true}
           >
         </input>
         <input
