@@ -182,6 +182,16 @@ Built using:
 - CSS
 - jQuery
 
+# [Wikipedia Search](https://react-wikipedia-search.netlify.com/)
+
+A *Wikipedia* search, it returns search results in card format with an image (if available).
+
+Built using:
+
+- HTML
+- CSS
+- React
+
 ## [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
 
 Convert between weekly and monthly rental rates.
