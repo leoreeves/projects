@@ -8,7 +8,6 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.getArticleData = this.getArticleData.bind(this);
     this.state = {
       searchInput: '',
       pages: [],
