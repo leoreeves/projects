@@ -5,17 +5,14 @@ import './searchbar.css';
 class Searchbar extends Component {
   constructor(props) {
     super(props);
-
-    this.setInputSearchState = this.setInputSearchState.bind(this);
-    this.submitSearch = this.submitSearch.bind(this);
     this.state = { inputField: '' };
   }
 
-  setInputSearchState(event) {
+  setInputSearchState = (event) => {
     this.setState({ inputField: event.target.value });
   }
 
-  submitSearch(event) {
+  submitSearch = (event) => {
     event.preventDefault();
     this.props.getArticleData(this.state.inputField);
     this.setState({ inputField: '' });

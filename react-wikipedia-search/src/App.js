@@ -15,7 +15,7 @@ class App extends Component {
     };
   }
 
-  async getArticleData(searchInput) {
+  getArticleData = async(searchInput) => {
     if (searchInput.length > 0) {
       this.setState({ searchInput });
       const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrsearch=${searchInput}&gsrnamespace=0&gsrlimit=20&prop=extracts%7Cpageimages&exchars=200&exlimit=max&explaintext=true&exintro=true&piprop=thumbnail&pithumbsize=800&origin=*`;
@@ -25,7 +25,6 @@ class App extends Component {
       const pagesArray = Object.keys(pages).map((key) => {
         return pages[key];
       })
-
       this.setState({pages: pagesArray});
     }
   }
