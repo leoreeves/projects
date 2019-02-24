@@ -5,9 +5,9 @@ import './searchbar.css';
 class Searchbar extends Component {
   constructor(props) {
     super(props);
+
     this.setInputSearchState = this.setInputSearchState.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
-
     this.state = { inputField: '' };
   }
 
