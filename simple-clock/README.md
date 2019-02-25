@@ -6,4 +6,4 @@ Built using:
 
 - HTML
 - CSS
-- JavaScript
+- Vue.js

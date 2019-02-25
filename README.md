@@ -210,7 +210,7 @@ Built using:
 
 - HTML
 - CSS
-- JavaScript
+- Vue.js
 
 
 ## [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)

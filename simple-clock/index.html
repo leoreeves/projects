@@ -9,28 +9,28 @@
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
-
-	<div class="analog-clock" id="analog">
-		<div id="hours"></div>
-		<div id="minutes"></div>
-		<div id="seconds"></div>
-		<div class="three"></div>
-		<div class="six"></div>
-		<div class="nine"></div>
-		<div class="twelve"></div>
-		<div class="center"></div>
-	</div>
-
-	<div class="digital-clock" id="digital">
-		<div class="clock-face">
-			<div id="time"></div>
+	<main id="simple-clock">
+		<div class="analogue-clock" v-bind:style="{ display: analogueClockDisplay }">
+			<div id="hours" v-bind:style="{ cssText: hours }"></div>
+			<div id="minutes" v-bind:style="{ cssText: minutes }"></div>
+			<div id="seconds" v-bind:style="{ cssText: seconds }"></div>
+			<div class="three"></div>
+			<div class="six"></div>
+			<div class="nine"></div>
+			<div class="twelve"></div>
+			<div class="center"></div>
 		</div>
-	</div>
-
-	<div class="button-container">
-		<button onclick="changeClock()">Switch Clock Face</button>
-	</div>
-
-  <script src="app.js"></script>
+		<div class="digital-clock" v-cloak v-bind:style="{ display: digitalClockDisplay }">
+			<div class="clock-face">
+				{{ digitalClockTime }}
+			</div>
+		</div>
+		<div class="button-container">
+			<button v-on:click="toggleDisplayedClock">Switch Clock Face</button>
+		</div>
+	</main>
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>

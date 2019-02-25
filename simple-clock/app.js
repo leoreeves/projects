@@ -1,43 +1,54 @@
-// Analog Clock
-function moveHands() {
-  const today = new Date();
+const simpleClock = new Vue({
+  el: '#simple-clock',
+  data: {
+    analogueClockDisplay: 'block',
+    digitalClockDisplay: 'none',
+    digitalClockTime: '',
+    hours: '',
+    minutes: '',
+    seconds: '',
+  },
+  mounted() {
+    this.moveHands();
+    this.getDigitalClockTime();
+    this.setDigitalClockTimeInterval();
+  },
+  methods: {
+    moveHands() {
+      const today = new Date();
 
-  // 30 degrees hour
-  const h = 30 * ((today.getHours() % 12) + (today.getMinutes() / 60));
-  // 6 degrees every minute
-  const m = 6 * today.getMinutes();
-  // 6 degrees every second
-  const s = 6 * today.getSeconds();
+      // 30 degrees hour
+      const hours = 30 * ((today.getHours() % 12) + (today.getMinutes() / 60));
+      // 6 degrees every minute
+      const minutes = 6 * today.getMinutes();
+      // 6 degrees every second
+      const seconds = 6 * today.getSeconds();
 
-  // setting the rotate CSS attribute to those degree values
-  document.getElementById('seconds').style.cssText = `-webkit-transform:rotate(${s}deg);`;
-  document.getElementById('minutes').style.cssText = `-webkit-transform:rotate(${m}deg);`;
-  document.getElementById('hours').style.cssText = `-webkit-transform:rotate(${h}deg);`;
+      // setting the rotate CSS attribute to those degree values
+      this.hours = this.setRotation(hours);
+      this.minutes = this.setRotation(minutes);
+      this.seconds = this.setRotation(seconds);
 
-  // calls the function every second
-  setTimeout(moveHands, 10);
-}
-
-// make sure the function starts on load of webpage
-window.onload = moveHands;
-
-// Digital Clock
-function setClock() {
-  document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
-}
-
-window.setInterval(setClock, 10);
-
-// Clock elements
-const digital = document.getElementById('digital');
-const analog = document.getElementById('analog');
-
-function changeClock() {
-  if (analog.style.display === 'block') {
-    analog.style.display = 'none';
-    digital.style.display = 'block';
-  } else {
-    analog.style.display = 'block';
-    digital.style.display = 'none';
-  }
-}
+      // calls the function every second
+      setTimeout(this.moveHands, 10);
+    },
+    setRotation(unit) {
+      return `-webkit-transform:rotate(${unit}deg);`;
+    },
+    getDigitalClockTime() {
+      this.digitalClockTime = new Date().toLocaleTimeString();
+    },
+    setDigitalClockTimeInterval() {
+      window.setInterval(this.getDigitalClockTime, 10);
+    },
+    toggleDisplayedClock() {
+      if (this.analogueClockDisplay === 'block') {
+        this.analogueClockDisplay = 'none';
+        this.digitalClockDisplay = 'block';
+      } else {
+        this.analogueClockDisplay = 'block';
+        this.digitalClockDisplay = 'none';
+      }
+    },
+  },
+});
