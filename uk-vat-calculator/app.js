@@ -42,9 +42,9 @@ const calculateVat = new Vue({
       window.scrollTo(0, document.body.scrollHeight);
     },
     copyText() {
-      this.showCopyMessage = true;
+      this.showToastMessage = true;
       setTimeout(() => {
-        this.showCopyMessage = false;
+        this.showToastMessage = false;
       }, 2000);
     },
   },
