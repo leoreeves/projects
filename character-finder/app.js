@@ -7,15 +7,12 @@ const characterFinder = new Vue({
     show: false,
   },
   methods: {
-    minusCharacterIndex() {
+    incrementCharacterIndex(operator) {
       const originalCharacterIndex = this.characterNumber;
-      if (this.characterNumber > 1) {
+
+      if (operator === '-' && this.characterNumber > 1) {
         this.characterNumber = Number(originalCharacterIndex) - 1;
-      }
-    },
-    plusCharacterIndex() {
-      const originalCharacterIndex = this.characterNumber;
-      if (this.characterNumber < this.textInput.length) {
+      } else if (operator === '+' && this.characterNumber < this.textInput.length) {
         this.characterNumber = Number(originalCharacterIndex) + 1;
       }
     },
@@ -31,4 +28,4 @@ const characterFinder = new Vue({
 });
 
 // clipboard.js
-const clipboard = new Clipboard('.copy-button');
+const clipboard = new ClipboardJS('.copy-button');
