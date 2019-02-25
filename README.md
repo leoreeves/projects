@@ -221,7 +221,6 @@ Built using:
 
 - HTML
 - CSS
-- JavaScript
 - Vue.js
 
 ## [Wikipedia Search](https://leoreeves.github.io/projects/wikipedia-search/)
