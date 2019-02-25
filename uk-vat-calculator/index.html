@@ -16,7 +16,7 @@
       <main id="calculate-vat">
         <h1>UK VAT Calculator</h1>
         <!-- Calculator Form -->
-        <form v-on:submit.prevent="calculateVatAndDisplayResult">
+        <form v-on:submit.prevent="calculateAmountsAndDisplayResult">
           <span class="currency">£</span>
           <input class="user-input" autofocus type="number" min="0.01" step="0.01" placeholder="Enter an amount" v-model.number="inputAmount"
             required>

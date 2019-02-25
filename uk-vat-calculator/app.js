@@ -9,19 +9,14 @@ const calculateVat = new Vue({
     vatAmount: 0,
     grossAmount: 0,
     resultCardDisplay: 'none',
-    showCopyMessage: false,
+    showToastMessage: false,
   },
   methods: {
-    calculateVatAndDisplayResult() {
+    calculateAmountsAndDisplayResult() {
       this.resultCardDisplay = 'block';
-      this.netAmount = this.formatAmount(this.inputAmount);
-      this.vatAmount = this.formatAmount((this.inputPlusVat()) - this.inputAmount);
-
-      if (this.vatOperation === 'plus') {
-        this.grossAmount = this.formatAmount(this.inputPlusVat());
-      } else if (this.vatOperation === 'minus') {
-        this.grossAmount = this.formatAmount(this.inputMinusVat());
-      }
+      this.calculateNetAmount();
+      this.calculateVatAmount();
+      this.calculateGrossAmount();
 
       // Jump to bottom on smaller widths to show result
       // Added delay to allow time to render
@@ -32,11 +27,18 @@ const calculateVat = new Vue({
     formatAmount(amount) {
       return `£${amount.toFixed(2)}`;
     },
-    inputPlusVat() {
-      return this.inputAmount * this.vatRate;
+    calculateNetAmount() {
+      this.netAmount = this.formatAmount(this.inputAmount);
     },
-    inputMinusVat() {
-      return this.inputAmount / this.vatRate;
+    calculateVatAmount() {
+      this.vatAmount = this.formatAmount((this.inputAmount * this.vatRate) - this.inputAmount);
+    },
+    calculateGrossAmount() {
+      if (this.vatOperation === 'plus') {
+        this.grossAmount = this.formatAmount(this.inputAmount * this.vatRate);
+      } else if (this.vatOperation === 'minus') {
+        this.grossAmount = this.formatAmount(this.inputAmount / this.vatRate);
+      }
     },
     scrollToBottom() {
       window.scrollTo(0, document.body.scrollHeight);
