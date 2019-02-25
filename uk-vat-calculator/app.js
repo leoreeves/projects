@@ -3,7 +3,7 @@ const calculateVat = new Vue({
   el: '#calculate-vat',
   data: {
     inputAmount: '',
-    vatOperation: 'add',
+    vatOperation: 'plus',
     vatRate: 1.2,
     netAmount: 0,
     vatAmount: 0,
@@ -15,10 +15,10 @@ const calculateVat = new Vue({
     calculateVatAndDisplayResult() {
       this.resultCardDisplay = 'block';
       this.netAmount = this.formatAmount(this.inputAmount);
-      this.vatAmount = this.formatAmount((this.inputAddVat()) - this.inputAmount);
+      this.vatAmount = this.formatAmount((this.inputPlusVat()) - this.inputAmount);
 
-      if (this.vatOperation === 'add') {
-        this.grossAmount = this.formatAmount(this.inputAddVat());
+      if (this.vatOperation === 'plus') {
+        this.grossAmount = this.formatAmount(this.inputPlusVat());
       } else if (this.vatOperation === 'minus') {
         this.grossAmount = this.formatAmount(this.inputMinusVat());
       }
@@ -32,7 +32,7 @@ const calculateVat = new Vue({
     formatAmount(amount) {
       return `£${amount.toFixed(2)}`;
     },
-    inputAddVat() {
+    inputPlusVat() {
       return this.inputAmount * this.vatRate;
     },
     inputMinusVat() {
