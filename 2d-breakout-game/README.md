@@ -9,5 +9,3 @@ Built using:
 - HTML
 - CSS
 - JavaScript
-
-![image](https://user-images.githubusercontent.com/15375448/53362850-074b4700-3933-11e9-8be5-dcd1a80be7dc.png)
