@@ -3,7 +3,7 @@ const calculateVat = new Vue({
   el: '#calculate-vat',
   data: {
     inputAmount: '',
-    addOrMinusVat: 'add',
+    vatOperation: 'add',
     vatRate: 1.2,
     netAmount: 0,
     vatAmount: 0,
@@ -17,9 +17,9 @@ const calculateVat = new Vue({
       this.netAmount = `£${(this.inputAmount).toFixed(2)}`;
       this.vatAmount = `£${((this.inputAmount * this.vatRate) - this.inputAmount).toFixed(2)}`;
 
-      if (this.addOrMinusVat === 'add') {
+      if (this.vatOperation === 'add') {
         this.grossAmount = `£${(this.inputAmount * this.vatRate).toFixed(2)}`;
-      } else if (this.addOrMinusVat === 'minus') {
+      } else if (this.vatOperation === 'minus') {
         this.grossAmount = `£${(this.inputAmount / this.vatRate).toFixed(2)}`;
       }
 
