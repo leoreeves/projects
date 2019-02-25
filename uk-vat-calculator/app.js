@@ -12,15 +12,15 @@ const calculateVat = new Vue({
     showCopyMessage: false,
   },
   methods: {
-    calculateVat() {
+    calculateVatAndDisplayResult() {
       this.resultCardDisplay = 'block';
-      this.netAmount = `£${(this.inputAmount).toFixed(2)}`;
-      this.vatAmount = `£${((this.inputAmount * this.vatRate) - this.inputAmount).toFixed(2)}`;
+      this.netAmount = this.formatAmount(this.inputAmount);
+      this.vatAmount = this.formatAmount((this.inputAddVat()) - this.inputAmount);
 
       if (this.vatOperation === 'add') {
-        this.grossAmount = `£${(this.inputAmount * this.vatRate).toFixed(2)}`;
+        this.grossAmount = this.formatAmount(this.inputAddVat());
       } else if (this.vatOperation === 'minus') {
-        this.grossAmount = `£${(this.inputAmount / this.vatRate).toFixed(2)}`;
+        this.grossAmount = this.formatAmount(this.inputMinusVat());
       }
 
       // Jump to bottom on smaller widths to show result
@@ -28,6 +28,15 @@ const calculateVat = new Vue({
       setTimeout(() => {
         this.scrollToBottom();
       }, 1);
+    },
+    formatAmount(amount) {
+      return `£${amount.toFixed(2)}`;
+    },
+    inputAddVat() {
+      return this.inputAmount * this.vatRate;
+    },
+    inputMinusVat() {
+      return this.inputAmount / this.vatRate;
     },
     scrollToBottom() {
       window.scrollTo(0, document.body.scrollHeight);
