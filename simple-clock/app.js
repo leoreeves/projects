@@ -17,7 +17,7 @@ const simpleClock = new Vue({
     moveHands() {
       const today = new Date();
 
-      // 30 degrees hour
+      // 30 degrees every hour
       const hours = 30 * ((today.getHours() % 12) + (today.getMinutes() / 60));
       // 6 degrees every minute
       const minutes = 6 * today.getMinutes();
