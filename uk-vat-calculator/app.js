@@ -45,6 +45,6 @@ const calculateVat = new Vue({
 });
 
 // Copy to clipboard
-const netAmountCopy = new Clipboard('.net-amount');
-const vatAmountCopy = new Clipboard('.vat-amount');
-const grossAmountCopy = new Clipboard('.gross-amount');
+const netAmountCopy = new ClipboardJS('.net-amount');
+const vatAmountCopy = new ClipboardJS('.vat-amount');
+const grossAmountCopy = new ClipboardJS('.gross-amount');
