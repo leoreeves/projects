@@ -17,6 +17,7 @@ A collection of personal projects.
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
 - [pomodoro-timer](https://leoreeves.github.io/projects/pomodoro-timer)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
+- [React Wikipedia Search](https://react-wikipedia-search.netlify.com/)
 - [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)
