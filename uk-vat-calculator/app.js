@@ -1,6 +1,6 @@
 // Vue object
-const calculateVat = new Vue({
-  el: '#calculate-vat',
+vatCalculator = new Vue({
+  el: '#vat-calculator',
   data: {
     inputAmount: '',
     vatOperation: 'plus',
