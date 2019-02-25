@@ -43,9 +43,7 @@ const calculateVat = new Vue({
     },
     copyText() {
       this.showToastMessage = true;
-      setTimeout(() => {
-        this.showToastMessage = false;
-      }, 2000);
+      setTimeout(() => { this.showToastMessage = false; }, 2000);
     },
   },
 });
