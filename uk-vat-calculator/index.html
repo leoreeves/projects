@@ -18,7 +18,7 @@
     <main id="calculate-vat">
       <h1>UK VAT Calculator</h1>
       <!-- Calculator Inputs -->
-      <form v-on:submit.prevent="calculateVat">
+      <form v-on:submit.prevent="calculateVatAndDisplayResult">
         <span class="currency">£</span>
         <input class="user-input" autofocus type="number" min="0.01" step="0.01" placeholder="Enter an amount" v-model.number="inputAmount"
           required>
@@ -53,7 +53,7 @@
           <button class="btn-copy vat-amount" :data-clipboard-text="vatAmount" v-on:click="copyText">Copy</button>
         </div>
         <div class="result-section">
-          <h3>VAT Amount (exc. VAT)</h3>
+          <h3>Gross Amount (incl. VAT)</h3>
           <p>{{ grossAmount }}</p>
           <button class="btn-copy gross-amount" :data-clipboard-text="grossAmount" v-on:click="copyText">Copy</button>
         </div>
