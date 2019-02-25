@@ -8,13 +8,12 @@ const calculateVat = new Vue({
     netAmount: 0,
     vatAmount: 0,
     grossAmount: 0,
-    resultVisibility: 'none',
+    resultCardDisplay: 'none',
     showCopyMessage: false,
   },
   methods: {
     calculateVat() {
-      // result card
-      this.resultVisibility = 'block';
+      this.resultCardDisplay = 'block';
       this.netAmount = `£${(this.inputAmount).toFixed(2)}`;
       this.vatAmount = `£${((this.inputAmount * this.vatRate) - this.inputAmount).toFixed(2)}`;
 
