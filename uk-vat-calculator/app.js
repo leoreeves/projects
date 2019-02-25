@@ -15,15 +15,13 @@ const calculateVat = new Vue({
     calculateVat() {
       // result card
       this.resultVisibility = 'block';
-      const inputAmount = this.inputAmount;
-      const vatRate = this.vatRate;
-      this.netAmount = `£${(inputAmount).toFixed(2)}`;
-      this.vatAmount = `£${((inputAmount * vatRate) - inputAmount).toFixed(2)}`;
+      this.netAmount = `£${(this.inputAmount).toFixed(2)}`;
+      this.vatAmount = `£${((this.inputAmount * this.vatRate) - this.inputAmount).toFixed(2)}`;
 
       if (this.addOrMinusVat === 'add') {
-        this.grossAmount = `£${(inputAmount * vatRate).toFixed(2)}`;
+        this.grossAmount = `£${(this.inputAmount * this.vatRate).toFixed(2)}`;
       } else if (this.addOrMinusVat === 'minus') {
-        this.grossAmount = `£${(inputAmount / vatRate).toFixed(2)}`;
+        this.grossAmount = `£${(this.inputAmount / this.vatRate).toFixed(2)}`;
       }
 
       // Jump to bottom on smaller widths to show result
