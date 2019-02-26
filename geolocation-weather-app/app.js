@@ -13,11 +13,8 @@ $(document).ready(() => {
     function setLocation(position) {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
-      const baseURL = 'https://api.darksky.net/forecast/';
-      const APPID = '3338c55b94a58007e0bf4195c5ab1548/';
-      const units = '?units=';
-      const location = `${lat},${lng}`;
-      const webURL = baseURL + APPID + location + units + unit;
+      const darkSkyAppId = '3338c55b94a58007e0bf4195c5ab1548/';
+      const darkSkyURL = `https://api.darksky.net/forecast/${darkSkyAppId}${lat},${lng}?units=${unit}`;
       const sunsetSunriseURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
       const nominatimURL = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`;
 
@@ -61,7 +58,7 @@ $(document).ready(() => {
 
       function getForecast() {
         $.ajax({
-          url: webURL,
+          url: darkSkyURL,
           dataType: 'jsonp',
           success(data) {
             $('.icon_unit, .weather');
