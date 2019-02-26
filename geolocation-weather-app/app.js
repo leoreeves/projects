@@ -37,7 +37,7 @@ $(document).ready(() => {
           const twilightEnd = new Date(json.results.civil_twilight_end);
 
           let times = [sunrise, sunset, twilightBegin, twilightEnd];
-          times = times.map(time => time = time.getUTCHours());
+          times = times.map(time => time.getUTCHours());
 
           if (hour >= times[2] && hour <= times[0]) {
             document.body.classList.add('dawn');
