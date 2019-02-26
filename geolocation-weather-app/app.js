@@ -19,11 +19,11 @@ $(document).ready(() => {
       const location = `${lat},${lng}`;
       const webURL = baseURL + APPID + location + units + unit;
       const sunsetSunriseURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
-      const locationURL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location}`;
+      const nominatimURL = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`;
 
       function setPlace() {
-        $.getJSON(locationURL, (json) => {
-          $('#location').html(`${json.results[0].address_components[3].long_name}`);
+        $.getJSON(nominatimURL, (json) => {
+          $('#location').html(json.address.city);
         });
       }
 
