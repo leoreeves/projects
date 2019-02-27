@@ -73,22 +73,25 @@ function checkIfHeroIsTouchingMonster() {
   }
 }
 
+
 function updateGameObjects(modifier) {
+  const position = hero.pixelSpeed * modifier;
+
   // Player holding up
   if (38 in keysDown) {
-    hero.y -= hero.pixelSpeed * modifier;
+    hero.y -= position;
   }
   // Player holding down
   if (40 in keysDown) {
-    hero.y += hero.pixelSpeed * modifier;
+    hero.y += position;
   }
-  // Player holiding left
+  // Player holding left
   if (37 in keysDown) {
-    hero.x -= hero.pixelSpeed * modifier;
+    hero.x -= position;
   }
   // Player holding right
   if (39 in keysDown) {
-    hero.x += hero.pixelSpeed * modifier;
+    hero.x += position;
   }
 
   checkIfHeroIsTouchingMonster();
