@@ -1,38 +1,29 @@
-// Create canvas
+// Draw canvas
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = 512;
 canvas.height = 480;
 document.body.appendChild(canvas);
 
-// Background image
-let bgReady = false;
-const bgImage = new Image();
-bgImage.onload = function bgLoad() {
-  bgReady = true;
-};
-bgImage.src = 'img/background.png';
+// Get images
+let backgroundImageReady = false;
+const backgroundImage = new Image();
+backgroundImage.src = 'img/background.png';
+backgroundImage.onload = () => { backgroundImageReady = true; };
 
-// Hero image
-let heroReady = false;
+let heroImageReady = false;
 const heroImage = new Image();
-heroImage.onload = function heroLoad() {
-  heroReady = true;
-};
 heroImage.src = 'img/hero.png';
+heroImage.onload = () => { heroImageReady = true; };
 
-// Monster image
-let monsterReady = false;
+let monsterImageReady = false;
 const monsterImage = new Image();
-monsterImage.onload = function monsterLoad() {
-  monsterReady = true;
-};
 monsterImage.src = 'img/monster.png';
+monsterImage.onload = () => { monsterImageReady = true; };
 
 // Game objects
 const hero = {
-  // pixels per second
-  speed: 256,
+  pixelSpeed: 256,
   x: 0,
   y: 0,
 };
@@ -55,35 +46,22 @@ document.addEventListener('keyup', (e) => {
   delete keysDown[e.keyCode];
 }, false);
 
-// Reset the game when the player catches a monster.
-const reset = function reset() {
+function setHeroStartingPosition() {
   hero.x = canvas.width / 2;
   hero.y = canvas.height / 2;
+}
 
-  // Put the monster somewhere on the screen randomly.
+function setMonsterStartingPosition() {
   monster.x = 32 + (Math.random() * (canvas.width - 100));
   monster.y = 32 + (Math.random() * (canvas.height - 100));
-};
+}
 
-// Update game objects
-const update = function update(modifier) {
-  // Player holding up
-  if (38 in keysDown) {
-    hero.y -= hero.speed * modifier;
-  }
-  // Player holding down
-  if (40 in keysDown) {
-    hero.y += hero.speed * modifier;
-  }
-  // Player holiding left
-  if (37 in keysDown) {
-    hero.x -= hero.speed * modifier;
-  }
-  // Player holding right
-  if (39 in keysDown) {
-    hero.x += hero.speed * modifier;
-  }
-  // Are they touching?
+function resetGame() {
+  setHeroStartingPosition();
+  setMonsterStartingPosition();
+}
+
+function checkIfHeroIsTouchingMonster() {
   if (
     hero.x <= (monster.x + 32)
     && monster.x <= (hero.x + 32)
@@ -91,23 +69,40 @@ const update = function update(modifier) {
     && monster.y <= (hero.y + 32)
   ) {
     monstersCaught += 1;
-    reset();
+    resetGame();
   }
-};
+}
 
-// Draw everything
-const render = function render() {
-  if (bgReady) {
-    ctx.drawImage(bgImage, 0, 0);
+function updateGameObjects(modifier) {
+  // Player holding up
+  if (38 in keysDown) {
+    hero.y -= hero.pixelSpeed * modifier;
   }
-  if (heroReady) {
-    ctx.drawImage(heroImage, hero.x, hero.y);
+  // Player holding down
+  if (40 in keysDown) {
+    hero.y += hero.pixelSpeed * modifier;
   }
-  if (monsterReady) {
-    ctx.drawImage(monsterImage, monster.x, monster.y);
+  // Player holiding left
+  if (37 in keysDown) {
+    hero.x -= hero.pixelSpeed * modifier;
+  }
+  // Player holding right
+  if (39 in keysDown) {
+    hero.x += hero.pixelSpeed * modifier;
   }
 
-  // Collision detection
+  checkIfHeroIsTouchingMonster();
+}
+
+function renderScore() {
+  ctx.fillStyle = 'rgb(250, 250, 250)';
+  ctx.font = '24px Helvetica';
+  ctx.texAling = 'left';
+  ctx.textBaseline = 'top';
+  ctx.fillText(`Monsters caught: ${monstersCaught}`, 32, 32);
+}
+
+function detectHeroCollision() {
   if (hero.x >= canvas.width - heroImage.width * 2) {
     hero.x = canvas.width - heroImage.width * 2;
   }
@@ -126,34 +121,45 @@ const render = function render() {
   if (hero.y < 0) {
     hero.y = 0;
   }
+}
 
-  // Score
-  ctx.fillStyle = 'rgb(250, 250, 250)';
-  ctx.font = '24px Helvetica';
-  ctx.texAling = 'left';
-  ctx.textBaseline = 'top';
-  ctx.fillText(`Monsters caught: ${monstersCaught}`, 32, 32);
-};
+function checkIfImagesAreReady() {
+  if (backgroundImageReady) {
+    ctx.drawImage(backgroundImage, 0, 0);
+  }
+  if (heroImageReady) {
+    ctx.drawImage(heroImage, hero.x, hero.y);
+  }
+  if (monsterImageReady) {
+    ctx.drawImage(monsterImage, monster.x, monster.y);
+  }
+}
 
-// The main game loop
+function renderGame() {
+  checkIfImagesAreReady();
+  detectHeroCollision();
+  renderScore();
+}
+
 let then = Date.now();
-const main = function mainLoop() {
+
+function startGame() {
   const now = Date.now();
   const delta = now - then;
 
-  update(delta / 1000);
-  render();
+  updateGameObjects(delta / 1000);
+  renderGame();
   then = now;
-  // Request to do this again ASAP.
-  window.requestAnimationFrame(main);
-};
+  window.requestAnimationFrame(startGame);
+}
 
 // Cross-browser support for requestAnimationFrame.
 const w = window;
-window.requestAnimationFrame =
-  w.requestAnimationFrame || w.webkitRequestAnimationFrame ||
-  w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+window.requestAnimationFrame = w.requestAnimationFrame
+  || w.webkitRequestAnimationFrame
+  || w.msRequestAnimationFrame
+  || w.mozRequestAnimationFrame;
 
 // Start the game
-reset();
-main();
+resetGame();
+startGame();
