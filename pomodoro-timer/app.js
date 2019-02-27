@@ -7,8 +7,6 @@ const customMinuteInput = document.querySelector('.custom-minute-input');
 let totalSeconds = 1500;
 let counting = false;
 
-// Desktop Notifications
-// http://stackoverflow.com/questions/2271156/chrome-desktop-notification-example
 document.addEventListener('DOMContentLoaded', () => {
   if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.');

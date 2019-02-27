@@ -6,7 +6,6 @@ function generateColor() {
   return `#${Math.random().toString(16).slice(2, 8)}`;
 }
 
-// based on: http://stackoverflow.com/a/11868398/2588066
 function getContrastYIQ(colorCode) {
   const [r, g, b] = [0, 2, 4].map(p => parseInt(colorCode.substr(p, 2), 16));
   return ((r * 299) + (g * 587) + (b * 114)) / 1000;

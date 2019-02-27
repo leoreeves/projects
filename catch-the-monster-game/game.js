@@ -107,9 +107,7 @@ const render = function render() {
     ctx.drawImage(monsterImage, monster.x, monster.y);
   }
 
-  /** Collision detection
-  * http://stackoverflow.com/a/21482699/2588066
-  */
+  // Collision detection
   if (hero.x >= canvas.width - heroImage.width * 2) {
     hero.x = canvas.width - heroImage.width * 2;
   }

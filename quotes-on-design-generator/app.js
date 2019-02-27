@@ -34,8 +34,6 @@ function createQuote(json) {
   $('.quote-author').html(`― ${quote.title}`).fadeIn();
 }
 
-// Change wording on mobiles/tablets - 'click' to 'tap'
-// Thanks to Santhosh @ http://stackoverflow.com/a/29509267/2588066
 $(document).ready(() => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
