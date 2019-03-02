@@ -16,7 +16,10 @@ function getBirthdayWeekDayAndAge() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // set current year
+function setBirthdayYearAsCurrentYear() {
   birthdayYear.value = new Date().getFullYear();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setBirthdayYearAsCurrentYear();
 });
