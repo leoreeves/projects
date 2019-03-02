@@ -21,7 +21,6 @@ A collection of personal projects.
 - [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)
-- [Wikipedia Search](https://leoreeves.github.io/projects/wikipedia-search/)
 
 ## [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
 
@@ -223,15 +222,3 @@ Built using:
 - HTML
 - CSS
 - Vue.js
-
-## [Wikipedia Search](https://leoreeves.github.io/projects/wikipedia-search/)
-
-A *Wikipedia* search viewer built for *freeCodeCamp*, it returns search results in card format with an image (if available).
-
-Built using:
-
-- HTML
-- CSS
-- Materialize.css
-- jQuery
-- AJAX
