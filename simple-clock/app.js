@@ -24,12 +24,10 @@ const simpleClock = new Vue({
       // 6 degrees every second
       const seconds = 6 * today.getSeconds();
 
-      // setting the rotate CSS attribute to those degree values
       this.hours = this.setRotation(hours);
       this.minutes = this.setRotation(minutes);
       this.seconds = this.setRotation(seconds);
 
-      // calls the function every second
       setTimeout(this.moveHands, 10);
     },
     setRotation(unit) {
