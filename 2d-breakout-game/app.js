@@ -1,6 +1,5 @@
 const canvas = document.querySelector('#my-canvas');
 const ctx = canvas.getContext('2d');
-const pauseButton = document.querySelector('button');
 let paused = false;
 let x = canvas.width / 2;
 let y = canvas.height - 30;
@@ -153,8 +152,6 @@ function draw() {
   }
 }
 
-draw();
-
 function pauseGame() {
   if (!paused) {
     paused = true;
@@ -164,12 +161,13 @@ function pauseGame() {
   }
 }
 
+draw();
+
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
-
-// pause game on spacebar press
-document.body.onkeydown = (e) => {
-  if (e.keyCode === 32) {
+document.body.onkeydown = (event) => {
+  // spacebar
+  if (event.keyCode === 32) {
     pauseGame();
   }
 };
