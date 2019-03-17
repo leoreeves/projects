@@ -183,7 +183,7 @@ Built using:
 - CSS
 - jQuery
 
-# [React Wikipedia Search](https://react-wikipedia-search.netlify.com/)
+## [React Wikipedia Search](https://react-wikipedia-search.netlify.com/)
 
 A *Wikipedia* search viewer, it returns search results in card format with an image (if available).
 
