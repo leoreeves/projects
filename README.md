@@ -10,6 +10,7 @@ A collection of personal projects.
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 - [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
+- [Ionic Contacts Manager](https://ionic-contacts-manager-app.herokuapp.com/)
 - [Issue Tracker](https://leoreeves.github.io/projects/issue-tracker/)
 - [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
@@ -96,7 +97,7 @@ Built using:
 - CSS
 - JavaScript
 
-# [Ionic Contacts Manager](https://ionic-contacts-manager-app.herokuapp.com/)
+## [Ionic Contacts Manager](https://ionic-contacts-manager-app.herokuapp.com/)
 
 A contacts manager that allows users to create, edit and view contacts.
 
