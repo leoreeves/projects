@@ -12,6 +12,7 @@
   font-size: 1.1em;
   outline-color: #1976d2;
   font-family: 'Lato', sans-serif;
+  max-width: 300px;
 }
 
 .search-button {
@@ -23,4 +24,10 @@
   border-radius: 0 4px 4px 0;
   font-family: 'Lato', sans-serif;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .searchbar {
+    width: inherit;
+  }
 }
