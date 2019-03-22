@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ArticleList from './components/article-list.js/article-list';
+import ArticleList from './components/article-list/article-list';
 import Searchbar from './components/searchbar/searchbar';
 
 import './App.css';
