@@ -66,7 +66,7 @@ class Map extends Component {
 
   render() {
     return (
-      <main class="map-wrapper">
+      <main className="map-wrapper">
         <h2>Map</h2>
         <div style={{ width: 800, height: 600 }} id="map" />
       </main>
