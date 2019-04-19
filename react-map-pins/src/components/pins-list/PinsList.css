@@ -1,0 +1,12 @@
+.pins-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+
+.pins-wrapper button {
+  background: lightgray;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  padding: 8px 0;
+}
