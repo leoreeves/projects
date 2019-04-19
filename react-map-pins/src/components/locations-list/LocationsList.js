@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
-import './PinsList.css';
+import './LocationsList.css';
 
-class PinsList extends Component {
+class LocationsList extends Component {
   selectLocation = (location) => {
     this.props.onLocationSelect(location);
   }
 
   render() {
     return (
-      <div className="pins-wrapper">
+      <div className="locations-wrapper">
+        <h2>Locations</h2>
         {this.props.locations.map(location => {
           return <button key={location.name} onClick={() => { this.selectLocation(location) }}>{location.name}</button>
         })}
@@ -18,4 +19,4 @@ class PinsList extends Component {
   }
 }
 
-export default PinsList;
+export default LocationsList;

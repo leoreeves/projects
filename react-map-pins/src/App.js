@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Map from './components/map/Map';
-import PinsList from './components/pins-list/PinsList';
+import LocationsList from './components/locations-list/LocationsList';
 
 class App extends Component {
   constructor() {
@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PinsList
+        <LocationsList
           locations={this.state.locations}
           onLocationSelect={this.handleLocationSelect}
         />
