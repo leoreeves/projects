@@ -8,8 +8,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      locations: []
+      locations: [],
+      selectedLocation: '',
     }
+  }
+
+  handleLocationSelect = (selectedLocation) => {
+    this.setState({selectedLocation});
+    console.log(this.state);
   }
 
   fetchLocations() {
@@ -26,7 +32,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PinsList locations={this.state.locations} />
+        <PinsList
+          locations={this.state.locations}
+          onLocationSelect={this.handleLocationSelect}
+        />
         <Map locations={this.state.locations} />
       </div>
     );
