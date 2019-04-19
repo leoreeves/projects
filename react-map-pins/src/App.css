@@ -1,5 +1,10 @@
 .App {
   display: flex;
-  flex-wrap: wrap;
   margin: 16px;
+}
+
+@media screen and (max-width: 540px) {
+  .App {
+    flex-wrap: wrap-reverse;
+  }
 }
