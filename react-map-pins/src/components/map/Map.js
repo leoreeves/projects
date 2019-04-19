@@ -1,34 +1,46 @@
 import React, { Component } from 'react';
 
 class Map extends Component {
+  constructor() {
+    super();
+    this.map = '';
+    this.latLng = { lat: 53.5775, lng: 23.106111 };
+  }
+
+  generateMap() {
+    this.map = new window.google.maps.Map(document.getElementById('map'), {
+      center: this.latLng,
+      zoom: 4,
+      maxZoom: 6,
+    });
+  }
+
+  generateMarkers() {
+    const locations = this.props.locations;
+    let marker;
+    const infoWindow = new window.google.maps.InfoWindow();
+
+    locations.forEach((location) => {
+      marker = new window.google.maps.Marker({
+        position: new window.google.maps.LatLng(location.latitude, location.longitude),
+        map: this.map
+      })
+
+      window.google.maps.event.addListener(marker, 'click', ((marker) => {
+        return () => {
+          infoWindow.setContent(location.name);
+          infoWindow.open(this.map, marker);
+        }
+      })(marker, location));
+    })
+  }
+
   componentDidMount() {
-    const latLng = { lat: 40.7128, lng: 74.0060 };
-    const map = new window.google.maps.Map(document.getElementById('map'), {
-      center: latLng,
-      zoom: 8
-    });
-    const locationName = 'Uluru';
+    this.generateMap();
+  }
 
-    const contentString =
-    `<div id="content">
-      <div id="siteNotice">
-        <h1 id="firstHeading" class="firstHeading">${locationName}</h1>
-      </div>
-     </div>`;
-
-    const infowindow = new window.google.maps.InfoWindow({
-      content: contentString
-    });
-
-    const marker = new window.google.maps.Marker({
-      position: latLng,
-      map: map,
-      title: 'Hello World!'
-    });
-
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
+  componentDidUpdate() {
+    this.generateMarkers();
   }
 
   render() {
