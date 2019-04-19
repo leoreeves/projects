@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   fetchLocations() {
-    fetch('https://s3-eu-west-1.amazonaws.com/omnifi/techtests/locations.json')
+    fetch('https://cors-anywhere.herokuapp.com/https://s3-eu-west-1.amazonaws.com/omnifi/techtests/locations.json')
       .then(response => response.json())
       .then(data => this.setState({locations: data}))
       .catch(error => console.error(error));
