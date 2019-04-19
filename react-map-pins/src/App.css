@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  margin: 16px;
+  margin: 0 16px;
 }
 
 @media screen and (max-width: 540px) {

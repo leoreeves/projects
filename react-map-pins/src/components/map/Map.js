@@ -66,10 +66,10 @@ class Map extends Component {
 
   render() {
     return (
-      <aside>
+      <main class="map-wrapper">
         <h2>Map</h2>
         <div style={{ width: 800, height: 600 }} id="map" />
-      </aside>
+      </main>
     );
   }
 }

@@ -1,7 +1,14 @@
 .locations-wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0 16px;
+  width: 20%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.locations-list {
+  display: flex;
+  flex-direction: column;
 }
 
 .locations-wrapper button {

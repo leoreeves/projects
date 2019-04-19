@@ -9,12 +9,14 @@ class LocationsList extends Component {
 
   render() {
     return (
-      <div className="locations-wrapper">
+      <aside className="locations-wrapper">
         <h2>Locations</h2>
-        {this.props.locations.map(location => {
-          return <button key={location.name} onClick={() => { this.selectLocation(location) }}>{location.name}</button>
-        })}
-      </div>
+        <div className="locations-list">
+          {this.props.locations.map(location => {
+            return <button key={location.name} onClick={() => { this.selectLocation(location) }}>{location.name}</button>
+          })}
+        </div>
+      </aside>
     );
   }
 }
