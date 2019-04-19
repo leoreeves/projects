@@ -7,7 +7,7 @@ class PinsList extends Component {
     return (
       <div className="pins-wrapper">
         {this.props.locations.map(location => {
-          return <a href="#" key={location.name}>{location.name}</a>
+          return <button key={location.name}>{location.name}</button>
         })}
       </div>
     );

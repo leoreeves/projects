@@ -5,8 +5,13 @@
 }
 
 .pins-wrapper button {
-  background: lightgray;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  padding: 8px 0;
+  text-align: left;
+  background:none !important;
+  color: #2196F3;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+  outline: 0;
+  cursor: pointer;
+  margin-bottom: 16px;
 }
