@@ -15,7 +15,6 @@ class App extends Component {
 
   handleLocationSelect = (selectedLocation) => {
     this.setState({selectedLocation});
-    console.log(this.state);
   }
 
   fetchLocations() {
@@ -36,7 +35,10 @@ class App extends Component {
           locations={this.state.locations}
           onLocationSelect={this.handleLocationSelect}
         />
-        <Map locations={this.state.locations} />
+        <Map
+          locations={this.state.locations}
+          selectedLocation={this.state.selectedLocation}
+        />
       </div>
     );
   }
