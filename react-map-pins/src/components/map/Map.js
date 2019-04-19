@@ -7,6 +7,7 @@ class Map extends Component {
     super();
     this.map = '';
     this.latLng = { lat: 53.5775, lng: 23.106111 };
+    this.markers = [];
   }
 
   generateMap() {
@@ -15,6 +16,20 @@ class Map extends Component {
       zoom: 4,
       maxZoom: 6,
     });
+  }
+
+  selectMarker() {
+    if (this.props && this.props.selectedLocation) {
+      const selectedLocation = this.props.selectedLocation;
+      const latLng = new window.google.maps.LatLng(selectedLocation.latitude, selectedLocation.longitude);
+      this.map.panTo(latLng);
+      const marker = this.findMarker(selectedLocation.name);
+      window.google.maps.event.trigger(marker, 'click')
+    }
+  }
+
+  findMarker(locationName) {
+    return this.markers.find(marker => marker.name === locationName);
   }
 
   generateMarkers() {
@@ -34,6 +49,9 @@ class Map extends Component {
           infoWindow.open(this.map, marker);
         }
       })(marker, location));
+
+      marker.name = location.name;
+      this.markers.push(marker);
     })
   }
 
@@ -43,11 +61,15 @@ class Map extends Component {
 
   componentDidUpdate() {
     this.generateMarkers();
+    this.selectMarker();
   }
 
   render() {
     return (
-      <div style={{ width: 800, height: 600 }} id="map" />
+      <aside>
+        <h2>Map</h2>
+        <div style={{ width: 800, height: 600 }} id="map" />
+      </aside>
     );
   }
 }
