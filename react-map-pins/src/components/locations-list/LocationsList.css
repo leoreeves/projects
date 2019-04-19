@@ -3,12 +3,12 @@
   flex-direction: column;
   width: 20%;
   height: 100vh;
-  overflow-y: scroll;
 }
 
 .locations-list {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .locations-wrapper button {
@@ -25,4 +25,12 @@
 
 .locations-wrapper button:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 1140px) {
+  .locations-wrapper {
+    width: 100%;
+    height: 60vh;
+    align-items: center;
+  }
 }
