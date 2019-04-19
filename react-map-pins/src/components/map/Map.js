@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Map.css';
+
 class Map extends Component {
   constructor() {
     super();
@@ -45,7 +47,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div style={{ width: 800, height: 800 }} id="map" />
+      <div style={{ width: 800, height: 600 }} id="map" />
     );
   }
 }
