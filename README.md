@@ -18,6 +18,7 @@ A collection of personal projects.
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
 - [pomodoro-timer](https://leoreeves.github.io/projects/pomodoro-timer)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
+- [React Map Pins](https://react-map-pins.netlify.com/)
 - [React Wikipedia Search](https://react-wikipedia-search.netlify.com/)
 - [Rental Rate Converter](https://leoreeves.github.io/projects/rental-rate-converter/)
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
@@ -182,6 +183,16 @@ Built using:
 - HTML
 - CSS
 - jQuery
+
+# [React Map Pins](https://react-map-pins.netlify.com/)
+
+A map with selectable location pins.
+
+Built using:
+
+- HTML
+- CSS
+- React
 
 ## [React Wikipedia Search](https://react-wikipedia-search.netlify.com/)
 
