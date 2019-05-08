@@ -1,0 +1,36 @@
+.locations-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100vh;
+}
+
+.locations-list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.locations-wrapper button {
+  text-align: left;
+  background:none !important;
+  color: #2196F3;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+  outline: 0;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.locations-wrapper button:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1140px) {
+  .locations-wrapper {
+    width: 100%;
+    height: 60vh;
+    align-items: center;
+  }
+}
