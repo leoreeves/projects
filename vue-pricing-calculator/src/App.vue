@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import PricingCalculator from './components/PricingCalculator.vue'
+import PricingCalculator from './components/PricingCalculator.vue';
+import 'normalize.css';
 
 export default {
   name: 'app',
@@ -19,12 +20,23 @@ export default {
 </script>
 
 <style lang="scss">
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
 #app {
+  height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background: #F4F8FB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
