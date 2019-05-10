@@ -1,13 +1,24 @@
 <template>
   <section class="pricing-calculator-container">
     <div class="pricing-inputs-container">
-      <input type="number" placeholder="Reward (£)" step="0.01" v-model.number="reward">
-      <input type="number" placeholder="Number of places" v-model.number="places">
-      <input type="number" placeholder="Time to complete study (minutes)" v-model.number="time">
+      <h1>Study Pricing Calculator</h1>
+      <div class="input-container">
+        <label for="reward">Participant reward (£)</label>
+        <input type="number" placeholder="Enter amount" step="0.01" id="reward" v-model.number="reward">
+      </div>
+      <div class="input-container">
+        <label for="places">Total participants</label>
+        <input type="number" placeholder="Enter amount" id="places" v-model.number="places">
+      </div>
+      <div class="input-container">
+        <label for="time">Time to complete (in minutes)</label>
+        <input type="number" placeholder="Enter amount" id="time" v-model.number="time">
+      </div>
     </div>
-    <div>
-      <p><span>Total cost: </span>£{{ calculateTotalCost }}</p>
-      <p><span>Reward per hour: </span>£{{ calculateRewardPerHour }}</p>
+    <div class="results-container">
+      <p class="result">Total cost: <span class="amount" v-if="calculateTotalCost">£{{ calculateTotalCost }}</span></p>
+      <p class="result">Reward per hour: <span class="amount" v-if="calculateRewardPerHour">£{{ calculateRewardPerHour }}</span></p>
+      <small class="error" v-if="calculateRewardPerHour < 5">Reward per hour is less than £5, please amend your amounts.</small>
     </div>
   </section>
 </template>
@@ -51,7 +62,7 @@ $base: 16px;
   width: 100%;
   max-width: 550px;
   border: 1px solid lightgray;
-  border-radius: $base / 2;
+  border-radius: $base / 4;
   padding: $base * 2;
   margin: $base;
   text-align: left;
@@ -62,15 +73,44 @@ $base: 16px;
     max-width: 60%;
   }
 
+  .error {
+    color: lightcoral;
+  }
+
   .pricing-inputs-container {
     display: flex;
     flex-direction: column;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: 500;
+      }
+    }
 
     input {
       margin: $base 0;
       padding: $base / 2 $base;
       border: 1px solid lightgray;
-      border-radius: $base / 2;
+      border-radius: $base / 4;
+      outline: 0;
+
+      &:focus {
+        border-color: lightblue;
+      }
+    }
+  }
+
+  .results-container {
+    .result {
+      display: flex;
+      font-size: 1.1em;
+    }
+
+    .amount {
+      margin-left: auto;
     }
   }
 }
