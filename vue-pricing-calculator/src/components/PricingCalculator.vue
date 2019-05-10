@@ -4,7 +4,10 @@
 <script>
 export default {
   name: 'PricingCalculator',
-  props: {}
+  props: {
+    feesPercentage: Number,
+    vatPercentage: Number,
+  }
 }
 </script>
 

@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <PricingCalculator/>
+    <PricingCalculator
+      feesPercentage="0.3"
+      vatPercentage="0.2"
+    />
   </div>
 </template>
 
