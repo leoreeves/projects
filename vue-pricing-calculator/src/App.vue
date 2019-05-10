@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <PricingCalculator
-      feesPercentage="0.3"
-      vatPercentage="0.2"
+      v-bind:feesPercentage="0.3"
+      v-bind:vatPercentage="0.2"
     />
   </div>
 </template>
