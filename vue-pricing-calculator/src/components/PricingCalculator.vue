@@ -38,10 +38,12 @@
     </div>
     <div class="results-container">
       <p class="result">
-        Total cost: <span class="amount" v-if="calculateTotalCost">£{{ calculateTotalCost }}</span>
+        Total cost:
+        <span class="amount amount-cost" v-if="calculateTotalCost">£{{ calculateTotalCost }}</span>
       </p>
-      <p class="result">Reward per hour:
-        <span class="amount" v-if="calculateRewardPerHour">£{{ calculateRewardPerHour }}</span>
+      <p class="result">
+        Reward per hour:
+        <span class="amount amount-reward" v-if="calculateRewardPerHour">£{{ calculateRewardPerHour }}</span>
       </p>
       <small class="error" v-if="calculateRewardPerHour && calculateRewardPerHour < 5">
         Reward per hour is less than £5, please amend entered amounts.
