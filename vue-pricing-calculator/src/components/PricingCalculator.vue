@@ -15,11 +15,25 @@
       </div>
       <div class="input-container">
         <label for="places">Total participants</label>
-        <input type="number" placeholder="Enter amount" id="places" v-model.number="places">
+        <input
+          type="number"
+          placeholder="Enter amount"
+          id="places"
+          pattern="[0-9]"
+          onkeypress="return !(event.charCode === 46)"
+          step="1"
+          v-model.number="places">
       </div>
       <div class="input-container">
         <label for="time">Time to complete (in minutes)</label>
-        <input type="number" placeholder="Enter amount" id="time" v-model.number="time">
+        <input
+          type="number"
+          pattern="[0-9]"
+          onkeypress="return !(event.charCode === 46)"
+          placeholder="Enter amount"
+          id="time"
+          step="1"
+          v-model.number="time">
       </div>
     </div>
     <div class="results-container">
