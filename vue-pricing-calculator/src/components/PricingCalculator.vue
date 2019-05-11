@@ -184,6 +184,7 @@ $error-color: lightcoral;
     }
 
     .amount {
+      font-weight: 600;
       margin-left: auto;
     }
   }
