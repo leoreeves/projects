@@ -1,7 +1,7 @@
 <template>
   <section class="pricing-calculator-container">
     <div class="pricing-inputs-container">
-      <h1>Study Pricing Calculator</h1>
+      <h1 class="heading-primary">Study Pricing Calculator</h1>
       <div class="input-container">
         <label for="reward">Participant reward (£)</label>
         <input type="number" placeholder="Enter amount" step="0.01" id="reward" v-model.number="reward">
@@ -91,6 +91,11 @@ $error-color: lightcoral;
   .pricing-inputs-container {
     display: flex;
     flex-direction: column;
+
+    .heading-primary {
+      margin-top: $base;
+      margin-bottom: $base * 2;
+    }
 
     .input-container {
       display: flex;
