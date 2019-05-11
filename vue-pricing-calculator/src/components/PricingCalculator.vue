@@ -72,16 +72,16 @@ export default {
         const cost = this.reward * this.places;
         const additionalFees = cost * this.feesPercentage;
         const vat = additionalFees * this.vatPercentage;
-        const totalCost = (Math.ceil((cost + additionalFees + vat) * 100) / 100).toFixed(2);
-        return this.addCommasToAmount(totalCost);
+        const roundedTotalCost = (Math.ceil((cost + additionalFees + vat) * 100) / 100).toFixed(2);
+        return this.addCommasToAmount(roundedTotalCost);
       } else {
         return '';
       }
     },
     calculateRewardPerHour() {
       if (this.reward && this.time) {
-        const totalRewardPerHour = (Math.ceil((this.reward / this.time * 60) * 100) / 100).toFixed(2);
-        return this.addCommasToAmount(totalRewardPerHour);
+        const roundedTotalRewardPerHour = (Math.ceil((this.reward / this.time * 60) * 100) / 100).toFixed(2);
+        return this.addCommasToAmount(roundedTotalRewardPerHour);
       } else {
         return '';
       }
