@@ -5,7 +5,13 @@
       <div class="input-container">
         <label for="reward">Participant reward</label>
         <span class="currency-symbol">£</span>
-        <input type="number" placeholder="Enter amount" step="0.01" class="reward-input" id="reward" v-model.number="reward">
+        <input
+          type="number"
+          placeholder="Enter amount"
+          step="0.01"
+          class="reward-input"
+          id="reward"
+          v-model.number="reward">
       </div>
       <div class="input-container">
         <label for="places">Total participants</label>
@@ -17,9 +23,15 @@
       </div>
     </div>
     <div class="results-container">
-      <p class="result">Total cost: <span class="amount" v-if="calculateTotalCost">£{{ calculateTotalCost }}</span></p>
-      <p class="result">Reward per hour: <span class="amount" v-if="calculateRewardPerHour">£{{ calculateRewardPerHour }}</span></p>
-      <small class="error" v-if="calculateRewardPerHour < 5">Reward per hour is less than £5, please amend your amounts.</small>
+      <p class="result">
+        Total cost: <span class="amount" v-if="calculateTotalCost">£{{ calculateTotalCost }}</span>
+      </p>
+      <p class="result">Reward per hour:
+        <span class="amount" v-if="calculateRewardPerHour">£{{ calculateRewardPerHour }}</span>
+      </p>
+      <small class="error" v-if="calculateRewardPerHour < 5">
+        Reward per hour is less than £5, please amend your amounts.
+      </small>
     </div>
   </section>
 </template>
