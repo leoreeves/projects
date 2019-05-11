@@ -36,4 +36,16 @@ describe('PricingCalculator.vue', () => {
       expect(addCommasTest).toEqual('2,500');
     });
   });
+
+  describe('elements', () => {
+    it('shows an error message if reward per hour is less than £5', () => {
+      wrapper.setData({ reward: 1, places: 100, time: 120 });
+      expect(wrapper.find('.error').exists()).toBeTruthy();
+    });
+
+    it('does not show an error message if reward per hour is greater than £5', () => {
+      wrapper.setData({ reward: 10, places: 100, time: 120 });
+      expect(wrapper.find('.error').exists()).toBeFalsy();
+    });
+  });
 })
