@@ -1,4 +1,4 @@
-# vue-pricing-calculator
+# vue-study-pricing-calculator
 
 ## Project setup
 ```

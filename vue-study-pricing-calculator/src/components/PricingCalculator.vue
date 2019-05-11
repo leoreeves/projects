@@ -1,5 +1,5 @@
 <template>
-  <section class="pricing-calculator-container">
+  <section class="study-pricing-calculator-container">
     <div class="pricing-inputs-container">
       <h1 class="heading-primary">Study Pricing Calculator</h1>
       <div class="input-container">
@@ -102,7 +102,7 @@ $border-color: #e3eaef;
 $input-border-focused: #199dff;
 $error-color: lightcoral;
 
-.pricing-calculator-container {
+.study-pricing-calculator-container {
   width: 100%;
   max-width: 550px;
   border: 1px solid $border-color;
