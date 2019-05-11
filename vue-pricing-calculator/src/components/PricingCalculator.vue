@@ -43,7 +43,7 @@
       </p>
       <p class="result">
         Reward:
-        <span class="amount">£{{ calculateRewardPerHour }}/hr</span>
+        <span class="amount">£{{ calculateRewardPerHour }}/<small>hr</small></span>
       </p>
       <small class="error" v-if="calculateRewardPerHour && calculateRewardPerHour < 5">
         Reward per hour is less than £5, please amend entered amounts.
