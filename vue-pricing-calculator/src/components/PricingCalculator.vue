@@ -39,11 +39,11 @@
     <div class="results-container">
       <p class="result">
         Total cost:
-        <span class="amount amount-cost" v-if="calculateTotalCost">£{{ calculateTotalCost }}</span>
+        <span class="amount">£{{ calculateTotalCost }}</span>
       </p>
       <p class="result">
         Reward per hour:
-        <span class="amount amount-reward" v-if="calculateRewardPerHour">£{{ calculateRewardPerHour }}</span>
+        <span class="amount">£{{ calculateRewardPerHour }}</span>
       </p>
       <small class="error" v-if="calculateRewardPerHour && calculateRewardPerHour < 5">
         Reward per hour is less than £5, please amend entered amounts.
@@ -75,7 +75,7 @@ export default {
         const roundedTotalCost = (Math.ceil((cost + additionalFees + vat) * 100) / 100).toFixed(2);
         return this.addCommasToAmount(roundedTotalCost);
       } else {
-        return '';
+        return 0;
       }
     },
     calculateRewardPerHour() {
@@ -83,7 +83,7 @@ export default {
         const roundedTotalRewardPerHour = (Math.ceil((this.reward / this.time * 60) * 100) / 100).toFixed(2);
         return this.addCommasToAmount(roundedTotalRewardPerHour);
       } else {
-        return '';
+        return 0;
       }
     }
   },

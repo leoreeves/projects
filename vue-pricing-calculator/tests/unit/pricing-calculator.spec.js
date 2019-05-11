@@ -42,24 +42,6 @@ describe('PricingCalculator.vue', () => {
   });
 
   describe('elements', () => {
-    it('shows total cost result if it exists', () => {
-      wrapper.setData({ reward: 30, places: 40 });
-      expect(wrapper.find('.amount-cost').exists()).toBeTruthy();
-    });
-
-    it('doesn\'t show total cost result if it doesn\'t exist', () => {
-      expect(wrapper.find('.amount-cost').exists()).toBeFalsy();
-    });
-
-    it('shows total cost result if it exists', () => {
-      wrapper.setData({ reward: 30, places: 40, time: 30 });
-      expect(wrapper.find('.amount-reward').exists()).toBeTruthy();
-    });
-
-    it('doesn\'t show total cost result if it doesn\'t exist', () => {
-      expect(wrapper.find('.amount-reward').exists()).toBeFalsy();
-    });
-
     it('shows an error message if reward per hour is less than £5', () => {
       wrapper.setData({ reward: 1, places: 100, time: 120 });
       expect(wrapper.find('.error').exists()).toBeTruthy();
