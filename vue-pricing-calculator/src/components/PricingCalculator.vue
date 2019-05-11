@@ -43,13 +43,21 @@ export default {
         const cost = this.reward * this.places;
         const additionalFees = cost * this.feesPercentage;
         const vat = additionalFees * this.vatPercentage;
-        return (Math.ceil((cost + additionalFees + vat) * 100) / 100).toFixed(2);
+        const totalCost = (Math.ceil((cost + additionalFees + vat) * 100) / 100).toFixed(2);
+        return this.addCommasToAmount(totalCost);
       }
     },
     calculateRewardPerHour() {
       if (this.reward && this.time) {
-        return (Math.ceil((this.reward / this.time * 60) * 100) / 100).toFixed(2);
+        const totalRewardPerHour = (Math.ceil((this.reward / this.time * 60) * 100) / 100).toFixed(2);
+        return this.addCommasToAmount(totalRewardPerHour);
       }
+    }
+  },
+  methods: {
+    addCommasToAmount(amount) {
+      const addCommasRegex = /(\d)(?=(\d{3})+(?!\d))/g;
+      return amount.toString().replace(addCommasRegex, '$1,');
     }
   }
 }
