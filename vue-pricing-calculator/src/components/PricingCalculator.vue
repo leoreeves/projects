@@ -131,6 +131,10 @@ $error-color: lightcoral;
       margin-top: 0;
       margin-bottom: $base * 2;
       font-size: 1.6em;
+
+      @media screen and (max-width: 720px) {
+        font-size: 1.4em;
+      }
     }
 
     .input-container {
@@ -173,6 +177,10 @@ $error-color: lightcoral;
       display: flex;
       font-size: 1.1em;
       margin-bottom: 0;
+
+      @media screen and (max-width: 720px) {
+        font-size: 1.05em;
+      }
     }
 
     .amount {
