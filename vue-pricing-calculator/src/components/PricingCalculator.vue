@@ -86,6 +86,8 @@ $error-color: lightcoral;
   }
 
   .error {
+    display: block;
+    margin-top: $base;
     color: $error-color;
   }
 
@@ -103,6 +105,7 @@ $error-color: lightcoral;
       display: flex;
       flex-direction: column;
       position: relative;
+      margin-bottom: $base / 2;
 
       label {
         font-weight: 500;
