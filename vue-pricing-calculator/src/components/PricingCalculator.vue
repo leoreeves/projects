@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 $base: 16px;
-$border-color: lightgray;
+$border-color: #e3eaef;
 $input-border-focused: #199dff;
 $error-color: lightcoral;
 
@@ -73,7 +73,7 @@ $error-color: lightcoral;
   width: 100%;
   max-width: 550px;
   border: 1px solid $border-color;
-  border-radius: $base / 4;
+  border-radius: $base / 2;
   padding: $base * 2;
   margin: $base;
   text-align: left;
@@ -95,6 +95,7 @@ $error-color: lightcoral;
     .heading-primary {
       margin-top: $base;
       margin-bottom: $base * 2;
+      font-size: 1.6em;
     }
 
     .input-container {
