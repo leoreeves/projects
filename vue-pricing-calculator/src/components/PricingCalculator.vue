@@ -3,8 +3,9 @@
     <div class="pricing-inputs-container">
       <h1 class="heading-primary">Study Pricing Calculator</h1>
       <div class="input-container">
-        <label for="reward">Participant reward (£)</label>
-        <input type="number" placeholder="Enter amount" step="0.01" id="reward" v-model.number="reward">
+        <label for="reward">Participant reward</label>
+        <span class="currency-symbol">£</span>
+        <input type="number" placeholder="Enter amount" step="0.01" class="reward-input" id="reward" v-model.number="reward">
       </div>
       <div class="input-container">
         <label for="places">Total participants</label>
@@ -101,9 +102,21 @@ $error-color: lightcoral;
     .input-container {
       display: flex;
       flex-direction: column;
+      position: relative;
 
       label {
         font-weight: 500;
+      }
+
+      .reward-input {
+        text-indent: $base / 2;
+      }
+
+      .currency-symbol {
+        position: absolute;
+        bottom: 25px;
+        left: 10px;
+        font-weight: 600;
       }
     }
 
