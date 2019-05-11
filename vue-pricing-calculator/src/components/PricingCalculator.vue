@@ -65,11 +65,14 @@ export default {
 
 <style lang="scss" scoped>
 $base: 16px;
+$border-color: lightgray;
+$input-border-focused: #199dff;
+$error-color: lightcoral;
 
 .pricing-calculator-container {
   width: 100%;
   max-width: 550px;
-  border: 1px solid lightgray;
+  border: 1px solid $border-color;
   border-radius: $base / 4;
   padding: $base * 2;
   margin: $base;
@@ -82,7 +85,7 @@ $base: 16px;
   }
 
   .error {
-    color: lightcoral;
+    color: $error-color;
   }
 
   .pricing-inputs-container {
@@ -101,12 +104,12 @@ $base: 16px;
     input {
       margin: $base 0;
       padding: $base / 2 $base;
-      border: 1px solid lightgray;
+      border: 1px solid $border-color;
       border-radius: $base / 4;
       outline: 0;
 
       &:focus {
-        border-color: lightblue;
+        border-color: $input-border-focused;
       }
     }
   }
