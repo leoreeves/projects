@@ -107,6 +107,7 @@ $base: 16px;
     .result {
       display: flex;
       font-size: 1.1em;
+      margin: $base 0;
     }
 
     .amount {
