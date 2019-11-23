@@ -1,25 +1,35 @@
-const dateOfBirth = document.querySelector('.date-of-birth');
-const birthdayYear = document.querySelector('.birthday-year');
-const birthdayWeekday = document.querySelector('.birthday-weekday');
-const age = document.querySelector('.age');
+const dateOfBirthInput = document.querySelector('.date-of-birth');
+const birthdayYearInput = document.querySelector('.birthday-year');
+const birthdayWeekdayElement = document.querySelector('.birthday-weekday');
+const ageElement = document.querySelector('.age');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
   'September', 'October', 'November', 'December'];
+const currentYear = new Date().getFullYear();
 
-function getBirthdayWeekDayAndAge() {
-  const birthDate = new Date(dateOfBirth.value);
-  const myDate = new Date(`${months[birthDate.getMonth()]} ${birthDate.getDate()}, ${birthdayYear.value}`);
-  const weekDay = weekdays[myDate.getDay()];
-  const calculatedAge = birthdayYear.value - birthDate.getFullYear();
+function calculateBirthdayWeekDayAndAge() {
+  const dateOfBirth = new Date(dateOfBirthInput.value);
+  const birthYear = dateOfBirth.getFullYear();
+  const birthMonth = dateOfBirth.getMonth();
+  const birthDate = dateOfBirth.getDate();
+  const enteredYear = birthdayYearInput.value;
+  const calculatedDate = new Date(`${months[birthMonth]} ${birthDate}, ${enteredYear}`);
+  const calculatedWeekday = weekdays[calculatedDate.getDay()];
+  const calculatedAge = enteredYear - birthYear;
 
-  if (dateOfBirth.value !== '' && birthDate.getFullYear() >= 1900) {
-    birthdayWeekday.innerHTML = weekDay;
-    age.innerHTML = calculatedAge;
+  if (dateOfBirth && enteredYear >= birthYear) {
+    setMinAsBirthdayYear(birthYear);
+    birthdayWeekdayElement.innerHTML = calculatedWeekday;
+    ageElement.innerHTML = calculatedAge;
   }
 }
 
 function setBirthdayYearAsCurrentYear() {
-  birthdayYear.value = new Date().getFullYear();
+  birthdayYearInput.value = currentYear;
+}
+
+function setMinAsBirthdayYear(birthYear) {
+  birthdayYearInput.min = birthYear;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
