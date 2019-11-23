@@ -9,10 +9,12 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 function getBirthdayWeekDayAndAge() {
   const birthDate = new Date(dateOfBirth.value);
   const myDate = new Date(`${months[birthDate.getMonth()]} ${birthDate.getDate()}, ${birthdayYear.value}`);
+  const weekDay = weekdays[myDate.getDay()];
+  const calculatedAge = birthdayYear.value - birthDate.getFullYear();
 
   if (dateOfBirth.value !== '' && birthDate.getFullYear() >= 1900) {
-    birthdayWeekday.innerHTML = weekdays[myDate.getDay()];
-    age.innerHTML = birthdayYear.value - birthDate.getFullYear();
+    birthdayWeekday.innerHTML = weekDay;
+    age.innerHTML = calculatedAge;
   }
 }
 
