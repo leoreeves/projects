@@ -1,4 +1,4 @@
-# [Ionic Contacts Manager](https://ionic-contacts-manager-app.herokuapp.com/)
+# [Ionic Contacts Manager](https://ionic-contacts-manager.netlify.com/)
 
 A contacts manager that allows users to create, edit and view contacts.
 
