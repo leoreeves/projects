@@ -1,17 +1,3 @@
-// Generate quote when spacebar is pressed
-$(window).keypress((e) => {
-  if (e.which === 32) {
-    fadeOutQuote();
-    getQuote();
-  }
-});
-
-// Generate quote on click
-$(document).on('click', () => {
-  fadeOutQuote();
-  getQuote();
-});
-
 function fadeOutQuote() {
   $('.quote-body').fadeOut();
   $('.quote-author').fadeOut();
@@ -33,6 +19,20 @@ function createQuote(json) {
   $('.quote-body').html(`${quote.content.rendered}`).fadeIn();
   $('.quote-author').html(`― ${quote.title.rendered}`).fadeIn();
 }
+
+// Generate quote when spacebar is pressed
+$(window).keypress((e) => {
+  if (e.which === 32) {
+    fadeOutQuote();
+    getQuote();
+  }
+});
+
+// Generate quote on click
+$(document).on('click', () => {
+  fadeOutQuote();
+  getQuote();
+});
 
 $(document).ready(() => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
