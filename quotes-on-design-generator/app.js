@@ -21,7 +21,7 @@ function getQuote() {
   setTimeout(() => {
     $.ajax({
       crossOrigin: true,
-      url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=createQuote',
+      url: 'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand&_jsonp=createQuote',
       dataType: 'jsonp',
     });
   }, 200);
@@ -30,8 +30,8 @@ function getQuote() {
 // Callback method in JSON
 function createQuote(json) {
   const quote = json[0];
-  $('.quote-body').html(`${quote.content}`).fadeIn();
-  $('.quote-author').html(`― ${quote.title}`).fadeIn();
+  $('.quote-body').html(`${quote.content.rendered}`).fadeIn();
+  $('.quote-author').html(`― ${quote.title.rendered}`).fadeIn();
 }
 
 $(document).ready(() => {
