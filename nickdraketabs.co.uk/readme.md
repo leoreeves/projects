@@ -10,7 +10,7 @@ Built using:
 - Nunjucks
 - Gulp
 
-### Setup
+### Setup
 
 1. Run `npm install`
 2. [Install gulp](https://gulpjs.com/docs/en/getting-started/quick-start/)
