@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+  <title>UK Microsoft Rewards Calculator</title>
+  <style>
+    html,
+    body {
+      background: #016fc9;
+      font-family: 'PT Sans', sans-serif;
+      height: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    input {
+      font-family: 'PT Sans', sans-serif;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    .calculator-card {
+      background: #fff;
+      padding: 20px;
+      margin: 20px;
+      max-width: 450px;
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    }
+    .calculator-heading {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .calculator-input-label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+    }
+    .value-label {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .result,
+    .difference {
+      margin-top: 10px;
+      font-size: 1.8em;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-card">
+    <h1 class="calculator-heading">UK Microsoft Rewards Calculator</h1>
+    <label for="calculator-input" class="calculator-input-label">
+      Points
+      <input id="calculator-input" type="number"/>
+    </label>
+    <p class="value-label">Reward</p>
+    <select name="rewards" id="rewards">
+      <option value="5">£5 gift card</option>
+      <option value="10">£10 gift card</option>
+      <option value="25">£25 gift card</option>
+    </select>
+    <p class="value-label">Value</p>
+    <p class="result">£0.00</p>
+    <p class="value-label">Difference</p>
+    <p class="difference">£0.00</p>
+  </div>
+  <script>
+    const calculatorInput = document.querySelector('#calculator-input')
+    const rewardSelector = document.querySelector('#rewards')
+    const result = document.querySelector('.result')
+    const difference = document.querySelector('.difference')
+    let resultValue
+
+    calculatorInput.addEventListener('input', (event) => updateValues(event))
+    rewardSelector.addEventListener('input', (event) => updateDifferenceValue())
+
+    function calculateReward(input) {
+      return (Number(input) / 1170).toFixed(2)
+    }
+
+    function calculateDifference() {
+      const rewardValue = Number(rewardSelector.value)
+      const difference = (rewardValue - resultValue).toFixed(2)
+      if (difference < rewardValue) {
+        return `£${difference}`
+      }
+      return '£0.00'
+    }
+
+    function updateResultValue(event) {
+      const value = event.target.value.replace(/[^0-9]+/g, '')
+      const calculatedValue = calculateReward(value)
+      result.innerHTML = `£${calculatedValue}`
+      resultValue = calculatedValue
+    }
+
+    function updateDifferenceValue() {
+      difference.innerHTML = `${calculateDifference()}`
+    }
+
+    function updateValues(event) {
+      updateResultValue(event)
+      updateDifferenceValue()
+    }
+  </script>
+</body>
+</html>
