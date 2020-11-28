@@ -67,8 +67,9 @@ let monstersCaught = 0;
 const keysDown = {};
 
 document.addEventListener('keydown', (e) => {
-  keysDown[e.keyCode] = true;
-  if (soundEnabled) {
+  const { keyCode } = e;
+  keysDown[keyCode] = true;
+  if (soundEnabled && keyCode >= 37 && keyCode <= 40) {
     runningSound.play();
   }
 }, false);
