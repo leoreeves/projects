@@ -5,7 +5,7 @@ canvas.width = 512;
 canvas.height = 480;
 document.body.appendChild(canvas);
 
-// Get images
+// Handle images
 let backgroundImageReady = false;
 const backgroundImage = new Image();
 backgroundImage.src = 'img/background.png';
@@ -73,10 +73,9 @@ function checkIfHeroIsTouchingMonster() {
   }
 }
 
-
 function updateGameObjects(modifier) {
   const position = hero.pixelSpeed * modifier;
-
+  
   // Player holding up
   if (38 in keysDown) {
     hero.y -= position;
