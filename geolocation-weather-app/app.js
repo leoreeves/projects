@@ -93,7 +93,6 @@ $(document).ready(() => {
           },
         });
       }
-
       setPlace();
       setBackground();
       getForecast();
@@ -118,7 +117,6 @@ $(document).ready(() => {
       }
     }
   }
-
 
   // Switch units
   let unit = 'si';
