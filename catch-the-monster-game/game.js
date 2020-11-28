@@ -21,6 +21,34 @@ const monsterImage = new Image();
 monsterImage.src = 'img/monster.png';
 monsterImage.onload = () => { monsterImageReady = true; };
 
+// Handle sounds
+const speakerImage = document.querySelector('.speaker');
+const runningSound = new Audio('sounds/running.wav');
+runningSound.loop = true;
+let soundEnabled = true;
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  speakerImage.src = soundEnabled ? 'img/speaker.svg' : 'img/mute.svg';
+}
+
+function generateRandomNumberBetweenRange(start, end) {
+  return Math.floor(Math.random() * end) + start;
+}
+
+let monsterDeathSoundNumber = 1;
+
+function generateMonsterDeathSound() {
+  let randomNumber = generateRandomNumberBetweenRange(1, 4);
+  while (randomNumber === monsterDeathSoundNumber) {
+    randomNumber = generateRandomNumberBetweenRange(1, 4);
+  }
+  monsterDeathSoundNumber = randomNumber;
+  const monsterDeathSound = new Audio(`sounds/monster/death${randomNumber}.wav`);
+  monsterDeathSound.volume = 0.15;
+  monsterDeathSound.play();
+}
+
 // Game objects
 const hero = {
   pixelSpeed: 256,
@@ -40,10 +68,16 @@ const keysDown = {};
 
 document.addEventListener('keydown', (e) => {
   keysDown[e.keyCode] = true;
+  if (soundEnabled) {
+    runningSound.play();
+  }
 }, false);
 
 document.addEventListener('keyup', (e) => {
   delete keysDown[e.keyCode];
+  if (soundEnabled) {
+    runningSound.pause();
+  }
 }, false);
 
 function setHeroStartingPosition() {
@@ -68,6 +102,9 @@ function checkIfHeroIsTouchingMonster() {
     && hero.y <= (monster.y + 32)
     && monster.y <= (hero.y + 32)
   ) {
+    if (soundEnabled) {
+      generateMonsterDeathSound();
+    }
     monstersCaught += 1;
     resetGame();
   }
@@ -162,6 +199,6 @@ window.requestAnimationFrame = w.requestAnimationFrame
   || w.msRequestAnimationFrame
   || w.mozRequestAnimationFrame;
 
-// Start the game
+// Handle the game
 resetGame();
 startGame();
