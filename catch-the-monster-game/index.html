@@ -13,9 +13,17 @@
         justify-content: center;
         background-image: url(img/webpage-background.png);
       }
+      .speaker {
+        cursor: pointer;
+        position: absolute;
+        width: 25px;
+        bottom: 10px;
+        right: 10px;
+      }
     </style>
 	</head>
 	<body>
-		<script src="game.js"></script>
+    <img src="img/speaker.svg" alt="Speaker" class="speaker" onclick="toggleSound()" />
+    <script src="game.js"></script>
 	</body>
 </html>
