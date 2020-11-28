@@ -8,17 +8,19 @@ document.body.appendChild(canvas);
 // Handle images
 let backgroundImageReady = false;
 const backgroundImage = new Image();
-backgroundImage.src = 'img/background.png';
+backgroundImage.src = 'img/background.svg';
 backgroundImage.onload = () => { backgroundImageReady = true; };
 
 let heroImageReady = false;
 const heroImage = new Image();
-heroImage.src = 'img/hero.png';
+heroImage.src = 'img/hero.svg';
 heroImage.onload = () => { heroImageReady = true; };
+heroImage.height = 32;
+heroImage.width = 32;
 
 let monsterImageReady = false;
 const monsterImage = new Image();
-monsterImage.src = 'img/monster.png';
+monsterImage.src = 'img/monster.svg';
 monsterImage.onload = () => { monsterImageReady = true; };
 
 // Handle sounds
@@ -168,10 +170,10 @@ function checkIfImagesAreReady() {
     ctx.drawImage(backgroundImage, 0, 0);
   }
   if (heroImageReady) {
-    ctx.drawImage(heroImage, hero.x, hero.y);
+    ctx.drawImage(heroImage, hero.x, hero.y, 32, 32);
   }
   if (monsterImageReady) {
-    ctx.drawImage(monsterImage, monster.x, monster.y);
+    ctx.drawImage(monsterImage, monster.x, monster.y, 32, 32);
   }
 }
 
