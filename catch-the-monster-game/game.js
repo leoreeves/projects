@@ -75,7 +75,7 @@ function checkIfHeroIsTouchingMonster() {
 
 function updateGameObjects(modifier) {
   const position = hero.pixelSpeed * modifier;
-  
+
   // Player holding up
   if (38 in keysDown) {
     hero.y -= position;
