@@ -69,15 +69,18 @@ let monstersCaught = 0;
 const keysDown = {};
 
 document.addEventListener('keydown', (e) => {
-  const { keyCode } = e;
-  keysDown[keyCode] = true;
-  if (soundEnabled && keyCode >= 37 && keyCode <= 40) {
+  const { code } = e;
+  keysDown[code] = true;
+
+  if (soundEnabled && code.includes('Arrow')) {
     runningSound.play();
   }
 }, false);
 
 document.addEventListener('keyup', (e) => {
-  delete keysDown[e.keyCode];
+  const { code } = e;
+  delete keysDown[code];
+
   if (soundEnabled) {
     runningSound.pause();
   }
@@ -116,20 +119,16 @@ function checkIfHeroIsTouchingMonster() {
 function updateGameObjects(modifier) {
   const position = hero.pixelSpeed * modifier;
 
-  // Player holding up
-  if (38 in keysDown) {
+  if ('ArrowUp' in keysDown) {
     hero.y -= position;
   }
-  // Player holding down
-  if (40 in keysDown) {
+  if ('ArrowDown' in keysDown) {
     hero.y += position;
   }
-  // Player holding left
-  if (37 in keysDown) {
+  if ('ArrowLeft' in keysDown) {
     hero.x -= position;
   }
-  // Player holding right
-  if (39 in keysDown) {
+  if ('ArrowRight' in keysDown) {
     hero.x += position;
   }
 
