@@ -59,10 +59,10 @@ operatorButtons.forEach((item) => {
     } else if ((screen.innerHTML.slice(-1)).match(/[÷×+-]/g)) {
       screen.innerHTML = screen.innerHTML.slice(0, -1);
       screen.innerHTML += item.innerHTML;
-    } else if (!(screen.innerHTML.slice(-1)).match(/[\.÷×+-]/g)) {
+    } else if (!(screen.innerHTML.slice(-1)).match(/[.÷×+-]/g)) {
       screen.innerHTML += item.innerHTML;
     }
-    item.blur();
+    return item.blur();
   });
 });
 
