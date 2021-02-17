@@ -66,8 +66,13 @@
 
     calculatorInput.addEventListener('input', (event) => updateResultValue(event))
 
+    function calculateRate() {
+      const twentyFivePoundsGiftCardPointsCost = 29250
+      return twentyFivePoundsGiftCardPointsCost / 25
+    }
+
     function calculateReward(value) {
-      return (value / 1170).toFixed(2)
+      return (value / calculateRate()).toFixed(2)
     }
 
     function updateResultValue(event) {
