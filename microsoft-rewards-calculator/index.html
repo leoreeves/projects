@@ -44,8 +44,7 @@
       margin-bottom: 10px;
       font-weight: 600;
     }
-    .result,
-    .difference {
+    .result {
       margin-top: 10px;
       font-size: 1.8em;
     }
@@ -58,54 +57,23 @@
       Points
       <input id="calculator-input" type="number"/>
     </label>
-    <p class="value-label">Reward</p>
-    <select name="rewards" id="rewards">
-      <option value="5">£5 gift card</option>
-      <option value="10">£10 gift card</option>
-      <option value="25">£25 gift card</option>
-    </select>
     <p class="value-label">Value</p>
     <p class="result">£0.00</p>
-    <p class="value-label">Difference</p>
-    <p class="difference">£0.00</p>
   </div>
   <script>
     const calculatorInput = document.querySelector('#calculator-input')
-    const rewardSelector = document.querySelector('#rewards')
     const result = document.querySelector('.result')
-    const difference = document.querySelector('.difference')
-    let resultValue
 
-    calculatorInput.addEventListener('input', (event) => updateValues(event))
-    rewardSelector.addEventListener('input', (event) => updateDifferenceValue())
+    calculatorInput.addEventListener('input', (event) => updateResultValue(event))
 
-    function calculateReward(input) {
-      return (Number(input) / 1170).toFixed(2)
-    }
-
-    function calculateDifference() {
-      const rewardValue = Number(rewardSelector.value)
-      const difference = (rewardValue - resultValue).toFixed(2)
-      if (difference < rewardValue) {
-        return `£${difference}`
-      }
-      return '£0.00'
+    function calculateReward(value) {
+      return (value / 1170).toFixed(2)
     }
 
     function updateResultValue(event) {
-      const value = event.target.value.replace(/[^0-9]+/g, '')
-      const calculatedValue = calculateReward(value)
+      const { value } = event.target
+      const calculatedValue = calculateReward(Number(value))
       result.innerHTML = `£${calculatedValue}`
-      resultValue = calculatedValue
-    }
-
-    function updateDifferenceValue() {
-      difference.innerHTML = `${calculateDifference()}`
-    }
-
-    function updateValues(event) {
-      updateResultValue(event)
-      updateDifferenceValue()
     }
   </script>
 </body>
