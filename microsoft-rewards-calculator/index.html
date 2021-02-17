@@ -61,14 +61,15 @@
     <p class="result">£0.00</p>
   </div>
   <script>
+    const TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST = 29250
+    
     const calculatorInput = document.querySelector('#calculator-input')
     const result = document.querySelector('.result')
 
     calculatorInput.addEventListener('input', (event) => updateResultValue(event))
 
     function calculateRate() {
-      const twentyFivePoundsGiftCardPointsCost = 29250
-      return twentyFivePoundsGiftCardPointsCost / 25
+      return TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST / 25
     }
 
     function calculateReward(value) {
