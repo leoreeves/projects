@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <title>Tell Me Quiz: Generate random letter</title>
+  <style>
+    html,
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 10px;
+    }
+    h1 {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 0.025em;
+      font-size: 6em;
+      margin: 5px;
+    }
+    h2 {
+    }
+    .letter {
+      font-size: 20em;
+      margin: 10px;
+    }
+    .letter-picker-button {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 0.025em;
+      font-size: 1.25em;
+      cursor: pointer;
+      border: 1px solid gray;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tell Me Quiz</h1>
+  <p class="letter">&nbsp;</p>
+  <button class="letter-picker-button" onclick="handleRandomLetter()">Generate random letter</button>
+</body>
+<script>
+const letterElement = document.querySelector('.letter')
+const allowedLetters = 'abcdefghijklmnopqrstuvwy'.split('')
+
+function generateRandomLetter() {
+  return allowedLetters[Math.floor(Math.random() * allowedLetters.length)]
+}
+
+function setLetterInnerHtml(randomLetter) {
+  letterElement.innerHTML = randomLetter
+}
+
+function speakLetter(randomLetter) {
+  const speechLetter = new SpeechSynthesisUtterance(randomLetter)
+
+  if (speechLetter.speaking) {
+    speechLetter.cancel()
+  } else {
+    window.speechSynthesis.speak(speechLetter)
+  }
+}
+
+function handleRandomLetter() {
+  const randomLetter = generateRandomLetter()
+  setLetterInnerHtml(randomLetter)
+  speakLetter(randomLetter)
+}
+</script>
+</html>
