@@ -167,12 +167,22 @@ function handlePause() {
   }
 }
 
-draw();
+function keyHandler(event) {
+  const { keyCode, type } = event;
+  if (keyCodes.left.includes(keyCode)) {
+    leftPressed = type === 'keydown';
+  } else if (keyCodes.right.includes(keyCode)) {
+    rightPressed = type === 'keydown';
+  }
+}
 
-document.addEventListener('keydown', keyDownHandler, false);
-document.addEventListener('keyup', keyUpHandler, false);
+['keydown', 'keyup'].forEach((listener) => {
+  document.addEventListener(listener, keyHandler, false);
+});
 document.body.onkeydown = (event) => {
   if (event.keyCode === keyCodes.space) {
     handlePause();
   }
 };
+
+draw();
