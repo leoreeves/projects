@@ -68,25 +68,6 @@ function drawBall() {
   ctx.closePath();
 }
 
-function collisionDetection() {
-  for (let c = 0; c < brick.columnCount; c += 1) {
-    for (let r = 0; r < brick.rowCount; r += 1) {
-      const b = bricks[c][r];
-      if (b.status === 1) {
-        if (x > b.x && x < b.x + brick.width && y > b.y && y < b.y + brick.height) {
-          dy = -dy;
-          b.status = 0;
-          score += 1;
-          if (score === brick.rowCount * brick.columnCount) {
-            alert('You Win, Congratulations!');
-            document.location.reload();
-          }
-        }
-      }
-    }
-  }
-}
-
 function drawScore() {
   ctx.font = font;
   ctx.fillStyle = colours.blue;
@@ -107,15 +88,31 @@ function drawPaddle() {
   ctx.closePath();
 }
 
+function initialiseCollisionDetection() {
+  for (let c = 0; c < brick.columnCount; c += 1) {
+    for (let r = 0; r < brick.rowCount; r += 1) {
+      const b = bricks[c][r];
+      if (b.status === 1) {
+        if (x > b.x && x < b.x + brick.width && y > b.y && y < b.y + brick.height) {
+          dy = -dy;
+          b.status = 0;
+          score += 1;
+          if (score === brick.rowCount * brick.columnCount) {
+            alert('You Win, Congratulations!');
+            document.location.reload();
+          }
+        }
+      }
+    }
+  }
+}
+
 function draw() {
+  const drawFunctions = [drawBricks, drawBall, drawPaddle, drawScore, drawLives];
   if (!paused) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBricks();
-    drawBall();
-    drawPaddle();
-    drawLives();
-    drawScore();
-    collisionDetection();
+    drawFunctions.forEach((func) => func());
+    initialiseCollisionDetection();
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
       dx = -dx;
     }
