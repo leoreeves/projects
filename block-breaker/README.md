@@ -1,4 +1,4 @@
-# [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
+# [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 
 Based on the classic game [*Breakout*](https://en.wikipedia.org/wiki/Breakout_(video_game)).
 
