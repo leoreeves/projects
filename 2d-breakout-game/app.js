@@ -3,14 +3,16 @@ const ctx = canvas.getContext('2d');
 const ballRadius = 10;
 const paddleHeight = 10;
 const paddleWidth = 75;
-const brickRowCount = 3;
-const brickColumnCount = 5;
-const brickWidth = 75;
-const brickHeight = 20;
-const brickPadding = 10;
-const brickOffsetTop = 40;
-const brickOffsetLeft = 30;
 const bricks = [];
+const brick = {
+  rowCount: 3,
+  columnCount: 5,
+  width: 75,
+  height: 20,
+  padding: 10,
+  offsetTop: 40,
+  offsetLeft: 30,
+};
 const keyCodes = {
   left: [37, 65],
   right: [39, 68],
@@ -27,23 +29,23 @@ let leftPressed = false;
 let score = 0;
 let lives = 3;
 
-for (let c = 0; c < brickColumnCount; c += 1) {
+for (let c = 0; c < brick.columnCount; c += 1) {
   bricks[c] = [];
-  for (let r = 0; r < brickRowCount; r += 1) {
+  for (let r = 0; r < brick.rowCount; r += 1) {
     bricks[c][r] = { x: 0, y: 0, status: 1 };
   }
 }
 
 function drawBricks() {
-  for (let c = 0; c < brickColumnCount; c += 1) {
-    for (let r = 0; r < brickRowCount; r += 1) {
+  for (let c = 0; c < brick.columnCount; c += 1) {
+    for (let r = 0; r < brick.rowCount; r += 1) {
       if (bricks[c][r].status === 1) {
-        const brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
-        const brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
+        const brickX = (c * (brick.width + brick.padding)) + brick.offsetLeft;
+        const brickY = (r * (brick.height + brick.padding)) + brick.offsetTop;
         bricks[c][r].x = brickX;
         bricks[c][r].y = brickY;
         ctx.beginPath();
-        ctx.rect(brickX, brickY, brickWidth, brickHeight);
+        ctx.rect(brickX, brickY, brick.width, brick.height);
         ctx.fillStyle = '#FF9800';
         ctx.fill();
         ctx.closePath();
@@ -61,15 +63,15 @@ function drawBall() {
 }
 
 function collisionDetection() {
-  for (let c = 0; c < brickColumnCount; c += 1) {
-    for (let r = 0; r < brickRowCount; r += 1) {
+  for (let c = 0; c < brick.columnCount; c += 1) {
+    for (let r = 0; r < brick.rowCount; r += 1) {
       const b = bricks[c][r];
       if (b.status === 1) {
-        if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+        if (x > b.x && x < b.x + brick.width && y > b.y && y < b.y + brick.height) {
           dy = -dy;
           b.status = 0;
           score += 1;
-          if (score === brickRowCount * brickColumnCount) {
+          if (score === brick.rowCount * brick.columnCount) {
             alert('You Win, Congratulations!');
             document.location.reload();
           }
