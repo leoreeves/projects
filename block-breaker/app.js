@@ -1,4 +1,4 @@
-const canvas = document.querySelector('#my-canvas');
+const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
 const ballRadius = 10;
 const paddleHeight = 10;
