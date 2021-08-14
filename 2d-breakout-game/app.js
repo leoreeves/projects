@@ -35,21 +35,21 @@ let leftPressed = false;
 let score = 0;
 let lives = 3;
 
-for (let c = 0; c < brick.columnCount; c += 1) {
-  bricks[c] = [];
-  for (let r = 0; r < brick.rowCount; r += 1) {
-    bricks[c][r] = { x: 0, y: 0, status: 1 };
+for (let column = 0; column < brick.columnCount; column += 1) {
+  bricks[column] = [];
+  for (let row = 0; row < brick.rowCount; row += 1) {
+    bricks[column][row] = { x: 0, y: 0, status: 1 };
   }
 }
 
 function drawBricks() {
-  for (let c = 0; c < brick.columnCount; c += 1) {
-    for (let r = 0; r < brick.rowCount; r += 1) {
-      if (bricks[c][r].status === 1) {
-        const brickX = (c * (brick.width + brick.padding)) + brick.offsetLeft;
-        const brickY = (r * (brick.height + brick.padding)) + brick.offsetTop;
-        bricks[c][r].x = brickX;
-        bricks[c][r].y = brickY;
+  for (let column = 0; column < brick.columnCount; column += 1) {
+    for (let row = 0; row < brick.rowCount; row += 1) {
+      if (bricks[column][row].status === 1) {
+        const brickX = (column * (brick.width + brick.padding)) + brick.offsetLeft;
+        const brickY = (row * (brick.height + brick.padding)) + brick.offsetTop;
+        bricks[column][row].x = brickX;
+        bricks[column][row].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brick.width, brick.height);
         ctx.fillStyle = colours.orange;
@@ -89,9 +89,9 @@ function drawPaddle() {
 }
 
 function initialiseCollisionDetection() {
-  for (let c = 0; c < brick.columnCount; c += 1) {
-    for (let r = 0; r < brick.rowCount; r += 1) {
-      const b = bricks[c][r];
+  for (let column = 0; column < brick.columnCount; column += 1) {
+    for (let row = 0; row < brick.rowCount; row += 1) {
+      const b = bricks[column][row];
       if (b.status === 1) {
         if (x > b.x && x < b.x + brick.width && y > b.y && y < b.y + brick.height) {
           dy = -dy;
