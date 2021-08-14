@@ -15,6 +15,7 @@ const brick = {
   offsetTop: 40,
   offsetLeft: 30,
 };
+const winningScore = brick.rowCount * brick.columnCount;
 const keyCodes = {
   left: [37, 65],
   right: [39, 68],
@@ -101,7 +102,7 @@ function initialiseCollisionDetection() {
           dy = -dy;
           b.status = 0;
           score += 1;
-          if (score === brick.rowCount * brick.columnCount) {
+          if (score === winningScore) {
             alert('You Win, Congratulations!');
             document.location.reload();
           }
