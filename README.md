@@ -3,7 +3,7 @@ A collection of personal projects.
 
 ### Contents
 
-- [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
+- [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 - [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
 - [Catch the Monster Game](https://leoreeves.github.io/projects/catch-the-monster-game/)
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
@@ -16,7 +16,7 @@ A collection of personal projects.
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
-- [pomodoro-timer](https://leoreeves.github.io/projects/pomodoro-timer)
+- [Pomodoro Timer](https://leoreeves.github.io/projects/pomodoro-timer)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 - [React Map Pins](https://react-map-pins.netlify.com/)
 - [React Wikipedia Search](https://react-wikipedia-search.netlify.com/)
@@ -24,7 +24,7 @@ A collection of personal projects.
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)
 
-## [2D Breakout Game](https://leoreeves.github.io/projects/2d-breakout-game/)
+## [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 
 Based on the classic game [*Breakout*](https://en.wikipedia.org/wiki/Breakout_(video_game)).
 
