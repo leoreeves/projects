@@ -18,6 +18,12 @@ const keyCodes = {
   right: [39, 68],
   space: 32,
 };
+const colours = {
+  blue: '#2196F3',
+  orange: '#FF9800',
+  green: '#4CAF50',
+};
+const font = '16px Open Sans';
 let paused = false;
 let x = canvas.width / 2;
 let y = canvas.height - 30;
@@ -46,7 +52,7 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brick.width, brick.height);
-        ctx.fillStyle = '#FF9800';
+        ctx.fillStyle = colours.orange;
         ctx.fill();
         ctx.closePath();
       }
@@ -57,7 +63,7 @@ function drawBricks() {
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = '#4CAF50';
+  ctx.fillStyle = colours.green;
   ctx.fill();
   ctx.closePath();
 }
@@ -82,21 +88,21 @@ function collisionDetection() {
 }
 
 function drawScore() {
-  ctx.font = '16px Open Sans';
-  ctx.fillStyle = '#2196F3';
+  ctx.font = font;
+  ctx.fillStyle = colours.blue;
   ctx.fillText(`Score: ${score}`, 8, 20);
 }
 
 function drawLives() {
-  ctx.font = '16px Open Sans';
-  ctx.fillStyle = '#2196F3';
+  ctx.font = font;
+  ctx.fillStyle = colours.blue;
   ctx.fillText(`Lives: ${lives}`, canvas.width - 65, 20);
 }
 
 function drawPaddle() {
+  ctx.fillStyle = colours.blue;
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = '#2196F3';
   ctx.fill();
   ctx.closePath();
 }
