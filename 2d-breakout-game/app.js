@@ -60,23 +60,6 @@ function drawBall() {
   ctx.closePath();
 }
 
-function keyDownHandler(event) {
-  const { keyCode } = event;
-  if (keyCodes.left.includes(keyCode)) {
-    leftPressed = true;
-  } else if (keyCodes.right.includes(keyCode)) {
-    rightPressed = true;
-  }
-}
-
-function keyUpHandler(e) {
-  if (e.keyCode === 39 || e.keyCode === 68) {
-    rightPressed = false;
-  } else if (e.keyCode === 37 || e.keyCode === 65) {
-    leftPressed = false;
-  }
-}
-
 function collisionDetection() {
   for (let c = 0; c < brickColumnCount; c += 1) {
     for (let r = 0; r < brickRowCount; r += 1) {
