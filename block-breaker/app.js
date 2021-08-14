@@ -35,10 +35,12 @@ let leftPressed = false;
 let score = 0;
 let lives = 3;
 
-for (let column = 0; column < brick.columnCount; column += 1) {
-  bricks[column] = [];
-  for (let row = 0; row < brick.rowCount; row += 1) {
-    bricks[column][row] = { x: 0, y: 0, status: 1 };
+function buildBricks() {
+  for (let column = 0; column < brick.columnCount; column += 1) {
+    bricks[column] = [];
+    for (let row = 0; row < brick.rowCount; row += 1) {
+      bricks[column][row] = { x: 0, y: 0, status: 1 };
+    }
   }
 }
 
@@ -173,4 +175,5 @@ document.body.onkeydown = (event) => {
   }
 };
 
+buildBricks();
 draw();
