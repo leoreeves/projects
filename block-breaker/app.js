@@ -47,6 +47,14 @@ function buildBricks() {
   }
 }
 
+function drawBrick(brickX, brickY) {
+  ctx.beginPath();
+  ctx.rect(brickX, brickY, brick.width, brick.height);
+  ctx.fillStyle = colours.orange;
+  ctx.fill();
+  ctx.closePath();
+}
+
 function drawBricks() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     for (let row = 0; row < brick.rowCount; row += 1) {
@@ -55,11 +63,7 @@ function drawBricks() {
         const brickY = (row * (brick.height + brick.padding)) + brick.offsetTop;
         bricks[column][row].x = brickX;
         bricks[column][row].y = brickY;
-        ctx.beginPath();
-        ctx.rect(brickX, brickY, brick.width, brick.height);
-        ctx.fillStyle = colours.orange;
-        ctx.fill();
-        ctx.closePath();
+        drawBrick(brickX, brickY);
       }
     }
   }
