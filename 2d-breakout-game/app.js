@@ -11,6 +11,11 @@ const brickPadding = 10;
 const brickOffsetTop = 40;
 const brickOffsetLeft = 30;
 const bricks = [];
+const keyCodes = {
+  left: [37, 65],
+  right: [39, 68],
+  space: 32,
+};
 let paused = false;
 let x = canvas.width / 2;
 let y = canvas.height - 30;
@@ -55,11 +60,12 @@ function drawBall() {
   ctx.closePath();
 }
 
-function keyDownHandler(e) {
-  if (e.keyCode === 39 || e.keyCode === 68) {
-    rightPressed = true;
-  } else if (e.keyCode === 37 || e.keyCode === 65) {
+function keyDownHandler(event) {
+  const { keyCode } = event;
+  if (keyCodes.left.includes(keyCode)) {
     leftPressed = true;
+  } else if (keyCodes.right.includes(keyCode)) {
+    rightPressed = true;
   }
 }
 
@@ -166,8 +172,7 @@ draw();
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
 document.body.onkeydown = (event) => {
-  // spacebar
-  if (event.keyCode === 32) {
-    pauseGame();
+  if (event.keyCode === keyCodes.space) {
+    handlePause();
   }
 };
