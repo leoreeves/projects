@@ -42,7 +42,7 @@ function buildBricks() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     bricks[column] = [];
     for (let row = 0; row < brick.rowCount; row += 1) {
-      bricks[column][row] = { x: 0, y: 0, status: 1 };
+      bricks[column][row] = { x: 0, y: 0, status: 'unbroken' };
     }
   }
 }
@@ -58,7 +58,7 @@ function drawBrick(brickX, brickY) {
 function drawBricks() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     for (let row = 0; row < brick.rowCount; row += 1) {
-      if (bricks[column][row].status === 1) {
+      if (bricks[column][row].status === 'unbroken') {
         const brickX = (column * (brick.width + brick.padding)) + brick.offsetLeft;
         const brickY = (row * (brick.height + brick.padding)) + brick.offsetTop;
         bricks[column][row].x = brickX;
@@ -101,10 +101,10 @@ function initialiseCollisionDetection() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     for (let row = 0; row < brick.rowCount; row += 1) {
       const b = bricks[column][row];
-      if (b.status === 1) {
+      if (b.status === 'unbroken') {
         if (x > b.x && x < b.x + brick.width && y > b.y && y < b.y + brick.height) {
           dy = -dy;
-          b.status = 0;
+          b.status = 'broken';
           score += 1;
           if (score === winningScore) {
             alert('You Win, Congratulations!');
