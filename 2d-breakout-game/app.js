@@ -158,12 +158,12 @@ function draw() {
   }
 }
 
-function pauseGame() {
-  if (!paused) {
-    paused = true;
-  } else {
+function handlePause() {
+  if (paused) {
     paused = false;
     draw();
+  } else {
+    paused = true;
   }
 }
 
