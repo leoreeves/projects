@@ -1,8 +1,10 @@
 const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
 const ballRadius = 10;
-const paddleHeight = 10;
-const paddleWidth = 75;
+const paddle = {
+  height: 10,
+  width: 75,
+};
 const bricks = [];
 const brick = {
   rowCount: 3,
@@ -29,7 +31,7 @@ let x = canvas.width / 2;
 let y = canvas.height - 30;
 let dx = 2;
 let dy = -2;
-let paddleX = (canvas.width - paddleWidth) / 2;
+let paddleX = (canvas.width - paddle.width) / 2;
 let rightPressed = false;
 let leftPressed = false;
 let score = 0;
@@ -85,7 +87,7 @@ function drawLives() {
 function drawPaddle() {
   ctx.fillStyle = colours.blue;
   ctx.beginPath();
-  ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+  ctx.rect(paddleX, canvas.height - paddle.height, paddle.width, paddle.height);
   ctx.fill();
   ctx.closePath();
 }
@@ -121,7 +123,7 @@ function draw() {
     if (y + dy < ballRadius) {
       dy = -dy;
     } else if (y + dy > canvas.height - ballRadius) {
-      if (x > paddleX && x < paddleX + paddleWidth) {
+      if (x > paddleX && x < paddleX + paddle.width) {
         dy = -dy;
       } else {
         lives -= 1;
@@ -133,11 +135,11 @@ function draw() {
           y = canvas.height - 30;
           dx = 2;
           dy = -2;
-          paddleX = (canvas.width - paddleWidth) / 2;
+          paddleX = (canvas.width - paddle.width) / 2;
         }
       }
     }
-    if (rightPressed && paddleX < canvas.width - paddleWidth) {
+    if (rightPressed && paddleX < canvas.width - paddle.width) {
       paddleX += 7;
     } else if (leftPressed && paddleX > 0) {
       paddleX -= 7;
