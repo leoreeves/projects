@@ -15,28 +15,31 @@ function getQuote() {
 
 // Callback method in JSON
 function createQuote(json) {
-  const quote = json[0];
-  $('.quote-body').html(`${quote.content.rendered}`).fadeIn();
-  $('.quote-author').html(`― ${quote.title.rendered}`).fadeIn();
+  const { content, title } = json[0];
+  $('.quote-body').html(`${content.rendered}`).fadeIn();
+  $('.quote-author').html(`― ${title.rendered}`).fadeIn();
 }
 
-// Generate quote when spacebar is pressed
-$(window).keypress((e) => {
-  if (e.which === 32) {
-    fadeOutQuote();
-    getQuote();
-  }
-});
-
-// Generate quote on click
-$(document).on('click', () => {
-  fadeOutQuote();
-  getQuote();
-});
-
-$(document).ready(() => {
+function setMobileText() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
-    $('.quote-body').html('Press the spacebar or tap to inspire');
+    $('.quote-body').html('Tap to inspire');
   }
-});
+}
+
+setMobileText();
+
+function handleQuote() {
+  fadeOutQuote();
+  getQuote();
+}
+
+document.body.onkeydown = (event) => {
+  if (event.code === 'Space') {
+    handleQuote();
+  }
+};
+
+document.body.onclick = () => {
+  handleQuote();
+};
