@@ -11,7 +11,17 @@ const userWin = 'You win';
 let userScore = 0;
 let cpuScore = 0;
 
-choiceButtons.forEach(e => e.addEventListener('click', () => {
+function updateScoreAndWinner(winner) {
+  if (winner === 'cpu') {
+    cpuScore += 1;
+    result.innerHTML = cpuWin;
+  } else if (winner === 'user') {
+    userScore += 1;
+    result.innerHTML = userWin;
+  }
+}
+
+choiceButtons.forEach((e) => e.addEventListener('click', () => {
   const tools = ['rock', 'paper', 'scissors'];
   const randomNum = Math.floor(Math.random() * 3);
   const cpuChoice = tools[randomNum];
@@ -22,27 +32,23 @@ choiceButtons.forEach(e => e.addEventListener('click', () => {
     result.innerHTML = 'Draw';
   } else if (cpuChoice === 'rock') {
     if (userChoice === 'scissors') {
-      cpuScore += 1;
-      result.innerHTML = cpuWin;
+      updateScoreAndWinner('cpu');
     } else if (userChoice === 'paper') {
-      userScore += 1;
-      result.innerHTML = userWin;
+      updateScoreAndWinner('user');
     }
   } else if (cpuChoice === 'paper') {
     if (userChoice === 'rock') {
-      cpuScore += 1;
-      result.innerHTML = cpuWin;
+      updateScoreAndWinner('cpu');
     } else if (userChoice === 'scissors') {
       userScore += 1;
-      result.innerHTML = userWin;
+      updateScoreAndWinner('user');
     }
   } else if (cpuChoice === 'scissors') {
     if (userChoice === 'paper') {
-      cpuScore += 1;
-      result.innerHTML = cpuWin;
+      updateScoreAndWinner('cpu');
     } else if (userChoice === 'rock') {
       userScore += 1;
-      result.innerHTML = userWin;
+      updateScoreAndWinner('user');
     }
   }
   // Update scores
