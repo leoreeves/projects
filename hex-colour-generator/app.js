@@ -6,28 +6,26 @@ function generateColor() {
   return `#${Math.random().toString(16).slice(2, 8)}`;
 }
 
-function getContrastYIQ(colorCode) {
-  const [r, g, b] = [0, 2, 4].map(p => parseInt(colorCode.substr(p, 2), 16));
-  return ((r * 299) + (g * 587) + (b * 114)) / 1000;
-}
-
 function setBackgroundColor(color) {
   document.body.style.backgroundColor = color;
 }
 
-function setHexColorHeaderText(colorCode) {
-  hexColorHeader.textContent = colorCode;
+function setHexColorHeaderText(color) {
+  hexColorHeader.textContent = color;
 }
 
-function setDataClipboardTextAttribute(colorCode) {
-  copyToClipboardButton.setAttribute('data-clipboard-text', colorCode);
+function setDataClipboardTextAttribute(color) {
+  copyToClipboardButton.setAttribute('data-clipboard-text', color);
+}
+
+function getContrastYIQ(color) {
+  const [r, g, b] = [0, 2, 4].map((p) => parseInt(color.substr(p, 2), 16));
+  return ((r * 299) + (g * 587) + (b * 114)) / 1000;
 }
 
 function setTextColorBasedOnContrastYIQ(color) {
-  const colorCodeWithoutHash = color.slice(1, 7);
-  const contrastYIQ = getContrastYIQ(colorCodeWithoutHash);
-
-  if (contrastYIQ >= 128) {
+  const colorWithoutHash = color.substring(1);
+  if (getContrastYIQ(colorWithoutHash) >= 128) {
     document.body.style.color = '#000';
   } else {
     document.body.style.color = '#fff';
@@ -36,10 +34,12 @@ function setTextColorBasedOnContrastYIQ(color) {
 
 function generateColorAndUpdatePage() {
   const color = generateColor();
-  setBackgroundColor(color);
-  setDataClipboardTextAttribute(color);
-  setHexColorHeaderText(color);
-  setTextColorBasedOnContrastYIQ(color);
+  [
+    setBackgroundColor,
+    setHexColorHeaderText,
+    setDataClipboardTextAttribute,
+    setTextColorBasedOnContrastYIQ,
+  ].forEach((func) => func(color));
 }
 
 function showAndFadeOutSuccessMessage() {
@@ -54,16 +54,15 @@ function showAndFadeOutSuccessMessage() {
   }, 1800);
 }
 
-// change colour on spacebar press
-document.body.onkeyup = (e) => {
-  if (e.keyCode === 32) {
+document.body.onkeyup = (event) => {
+  if (event.code === 'Space') {
     generateColorAndUpdatePage();
   }
 };
 
 // change colour on mouse click
-document.addEventListener('click', (e) => {
-  if (e.target.className === 'container__copy-to-clipboard-button') {
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'container__copy-to-clipboard-button') {
     showAndFadeOutSuccessMessage();
   } else {
     generateColorAndUpdatePage();
