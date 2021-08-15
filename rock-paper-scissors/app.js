@@ -21,6 +21,12 @@ function updateScoreAndWinner(winner) {
   }
 }
 
+function calculateWin(player1Choice, player2Choice) {
+  return (player1Choice === 'rock' && player2Choice === 'scissors')
+    || (player1Choice === 'paper' && player2Choice === 'rock')
+    || (player1Choice === 'scissors' && player2Choice === 'paper');
+}
+
 choiceButtons.forEach((e) => e.addEventListener('click', () => {
   const tools = ['rock', 'paper', 'scissors'];
   const randomNum = Math.floor(Math.random() * 3);
@@ -28,28 +34,17 @@ choiceButtons.forEach((e) => e.addEventListener('click', () => {
   const userChoice = e.value;
   cpuChoiceSpan.innerHTML = `<i class="fa fa-hand-${cpuChoice}-o" aria-hidden="true"></i>`;
   // Game logic
-  if (cpuChoice === userChoice) {
+  const results = {
+    draw: cpuChoice === userChoice,
+    cpuWin: calculateWin(cpuChoice, userChoice),
+    userWin: calculateWin(userChoice, cpuChoice),
+  };
+  if (results.draw) {
     result.innerHTML = 'Draw';
-  } else if (cpuChoice === 'rock') {
-    if (userChoice === 'scissors') {
-      updateScoreAndWinner('cpu');
-    } else if (userChoice === 'paper') {
-      updateScoreAndWinner('user');
-    }
-  } else if (cpuChoice === 'paper') {
-    if (userChoice === 'rock') {
-      updateScoreAndWinner('cpu');
-    } else if (userChoice === 'scissors') {
-      userScore += 1;
-      updateScoreAndWinner('user');
-    }
-  } else if (cpuChoice === 'scissors') {
-    if (userChoice === 'paper') {
-      updateScoreAndWinner('cpu');
-    } else if (userChoice === 'rock') {
-      userScore += 1;
-      updateScoreAndWinner('user');
-    }
+  } else if (results.cpuWin) {
+    updateScoreAndWinner('cpu');
+  } else if (results.userWin) {
+    updateScoreAndWinner('user');
   }
   // Update scores
   userScoreSpan.innerHTML = userScore;
