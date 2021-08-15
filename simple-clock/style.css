@@ -286,7 +286,7 @@ button:focus {
 }
 
 @media screen and (max-width: 800px) {
-.digital-clock {
+	.digital-clock {
 		width: 430px;
 		height: 150px;
 	}
@@ -300,7 +300,7 @@ button:focus {
 }
 
 @media screen and (max-width: 500px) {
-.digital-clock {
+	.digital-clock {
 		width: 230px;
 		height: 120px;
 	}
