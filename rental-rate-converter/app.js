@@ -10,7 +10,7 @@ function calculateAmountPerWeek(value) {
   return (value * 12 / 365.25 * 7).toFixed(2);
 }
 
-eventType.forEach(event => perWeek.addEventListener(event, () => {
+eventType.forEach((event) => perWeek.addEventListener(event, () => {
   if (perWeek.value === '') {
     perWeek.focus();
   } else {
@@ -18,7 +18,7 @@ eventType.forEach(event => perWeek.addEventListener(event, () => {
   }
 }));
 
-eventType.forEach(e => perMonth.addEventListener(e, () => {
+eventType.forEach((event) => perMonth.addEventListener(event, () => {
   if (perMonth.value === '') {
     perMonth.focus();
   } else {
