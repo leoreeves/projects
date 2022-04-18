@@ -153,7 +153,7 @@ $error-color: lightcoral;
 
       .currency-symbol {
         position: absolute;
-        bottom: 25px;
+        bottom: 22px;
         left: 10px;
         font-weight: 600;
       }

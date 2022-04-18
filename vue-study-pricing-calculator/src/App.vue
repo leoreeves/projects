@@ -9,7 +9,6 @@
 
 <script>
 import PricingCalculator from './components/PricingCalculator.vue';
-import 'normalize.css';
 
 export default {
   name: 'app',
@@ -33,7 +32,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: #F4F8FB;
+  background: #e1eef8;
   display: flex;
   flex-direction: column;
   justify-content: center;
