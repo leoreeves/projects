@@ -1,7 +1,7 @@
 const dateOfBirthInput = document.querySelector('.date-of-birth');
 const birthdayYearInput = document.querySelector('.birthday-year');
-const birthdayWeekdayElement = document.querySelector('.birthday-weekday');
-const ageElement = document.querySelector('.age');
+const birthdayWeekdaySpan = document.querySelector('.birthday-weekday');
+const ageSpan = document.querySelector('.age');
 
 function setBirthdayYearInputValueAsCurrentYear() {
   const currentYear = new Date().getFullYear();
@@ -12,9 +12,14 @@ function setBirthdayYearInputMinAsBirthYear(birthYear) {
   birthdayYearInput.min = birthYear;
 }
 
-function updateInnerHTMLValues(calculatedWeekday, calculatedAge) {
-  birthdayWeekdayElement.innerHTML = calculatedWeekday;
-  ageElement.innerHTML = calculatedAge;
+function updateBirthdayWeekdayInnerHTML(dateOfBirth) {
+  const calculatedWeekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(dateOfBirth);
+  birthdayWeekdaySpan.innerHTML = calculatedWeekday;
+}
+
+function updateAgeSpanInnerHTML(enteredYear, birthYear) {
+  const calculatedAge = enteredYear - birthYear;
+  ageSpan.innerHTML = calculatedAge;
 }
 
 function calculateBirthdayWeekDayAndAge() {
@@ -22,12 +27,11 @@ function calculateBirthdayWeekDayAndAge() {
   const birthYear = dateOfBirth.getFullYear();
   const enteredYear = birthdayYearInput.value;
   dateOfBirth.setFullYear(enteredYear);
-  const calculatedWeekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(dateOfBirth);
-  const calculatedAge = enteredYear - birthYear;
 
   if (dateOfBirth && enteredYear >= birthYear) {
     setBirthdayYearInputMinAsBirthYear(birthYear);
-    updateInnerHTMLValues(calculatedWeekday, calculatedAge);
+    updateBirthdayWeekdayInnerHTML(dateOfBirth);
+    updateAgeSpanInnerHTML(enteredYear, birthYear);
   }
 }
 
