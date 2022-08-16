@@ -1,8 +1,10 @@
+// query elements
 const dateOfBirthInput = document.querySelector('.date-of-birth');
 const birthdayYearInput = document.querySelector('.birthday-year');
 const birthdayWeekdaySpan = document.querySelector('.birthday-weekday');
 const ageSpan = document.querySelector('.age');
 
+// calculate values
 function setBirthdayYearInputValueAsCurrentYear() {
   const currentYear = new Date().getFullYear();
   birthdayYearInput.value = currentYear;
@@ -35,5 +37,6 @@ function calculateBirthdayWeekDayAndAge() {
   }
 }
 
+// add event listeners
 document.addEventListener('DOMContentLoaded', setBirthdayYearInputValueAsCurrentYear);
 document.addEventListener('input', calculateBirthdayWeekDayAndAge);
