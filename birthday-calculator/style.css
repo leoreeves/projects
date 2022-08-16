@@ -23,6 +23,10 @@ h1 {
   padding-top: 10px;
 }
 
+label {
+  margin: 10px;
+}
+
 input {
   font-family: 'Open Sans', sans-serif;
   font-size: .9em;
@@ -32,23 +36,23 @@ input {
   border: 1px solid lightgray;
   min-width: 50px;
   margin-top: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
   min-height: 100%;
 }
 
 content {
   width: 600px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   padding: 16px;
   border-radius: 5px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
