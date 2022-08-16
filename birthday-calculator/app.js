@@ -7,6 +7,10 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
   'September', 'October', 'November', 'December'];
 const currentYear = new Date().getFullYear();
 
+function setBirthdayYearInputMinAsBirthYear(birthYear) {
+  birthdayYearInput.min = birthYear;
+}
+
 function calculateBirthdayWeekDayAndAge() {
   const dateOfBirth = new Date(dateOfBirthInput.value);
   const birthYear = dateOfBirth.getFullYear();
@@ -18,20 +22,15 @@ function calculateBirthdayWeekDayAndAge() {
   const calculatedAge = enteredYear - birthYear;
 
   if (dateOfBirth && enteredYear >= birthYear) {
-    setMinAsBirthdayYear(birthYear);
+    setBirthdayYearInputMinAsBirthYear(birthYear);
     birthdayWeekdayElement.innerHTML = calculatedWeekday;
     ageElement.innerHTML = calculatedAge;
   }
 }
 
-function setBirthdayYearAsCurrentYear() {
+function setBirthdayYearInputValueAsCurrentYear() {
   birthdayYearInput.value = currentYear;
 }
 
-function setMinAsBirthdayYear(birthYear) {
-  birthdayYearInput.min = birthYear;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  setBirthdayYearAsCurrentYear();
-});
+document.addEventListener('DOMContentLoaded', setBirthdayYearInputValueAsCurrentYear);
+document.addEventListener('input', calculateBirthdayWeekDayAndAge);
