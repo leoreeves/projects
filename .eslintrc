@@ -15,6 +15,7 @@
     "navigator": true,
     "showLocation": true,
     "cursor": true,
-    "localStorage": true
+    "localStorage": true,
+    "Vue": true
   }
 }
