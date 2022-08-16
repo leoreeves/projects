@@ -30,7 +30,7 @@ function calculateBirthdayWeekDayAndAge() {
   const enteredYear = birthdayYearInput.value;
   dateOfBirth.setFullYear(enteredYear);
 
-  if (dateOfBirth && enteredYear >= birthYear) {
+  if (dateOfBirth >= birthYear) {
     setBirthdayYearInputMinAsBirthYear(birthYear);
     updateBirthdayWeekdayInnerHTML(dateOfBirth);
     updateAgeSpanInnerHTML(enteredYear, birthYear);
