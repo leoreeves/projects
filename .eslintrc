@@ -16,6 +16,7 @@
     "showLocation": true,
     "cursor": true,
     "localStorage": true,
+    "ClipboardJS": true,
     "Vue": true
   }
 }
