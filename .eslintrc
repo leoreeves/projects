@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
   "plugins": ["html", "@html-eslint"],
   "overrides": [
     {
