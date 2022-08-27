@@ -1,6 +1,6 @@
 # [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 
-Inspired by [this](https://www.youtube.com/watch?v=Smwrw4sNCxE) scene from the movie *The Matrix*, it's a simulation of Neo's terminal.
+Inspired by [this](https://www.youtube.com/watch?v=Smwrw4sNCxE) scene from the movie _The Matrix_, it's a simulation of Neo's terminal.
 To achieve the typewriter effect I used [this](https://github.com/ckm100/typeWriter.js) script.
 
 Built using:

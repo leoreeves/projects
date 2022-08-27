@@ -12,7 +12,6 @@ body {
   font-family: 'Merriweather', sans-serif;
 }
 
-
 /**
  * Header
  */
@@ -24,7 +23,7 @@ body {
 
 header {
   min-height: 100vh;
-  background: url("img/photos/piano.jpg") center 0 fixed;
+  background: url('img/photos/piano.jpg') center 0 fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -64,7 +63,6 @@ header h3 {
   padding-bottom: 20px;
 }
 
-
 /**
  * Biography
  */
@@ -98,14 +96,13 @@ header h3 {
   padding-top: 20px;
 }
 
-
 /**
  * Discography
  */
 
 .discography {
   min-height: 100vh;
-  background: #FFF;
+  background: #fff;
   padding: 50px 0;
 }
 
@@ -133,7 +130,7 @@ header h3 {
 
 .influences {
   min-height: 100vh;
-  background: #FFF;
+  background: #fff;
   padding: 50px 0;
   padding-bottom: 50px;
   line-height: 2em;
@@ -156,20 +153,19 @@ header h3 {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-
 /**
  * Photo dividers
  */
 
 .first-photo {
   min-height: 100vh;
-  background: url("img/photos/young-with-guitar.jpg") center 0 fixed;
+  background: url('img/photos/young-with-guitar.jpg') center 0 fixed;
   background-size: cover;
 }
 
 .second-photo {
   min-height: 100vh;
-  background: url("img/photos/live-electric.jpg") center 0 fixed;
+  background: url('img/photos/live-electric.jpg') center 0 fixed;
   background-size: cover;
 }
 
@@ -181,7 +177,7 @@ header h3 {
 
 .final-photo {
   min-height: 100vh;
-  background: url("img/photos/seated.jpg") center fixed;
+  background: url('img/photos/seated.jpg') center fixed;
   background-size: cover;
 }
 
@@ -209,7 +205,6 @@ header h3 {
   background: rgba(255, 255, 255, 0.7);
   box-shadow: inset 0 10px 15px -3px rgba(0, 0, 0, 0.12);
 }
-
 
 /**
  * Responsiveness

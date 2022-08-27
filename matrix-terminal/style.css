@@ -1,19 +1,19 @@
 body {
-    background-color: black;
+  background-color: black;
 }
 
 #screen {
-    padding: 100px;
+  padding: 100px;
 }
 
 #code {
-    color: #89dd96;
-    font-size: 2.5em;
-    text-shadow: 1px 0px 10px #b7ffc2;
+  color: #89dd96;
+  font-size: 2.5em;
+  text-shadow: 1px 0px 10px #b7ffc2;
 }
 
 @media screen and (max-width: 800px) {
-    #code {
-        font-size: 2em;
-    }
+  #code {
+    font-size: 2em;
+  }
 }

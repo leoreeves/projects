@@ -18,7 +18,7 @@ body {
 
 h1 {
   margin: 5px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   font-weight: 300;
 }
 
@@ -30,10 +30,9 @@ h1 {
   outline: none;
   margin: 10px;
   border-radius: 4px;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 6px 0;
-  box-shadow: 0 0 10px rgba(50,50,93,.11),
-              0 0 3px rgba(0,0,0,.08);
+  box-shadow: 0 0 10px rgba(50, 50, 93, 0.11), 0 0 3px rgba(0, 0, 0, 0.08);
 }
 
 .container {
@@ -70,37 +69,33 @@ content {
   height: 40px;
   line-height: 40px;
   padding: 0 14px;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11),
-              0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: 0.85em;
   margin: 10px;
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
-  box-shadow: 0 7px 14px rgba(50,50,93,.1),
-              0 3px 6px rgba(0,0,0,.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .btn-focus {
-  box-shadow: 0 7px 14px rgba(50,50,93,.1),
-              0 3px 6px rgba(0,0,0,.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .btn:active {
-  box-shadow: 0 4px 6px rgba(50,50,93,.11),
-              0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .start-button {
@@ -113,7 +108,7 @@ content {
 }
 
 .stop-button {
-  background-color: #F44336;
+  background-color: #f44336;
 }
 
 .stop-button:hover,

@@ -3,9 +3,5 @@
   "description": "App Description",
   "repository": "https://github.com/leoreeves/projects/tree/master/ionic-contacts-manager",
   "logo": "http://icons.veryicon.com/256/Application/Enkel/Contacts.png",
-  "keywords": [
-    "ionic",
-    "contacts",
-    "manager"
-  ]
+  "keywords": ["ionic", "contacts", "manager"]
 }

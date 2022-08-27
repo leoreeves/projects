@@ -33,7 +33,7 @@ p {
 .rock:hover,
 .paper:hover,
 .scissors:hover {
-  color: #F44336;
+  color: #f44336;
 }
 
 .result {

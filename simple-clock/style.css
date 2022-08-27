@@ -1,14 +1,14 @@
 * {
-	margin: 0;
-	padding: 0;
-	border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 body {
-	background-color: #d4d8dd;
-	height: 100%;
-	width: 100%;
-	font-size: 1em;
+  background-color: #d4d8dd;
+  height: 100%;
+  width: 100%;
+  font-size: 1em;
 }
 
 [v-cloak] {
@@ -17,298 +17,293 @@ body {
 
 /* Analogue clock */
 .analogue-clock {
-	height: 500px;
-	width: 500px;
-	background-color: #DDDDDD;
-	border-radius: 100%;
-	border: 10px solid #AAAAAA;
-	-moz-box-shadow: inset 0 0 20px #000000,
-									 1px 5px 5px rgba(0,0,0,.3);
-	-webkit-box-shadow: inset 0 0 20px #000000,
- 											1px 5px 5px rgba(0,0,0,.3);
-	box-shadow: inset 0 0 20px #000000,
-							1px 5px 5px rgba(0,0,0,.3);
-	position: absolute;
- 	top: 46%;
+  height: 500px;
+  width: 500px;
+  background-color: #dddddd;
+  border-radius: 100%;
+  border: 10px solid #aaaaaa;
+  -moz-box-shadow: inset 0 0 20px #000000, 1px 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 20px #000000, 1px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 20px #000000, 1px 5px 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 46%;
   left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
   display: none;
 }
 
 /* Hour positions */
 .twelve {
-	position: absolute;
-	width: 3px;
-	height: 15px;
-	background: #111111;
-	left: 0;
-	top: 0;
-	right: 0;
-	margin: 0 auto;
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: #111111;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .three {
-	position: absolute;
-	width: 15px;
-	height: 3px;
-	background: #111111;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto 0;
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background: #111111;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
 }
 
 .six {
-	position: absolute;
-	width: 3px;
-	height: 15px;
-	background: #111111;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	margin: 0 auto;
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: #111111;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .nine {
-	position: absolute;
-	width: 15px;
-	height: 3px;
-	background: #111111;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto 0;
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  background: #111111;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
 }
 
 /* Clock hands */
 .center {
-	width: 10px;
-	height: 10px;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	margin: auto;
-	background: #000;
-	border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  background: #000;
+  border-radius: 100%;
 }
 
 #seconds {
-	position: absolute;
-	height: 180px;
-	width: 2px;
-	left: 0;
-	right: 0;
-	bottom: 180px;
-	top: 0px;
-	margin: auto;
-	background: #000;
-	-webkit-transform-origin: bottom;
-	transform-origin: bottom;
-	background: #FF4136;
+  position: absolute;
+  height: 180px;
+  width: 2px;
+  left: 0;
+  right: 0;
+  bottom: 180px;
+  top: 0px;
+  margin: auto;
+  background: #000;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  background: #ff4136;
 }
 
 #minutes {
-	position: absolute;
-	height: 200px;
-	width: 7px;
-	left: 0;
-	right: 0;
-	bottom: 200px;
-	top: 0px;
-	margin: auto;
-	background: #000;
-	-webkit-transform-origin: bottom;
-	transform-origin: bottom;
+  position: absolute;
+  height: 200px;
+  width: 7px;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  top: 0px;
+  margin: auto;
+  background: #000;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
 }
 
 #hours {
-	position: absolute;
-	height: 130px;
-	width: 10px;
-	left: 0;
-	right: 0;
-	bottom: 130px;
-	top: 0px;
-	margin: auto;
-	background: #000;
-	-webkit-transform-origin: bottom;
-	transform-origin: bottom;
+  position: absolute;
+  height: 130px;
+  width: 10px;
+  left: 0;
+  right: 0;
+  bottom: 130px;
+  top: 0px;
+  margin: auto;
+  background: #000;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
 }
 
 /* Digital clock */
 @font-face {
-	font-family: alarm-clock;
-	src: url(digital-7-mono.ttf);
-	font-weight: bold;
+  font-family: alarm-clock;
+  src: url(digital-7-mono.ttf);
+  font-weight: bold;
 }
 
 .digital-clock {
-	width: 730px;
-	height: 200px;
-	background-color: #595959;
-	border-radius: 25px;
-	border: 3px solid #3a3a3a;
-	position: absolute;
- 	top: 50%;
+  width: 730px;
+  height: 200px;
+  background-color: #595959;
+  border-radius: 25px;
+  border: 3px solid #3a3a3a;
+  position: absolute;
+  top: 50%;
   left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	overflow: hidden;
-	box-shadow: 1px 5px 5px rgba(0,0,0,.3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .clock-face {
-	width: 650px;
-	height: 150px;
-	background-color: #DDDDDD;
-	border-radius: 25px;
-	border: 3px solid #AAAAAA;
-	margin: 0 auto;
-	position: absolute;
- 	top: 50%;
+  width: 650px;
+  height: 150px;
+  background-color: #dddddd;
+  border-radius: 25px;
+  border: 3px solid #aaaaaa;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
   left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	overflow: hidden;
-	text-align: center;
-	text-indent: 0.075em;
-	line-height: 150px;
-	font-size: 8em;
-	color: #474747;
-	font-weight: bold;
-	font-family: alarm-clock, arial;
-	-moz-box-shadow: inset 0 0 10px #000000;
-	-webkit-box-shadow: inset 0 0 10px #000000;
-	box-shadow: inset 0 0 10px #000000;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  text-align: center;
+  text-indent: 0.075em;
+  line-height: 150px;
+  font-size: 8em;
+  color: #474747;
+  font-weight: bold;
+  font-family: alarm-clock, arial;
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 /* Button */
 .button-container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 button {
-	background-color: #29434e;
-	border: none;
-	color: #fff;
-	padding: 16px;
-	position: absolute;
-	bottom: 32px;
-	opacity: 0.8;
-	border-radius: 5px;
-	margin: 0 auto;
-	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: 0.25em;
-	cursor: pointer;
-	outline: 0;
-	transition: all .1s ease;
-	-webkit-transition: all .1s ease;
+  background-color: #29434e;
+  border: none;
+  color: #fff;
+  padding: 16px;
+  position: absolute;
+  bottom: 32px;
+  opacity: 0.8;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  cursor: pointer;
+  outline: 0;
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
 }
 
 button:hover {
-	background-color: #546e7a;
-	box-shadow: 0 7px 14px rgba(50,50,93,.1),
-							0 3px 6px rgba(0,0,0,.08);
+  background-color: #546e7a;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 button:focus {
-	box-shadow: 0 4px 6px rgba(50,50,93,.11),
-							0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* Responsive Queries */
 @media screen and (max-width: 560px) {
-	.analogue-clock {
-		height: 300px;
-		width: 300px;
-	}
+  .analogue-clock {
+    height: 300px;
+    width: 300px;
+  }
 
-	#hours {
-		height: 70px;
-		bottom: 70px;
-		width: 8px;
-	}
+  #hours {
+    height: 70px;
+    bottom: 70px;
+    width: 8px;
+  }
 
-	#minutes {
-		height: 120px;
-		bottom: 120px;
-		width: 5px;
-	}
+  #minutes {
+    height: 120px;
+    bottom: 120px;
+    width: 5px;
+  }
 
-	#seconds {
-		height: 100px;
-		bottom: 100px;
-	}
+  #seconds {
+    height: 100px;
+    bottom: 100px;
+  }
 
-	#btn {
-		font-size: 1.2em;
-	}
+  #btn {
+    font-size: 1.2em;
+  }
 }
 
 @media screen and (max-width: 380px) {
-	.analogue-clock {
-		height: 200px;
-		width: 200px;
-	}
+  .analogue-clock {
+    height: 200px;
+    width: 200px;
+  }
 
-	#hours {
-		height: 50px;
-		bottom: 50px;
-		width: 6px;
-	}
+  #hours {
+    height: 50px;
+    bottom: 50px;
+    width: 6px;
+  }
 
-	#minutes {
-		height: 80px;
-		bottom: 80px;
-		width: 4px;
-	}
+  #minutes {
+    height: 80px;
+    bottom: 80px;
+    width: 4px;
+  }
 
-	#seconds {
-		height: 80px;
-		bottom: 80px;
-	}
+  #seconds {
+    height: 80px;
+    bottom: 80px;
+  }
 }
 
 @media screen and (max-width: 800px) {
-	.digital-clock {
-		width: 430px;
-		height: 150px;
-	}
+  .digital-clock {
+    width: 430px;
+    height: 150px;
+  }
 
-	.clock-face {
-		width: 380px;
-		height: 100px;
-		font-size: 5em;
-		line-height: 100px;
-	}
+  .clock-face {
+    width: 380px;
+    height: 100px;
+    font-size: 5em;
+    line-height: 100px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-	.digital-clock {
-		width: 230px;
-		height: 120px;
-	}
+  .digital-clock {
+    width: 230px;
+    height: 120px;
+  }
 
-	.clock-face {
-		width: 190px;
-		height: 80px;
+  .clock-face {
+    width: 190px;
+    height: 80px;
     font-size: 2.5em;
     line-height: 80px;
-	}
+  }
 }

@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import './article-list.css';
+import './article-list.css'
 
 class ArticleList extends Component {
   generatePageUrl(pageTitle) {
-    const underscoredTitle = pageTitle.split(' ').join('_');
-    const articleUrl = `http://en.wikipedia.org/wiki/${underscoredTitle}`;
-    window.location.href = articleUrl;
+    const underscoredTitle = pageTitle.split(' ').join('_')
+    const articleUrl = `http://en.wikipedia.org/wiki/${underscoredTitle}`
+    window.location.href = articleUrl
   }
 
   render() {
     const ArticleCards = () => {
       return this.props.pages.map((page) => {
         return (
-          <div
-            className="article-card"
-            onClick={() => this.generatePageUrl(page.title)}
-            key={page.pageid}
-          >
-            <ArticleImage {...page}/>
+          <div className="article-card" onClick={() => this.generatePageUrl(page.title)} key={page.pageid}>
+            <ArticleImage {...page} />
             <h2 className="card-title">{page.title}</h2>
             <p className="card-content">{page.extract}</p>
           </div>
-        );
+        )
       })
     }
 
@@ -34,7 +30,7 @@ class ArticleList extends Component {
           </div>
         )
       } else {
-        return null;
+        return null
       }
     }
 
@@ -45,9 +41,9 @@ class ArticleList extends Component {
         </article>
       )
     } else {
-      return null;
+      return null
     }
   }
 }
 
-export default ArticleList;
+export default ArticleList

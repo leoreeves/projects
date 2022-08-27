@@ -1,109 +1,114 @@
 html,
 body {
-	height: 100%;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  height: 100%;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 html {
-	display: table;
-	width: 100%;
+  display: table;
+  width: 100%;
 }
 
 body {
-	padding: 0 25px;
-	color: #333;
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	font-family: 'Quicksand', sans-serif;
+  padding: 0 25px;
+  color: #333;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .container__instruction-header,
 .container__hex-colour-header {
-	opacity: 0.8;
-	font-size: 2em;
+  opacity: 0.8;
+  font-size: 2em;
 }
 
 .container__instruction-header {
-	font-weight: 300;
-	margin-bottom: 30px;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  font-weight: 300;
+  margin-bottom: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container__hex-colour-header {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .container__copy-to-clipboard-button {
-	font-size: 1em;
-	font-family: 'Quicksand', sans-serif;
-	height: 35px;
-	letter-spacing: .025em;
-	cursor: pointer;
-	margin-top: 5px;
-	border-radius: 5px;
-	background-color: rgba(238, 238, 238, 0.9);
-	border: 1px solid rgba(238, 238, 238, 0.9);
-	padding: 0 10px;
-	padding-bottom: 2px;
-	box-shadow: 0 4px 6px rgba(50,50,93,.11),
-							0 1px 3px rgba(0,0,0,.08);
-	outline: none;
-	font-weight: 500;
-	color: #333;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	transition: all .1s ease;
-	-webkit-transition: all .1s ease;
-	text-transform: uppercase;
-	letter-spacing: .025em;
-	font-weight: 600;
+  font-size: 1em;
+  font-family: 'Quicksand', sans-serif;
+  height: 35px;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgba(238, 238, 238, 0.9);
+  border: 1px solid rgba(238, 238, 238, 0.9);
+  padding: 0 10px;
+  padding-bottom: 2px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  outline: none;
+  font-weight: 500;
+  color: #333;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-weight: 600;
 }
 
 .container__copy-to-clipboard-button:hover,
 .container__copy-to-clipboard-button:focus {
-	box-shadow: 0 7px 14px rgba(50,50,93,.1),
-							0 3px 6px rgba(0,0,0,.08);
-	transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 .container__copy-to-clipboard-button:active {
-	box-shadow: 0 4px 6px rgba(50,50,93,.11),
-							0 1px 3px rgba(0,0,0,.08);
-	transform: translateY(1px);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: translateY(1px);
 }
 
 .container__success-message {
-	margin-top: 30px;
-	display: none;
-	position: fixed;
-	right: 0;
-	width: 100%;
-	opacity: 0;
-	font-size: 1.3em;
+  margin-top: 30px;
+  display: none;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  font-size: 1.3em;
 }
 
 @-webkit-keyframes fadeout {
-	0% { opacity:1; }
-	100% { opacity:0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @keyframes fadeout {
-	0% { opacity:1; }
-	100% { opacity:0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .container__success-message--fade-out {
-	opacity: 0;
-	-moz-animation   : fadeout 1.5s linear;
-	-webkit-animation: fadeout 1.5s linear;
-	animation        : fadeout 1.5s linear;
+  opacity: 0;
+  -moz-animation: fadeout 1.5s linear;
+  -webkit-animation: fadeout 1.5s linear;
+  animation: fadeout 1.5s linear;
 }

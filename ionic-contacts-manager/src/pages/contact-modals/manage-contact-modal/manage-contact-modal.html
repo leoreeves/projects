@@ -9,7 +9,14 @@
     <ion-list>
       <ion-item>
         <ion-icon item-start name="contact"></ion-icon>
-        <ion-input item-end formControlName="name" type="text" autocapitalize="words" placeholder="Name" required></ion-input>
+        <ion-input
+          item-end
+          formControlName="name"
+          type="text"
+          autocapitalize="words"
+          placeholder="Name"
+          required
+        ></ion-input>
       </ion-item>
       <p ion-text class="error-message" *ngIf="invalidForm" color="danger">Name is required</p>
       <ion-item>
@@ -24,8 +31,7 @@
         <ion-icon item-start name="pin"></ion-icon>
         <ion-input item-end formControlName="address" type="text" placeholder="Address"></ion-input>
       </ion-item>
-      <ion-item>
-      </ion-item>
+      <ion-item> </ion-item>
     </ion-list>
   </form>
 </ion-content>

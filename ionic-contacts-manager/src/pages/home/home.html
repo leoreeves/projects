@@ -3,9 +3,7 @@
     <ion-grid>
       <ion-row>
         <ion-col class="title-col" col-3>
-          <ion-title>
-            Contacts
-          </ion-title>
+          <ion-title> Contacts </ion-title>
         </ion-col>
         <ion-col col-sm-4 offset-1>
           <ion-searchbar item-end (ionInput)="filterContacts($event)"></ion-searchbar>
@@ -30,21 +28,27 @@
     <button class="contact-button" (click)="openViewContactModal(contact)" ion-item *ngFor="let contact of contacts">
       <ion-grid>
         <ion-row>
-          <ion-col col-4>
-            {{ contact.name }}
-          </ion-col>
-          <ion-col class="contact-email-col" col-3>
-            {{ contact.email}}
-          </ion-col>
-          <ion-col class="contact-phone-col" col-3>
-            {{ contact.phone}}
-          </ion-col>
+          <ion-col col-4> {{ contact.name }} </ion-col>
+          <ion-col class="contact-email-col" col-3> {{ contact.email}} </ion-col>
+          <ion-col class="contact-phone-col" col-3> {{ contact.phone}} </ion-col>
         </ion-row>
       </ion-grid>
-      <button class="contact-tool-buttons" ion-button (click)="openManageContactModal('Edit', contact); $event.stopPropagation()" clear item-end>
+      <button
+        class="contact-tool-buttons"
+        ion-button
+        (click)="openManageContactModal('Edit', contact); $event.stopPropagation()"
+        clear
+        item-end
+      >
         <ion-icon color="dark" name="create"></ion-icon>
       </button>
-      <button class="contact-tool-buttons" ion-button (click)="presentDeleteAlert(contact); $event.stopPropagation()" clear item-end>
+      <button
+        class="contact-tool-buttons"
+        ion-button
+        (click)="presentDeleteAlert(contact); $event.stopPropagation()"
+        clear
+        item-end
+      >
         <ion-icon color="dark" name="trash"></ion-icon>
       </button>
     </button>

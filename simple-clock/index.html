@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Simple Clock</title>
-	<meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
-</head>
-<body>
-	<main id="simple-clock">
-		<div class="analogue-clock" v-bind:style="{ display: analogueClockDisplay }">
-			<div id="hours" v-bind:style="{ cssText: hours }"></div>
-			<div id="minutes" v-bind:style="{ cssText: minutes }"></div>
-			<div id="seconds" v-bind:style="{ cssText: seconds }"></div>
-			<div class="three"></div>
-			<div class="six"></div>
-			<div class="nine"></div>
-			<div class="twelve"></div>
-			<div class="center"></div>
-		</div>
-		<div class="digital-clock" v-cloak v-bind:style="{ display: digitalClockDisplay }">
-			<div class="clock-face">
-				{{ digitalClockTime }}
-			</div>
-		</div>
-		<div class="button-container">
-			<button v-on:click="toggleDisplayedClock">Switch Clock Face</button>
-		</div>
-	</main>
-	<!-- Scripts -->
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
-	<script src="app.js"></script>
-</body>
+  <head>
+    <title>Simple Clock</title>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main id="simple-clock">
+      <div class="analogue-clock" v-bind:style="{ display: analogueClockDisplay }">
+        <div id="hours" v-bind:style="{ cssText: hours }"></div>
+        <div id="minutes" v-bind:style="{ cssText: minutes }"></div>
+        <div id="seconds" v-bind:style="{ cssText: seconds }"></div>
+        <div class="three"></div>
+        <div class="six"></div>
+        <div class="nine"></div>
+        <div class="twelve"></div>
+        <div class="center"></div>
+      </div>
+      <div class="digital-clock" v-cloak v-bind:style="{ display: digitalClockDisplay }">
+        <div class="clock-face">{{ digitalClockTime }}</div>
+      </div>
+      <div class="button-container">
+        <button v-on:click="toggleDisplayedClock">Switch Clock Face</button>
+      </div>
+    </main>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

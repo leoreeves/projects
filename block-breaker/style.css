@@ -34,15 +34,15 @@ canvas {
   background-color: #455a64;
   border: 1px solid #455a64;
   border-radius: 5px;
-  color: #FFF;
+  color: #fff;
   margin-top: 10px;
   padding: 12px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: .2em;
-  transition: all .15s ease;
-  -webkit-transition: all .5s ease;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  letter-spacing: 0.2em;
+  transition: all 0.15s ease;
+  -webkit-transition: all 0.5s ease;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   outline: none;
 }

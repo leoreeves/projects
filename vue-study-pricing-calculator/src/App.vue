@@ -1,25 +1,23 @@
 <template>
   <div id="app">
-    <PricingCalculator
-      v-bind:feesPercentage="0.3"
-      v-bind:vatPercentage="0.2"
-    />
+    <PricingCalculator v-bind:feesPercentage="0.3" v-bind:vatPercentage="0.2" />
   </div>
 </template>
 
 <script>
-import PricingCalculator from './components/PricingCalculator.vue';
+import PricingCalculator from './components/PricingCalculator.vue'
 
 export default {
   name: 'app',
   components: {
-    PricingCalculator
-  }
+    PricingCalculator,
+  },
 }
 </script>
 
 <style lang="scss">
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   height: 100%;

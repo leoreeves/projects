@@ -1,137 +1,195 @@
-{% extends "layout.html" %}
-
-{% block content %}
-  <section class="container tunings-container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Tunings</h1>
-        <ul>
-          <li>Start with the lowest string first.</li>
-          <li>Suggested tunings include equivalents (i.e. <span class="highlight">CGCFCE</span> includes <span class="highlight">DADGDF#</span>).</li>
-          <li><a href="http://sethares.engr.wisc.edu/alternatetunings/alltunings.pdf" target="_blank" rel="noopener noreferrer">Alternate tuning guide</a> by Bill Sethares.</li>
-        </ul>
-      </div>
+{% extends "layout.html" %} {% block content %}
+<section class="container tunings-container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Tunings</h1>
+      <ul>
+        <li>Start with the lowest string first.</li>
+        <li>
+          Suggested tunings include equivalents (i.e. <span class="highlight">CGCFCE</span> includes
+          <span class="highlight">DADGDF#</span>).
+        </li>
+        <li>
+          <a href="http://sethares.engr.wisc.edu/alternatetunings/alltunings.pdf" target="_blank" rel="noopener noreferrer"
+            >Alternate tuning guide</a
+          >
+          by Bill Sethares.
+        </li>
+      </ul>
     </div>
-    <hr>
-    <div id="tunings" class="row">
-      <div class="col-md-3 col-xs-6">
-        <h2>Standard</h2>
-        <ul>
-          <li><a href="time-has-told-me.html">Time Has Told Me</a></li>
-          <li><a href="river-man.html">River Man</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/daydone.htm" target="_blank" rel="noopener noreferrer">Day Is Done</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/poorboy.htm" target="_blank" rel="noopener noreferrer">Poor Boy</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/thingsun.htm" target="_blank" rel="noopener noreferrer">Things Behind the Sun</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/joey.htm" target="_blank" rel="noopener noreferrer">Joey</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/mayfair.htm" target="_blank" rel="noopener noreferrer">Mayfair</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/strange.htm" target="_blank" rel="noopener noreferrer">Strange Meeting II</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/birdflew.htm" target="_blank" rel="noopener noreferrer">Bird Flew By</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/leaving.htm" target="_blank" rel="noopener noreferrer">Leaving Me Behind</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/rain.htm" target="_blank" rel="noopener noreferrer">Rain</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>BEBEBE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/manshed.htm" target="_blank" rel="noopener noreferrer">Man in a Shed</a></li>
-          <li> <a href="http://www.chrish.ndo.co.uk/atchime.htm" target="_blank" rel="noopener noreferrer">At the Chime of a City Clock</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/fly.htm" target="_blank" rel="noopener noreferrer">Fly</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/northsky.htm" target="_blank" rel="noopener noreferrer">Northern Sky</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/sunday.htm" target="_blank" rel="noopener noreferrer">Sunday</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/harvest.htm" target="_blank" rel="noopener noreferrer">Harvest Breed</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/frommorn.htm" target="_blank" rel="noopener noreferrer">From the Morning</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/timreply.htm" target="_blank" rel="noopener noreferrer">Time of No Reply</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>CGCFCE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/introduc.htm" target="_blank" rel="noopener noreferrer">Introduction</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/hazey2.htm" target="_blank" rel="noopener noreferrer">Hazey Jane II</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/hazey1.htm" target="_blank" rel="noopener noreferrer">Hazey Jane I</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/pinkmoon.htm" target="_blank" rel="noopener noreferrer">Pink Moon</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/whichwil.htm" target="_blank" rel="noopener noreferrer">Which Will</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/parasite.htm" target="_blank" rel="noopener noreferrer">Parasite</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/hanging.htm" target="_blank" rel="noopener noreferrer">Hanging on a Star</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>BBDGBE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/threehrs.htm" target="_blank" rel="noopener noreferrer">Three Hours</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/fruitree.htm" target="_blank" rel="noopener noreferrer">Fruit Tree</a></li>
-        </ul>
-      </div>
+  </div>
+  <hr />
+  <div id="tunings" class="row">
+    <div class="col-md-3 col-xs-6">
+      <h2>Standard</h2>
+      <ul>
+        <li><a href="time-has-told-me.html">Time Has Told Me</a></li>
+        <li><a href="river-man.html">River Man</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/daydone.htm" target="_blank" rel="noopener noreferrer">Day Is Done</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/poorboy.htm" target="_blank" rel="noopener noreferrer">Poor Boy</a></li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/thingsun.htm" target="_blank" rel="noopener noreferrer"
+            >Things Behind the Sun</a
+          >
+        </li>
+        <li><a href="http://www.chrish.ndo.co.uk/joey.htm" target="_blank" rel="noopener noreferrer">Joey</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/mayfair.htm" target="_blank" rel="noopener noreferrer">Mayfair</a></li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/strange.htm" target="_blank" rel="noopener noreferrer">Strange Meeting II</a>
+        </li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/birdflew.htm" target="_blank" rel="noopener noreferrer">Bird Flew By</a>
+        </li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/leaving.htm" target="_blank" rel="noopener noreferrer">Leaving Me Behind</a>
+        </li>
+        <li><a href="http://www.chrish.ndo.co.uk/rain.htm" target="_blank" rel="noopener noreferrer">Rain</a></li>
+      </ul>
     </div>
-    <div class="row mt-2">
-      <div class="col-md-3 col-sm-6">
-        <h2>EADF#BE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/cello.htm" target="_blank" rel="noopener noreferrer">’Cello Song</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/maryjane.htm" target="_blank" rel="noopener noreferrer">Thoughts of Mary Jane</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>EADEBE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/road.htm" target="_blank" rel="noopener noreferrer">Road</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/voice.htm" target="_blank" rel="noopener noreferrer">Voice from the Mountain</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>GGDGBD</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/rideron.htm" target="_blank" rel="noopener noreferrer">Rider on the Wheel</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/rideron.htm" target="_blank" rel="noopener noreferrer">Black Eyed Dog</a></li>
-          <li><a href="http://www.chrish.ndo.co.uk/tow.htm" target="_blank" rel="noopener noreferrer">Tow the Line</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>DADGBD</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/bryter.htm" target="_blank" rel="noopener noreferrer">Bryter Layter</a></li>
-        </ul>
-      </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>BEBEBE</h2>
+      <ul>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/manshed.htm" target="_blank" rel="noopener noreferrer">Man in a Shed</a>
+        </li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/atchime.htm" target="_blank" rel="noopener noreferrer"
+            >At the Chime of a City Clock</a
+          >
+        </li>
+        <li><a href="http://www.chrish.ndo.co.uk/fly.htm" target="_blank" rel="noopener noreferrer">Fly</a></li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/northsky.htm" target="_blank" rel="noopener noreferrer">Northern Sky</a>
+        </li>
+        <li><a href="http://www.chrish.ndo.co.uk/sunday.htm" target="_blank" rel="noopener noreferrer">Sunday</a></li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/harvest.htm" target="_blank" rel="noopener noreferrer">Harvest Breed</a>
+        </li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/frommorn.htm" target="_blank" rel="noopener noreferrer">From the Morning</a>
+        </li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/timreply.htm" target="_blank" rel="noopener noreferrer">Time of No Reply</a>
+        </li>
+      </ul>
     </div>
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <h2>DADF#AD</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/oneof.htm" target="_blank" rel="noopener noreferrer">One of These Things First</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>EADGAE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/clothes.htm" target="_blank" rel="noopener noreferrer">Clothes of Sand</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>AADEBE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/freeride.htm" target="_blank" rel="noopener noreferrer">Free Ride</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>CGCFGE</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/placebe.htm" target="_blank" rel="noopener noreferrer">Place to Be</a></li>
-        </ul>
-      </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>CGCFCE</h2>
+      <ul>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/introduc.htm" target="_blank" rel="noopener noreferrer">Introduction</a>
+        </li>
+        <li><a href="http://www.chrish.ndo.co.uk/hazey2.htm" target="_blank" rel="noopener noreferrer">Hazey Jane II</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/hazey1.htm" target="_blank" rel="noopener noreferrer">Hazey Jane I</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/pinkmoon.htm" target="_blank" rel="noopener noreferrer">Pink Moon</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/whichwil.htm" target="_blank" rel="noopener noreferrer">Which Will</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/parasite.htm" target="_blank" rel="noopener noreferrer">Parasite</a></li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/hanging.htm" target="_blank" rel="noopener noreferrer">Hanging on a Star</a>
+        </li>
+      </ul>
     </div>
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <h2>xGDGBbD</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/magic.htm" target="_blank" rel="noopener noreferrer">I Was Made to Love Magic</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <h2>DADGAD</h2>
-        <ul>
-          <li><a href="http://www.chrish.ndo.co.uk/farleys.htm" target="_blank" rel="noopener noreferrer">Far Leys / Sketch 1</a></li>
-        </ul>
-      </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>BBDGBE</h2>
+      <ul>
+        <li><a href="http://www.chrish.ndo.co.uk/threehrs.htm" target="_blank" rel="noopener noreferrer">Three Hours</a></li>
+        <li><a href="http://www.chrish.ndo.co.uk/fruitree.htm" target="_blank" rel="noopener noreferrer">Fruit Tree</a></li>
+      </ul>
     </div>
-  </section>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-3 col-sm-6">
+      <h2>EADF#BE</h2>
+      <ul>
+        <li><a href="http://www.chrish.ndo.co.uk/cello.htm" target="_blank" rel="noopener noreferrer">’Cello Song</a></li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/maryjane.htm" target="_blank" rel="noopener noreferrer"
+            >Thoughts of Mary Jane</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>EADEBE</h2>
+      <ul>
+        <li><a href="http://www.chrish.ndo.co.uk/road.htm" target="_blank" rel="noopener noreferrer">Road</a></li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/voice.htm" target="_blank" rel="noopener noreferrer"
+            >Voice from the Mountain</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>GGDGBD</h2>
+      <ul>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/rideron.htm" target="_blank" rel="noopener noreferrer">Rider on the Wheel</a>
+        </li>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/rideron.htm" target="_blank" rel="noopener noreferrer">Black Eyed Dog</a>
+        </li>
+        <li><a href="http://www.chrish.ndo.co.uk/tow.htm" target="_blank" rel="noopener noreferrer">Tow the Line</a></li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>DADGBD</h2>
+      <ul>
+        <li><a href="http://www.chrish.ndo.co.uk/bryter.htm" target="_blank" rel="noopener noreferrer">Bryter Layter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <h2>DADF#AD</h2>
+      <ul>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/oneof.htm" target="_blank" rel="noopener noreferrer"
+            >One of These Things First</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>EADGAE</h2>
+      <ul>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/clothes.htm" target="_blank" rel="noopener noreferrer">Clothes of Sand</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>AADEBE</h2>
+      <ul>
+        <li><a href="http://www.chrish.ndo.co.uk/freeride.htm" target="_blank" rel="noopener noreferrer">Free Ride</a></li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>CGCFGE</h2>
+      <ul>
+        <li><a href="http://www.chrish.ndo.co.uk/placebe.htm" target="_blank" rel="noopener noreferrer">Place to Be</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <h2>xGDGBbD</h2>
+      <ul>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/magic.htm" target="_blank" rel="noopener noreferrer"
+            >I Was Made to Love Magic</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h2>DADGAD</h2>
+      <ul>
+        <li>
+          <a href="http://www.chrish.ndo.co.uk/farleys.htm" target="_blank" rel="noopener noreferrer">Far Leys / Sketch 1</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 {% endblock %}

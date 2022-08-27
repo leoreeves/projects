@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>UK VAT Calculator</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="flex-container">
@@ -26,24 +26,24 @@
             placeholder="Enter an amount"
             v-model.number="inputAmount"
             required
-          >
+          />
           <div class="label-container">
             <label>
-              <input id="add-vat" type="radio" name="vat-option" value="plus" v-model="vatOperation" required> Add VAT
+              <input id="add-vat" type="radio" name="vat-option" value="plus" v-model="vatOperation" required /> Add VAT
             </label>
             <label>
-              <input id="remove-vat" type="radio" name="vat-option" value="minus" v-model="vatOperation"> Remove VAT
+              <input id="remove-vat" type="radio" name="vat-option" value="minus" v-model="vatOperation" /> Remove VAT
             </label>
           </div>
           <div class="label-container">
             <label>
-              <input id="20-percent" type="radio" name="vat-rate" value="1.2" v-model="vatRate" required> 20% Standard Rate
+              <input id="20-percent" type="radio" name="vat-rate" value="1.2" v-model="vatRate" required /> 20% Standard Rate
             </label>
             <label>
-              <input id="5-percent" type="radio" name="vat-rate" value="1.05" v-model="vatRate"> 5% Reduced Rate
+              <input id="5-percent" type="radio" name="vat-rate" value="1.05" v-model="vatRate" /> 5% Reduced Rate
             </label>
           </div>
-          <input class="btn" type="submit" value="Calculate">
+          <input class="btn" type="submit" value="Calculate" />
         </form>
         <!-- Result Card -->
         <div class="result" v-bind:style="{ display: resultCardDisplay }">

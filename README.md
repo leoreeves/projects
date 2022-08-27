@@ -1,4 +1,5 @@
 # Projects
+
 A collection of personal projects.
 
 ## Contents
@@ -26,7 +27,7 @@ A collection of personal projects.
 
 ### [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 
-Based on the classic game [*Breakout*](https://en.wikipedia.org/wiki/Breakout_(video_game)).
+Based on the classic game [_Breakout_](<https://en.wikipedia.org/wiki/Breakout_(video_game)>).
 
 Inspired by [this](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) tutorial.
 
@@ -68,7 +69,7 @@ Built using:
 
 ### [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 
-A tribute page for the musician Elliott Smith built for *freeCodeCamp*.
+A tribute page for the musician Elliott Smith built for _freeCodeCamp_.
 
 Built using:
 
@@ -78,7 +79,7 @@ Built using:
 
 ### [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 
-Simple weather app built for *freeCodeCamp*, it displays the local weather for the user based on browser geolocation.
+Simple weather app built for _freeCodeCamp_, it displays the local weather for the user based on browser geolocation.
 
 Built using:
 
@@ -88,7 +89,7 @@ Built using:
 - jQuery
 - AJAX
 
-###  [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
+### [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
 
 Randomly generates a hex colour on user input.
 
@@ -123,7 +124,7 @@ Built using:
 
 ### [JavaScript Calculator](https://leoreeves.github.io/projects/javascript-calculator/)
 
-A simple calculator built for *freeCodeCamp*.
+A simple calculator built for _freeCodeCamp_.
 
 Built using:
 
@@ -143,7 +144,7 @@ Built using:
 
 ### [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 
-Inspired by [this](https://www.youtube.com/watch?v=Smwrw4sNCxE) scene from the movie *The Matrix*, a simulation of Neo's terminal.
+Inspired by [this](https://www.youtube.com/watch?v=Smwrw4sNCxE) scene from the movie _The Matrix_, a simulation of Neo's terminal.
 To achieve the typewriter effect I used [this](https://github.com/ckm100/typeWriter.js) script.
 
 Built using:
@@ -166,7 +167,7 @@ Built using:
 
 ### [Pomodoro Timer](https://leoreeves.github.io/projects/pomodoro-timer/)
 
-A pomodoro timer built for *freeCodeCamp*.
+A pomodoro timer built for _freeCodeCamp_.
 
 Built using:
 
@@ -176,7 +177,7 @@ Built using:
 
 ### [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 
-Generates a random quote about design, built for *freeCodeCamp*.
+Generates a random quote about design, built for _freeCodeCamp_.
 
 Built using:
 
@@ -196,7 +197,7 @@ Built using:
 
 ### [React Wikipedia Search](https://react-wikipedia-search.netlify.com/)
 
-A *Wikipedia* search viewer, it returns search results in card format with an image (if available).
+A _Wikipedia_ search viewer, it returns search results in card format with an image (if available).
 
 Built using:
 

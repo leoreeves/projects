@@ -41,8 +41,7 @@ h1 {
   border-radius: 5px;
   border: 1px solid #e4e9ec;
   padding: 5px 0;
-  box-shadow: inset 0 2px 6px rgba(50,50,93,0.01),
-              inset 0 1px 3px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 6px rgba(50, 50, 93, 0.01), inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* Labels */
@@ -55,24 +54,23 @@ h1 {
 
 label {
   border-radius: 5px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border: 1px solid transparent;
   padding: 5px 10px;
   margin: 10px 5px;
   white-space: nowrap;
-  box-shadow: 0 4px 2px rgba(50,50,93,.05),
-              0 1px 2px rgba(0,0,0,.08);
-  -webkit-transition: all .1s ease;
-  transition: all .1s ease;
+  box-shadow: 0 4px 2px rgba(50, 50, 93, 0.05), 0 1px 2px rgba(0, 0, 0, 0.08);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   cursor: pointer;
   outline: none;
 }
 
 label:hover {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   cursor: pointer;
 }
 
@@ -85,28 +83,25 @@ label:hover {
   background-color: #455a64;
   border: 1px solid #455a64;
   border-radius: 5px;
-  color: #FFF;
+  color: #fff;
   margin-top: 10px;
   padding: 12px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: .025em;
-  transition: all .1s ease;
-  -webkit-transition: all .1s ease;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11),
-              0 1px 3px rgba(0,0,0,.08);
+  letter-spacing: 0.025em;
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn:hover {
   background-color: #546e7a;
-  box-shadow: 0 7px 14px rgba(50,50,93,.1),
-               0 3px 6px rgba(0,0,0,.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .btn:active {
-  box-shadow: 0 4px 6px rgba(50,50,93,.11),
-              0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn:focus {
@@ -123,7 +118,7 @@ label:hover {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: .025em;
+  letter-spacing: 0.025em;
   padding: 5px;
   position: absolute;
   bottom: 0;
@@ -132,33 +127,30 @@ label:hover {
   border-width: 3.2px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  transition: all .1s ease;
-  -webkit-transition: all .1s ease;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11),
-              0 1px 3px rgba(0,0,0,.08);
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn-copy:hover {
   background-color: #ff683a;
   border-color: #ff683a;
-  box-shadow: 0 7px 14px rgba(50,50,93,.1),
-              0 3px 6px rgba(0,0,0,.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .btn-copy:active {
-  box-shadow: 0 4px 6px rgba(50,50,93,.11),
-              0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* Results pane */
 .result {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   max-width: 280px;
   border-radius: 5px;
   padding: 5px 20px;
   margin: 30px auto 0;
   display: none;
-  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .result-section {
@@ -172,12 +164,11 @@ label:hover {
 }
 
 .result p {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 5px;
   font-size: 1.2em;
   margin-top: 5px;
-  box-shadow: inset 0 2px 6px rgba(50,50,93,.11),
-              inset 0 1px 3px rgba(0,0,0,.08);
+  box-shadow: inset 0 2px 6px rgba(50, 50, 93, 0.11), inset 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .result small {
@@ -200,11 +191,12 @@ label:hover {
   color: #fff;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .06s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.06s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   opacity: 0;
 }
 

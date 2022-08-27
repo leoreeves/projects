@@ -1,54 +1,60 @@
 // Draw canvas
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
-canvas.width = 512;
-canvas.height = 480;
-document.body.appendChild(canvas);
+const canvas = document.createElement('canvas')
+const ctx = canvas.getContext('2d')
+canvas.width = 512
+canvas.height = 480
+document.body.appendChild(canvas)
 
 // Handle images
-let backgroundImageReady = false;
-const backgroundImage = new Image();
-backgroundImage.src = 'img/background.svg';
-backgroundImage.onload = () => { backgroundImageReady = true; };
+let backgroundImageReady = false
+const backgroundImage = new Image()
+backgroundImage.src = 'img/background.svg'
+backgroundImage.onload = () => {
+  backgroundImageReady = true
+}
 
-let heroImageReady = false;
-const heroImage = new Image();
-heroImage.src = 'img/hero.svg';
-heroImage.onload = () => { heroImageReady = true; };
-heroImage.height = 32;
-heroImage.width = 32;
+let heroImageReady = false
+const heroImage = new Image()
+heroImage.src = 'img/hero.svg'
+heroImage.onload = () => {
+  heroImageReady = true
+}
+heroImage.height = 32
+heroImage.width = 32
 
-let monsterImageReady = false;
-const monsterImage = new Image();
-monsterImage.src = 'img/monster.svg';
-monsterImage.onload = () => { monsterImageReady = true; };
+let monsterImageReady = false
+const monsterImage = new Image()
+monsterImage.src = 'img/monster.svg'
+monsterImage.onload = () => {
+  monsterImageReady = true
+}
 
 // Handle sounds
-const speakerImage = document.querySelector('.speaker');
-const runningSound = new Audio('sounds/running.wav');
-runningSound.loop = true;
-let soundEnabled = true;
+const speakerImage = document.querySelector('.speaker')
+const runningSound = new Audio('sounds/running.wav')
+runningSound.loop = true
+let soundEnabled = true
 
 function toggleSound() {
-  soundEnabled = !soundEnabled;
-  speakerImage.src = soundEnabled ? 'img/speaker.svg' : 'img/mute.svg';
+  soundEnabled = !soundEnabled
+  speakerImage.src = soundEnabled ? 'img/speaker.svg' : 'img/mute.svg'
 }
 
 function generateRandomNumberBetweenRange(start, end) {
-  return Math.floor(Math.random() * end) + start;
+  return Math.floor(Math.random() * end) + start
 }
 
-let monsterDeathSoundNumber = 1;
+let monsterDeathSoundNumber = 1
 
 function generateMonsterDeathSound() {
-  let randomNumber = generateRandomNumberBetweenRange(1, 4);
+  let randomNumber = generateRandomNumberBetweenRange(1, 4)
   while (randomNumber === monsterDeathSoundNumber) {
-    randomNumber = generateRandomNumberBetweenRange(1, 4);
+    randomNumber = generateRandomNumberBetweenRange(1, 4)
   }
-  monsterDeathSoundNumber = randomNumber;
-  const monsterDeathSound = new Audio(`sounds/monster/death${randomNumber}.wav`);
-  monsterDeathSound.volume = 0.15;
-  monsterDeathSound.play();
+  monsterDeathSoundNumber = randomNumber
+  const monsterDeathSound = new Audio(`sounds/monster/death${randomNumber}.wav`)
+  monsterDeathSound.volume = 0.15
+  monsterDeathSound.play()
 }
 
 // Game objects
@@ -56,151 +62,152 @@ const hero = {
   pixelSpeed: 256,
   x: 0,
   y: 0,
-};
+}
 
 const monster = {
   x: 0,
   y: 0,
-};
+}
 
-let monstersCaught = 0;
+let monstersCaught = 0
 
 // Handle keyboard controls
-const keysDown = {};
+const keysDown = {}
 
-document.addEventListener('keydown', (e) => {
-  const { code } = e;
-  keysDown[code] = true;
+document.addEventListener(
+  'keydown',
+  (e) => {
+    const { code } = e
+    keysDown[code] = true
 
-  if (soundEnabled && code.includes('Arrow')) {
-    runningSound.play();
-  }
-}, false);
+    if (soundEnabled && code.includes('Arrow')) {
+      runningSound.play()
+    }
+  },
+  false
+)
 
-document.addEventListener('keyup', (e) => {
-  const { code } = e;
-  delete keysDown[code];
+document.addEventListener(
+  'keyup',
+  (e) => {
+    const { code } = e
+    delete keysDown[code]
 
-  if (soundEnabled) {
-    runningSound.pause();
-  }
-}, false);
+    if (soundEnabled) {
+      runningSound.pause()
+    }
+  },
+  false
+)
 
 function setHeroStartingPosition() {
-  hero.x = canvas.width / 2;
-  hero.y = canvas.height / 2;
+  hero.x = canvas.width / 2
+  hero.y = canvas.height / 2
 }
 
 function setMonsterStartingPosition() {
-  monster.x = 32 + (Math.random() * (canvas.width - 100));
-  monster.y = 32 + (Math.random() * (canvas.height - 100));
+  monster.x = 32 + Math.random() * (canvas.width - 100)
+  monster.y = 32 + Math.random() * (canvas.height - 100)
 }
 
 function resetGame() {
-  setHeroStartingPosition();
-  setMonsterStartingPosition();
+  setHeroStartingPosition()
+  setMonsterStartingPosition()
 }
 
 function checkIfHeroIsTouchingMonster() {
-  if (
-    hero.x <= (monster.x + 32)
-    && monster.x <= (hero.x + 32)
-    && hero.y <= (monster.y + 32)
-    && monster.y <= (hero.y + 32)
-  ) {
+  if (hero.x <= monster.x + 32 && monster.x <= hero.x + 32 && hero.y <= monster.y + 32 && monster.y <= hero.y + 32) {
     if (soundEnabled) {
-      generateMonsterDeathSound();
+      generateMonsterDeathSound()
     }
-    monstersCaught += 1;
-    resetGame();
+    monstersCaught += 1
+    resetGame()
   }
 }
 
 function updateGameObjects(modifier) {
-  const position = hero.pixelSpeed * modifier;
+  const position = hero.pixelSpeed * modifier
 
   if ('ArrowUp' in keysDown) {
-    hero.y -= position;
+    hero.y -= position
   }
   if ('ArrowDown' in keysDown) {
-    hero.y += position;
+    hero.y += position
   }
   if ('ArrowLeft' in keysDown) {
-    hero.x -= position;
+    hero.x -= position
   }
   if ('ArrowRight' in keysDown) {
-    hero.x += position;
+    hero.x += position
   }
 
-  checkIfHeroIsTouchingMonster();
+  checkIfHeroIsTouchingMonster()
 }
 
 function renderScore() {
-  ctx.fillStyle = 'rgb(250, 250, 250)';
-  ctx.font = '24px Helvetica';
-  ctx.texAling = 'left';
-  ctx.textBaseline = 'top';
-  ctx.fillText(`Monsters caught: ${monstersCaught}`, 32, 32);
+  ctx.fillStyle = 'rgb(250, 250, 250)'
+  ctx.font = '24px Helvetica'
+  ctx.texAling = 'left'
+  ctx.textBaseline = 'top'
+  ctx.fillText(`Monsters caught: ${monstersCaught}`, 32, 32)
 }
 
 function detectHeroCollision() {
   if (hero.x >= canvas.width - heroImage.width * 2) {
-    hero.x = canvas.width - heroImage.width * 2;
+    hero.x = canvas.width - heroImage.width * 2
   }
   if (hero.x <= heroImage.width) {
-    hero.x = heroImage.width + 10;
+    hero.x = heroImage.width + 10
   }
   if (hero.y >= canvas.height - heroImage.height * 2) {
-    hero.y = canvas.height - heroImage.height * 2;
+    hero.y = canvas.height - heroImage.height * 2
   }
   if (hero.y <= heroImage.height) {
-    hero.y = heroImage.height + 10;
+    hero.y = heroImage.height + 10
   }
   if (hero.x < 0) {
-    hero.x = 0;
+    hero.x = 0
   }
   if (hero.y < 0) {
-    hero.y = 0;
+    hero.y = 0
   }
 }
 
 function checkIfImagesAreReady() {
   if (backgroundImageReady) {
-    ctx.drawImage(backgroundImage, 0, 0);
+    ctx.drawImage(backgroundImage, 0, 0)
   }
   if (heroImageReady) {
-    ctx.drawImage(heroImage, hero.x, hero.y, 32, 32);
+    ctx.drawImage(heroImage, hero.x, hero.y, 32, 32)
   }
   if (monsterImageReady) {
-    ctx.drawImage(monsterImage, monster.x, monster.y, 32, 32);
+    ctx.drawImage(monsterImage, monster.x, monster.y, 32, 32)
   }
 }
 
 function renderGame() {
-  checkIfImagesAreReady();
-  detectHeroCollision();
-  renderScore();
+  checkIfImagesAreReady()
+  detectHeroCollision()
+  renderScore()
 }
 
-let then = Date.now();
+let then = Date.now()
 
 function startGame() {
-  const now = Date.now();
-  const delta = now - then;
+  const now = Date.now()
+  const delta = now - then
 
-  updateGameObjects(delta / 1000);
-  renderGame();
-  then = now;
-  window.requestAnimationFrame(startGame);
+  updateGameObjects(delta / 1000)
+  renderGame()
+  then = now
+  window.requestAnimationFrame(startGame)
 }
 
 // Cross-browser support for requestAnimationFrame.
-const w = window;
-window.requestAnimationFrame = w.requestAnimationFrame
-  || w.webkitRequestAnimationFrame
-  || w.msRequestAnimationFrame
-  || w.mozRequestAnimationFrame;
+const w = window
+window.requestAnimationFrame =
+  w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame
 
 // Handle the game
-resetGame();
-startGame();
+resetGame()
+startGame()

@@ -8,24 +8,24 @@ const characterFinder = new Vue({
   },
   methods: {
     incrementCharacterIndex(operator) {
-      const originalCharacterIndex = this.characterNumber;
+      const originalCharacterIndex = this.characterNumber
 
       if (operator === '-' && this.characterNumber > 1) {
-        this.characterNumber = Number(originalCharacterIndex) - 1;
+        this.characterNumber = Number(originalCharacterIndex) - 1
       } else if (operator === '+' && this.characterNumber < this.textInput.length) {
-        this.characterNumber = Number(originalCharacterIndex) + 1;
+        this.characterNumber = Number(originalCharacterIndex) + 1
       }
     },
     showCopyMessage() {
       if (this.textInput !== '') {
-        this.show = true;
+        this.show = true
         setTimeout(() => {
-          this.show = false;
-        }, 1000);
+          this.show = false
+        }, 1000)
       }
     },
   },
-});
+})
 
 // clipboard.js
-const clipboard = new ClipboardJS('.copy-button');
+const clipboard = new ClipboardJS('.copy-button')

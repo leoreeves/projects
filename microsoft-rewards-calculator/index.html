@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
     <title>Microsoft Rewards Calculator</title>
     <style>
-    html,
-    body {
-      background: #016fc9;
-      font-family: 'PT Sans', sans-serif;
-      height: 60%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    input {
-      font-family: 'PT Sans', sans-serif;
-      font-size: 1em;
-      margin-top: 10px;
-    }
-    .calculator-card {
-      background: #fff;
-      padding: 20px;
-      margin: 20px;
-      max-width: 450px;
-      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
-    }
-    .calculator-heading {
-      font-size: 1.5em;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .calculator-input-label {
-      display: flex;
-      flex-direction: column;
-      font-weight: 600;
-    }
-    .value-label {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    .result {
-      margin-top: 10px;
-      font-size: 1.8em;
-    }
+      html,
+      body {
+        background: #016fc9;
+        font-family: 'PT Sans', sans-serif;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        font-family: 'PT Sans', sans-serif;
+        font-size: 1em;
+        margin-top: 10px;
+      }
+      .calculator-card {
+        background: #fff;
+        padding: 20px;
+        margin: 20px;
+        max-width: 450px;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+      }
+      .calculator-heading {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .calculator-input-label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+      }
+      .value-label {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      .result {
+        margin-top: 10px;
+        font-size: 1.8em;
+      }
     </style>
   </head>
   <body>
@@ -55,36 +55,36 @@
       <h1 class="calculator-heading">Microsoft Rewards Calculator</h1>
       <label for="calculator-input" class="calculator-input-label">
         Points
-        <input id="calculator-input" type="number">
+        <input id="calculator-input" type="number" />
       </label>
       <p class="value-label">Value</p>
       <p class="result">£0.00</p>
     </div>
     <script>
-    const TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST = 29250;
-    const calculatorInput = document.querySelector('#calculator-input');
-    const result = document.querySelector('.result');
+      const TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST = 29250
+      const calculatorInput = document.querySelector('#calculator-input')
+      const result = document.querySelector('.result')
 
-    function calculateRate() {
-      return TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST / 25;
-    }
+      function calculateRate() {
+        return TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST / 25
+      }
 
-    function formatResultValue(resultValue) {
-      return `£${resultValue.toFixed(2)}`;
-    }
+      function formatResultValue(resultValue) {
+        return `£${resultValue.toFixed(2)}`
+      }
 
-    function calculateResultValue(value) {
-      const rate = calculateRate();
-      const resultValue = value / rate;
-      return formatResultValue(resultValue);
-    }
+      function calculateResultValue(value) {
+        const rate = calculateRate()
+        const resultValue = value / rate
+        return formatResultValue(resultValue)
+      }
 
-    function updateResultValue(event) {
-      const { value } = event.target;
-      result.innerHTML = calculateResultValue(Number(value));
-    }
+      function updateResultValue(event) {
+        const { value } = event.target
+        result.innerHTML = calculateResultValue(Number(value))
+      }
 
-    calculatorInput.addEventListener('input', (event) => updateResultValue(event));
+      calculatorInput.addEventListener('input', (event) => updateResultValue(event))
     </script>
   </body>
 </html>

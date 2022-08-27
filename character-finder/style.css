@@ -19,7 +19,7 @@ body {
 }
 
 label {
-  font-size: .85em;
+  font-size: 0.85em;
   margin-bottom: 10px;
 }
 
@@ -51,8 +51,8 @@ h1 {
   padding: 0 40px;
 }
 
-input[type=text],
-input[type=number] {
+input[type='text'],
+input[type='number'] {
   font-family: 'Work Sans', sans-serif;
   font-size: 1em;
   outline: none;
@@ -61,29 +61,30 @@ input[type=number] {
 }
 
 /* Inputs */
-input[type=text] {
+input[type='text'] {
   border-radius: 5px;
   border: 1px solid lightgray;
 }
 
-input[type=number] {
+input[type='number'] {
   width: 80px;
   border: 1px solid lightgray;
   text-align: center;
   -moz-appearance: textfield;
 }
 
-input[type=number]:invalid  {
+input[type='number']:invalid {
   box-shadow: none;
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   text-align: center;
 }
 ::-moz-placeholder {
@@ -124,7 +125,7 @@ input[type=number]::-webkit-inner-spin-button {
 .character-number button {
   border: 0;
   min-width: 35px;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
   color: #333;
 }
 
@@ -151,9 +152,9 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .copy-button {
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
   color: #333;
-  font-size: .65em;
+  font-size: 0.65em;
   border: 0;
   padding: 10px;
   border-radius: 5px;
@@ -173,11 +174,11 @@ input[type=number]::-webkit-inner-spin-button {
 .copied-confirmation {
   font-size: 0.7em;
   opacity: 0;
-  transition: opacity .5s
+  transition: opacity 0.5s;
 }
 
 .show-message {
   visibility: visible;
   opacity: 1;
-  transition: opacity .5s
+  transition: opacity 0.5s;
 }

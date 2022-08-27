@@ -11,7 +11,8 @@
           step="0.01"
           class="reward-input"
           id="reward"
-          v-model.number="reward">
+          v-model.number="reward"
+        />
       </div>
       <div class="input-container">
         <label for="places">Total participants</label>
@@ -22,7 +23,8 @@
           pattern="[0-9]"
           onkeypress="return !(event.charCode === 46)"
           step="1"
-          v-model.number="places">
+          v-model.number="places"
+        />
       </div>
       <div class="input-container">
         <label for="time">Time to complete (in minutes)</label>
@@ -33,7 +35,8 @@
           placeholder="Enter amount"
           id="time"
           step="1"
-          v-model.number="time">
+          v-model.number="time"
+        />
       </div>
     </div>
     <div class="results-container">
@@ -59,7 +62,7 @@ export default {
     feesPercentage: Number,
     vatPercentage: Number,
   },
-  data () {
+  data() {
     return {
       reward: '',
       places: '',
@@ -69,30 +72,30 @@ export default {
   computed: {
     calculateTotalCost() {
       if (this.reward && this.places) {
-        const cost = this.reward * this.places;
-        const additionalFees = cost * this.feesPercentage;
-        const vat = additionalFees * this.vatPercentage;
-        const roundedTotalCost = (Math.ceil((cost + additionalFees + vat) * 100) / 100).toFixed(2);
-        return this.addCommasToAmount(roundedTotalCost);
+        const cost = this.reward * this.places
+        const additionalFees = cost * this.feesPercentage
+        const vat = additionalFees * this.vatPercentage
+        const roundedTotalCost = (Math.ceil((cost + additionalFees + vat) * 100) / 100).toFixed(2)
+        return this.addCommasToAmount(roundedTotalCost)
       } else {
-        return 0;
+        return 0
       }
     },
     calculateRewardPerHour() {
       if (this.reward && this.time) {
-        const roundedTotalRewardPerHour = (Math.ceil((this.reward / this.time * 60) * 100) / 100).toFixed(2);
-        return this.addCommasToAmount(roundedTotalRewardPerHour);
+        const roundedTotalRewardPerHour = (Math.ceil((this.reward / this.time) * 60 * 100) / 100).toFixed(2)
+        return this.addCommasToAmount(roundedTotalRewardPerHour)
       } else {
-        return 0;
+        return 0
       }
-    }
+    },
   },
   methods: {
     addCommasToAmount(amount) {
-      const addCommasRegex = /(\d)(?=(\d{3})+(?!\d))/g;
-      return amount.toString().replace(addCommasRegex, '$1,');
-    }
-  }
+      const addCommasRegex = /(\d)(?=(\d{3})+(?!\d))/g
+      return amount.toString().replace(addCommasRegex, '$1,')
+    },
+  },
 }
 </script>
 

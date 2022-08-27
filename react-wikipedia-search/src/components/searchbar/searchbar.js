@@ -1,29 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import './searchbar.css';
+import './searchbar.css'
 
 class Searchbar extends Component {
   constructor(props) {
-    super(props);
-    this.state = { inputField: '' };
+    super(props)
+    this.state = { inputField: '' }
   }
 
   setInputSearchState = (event) => {
-    this.setState({ inputField: event.target.value });
+    this.setState({ inputField: event.target.value })
   }
 
   submitSearch = (event) => {
-    event.preventDefault();
-    this.props.getArticleData(this.state.inputField);
-    this.setState({ inputField: '' });
+    event.preventDefault()
+    this.props.getArticleData(this.state.inputField)
+    this.setState({ inputField: '' })
   }
 
   render() {
-    return(
-      <form
-        className="search-form"
-        onSubmit={this.submitSearch}
-      >
+    return (
+      <form className="search-form" onSubmit={this.submitSearch}>
         <input
           type="text"
           className="searchbar"
@@ -31,16 +28,11 @@ class Searchbar extends Component {
           value={this.state.inputField}
           onChange={this.setInputSearchState}
           autoFocus={true}
-          >
-        </input>
-        <input
-          type="submit"
-          value="Search"
-          className="search-button"
         ></input>
+        <input type="submit" value="Search" className="search-button"></input>
       </form>
     )
   }
 }
 
-export default Searchbar;
+export default Searchbar

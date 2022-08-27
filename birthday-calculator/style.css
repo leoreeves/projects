@@ -29,7 +29,7 @@ label {
 
 input {
   font-family: 'Open Sans', sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
   padding: 5px;
   font-size: 1.1em;
   border-radius: 5px;
@@ -69,7 +69,7 @@ span {
 
 .result {
   font-size: 1.4em;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   text-align: center;
 }
 

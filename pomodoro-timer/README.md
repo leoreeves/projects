@@ -1,6 +1,6 @@
 # [Pomodoro Timer](https://leoreeves.github.io/projects/pomodoro-timer/)
 
-A pomodoro timer built for *freeCodeCamp*.
+A pomodoro timer built for _freeCodeCamp_.
 
 Built using:
 
