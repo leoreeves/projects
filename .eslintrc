@@ -1,5 +1,6 @@
 {
   "extends": ["airbnb", "prettier"],
+  "plugins": ["html"],
   "rules": {
     "spaced-comment": "off",
     "max-len": ["error", { "code": 125 }]
