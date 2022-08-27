@@ -1,5 +1,22 @@
 {
   "extends": "airbnb",
+  "plugins": ["html", "@html-eslint"],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "parser": "@html-eslint/parser",
+      "extends": ["plugin:@html-eslint/recommended"]
+    }
+  ],
+  "rules": {
+    "@html-eslint/indent": ["error", 2],
+    "@html-eslint/require-meta-charset": "error",
+    "@html-eslint/require-meta-viewport": "error",
+    "spaced-comment": "off",
+    "max-len": ["error", { "code": 125 }]
+    // TODO: Enable and fix
+    // "@html-eslint/require-meta-description": "error",
+  },
   "globals": {
     "document": true,
     "browser": true,

@@ -12,13 +12,23 @@
   </head>
   <body onload="fetchIssues()">
     <main class="container">
-      <h1 class="text-center"><strong>Issue Tracker</strong></h1>
+      <h1 class="text-center">
+        <strong>Issue Tracker</strong>
+      </h1>
       <div class="jumbotron">
-        <h3><strong>Add new issue:</strong></h3>
+        <h3>
+          <strong>Add new issue:</strong>
+        </h3>
         <form id="issueInputForm">
           <div class="form-group">
             <label for="issueDescInput">Description</label>
-            <textarea class="form-control" id="issueDescInput" placeholder="Describe the issue..." minlength="10" required></textarea>
+            <textarea
+              class="form-control"
+              id="issueDescInput"
+              placeholder="Describe the issue..."
+              minlength="10"
+              required>
+            </textarea>
           </div>
           <div class="form-group">
             <label for="issueDescInput">Severity</label>
@@ -30,7 +40,12 @@
           </div>
           <div class="form-group">
             <label for="issueDescInput">Assigned to</label>
-            <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Enter who is responsible..." required>
+            <input type="text"
+              class="form-control"
+              id="issueAssignedToInput"
+              placeholder="Enter who is responsible..."
+              required
+            >
           </div>
           <button type="submit" class="btn btn-primary">Add</button>
         </form>
@@ -45,7 +60,10 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.4/chance.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
     <script src="main.js"></script>
   </body>
 </html>

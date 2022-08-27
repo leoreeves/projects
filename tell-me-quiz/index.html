@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <title>Tell Me Quiz: Generate random letter</title>
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Tell Me Quiz: Generate random letter</title>
+    <style>
     html,
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,15 +34,15 @@
       border: 1px solid gray;
       padding: 5px 10px;
     }
-  </style>
-</head>
+    </style>
+  </head>
 
-<body>
-  <h1>Tell Me Quiz</h1>
-  <p class="letter">&nbsp;</p>
-  <button class="letter-picker-button" onclick="handleRandomLetter()">Generate random letter</button>
-</body>
-<script>
+  <body>
+    <h1>Tell Me Quiz</h1>
+    <p class="letter">&nbsp;</p>
+    <button class="letter-picker-button" onclick="handleRandomLetter()">Generate random letter</button>
+  </body>
+  <script>
   const letterElement = document.querySelector('.letter');
   const allowedLetters = 'abcdefghijklmnopqrstuvwy'.split('');
 
@@ -70,6 +69,6 @@
     setLetterInnerHtml(randomLetter);
     speakLetter(randomLetter);
   }
-</script>
+  </script>
 
 </html>
