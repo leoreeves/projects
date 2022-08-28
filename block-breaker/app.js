@@ -290,6 +290,9 @@ function handlePositionFunctions() {
   callFunctionsInArray(collisionFunctions)
 }
 
+/**
+ * Handles rendering
+ */
 function render() {
   if (!paused) {
     removeBallTrail()
@@ -325,15 +328,22 @@ function handleLeftAndRightKeydown(event) {
   }
 }
 
-// document functions
-;['keydown', 'keyup'].forEach((listener) => {
-  document.addEventListener(listener, handleLeftAndRightKeydown, false)
-})
-document.body.onkeydown = (event) => {
-  if (event.keyCode === keyCodes.space) {
-    handlePause()
+/**
+ * Handles key events
+ * @param {event} event
+ */
+function handleKeyEvents() {
+  const events = ['keydown', 'keyup']
+  events.forEach((listener) => {
+    document.addEventListener(listener, handleLeftAndRightKeydown, false)
+  })
+  document.body.onkeydown = (event) => {
+    if (event.keyCode === keyCodes.space) {
+      handlePause()
+    }
   }
 }
 
 generateBricks()
+handleKeyEvents()
 render()
