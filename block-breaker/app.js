@@ -84,6 +84,9 @@ function renderUnbrokenBricks() {
   }
 }
 
+/**
+ * Renders ball on canvas
+ */
 function renderBall() {
   context.beginPath()
   context.arc(x, y, ballRadius, 0, Math.PI * 2)
@@ -92,16 +95,26 @@ function renderBall() {
   context.closePath()
 }
 
+/**
+ * Renders score on canvas
+ */
 function renderScore() {
+  const scoreX = 8
+  const scoreY = 20
   context.font = font
   context.fillStyle = colours.blue
-  context.fillText(`Score: ${score}`, 8, 20)
+  context.fillText(`Score: ${score}`, scoreX, scoreY)
 }
 
+/**
+ * Renders lives on canvas
+ */
 function renderLives() {
+  const livesX = canvas.width - 65
+  const livesY = 20
   context.font = font
   context.fillStyle = colours.blue
-  context.fillText(`Lives: ${lives}`, canvas.width - 65, 20)
+  context.fillText(`Lives: ${lives}`, livesX, livesY)
 }
 
 function renderPaddle() {
