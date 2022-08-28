@@ -1,5 +1,5 @@
-const canvas = document.querySelector('#game')
-const ctx = canvas.getContext('2d')
+const canvas = document.querySelector('#canvas')
+const context = canvas.getContext('2d')
 const ballRadius = 10
 const paddle = {
   height: 10,
@@ -38,7 +38,11 @@ let leftPressed = false
 let score = 0
 let lives = 3
 
-function buildBricks() {
+/**
+ * Generates bricks arranged into columns and rows
+ * @returns {Array} Returns an array of arrays of bricks
+ */
+function generateBricks() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     bricks[column] = []
     for (let row = 0; row < brick.rowCount; row += 1) {
@@ -47,15 +51,25 @@ function buildBricks() {
   }
 }
 
-function drawBrick(brickX, brickY) {
-  ctx.beginPath()
-  ctx.rect(brickX, brickY, brick.width, brick.height)
-  ctx.fillStyle = colours.orange
-  ctx.fill()
-  ctx.closePath()
+/**
+ * Renders brick on canvas
+ * @param {Number} brickX
+ * @param {Number} brickY
+ */
+function renderBrick(brickX, brickY) {
+  context.beginPath()
+  context.rect(brickX, brickY, brick.width, brick.height)
+  context.fillStyle = colours.orange
+  context.fill()
+  context.closePath()
 }
 
-function drawBricks() {
+/**
+ * Renders unbroken bricks on canvas
+ * @param {Number} brickX
+ * @param {Number} brickY
+ */
+function renderUnbrokenBricks() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     for (let row = 0; row < brick.rowCount; row += 1) {
       const selectedBrick = bricks[column][row]
@@ -64,38 +78,38 @@ function drawBricks() {
         const brickY = row * (brick.height + brick.padding) + brick.offsetTop
         selectedBrick.x = brickX
         selectedBrick.y = brickY
-        drawBrick(brickX, brickY)
+        renderBrick(brickX, brickY)
       }
     }
   }
 }
 
 function drawBall() {
-  ctx.beginPath()
-  ctx.arc(x, y, ballRadius, 0, Math.PI * 2)
-  ctx.fillStyle = colours.green
-  ctx.fill()
-  ctx.closePath()
+  context.beginPath()
+  context.arc(x, y, ballRadius, 0, Math.PI * 2)
+  context.fillStyle = colours.green
+  context.fill()
+  context.closePath()
 }
 
 function drawScore() {
-  ctx.font = font
-  ctx.fillStyle = colours.blue
-  ctx.fillText(`Score: ${score}`, 8, 20)
+  context.font = font
+  context.fillStyle = colours.blue
+  context.fillText(`Score: ${score}`, 8, 20)
 }
 
 function drawLives() {
-  ctx.font = font
-  ctx.fillStyle = colours.blue
-  ctx.fillText(`Lives: ${lives}`, canvas.width - 65, 20)
+  context.font = font
+  context.fillStyle = colours.blue
+  context.fillText(`Lives: ${lives}`, canvas.width - 65, 20)
 }
 
 function drawPaddle() {
-  ctx.fillStyle = colours.blue
-  ctx.beginPath()
-  ctx.rect(paddleX, canvas.height - paddle.height, paddle.width, paddle.height)
-  ctx.fill()
-  ctx.closePath()
+  context.fillStyle = colours.blue
+  context.beginPath()
+  context.rect(paddleX, canvas.height - paddle.height, paddle.width, paddle.height)
+  context.fill()
+  context.closePath()
 }
 
 function initialiseCollisionDetection() {
@@ -123,9 +137,9 @@ function initialiseCollisionDetection() {
 }
 
 function draw() {
-  const drawFunctions = [drawBricks, drawBall, drawPaddle, drawScore, drawLives]
+  const drawFunctions = [renderUnbrokenBricks, drawBall, drawPaddle, drawScore, drawLives]
   if (!paused) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    context.clearRect(0, 0, canvas.width, canvas.height)
     drawFunctions.forEach((func) => func())
     initialiseCollisionDetection()
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
@@ -188,5 +202,5 @@ document.body.onkeydown = (event) => {
   }
 }
 
-buildBricks()
+generateBricks()
 draw()
