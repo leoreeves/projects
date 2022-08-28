@@ -3,12 +3,15 @@ const context = canvas.getContext('2d')
 const ball = {
   x: canvas.width / 2,
   y: canvas.height - 30,
+  directionX: 2,
+  directionY: -2,
   radius: 10,
 }
 const paddle = {
   height: 10,
   width: 75,
 }
+paddle.x = (canvas.width - paddle.width) / 2
 const bricks = []
 const brick = {
   rowCount: 3,
@@ -32,9 +35,6 @@ const colours = {
 }
 const font = '16px Open Sans'
 let paused = false
-let dx = 2
-let dy = -2
-let paddleX = (canvas.width - paddle.width) / 2
 let rightPressed = false
 let leftPressed = false
 let score = 0
@@ -127,7 +127,7 @@ function renderLives() {
 function renderPaddle() {
   context.fillStyle = colours.blue
   context.beginPath()
-  context.rect(paddleX, canvas.height - paddle.height, paddle.width, paddle.height)
+  context.rect(paddle.x, canvas.height - paddle.height, paddle.width, paddle.height)
   context.fill()
   context.closePath()
 }
@@ -154,7 +154,7 @@ function handleBrickCollisions() {
           ball.y > selectedBrick.y &&
           ball.y < selectedBrick.y + brick.height
         ) {
-          dy = -dy
+          ball.directionY = -ball.directionY
           selectedBrick.status = 'broken'
           score += 1
           if (score === winningScore) {
@@ -163,6 +163,15 @@ function handleBrickCollisions() {
         }
       }
     }
+  }
+}
+
+/**
+ * Handles when the ball collides with the left and right wall
+ */
+function handleBallCollisionWithLeftAndRightWall() {
+  if (ball.x + ball.directionX > canvas.width - ball.radius || ball.x + ball.directionX < ball.radius) {
+    ball.directionX = -ball.directionX
   }
 }
 
@@ -195,19 +204,19 @@ function handleRenderFunctions() {
 function resetBallAndPaddlePosition() {
   ball.x = canvas.width / 2
   ball.y = canvas.height - 30
-  dx = 2
-  dy = -2
-  paddleX = (canvas.width - paddle.width) / 2
+  ball.directionX = 2
+  ball.directionY = -2
+  paddle.x = (canvas.width - paddle.width) / 2
 }
 
 /**
  * Handles position of paddle
  */
 function handlePaddlePosition() {
-  if (rightPressed && paddleX < canvas.width - paddle.width) {
-    paddleX += 7
-  } else if (leftPressed && paddleX > 0) {
-    paddleX -= 7
+  if (rightPressed && paddle.x < canvas.width - paddle.width) {
+    paddle.x += 7
+  } else if (leftPressed && paddle.x > 0) {
+    paddle.x -= 7
   }
 }
 
@@ -216,14 +225,12 @@ function render() {
     removeBallTrail()
     handleRenderFunctions()
     handleBrickCollisions()
-    if (ball.x + dx > canvas.width - ball.radius || ball.x + dx < ball.radius) {
-      dx = -dx
-    }
-    if (ball.y + dy < ball.radius) {
-      dy = -dy
-    } else if (ball.y + dy > canvas.height - ball.radius) {
-      if (ball.x > paddleX && ball.x < paddleX + paddle.width) {
-        dy = -dy
+    handleBallCollisionWithLeftAndRightWall()
+    if (ball.y + ball.directionY < ball.radius) {
+      ball.directionY = -ball.directionY
+    } else if (ball.y + ball.directionY > canvas.height - ball.radius) {
+      if (ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
+        ball.directionY = -ball.directionY
       } else {
         lives -= 1
         if (!lives) {
@@ -234,8 +241,8 @@ function render() {
       }
     }
     handlePaddlePosition()
-    ball.x += dx
-    ball.y += dy
+    ball.x += ball.directionX
+    ball.y += ball.directionY
     requestAnimationFrame(render)
   }
 }
