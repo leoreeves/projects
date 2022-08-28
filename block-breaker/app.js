@@ -40,6 +40,14 @@ let score = 0
 let lives = 3
 
 /**
+ * Calls all functions in array
+ * @param {array} functions
+ */
+function callFunctionsInArray(functions) {
+  functions.forEach((fn) => fn())
+}
+
+/**
  * Generates bricks arranged into columns and rows
  * @returns {Array} Returns an array of arrays of bricks
  */
@@ -167,9 +175,24 @@ function handleBrickCollisions() {
 }
 
 /**
+ * Clears canvas content to prevent the ball leaving a trail
+ */
+function removeBallTrail() {
+  context.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+/**
+ * Handles all of the rendering
+ */
+function handleRenderFunctions() {
+  const renderFunctions = [renderUnbrokenBricks, renderBall, renderPaddle, renderScore, renderLives]
+  callFunctionsInArray(renderFunctions)
+}
+
+/**
  * Handles when the ball collides with the left and right wall
  */
-function handleBallCollisionWithLeftAndRightWall() {
+function handleBallXCollision() {
   if (ball.x + ball.directionX > canvas.width - ball.radius || ball.x + ball.directionX < ball.radius) {
     ball.directionX = -ball.directionX
   }
@@ -184,21 +207,6 @@ function handleGameOver() {
 }
 
 /**
- * Clears canvas content to prevent the ball leaving a trail
- */
-function removeBallTrail() {
-  context.clearRect(0, 0, canvas.width, canvas.height)
-}
-
-/**
- * Handles all of the rendering
- */
-function handleRenderFunctions() {
-  const renderFunctions = [renderUnbrokenBricks, renderBall, renderPaddle, renderScore, renderLives]
-  renderFunctions.forEach((func) => func())
-}
-
-/**
  * Resets ball and paddle to their original state
  */
 function resetBallAndPaddlePosition() {
@@ -207,6 +215,34 @@ function resetBallAndPaddlePosition() {
   ball.directionX = 2
   ball.directionY = -2
   paddle.x = (canvas.width - paddle.width) / 2
+}
+
+/**
+ * Handles when the ball collides with the ceiling and floor
+ */
+function handleBallYCollision() {
+  if (ball.y + ball.directionY < ball.radius) {
+    ball.directionY = -ball.directionY
+  } else if (ball.y + ball.directionY > canvas.height - ball.radius) {
+    if (ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
+      ball.directionY = -ball.directionY
+    } else {
+      lives -= 1
+      if (!lives) {
+        handleGameOver()
+      } else {
+        resetBallAndPaddlePosition()
+      }
+    }
+  }
+}
+
+/**
+ * Handles all of the collisions
+ */
+function handleCollisionFunctions() {
+  const collisionFunctions = [handleBrickCollisions, handleBallXCollision, handleBallYCollision]
+  callFunctionsInArray(collisionFunctions)
 }
 
 /**
@@ -220,29 +256,28 @@ function handlePaddlePosition() {
   }
 }
 
+/**
+ * Handles position of ball
+ */
+function handleBallPosition() {
+  ball.x += ball.directionX
+  ball.y += ball.directionY
+}
+
+/**
+ * Handles all of the positions
+ */
+function handlePositionFunctions() {
+  const collisionFunctions = [handlePaddlePosition, handleBallPosition]
+  callFunctionsInArray(collisionFunctions)
+}
+
 function render() {
   if (!paused) {
     removeBallTrail()
     handleRenderFunctions()
-    handleBrickCollisions()
-    handleBallCollisionWithLeftAndRightWall()
-    if (ball.y + ball.directionY < ball.radius) {
-      ball.directionY = -ball.directionY
-    } else if (ball.y + ball.directionY > canvas.height - ball.radius) {
-      if (ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
-        ball.directionY = -ball.directionY
-      } else {
-        lives -= 1
-        if (!lives) {
-          handleGameOver()
-        } else {
-          resetBallAndPaddlePosition()
-        }
-      }
-    }
-    handlePaddlePosition()
-    ball.x += ball.directionX
-    ball.y += ball.directionY
+    handleCollisionFunctions()
+    handlePositionFunctions()
     requestAnimationFrame(render)
   }
 }
