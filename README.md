@@ -4,8 +4,8 @@ A collection of personal projects.
 
 ## Contents
 
-- [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 - [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
+- [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 - [Catch the Monster Game](https://leoreeves.github.io/projects/catch-the-monster-game/)
 - [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
@@ -25,11 +25,9 @@ A collection of personal projects.
 - [Simple Clock](https://leoreeves.github.io/projects/simple-clock/)
 - [UK VAT Calculator](https://leoreeves.github.io/projects/uk-vat-calculator/)
 
-### [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
+### [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
 
-Based on the classic game [_Breakout_](<https://en.wikipedia.org/wiki/Breakout_(video_game)>).
-
-Inspired by [this](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) tutorial.
+Work out how old you will be in the year entered and what day of the week your birthday is.
 
 Built using:
 
@@ -37,9 +35,11 @@ Built using:
 - CSS
 - JavaScript
 
-### [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
+### [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 
-Work out how old you will be in the year entered and what day of the week your birthday is.
+Based on the classic game [_Breakout_](<https://en.wikipedia.org/wiki/Breakout_(video_game)>).
+
+Inspired by [this](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript) tutorial.
 
 Built using:
 
