@@ -4,7 +4,8 @@
   "description": "A collection of personal projects.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --fix"
+    "lint": "eslint --fix",
+    "format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
