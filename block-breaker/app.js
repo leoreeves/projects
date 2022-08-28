@@ -170,7 +170,7 @@ function handlePause() {
   }
 }
 
-function keyHandler(event) {
+function handleKeys(event) {
   const { keyCode, type } = event
   if (keyCodes.left.includes(keyCode)) {
     leftPressed = type === 'keydown'
@@ -180,7 +180,7 @@ function keyHandler(event) {
 }
 
 ;['keydown', 'keyup'].forEach((listener) => {
-  document.addEventListener(listener, keyHandler, false)
+  document.addEventListener(listener, handleKeys, false)
 })
 document.body.onkeydown = (event) => {
   if (event.keyCode === keyCodes.space) {
