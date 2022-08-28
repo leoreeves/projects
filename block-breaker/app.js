@@ -84,7 +84,7 @@ function renderUnbrokenBricks() {
   }
 }
 
-function drawBall() {
+function renderBall() {
   context.beginPath()
   context.arc(x, y, ballRadius, 0, Math.PI * 2)
   context.fillStyle = colours.green
@@ -92,19 +92,19 @@ function drawBall() {
   context.closePath()
 }
 
-function drawScore() {
+function renderScore() {
   context.font = font
   context.fillStyle = colours.blue
   context.fillText(`Score: ${score}`, 8, 20)
 }
 
-function drawLives() {
+function renderLives() {
   context.font = font
   context.fillStyle = colours.blue
   context.fillText(`Lives: ${lives}`, canvas.width - 65, 20)
 }
 
-function drawPaddle() {
+function renderPaddle() {
   context.fillStyle = colours.blue
   context.beginPath()
   context.rect(paddleX, canvas.height - paddle.height, paddle.width, paddle.height)
@@ -112,7 +112,7 @@ function drawPaddle() {
   context.closePath()
 }
 
-function initialiseCollisionDetection() {
+function handleCollisionDetection() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     for (let row = 0; row < brick.rowCount; row += 1) {
       const selectedBrick = bricks[column][row]
@@ -136,12 +136,12 @@ function initialiseCollisionDetection() {
   }
 }
 
-function draw() {
-  const drawFunctions = [renderUnbrokenBricks, drawBall, drawPaddle, drawScore, drawLives]
+function render() {
+  const renderFunctions = [renderUnbrokenBricks, renderBall, renderPaddle, renderScore, renderLives]
   if (!paused) {
     context.clearRect(0, 0, canvas.width, canvas.height)
-    drawFunctions.forEach((func) => func())
-    initialiseCollisionDetection()
+    renderFunctions.forEach((func) => func())
+    handleCollisionDetection()
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
       dx = -dx
     }
@@ -171,14 +171,14 @@ function draw() {
     }
     x += dx
     y += dy
-    requestAnimationFrame(draw)
+    requestAnimationFrame(render)
   }
 }
 
 function handlePause() {
   if (paused) {
     paused = false
-    draw()
+    render()
   } else {
     paused = true
   }
@@ -193,6 +193,7 @@ function handleKeys(event) {
   }
 }
 
+// document functions
 ;['keydown', 'keyup'].forEach((listener) => {
   document.addEventListener(listener, handleKeys, false)
 })
@@ -203,4 +204,4 @@ document.body.onkeydown = (event) => {
 }
 
 generateBricks()
-draw()
+render()
