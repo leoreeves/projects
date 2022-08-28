@@ -18,6 +18,10 @@ const simpleClock = new Vue({
   },
 
   methods: {
+    setHandRotation(unit) {
+      return `-webkit-transform:rotate(${unit}deg);`
+    },
+
     setAnalogueClockHandPosition() {
       const now = new Date()
       const [seconds, minutes, hours] = [now.getSeconds(), now.getMinutes(), now.getHours()]
@@ -31,10 +35,6 @@ const simpleClock = new Vue({
 
     setAnalogueClockTimeInterval() {
       window.setInterval(this.setAnalogueClockHandPosition, 10)
-    },
-
-    setHandRotation(unit) {
-      return `-webkit-transform:rotate(${unit}deg);`
     },
 
     setDigitalClockTime() {
