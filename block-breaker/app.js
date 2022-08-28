@@ -1,6 +1,10 @@
 const canvas = document.querySelector('#canvas')
 const context = canvas.getContext('2d')
-const ballRadius = 10
+const ball = {
+  x: canvas.width / 2,
+  y: canvas.height - 30,
+  radius: 10,
+}
 const paddle = {
   height: 10,
   width: 75,
@@ -28,8 +32,6 @@ const colours = {
 }
 const font = '16px Open Sans'
 let paused = false
-let x = canvas.width / 2
-let y = canvas.height - 30
 let dx = 2
 let dy = -2
 let paddleX = (canvas.width - paddle.width) / 2
@@ -91,7 +93,7 @@ function renderBall() {
   const startAngle = 0
   const endAngle = Math.PI * 2
   context.beginPath()
-  context.arc(x, y, ballRadius, startAngle, endAngle)
+  context.arc(ball.x, ball.y, ball.radius, startAngle, endAngle)
   context.fillStyle = colours.green
   context.fill()
   context.closePath()
@@ -147,10 +149,10 @@ function handleBrickCollisions() {
       const selectedBrick = bricks[column][row]
       if (selectedBrick.status === 'unbroken') {
         if (
-          x > selectedBrick.x &&
-          x < selectedBrick.x + brick.width &&
-          y > selectedBrick.y &&
-          y < selectedBrick.y + brick.height
+          ball.x > selectedBrick.x &&
+          ball.x < selectedBrick.x + brick.width &&
+          ball.y > selectedBrick.y &&
+          ball.y < selectedBrick.y + brick.height
         ) {
           dy = -dy
           selectedBrick.status = 'broken'
@@ -173,6 +175,13 @@ function handleGameOver() {
 }
 
 /**
+ * Clears canvas content to prevent the ball leaving a trail
+ */
+function removeBallTrail() {
+  context.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+/**
  * Handles all of the rendering
  */
 function handleRenderFunctions() {
@@ -180,39 +189,53 @@ function handleRenderFunctions() {
   renderFunctions.forEach((func) => func())
 }
 
+/**
+ * Handles all of the rendering
+ */
+function resetBallAndPaddlePosition() {
+  ball.x = canvas.width / 2
+  ball.y = canvas.height - 30
+  dx = 2
+  dy = -2
+  paddleX = (canvas.width - paddle.width) / 2
+}
+
+/**
+ * Handles position of paddle
+ */
+function handlePaddlePosition() {
+  if (rightPressed && paddleX < canvas.width - paddle.width) {
+    paddleX += 7
+  } else if (leftPressed && paddleX > 0) {
+    paddleX -= 7
+  }
+}
+
 function render() {
   if (!paused) {
-    context.clearRect(0, 0, canvas.width, canvas.height)
+    removeBallTrail()
     handleRenderFunctions()
     handleBrickCollisions()
-    if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+    if (ball.x + dx > canvas.width - ball.radius || ball.x + dx < ball.radius) {
       dx = -dx
     }
-    if (y + dy < ballRadius) {
+    if (ball.y + dy < ball.radius) {
       dy = -dy
-    } else if (y + dy > canvas.height - ballRadius) {
-      if (x > paddleX && x < paddleX + paddle.width) {
+    } else if (ball.y + dy > canvas.height - ball.radius) {
+      if (ball.x > paddleX && ball.x < paddleX + paddle.width) {
         dy = -dy
       } else {
         lives -= 1
         if (!lives) {
           handleGameOver()
         } else {
-          x = canvas.width / 2
-          y = canvas.height - 30
-          dx = 2
-          dy = -2
-          paddleX = (canvas.width - paddle.width) / 2
+          resetBallAndPaddlePosition()
         }
       }
     }
-    if (rightPressed && paddleX < canvas.width - paddle.width) {
-      paddleX += 7
-    } else if (leftPressed && paddleX > 0) {
-      paddleX -= 7
-    }
-    x += dx
-    y += dy
+    handlePaddlePosition()
+    ball.x += dx
+    ball.y += dy
     requestAnimationFrame(render)
   }
 }
