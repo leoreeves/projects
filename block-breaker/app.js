@@ -22,17 +22,17 @@ const brick = {
   offsetTop: 40,
   offsetLeft: 30,
 }
-const keyCodes = {
-  left: [37, 65],
-  right: [39, 68],
-  space: 32,
-}
 const colours = {
   blue: '#2196F3',
   orange: '#FF9800',
   green: '#4CAF50',
 }
 const font = '16px Open Sans'
+const keys = {
+  left: ['a', 'ArrowLeft'],
+  right: ['d', 'ArrowRight'],
+  space: 'Space',
+}
 let paused = false
 let rightPressed = false
 let leftPressed = false
@@ -319,28 +319,27 @@ function handlePause() {
  * Handles left and right keydown events
  * @param {event} event
  */
-function handleLeftAndRightKeydown(event) {
-  const { keyCode, type } = event
-  if (keyCodes.left.includes(keyCode)) {
+function handleLeftAndRightKeys(event) {
+  const { key, type } = event
+  if (keys.left.includes(key)) {
     leftPressed = type === 'keydown'
-  } else if (keyCodes.right.includes(keyCode)) {
+  } else if (keys.right.includes(key)) {
     rightPressed = type === 'keydown'
   }
 }
 
 /**
  * Handles key events
- * @param {event} event
  */
 function handleKeyEvents() {
-  const events = ['keydown', 'keyup']
-  events.forEach((listener) => {
-    document.addEventListener(listener, handleLeftAndRightKeydown, false)
-  })
   document.body.onkeydown = (event) => {
-    if (event.keyCode === keyCodes.space) {
+    if (event.code === keys.space) {
       handlePause()
     }
+    handleLeftAndRightKeys(event)
+  }
+  document.body.onkeyup = (event) => {
+    handleLeftAndRightKeys(event)
   }
 }
 
