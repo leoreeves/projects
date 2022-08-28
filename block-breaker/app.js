@@ -88,8 +88,10 @@ function renderUnbrokenBricks() {
  * Renders ball on canvas
  */
 function renderBall() {
+  const startAngle = 0
+  const endAngle = Math.PI * 2
   context.beginPath()
-  context.arc(x, y, ballRadius, 0, Math.PI * 2)
+  context.arc(x, y, ballRadius, startAngle, endAngle)
   context.fillStyle = colours.green
   context.fill()
   context.closePath()
@@ -117,6 +119,9 @@ function renderLives() {
   context.fillText(`Lives: ${lives}`, livesX, livesY)
 }
 
+/**
+ * Renders pandle on canvas
+ */
 function renderPaddle() {
   context.fillStyle = colours.blue
   context.beginPath()
@@ -125,7 +130,18 @@ function renderPaddle() {
   context.closePath()
 }
 
-function handleCollisionDetection() {
+/**
+ * Handles when the player wins the game
+ */
+function handleWin() {
+  alert('You Win, Congratulations!')
+  document.location.reload()
+}
+
+/**
+ * Handles when the ball collides with bricks
+ */
+function handleBrickCollisions() {
   for (let column = 0; column < brick.columnCount; column += 1) {
     for (let row = 0; row < brick.rowCount; row += 1) {
       const selectedBrick = bricks[column][row]
@@ -140,8 +156,7 @@ function handleCollisionDetection() {
           selectedBrick.status = 'broken'
           score += 1
           if (score === winningScore) {
-            alert('You Win, Congratulations!')
-            document.location.reload()
+            handleWin()
           }
         }
       }
@@ -149,12 +164,27 @@ function handleCollisionDetection() {
   }
 }
 
-function render() {
+/**
+ * Handles when the game ends
+ */
+function handleGameOver() {
+  alert('Game Over')
+  document.location.reload()
+}
+
+/**
+ * Handles all of the rendering
+ */
+function handleRenderFunctions() {
   const renderFunctions = [renderUnbrokenBricks, renderBall, renderPaddle, renderScore, renderLives]
+  renderFunctions.forEach((func) => func())
+}
+
+function render() {
   if (!paused) {
     context.clearRect(0, 0, canvas.width, canvas.height)
-    renderFunctions.forEach((func) => func())
-    handleCollisionDetection()
+    handleRenderFunctions()
+    handleBrickCollisions()
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
       dx = -dx
     }
@@ -166,8 +196,7 @@ function render() {
       } else {
         lives -= 1
         if (!lives) {
-          alert('Game Over')
-          document.location.reload()
+          handleGameOver()
         } else {
           x = canvas.width / 2
           y = canvas.height - 30
