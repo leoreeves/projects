@@ -190,7 +190,7 @@ function handleRenderFunctions() {
 }
 
 /**
- * Handles all of the rendering
+ * Resets ball and paddle to their original state
  */
 function resetBallAndPaddlePosition() {
   ball.x = canvas.width / 2
