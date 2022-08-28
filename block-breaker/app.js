@@ -148,6 +148,18 @@ function handleWin() {
 }
 
 /**
+ * Reverses the ball's x or y direction
+ * @param {string} direction
+ */
+function reverseBallDirection(direction) {
+  if (direction === 'x') {
+    ball.directionX = -ball.directionX
+  } else {
+    ball.directionY = -ball.directionY
+  }
+}
+
+/**
  * Handles when the ball collides with bricks
  */
 function handleBrickCollisions() {
@@ -161,7 +173,7 @@ function handleBrickCollisions() {
           ball.y > selectedBrick.y &&
           ball.y < selectedBrick.y + brick.height
         ) {
-          ball.directionY = -ball.directionY
+          reverseBallDirection('y')
           selectedBrick.status = 'broken'
           score += 1
           const winningScore = brick.rowCount * brick.columnCount
@@ -193,8 +205,10 @@ function handleRenderFunctions() {
  * Handles when the ball collides with the left and right wall
  */
 function handleBallXCollision() {
-  if (ball.x + ball.directionX > canvas.width - ball.radius || ball.x + ball.directionX < ball.radius) {
-    ball.directionX = -ball.directionX
+  const leftWallCollision = ball.x + ball.directionX < ball.radius
+  const rightWallCollision = ball.x + ball.directionX > canvas.width - ball.radius
+  if (leftWallCollision || rightWallCollision) {
+    reverseBallDirection('x')
   }
 }
 
@@ -222,10 +236,10 @@ function resetBallAndPaddlePosition() {
  */
 function handleBallYCollision() {
   if (ball.y + ball.directionY < ball.radius) {
-    ball.directionY = -ball.directionY
+    reverseBallDirection('y')
   } else if (ball.y + ball.directionY > canvas.height - ball.radius) {
     if (ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
-      ball.directionY = -ball.directionY
+      reverseBallDirection('y')
     } else {
       lives -= 1
       if (!lives) {
