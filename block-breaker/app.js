@@ -235,10 +235,13 @@ function resetBallAndPaddlePosition() {
  * Handles when the ball collides with the ceiling and floor
  */
 function handleBallYCollision() {
-  if (ball.y + ball.directionY < ball.radius) {
+  const ceilingCollision = ball.y + ball.directionY < ball.radius
+  const floorCollision = ball.y + ball.directionY > canvas.height - ball.radius
+  const paddleCollision = ball.x > paddle.x && ball.x < paddle.x + paddle.width
+  if (ceilingCollision) {
     reverseBallDirection('y')
-  } else if (ball.y + ball.directionY > canvas.height - ball.radius) {
-    if (ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
+  } else if (floorCollision) {
+    if (paddleCollision) {
       reverseBallDirection('y')
     } else {
       lives -= 1
@@ -263,10 +266,11 @@ function handleCollisionFunctions() {
  * Handles position of paddle
  */
 function handlePaddlePosition() {
+  const paddleMovementPosition = 7
   if (rightPressed && paddle.x < canvas.width - paddle.width) {
-    paddle.x += 7
+    paddle.x += paddleMovementPosition
   } else if (leftPressed && paddle.x > 0) {
-    paddle.x -= 7
+    paddle.x -= paddleMovementPosition
   }
 }
 
