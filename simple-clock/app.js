@@ -1,44 +1,50 @@
 const simpleClock = new Vue({
   el: '#simple-clock',
+
   data: {
     analogueClockDisplay: 'block',
     digitalClockDisplay: 'none',
-    digitalClockTime: '',
-    hours: '',
-    minutes: '',
-    seconds: '',
+    digitalClockTime: null,
+    hours: null,
+    minutes: null,
+    seconds: null,
   },
+
   mounted() {
-    this.moveHands()
-    this.getDigitalClockTime()
+    this.setAnalogueClockHandPosition()
+    this.setAnalogueClockTimeInterval()
+    this.setDigitalClockTime()
     this.setDigitalClockTimeInterval()
   },
+
   methods: {
-    moveHands() {
-      const today = new Date()
-
-      // 30 degrees every hour
-      const hours = 30 * ((today.getHours() % 12) + today.getMinutes() / 60)
-      // 6 degrees every minute
-      const minutes = 6 * today.getMinutes()
-      // 6 degrees every second
-      const seconds = 6 * today.getSeconds()
-
-      this.hours = this.setRotation(hours)
-      this.minutes = this.setRotation(minutes)
-      this.seconds = this.setRotation(seconds)
-
-      setTimeout(this.moveHands, 10)
+    setAnalogueClockHandPosition() {
+      const now = new Date()
+      const [seconds, minutes, hours] = [now.getSeconds(), now.getMinutes(), now.getHours()]
+      const thirtyDegreesEveryHour = 30 * ((hours % 12) + minutes / 60)
+      const sixDegreesEveryMinute = 6 * minutes
+      const sixDegreesEverySecond = 6 * seconds
+      this.hours = this.setHandRotation(thirtyDegreesEveryHour)
+      this.minutes = this.setHandRotation(sixDegreesEveryMinute)
+      this.seconds = this.setHandRotation(sixDegreesEverySecond)
     },
-    setRotation(unit) {
+
+    setAnalogueClockTimeInterval() {
+      window.setInterval(this.setAnalogueClockHandPosition, 10)
+    },
+
+    setHandRotation(unit) {
       return `-webkit-transform:rotate(${unit}deg);`
     },
-    getDigitalClockTime() {
+
+    setDigitalClockTime() {
       this.digitalClockTime = new Date().toLocaleTimeString()
     },
+
     setDigitalClockTimeInterval() {
-      window.setInterval(this.getDigitalClockTime, 10)
+      window.setInterval(this.setDigitalClockTime, 10)
     },
+
     toggleDisplayedClock() {
       if (this.analogueClockDisplay === 'block') {
         this.analogueClockDisplay = 'none'
