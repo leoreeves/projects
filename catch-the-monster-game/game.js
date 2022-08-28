@@ -1,6 +1,6 @@
 // Draw canvas
 const canvas = document.createElement('canvas')
-const ctx = canvas.getContext('2d')
+const context = canvas.getContext('2d')
 canvas.width = 512
 canvas.height = 480
 document.body.appendChild(canvas)
@@ -145,11 +145,11 @@ function updateGameObjects(modifier) {
 }
 
 function renderScore() {
-  ctx.fillStyle = 'rgb(250, 250, 250)'
-  ctx.font = '24px Helvetica'
-  ctx.texAling = 'left'
-  ctx.textBaseline = 'top'
-  ctx.fillText(`Monsters caught: ${monstersCaught}`, 32, 32)
+  context.fillStyle = 'rgb(250, 250, 250)'
+  context.font = '24px Helvetica'
+  context.texAling = 'left'
+  context.textBaseline = 'top'
+  context.fillText(`Monsters caught: ${monstersCaught}`, 32, 32)
 }
 
 function detectHeroCollision() {
@@ -175,13 +175,13 @@ function detectHeroCollision() {
 
 function checkIfImagesAreReady() {
   if (backgroundImageReady) {
-    ctx.drawImage(backgroundImage, 0, 0)
+    context.drawImage(backgroundImage, 0, 0)
   }
   if (heroImageReady) {
-    ctx.drawImage(heroImage, hero.x, hero.y, 32, 32)
+    context.drawImage(heroImage, hero.x, hero.y, 32, 32)
   }
   if (monsterImageReady) {
-    ctx.drawImage(monsterImage, monster.x, monster.y, 32, 32)
+    context.drawImage(monsterImage, monster.x, monster.y, 32, 32)
   }
 }
 
