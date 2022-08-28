@@ -22,7 +22,6 @@ const brick = {
   offsetTop: 40,
   offsetLeft: 30,
 }
-const winningScore = brick.rowCount * brick.columnCount
 const keyCodes = {
   left: [37, 65],
   right: [39, 68],
@@ -157,6 +156,7 @@ function handleBrickCollisions() {
           ball.directionY = -ball.directionY
           selectedBrick.status = 'broken'
           score += 1
+          const winningScore = brick.rowCount * brick.columnCount
           if (score === winningScore) {
             handleWin()
           }
@@ -247,6 +247,9 @@ function render() {
   }
 }
 
+/**
+ * Handles pausing the game
+ */
 function handlePause() {
   if (paused) {
     paused = false
@@ -256,7 +259,11 @@ function handlePause() {
   }
 }
 
-function handleKeys(event) {
+/**
+ * Handles left and right keydown events
+ * @param {event} event
+ */
+function handleLeftAndRightKeydown(event) {
   const { keyCode, type } = event
   if (keyCodes.left.includes(keyCode)) {
     leftPressed = type === 'keydown'
@@ -267,7 +274,7 @@ function handleKeys(event) {
 
 // document functions
 ;['keydown', 'keyup'].forEach((listener) => {
-  document.addEventListener(listener, handleKeys, false)
+  document.addEventListener(listener, handleLeftAndRightKeydown, false)
 })
 document.body.onkeydown = (event) => {
   if (event.keyCode === keyCodes.space) {
