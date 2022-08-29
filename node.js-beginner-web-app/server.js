@@ -4,7 +4,7 @@ const url = require('url')
 function start(route, handle) {
   function onRequest(request, response) {
     let postData = ''
-    const pathname = url.parse(request.url).pathname
+    const { pathname } = url.parse(request.url)
     console.log(`Request for ${pathname} received`)
 
     request.setEncoding('utf8')

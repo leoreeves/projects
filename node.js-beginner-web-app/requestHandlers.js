@@ -1,8 +1,4 @@
-// const exec = require('child_process').exec;
-
-const querystring = require('querystring')
-
-function start(response, postData) {
+function start(response) {
   console.log("Request handler 'start' was called")
 
   const body =
