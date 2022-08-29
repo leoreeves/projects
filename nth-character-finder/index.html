@@ -32,7 +32,7 @@
         </div>
       </div>
       <div>
-        <p class="character-result" v-cloak>{{ nthCharacter}} = <span id="text">{{ textInput[nthCharacter
+        <p class="character-result" v-if="nthCharacter">{{ nthCharacter}} = <span id="text">{{ textInput[nthCharacter
             - 1] }}</span></p>
         <button class="copy-button" data-clipboard-action="copy" data-clipboard-target="#text" v-on:click="showCopyMessage">
           Copy to clipboard

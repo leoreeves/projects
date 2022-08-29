@@ -4,7 +4,7 @@ const initialiseCharacterFinderVueInstance = () =>
 
     data: {
       textInput: '',
-      nthCharacter: 1,
+      nthCharacter: null,
       show: false,
     },
 
