@@ -1,3 +1,12 @@
+/* variables */
+:root {
+  --color-black: #333;
+  --color-light-gray: #d3d3d3;
+  --color-button-bg: #e0e0e0;
+  --color-button-hover-bg: #c9cacc;
+  --color-button-active-bg: #babbbc;
+}
+
 /* Hide vue.js elements till fully loaded */
 [v-cloak] {
   visibility: hidden;
@@ -14,13 +23,13 @@ body {
 body {
   font-family: 'Work Sans', sans-serif;
   text-align: center;
-  font-size: 1.4em;
-  color: #333;
+  font-size: 1.4rem;
+  color: var(--color-black);
 }
 
 h1 {
   font-family: 'Fanwood Text', serif;
-  font-size: 1.9em;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
@@ -37,7 +46,7 @@ p {
   justify-content: center;
   height: 100%;
   margin: 0 auto;
-  max-width: 450px;
+  max-width: 420px;
   padding: 0 40px;
 }
 
@@ -48,21 +57,21 @@ p {
 input[type='text'],
 input[type='number'] {
   font-family: 'Work Sans', sans-serif;
-  font-size: 1em;
-  outline: none;
+  font-size: 1.2rem;
   padding: 10px;
-  color: #333;
+  color: var(--color-black);
 }
 
 /* Inputs */
 input[type='text'] {
   border-radius: 5px;
-  border: 1px solid lightgray;
+  border: 1px solid var(--color-light-gray);
+  width: 100%;
 }
 
 input[type='number'] {
   width: 50px;
-  border: 1px solid lightgray;
+  border: 1px solid var(--color-light-gray);
   text-align: center;
 }
 
@@ -81,20 +90,22 @@ input[type='number']::-webkit-inner-spin-button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+  align-items: center;
 }
 
 .character-result {
-  font-size: 1.8em;
+  font-size: 1.8rem;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
   height: 50px;
-  background-color: #333;
+  background-color: var(--color-black);
   color: #fff;
   text-align: center;
   padding: 10px 15px;
 }
 
+/* Character number */
 .character-number {
   display: flex;
   justify-content: center;
@@ -105,24 +116,28 @@ input[type='number']::-webkit-inner-spin-button {
   font-size: 1em;
 }
 
-.character-number button {
-  cursor: pointer;
+/* Buttons */
+button {
   border: 0;
+  background-color: var(--color-button-bg);
+  cursor: pointer;
+  color: var(--color-black);
+  font-family: inherit;
+  font-size: 1rem;
+  border: 0;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: var(--color-button-hover-bg);
+}
+
+button:active {
+  background-color: var(--color-button-active-bg);
+}
+
+.character-number button {
   min-width: 35px;
-  background-color: #e0e0e0;
-  color: #333;
-}
-
-.character-number button:hover {
-  background-color: #c9cacc;
-}
-
-.character-number button:active {
-  background-color: #babbbc;
-}
-
-.character-number button:focus {
-  outline: none;
 }
 
 .character-number button:first-child {
@@ -136,29 +151,12 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .copy-button {
-  background-color: #e0e0e0;
-  color: #333;
-  font-size: 0.65em;
-  border: 0;
-  padding: 10px;
-  border-radius: 5px;
-  outline: none;
-  font-family: inherit;
   width: 100%;
-  cursor: pointer;
 }
 
-.copy-button:hover {
-  background-color: #c9cacc;
-}
-
-.copy-button:active {
-  background-color: #babbbc;
-  outline: none;
-}
-
+/* Confirmation */
 .copied-confirmation {
-  font-size: 0.7em;
+  font-size: 1rem;
   opacity: 0;
   transition: opacity 0.5s;
   text-align: center;
