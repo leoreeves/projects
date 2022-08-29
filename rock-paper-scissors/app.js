@@ -29,13 +29,19 @@ function calculateWin(player1Choice, player2Choice) {
   )
 }
 
-choiceButtons.forEach((e) =>
-  e.addEventListener('click', () => {
+function updateScoresInnerHTML() {
+  userScoreSpan.innerHTML = userScore
+  cpuScoreSpan.innerHTML = cpuScore
+}
+
+choiceButtons.forEach((event) =>
+  event.addEventListener('click', () => {
     const tools = ['rock', 'paper', 'scissors']
     const randomNum = Math.floor(Math.random() * 3)
     const cpuChoice = tools[randomNum]
-    const userChoice = e.value
+    const userChoice = event.value
     cpuChoiceSpan.innerHTML = `<i class="fa fa-hand-${cpuChoice}-o" aria-hidden="true"></i>`
+
     // Game logic
     const results = {
       draw: cpuChoice === userChoice,
@@ -49,8 +55,6 @@ choiceButtons.forEach((e) =>
     } else if (results.userWin) {
       updateScoreAndWinner('user')
     }
-    // Update scores
-    userScoreSpan.innerHTML = userScore
-    cpuScoreSpan.innerHTML = cpuScore
+    updateScoresInnerHTML()
   })
 )
