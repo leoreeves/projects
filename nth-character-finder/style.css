@@ -98,7 +98,6 @@ input[type='number']::-webkit-inner-spin-button {
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
-  height: 50px;
   background-color: var(--color-black);
   color: #fff;
   text-align: center;
