@@ -1,6 +1,6 @@
 const eventType = ['change', 'keyup']
-const perWeek = document.querySelector('.per-week')
-const perMonth = document.querySelector('.per-month')
+const perWeekInput = document.querySelector('.per-week')
+const perMonthInput = document.querySelector('.per-month')
 const DAYS_IN_A_WEEK = 7
 const DAYS_IN_A_YEAR = 365.25
 const MONTHS_IN_A_YEAR = 12
@@ -20,21 +20,21 @@ function calculateAmountPerWeek(value) {
 }
 
 function handlePerWeekInput(event) {
-  return perWeek.addEventListener(event, () => {
-    if (perWeek.value === '') {
-      perWeek.focus()
+  return perWeekInput.addEventListener(event, () => {
+    if (perWeekInput.value === '') {
+      perWeekInput.focus()
     } else {
-      perMonth.value = calculateAmountPerMonth(perWeek.value)
+      perMonthInput.value = calculateAmountPerMonth(perWeekInput.value)
     }
   })
 }
 
 function handlePerMonthInput(event) {
-  return perMonth.addEventListener(event, () => {
-    if (perMonth.value === '') {
-      perMonth.focus()
+  return perMonthInput.addEventListener(event, () => {
+    if (perMonthInput.value === '') {
+      perMonthInput.focus()
     } else {
-      perWeek.value = calculateAmountPerWeek(perMonth.value)
+      perWeekInput.value = calculateAmountPerWeek(perMonthInput.value)
     }
   })
 }
