@@ -17,10 +17,10 @@
         <input id="text-input" type="text" v-model="textInput" placeholder="Enter your word" />
         <p>Character index:</p>
         <div class="character-number">
-          <button v-on:click="incrementCharacterIndex('-')">-</button>
+          <button v-on:click="handleOperator('-')">-</button>
           <label for="number-input" hidden>Number input</label>
           <input id="number-input" type="number" min="1" v-bind:max="textInput.length" v-model="characterNumber" />
-          <button v-on:click="incrementCharacterIndex('+')">+</button>
+          <button v-on:click="handleOperator('+')">+</button>
         </div>
         <p class="character-result" id="text" v-cloak>{{ textInput[characterNumber - 1] }}</p>
         <button class="copy-button" data-clipboard-action="copy" data-clipboard-target="#text" v-on:click="showCopyMessage">

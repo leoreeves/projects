@@ -10,12 +10,14 @@ const initialiseCharacterFinderVueInstance = () =>
     },
 
     methods: {
-      incrementCharacterIndex(operator) {
+      handleOperator(operator) {
         const originalCharacterIndex = this.characterNumber
+        const isDecerement = operator === '-' && this.characterNumber > 1
+        const isIncrement = operator === '+' && this.characterNumber < this.textInput.length
 
-        if (operator === '-' && this.characterNumber > 1) {
+        if (isDecerement) {
           this.characterNumber = Number(originalCharacterIndex) - 1
-        } else if (operator === '+' && this.characterNumber < this.textInput.length) {
+        } else if (isIncrement) {
           this.characterNumber = Number(originalCharacterIndex) + 1
         }
       },
