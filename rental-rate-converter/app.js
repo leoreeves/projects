@@ -1,4 +1,3 @@
-const eventType = ['change', 'keyup']
 const perWeekInput = document.querySelector('.per-week')
 const perMonthInput = document.querySelector('.per-month')
 const DAYS_IN_A_WEEK = 7
@@ -62,5 +61,15 @@ function handlePerMonthInputEvents(event) {
   })
 }
 
-eventType.forEach((event) => handlePerWeekInputEvents(event))
-eventType.forEach((event) => handlePerMonthInputEvents(event))
+/**
+ * Handles change and keyup events
+ */
+function handleEvents() {
+  const eventType = ['change', 'keyup']
+  eventType.forEach((event) => {
+    handlePerWeekInputEvents(event)
+    handlePerMonthInputEvents(event)
+  })
+}
+
+handleEvents()
