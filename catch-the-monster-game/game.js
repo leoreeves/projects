@@ -106,8 +106,9 @@ function setHeroStartingPosition() {
 }
 
 function setMonsterStartingPosition() {
-  monster.x = 32 + Math.random() * (canvas.width - 100)
-  monster.y = 32 + Math.random() * (canvas.height - 100)
+  const startingPosition = (dimension) => 32 + Math.random() * (canvas[dimension] - 100)
+  monster.x = startingPosition('width')
+  monster.y = startingPosition('height')
 }
 
 function resetGame() {
