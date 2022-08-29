@@ -18,37 +18,31 @@ body {
   color: #333;
 }
 
-label {
-  font-size: 0.85em;
-  margin-bottom: 10px;
-}
-
-br {
-  line-height: 40px;
-}
-
 h1 {
   font-family: 'Fanwood Text', serif;
   font-size: 1.9em;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
-.flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
+p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.nth-character-finder-wrapper {
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
+  text-align: left;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   height: 100%;
+  margin: 0 auto;
+  max-width: 450px;
   padding: 0 40px;
+}
+
+.nth-character-finder-wrapper > * {
+  margin-bottom: 20px;
 }
 
 input[type='text'],
@@ -56,7 +50,7 @@ input[type='number'] {
   font-family: 'Work Sans', sans-serif;
   font-size: 1em;
   outline: none;
-  padding: 5px;
+  padding: 10px;
   color: #333;
 }
 
@@ -67,10 +61,9 @@ input[type='text'] {
 }
 
 input[type='number'] {
-  width: 80px;
+  width: 50px;
   border: 1px solid lightgray;
   text-align: center;
-  -moz-appearance: textfield;
 }
 
 input[type='number']:invalid {
@@ -83,18 +76,11 @@ input[type='number']::-webkit-inner-spin-button {
   margin: 0;
 }
 
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  text-align: center;
-}
-::-moz-placeholder {
-  text-align: center;
-}
-:-ms-input-placeholder {
-  text-align: center;
-}
-:-moz-placeholder {
-  text-align: center;
+.input-wrappers {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .character-result {
@@ -103,17 +89,14 @@ input[type='number']::-webkit-inner-spin-button {
   margin-right: auto;
   border-radius: 5px;
   height: 50px;
-  background-color: #eee;
-  width: 40px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
   padding: 10px 15px;
 }
 
 .character-number {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -123,6 +106,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .character-number button {
+  cursor: pointer;
   border: 0;
   min-width: 35px;
   background-color: #e0e0e0;
@@ -160,6 +144,8 @@ input[type='number']::-webkit-inner-spin-button {
   border-radius: 5px;
   outline: none;
   font-family: inherit;
+  width: 100%;
+  cursor: pointer;
 }
 
 .copy-button:hover {
@@ -175,6 +161,8 @@ input[type='number']::-webkit-inner-spin-button {
   font-size: 0.7em;
   opacity: 0;
   transition: opacity 0.5s;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .show-message {

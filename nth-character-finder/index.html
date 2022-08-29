@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nth character finder</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text|Work+Sans" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="nth-character-finder-wrapper">
+      <h1>Nth character finder</h1>
+      <p>Find the nth character of any word</p>
+      <p>e.g. the 6th character of "ability" is "t"</p>
+      <div class="input-wrappers">
+        <div>
+          <label for="text-input" hidden>Text input</label>
+          <input id="text-input" type="text" v-model="textInput" placeholder="Enter your word" />
+        </div>
+        <div>
+          <label for="nth-input" hidden>Nth character input</label>
+          <div class="character-number">
+            <button v-on:click="handleNthCharacter('-')">-</button>
+            <input id="nth-input" type="number" min="1" v-bind:max="textInput.length" v-model="nthCharacter"
+              placeholder="Nth" />
+            <button v-on:click="handleNthCharacter('+')">+</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="character-result" v-cloak>{{ nthCharacter}} = <span id="text">{{ textInput[nthCharacter
+            - 1] }}</span></p>
+        <button class="copy-button" data-clipboard-action="copy" data-clipboard-target="#text" v-on:click="showCopyMessage">
+          Copy to clipboard
+        </button>
+        <p class="copied-confirmation" v-bind:class="{'show-message': show}">Successfully copied</p>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,23 +1,23 @@
 const initialiseCharacterFinderVueInstance = () =>
   new Vue({
-    el: '.character-finder',
+    el: '.nth-character-finder-wrapper',
 
     data: {
       textInput: '',
-      characterNumber: 1,
+      nthCharacter: 1,
       show: false,
     },
 
     methods: {
-      handleOperator(operator) {
-        const originalCharacterIndex = this.characterNumber
-        const isDecerement = operator === '-' && this.characterNumber > 1
-        const isIncrement = operator === '+' && this.characterNumber < this.textInput.length
+      handleNthCharacter(operator) {
+        const originalCharacterIndex = this.nthCharacter
+        const isDecerement = operator === '-' && this.nthCharacter > 1
+        const isIncrement = operator === '+' && this.nthCharacter < this.textInput.length
 
         if (isDecerement) {
-          this.characterNumber = Number(originalCharacterIndex) - 1
+          this.nthCharacter = Number(originalCharacterIndex) - 1
         } else if (isIncrement) {
-          this.characterNumber = Number(originalCharacterIndex) + 1
+          this.nthCharacter = Number(originalCharacterIndex) + 1
         }
       },
 

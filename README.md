@@ -7,7 +7,6 @@ A collection of personal projects.
 - [Birthday Calculator](https://leoreeves.github.io/projects/birthday-calculator/)
 - [Block Breaker](https://leoreeves.github.io/projects/block-breaker/)
 - [Catch the Monster Game](https://leoreeves.github.io/projects/catch-the-monster-game/)
-- [Character Finder](https://leoreeves.github.io/projects/character-finder/)
 - [Elliott Smith Tribute Page](https://leoreeves.github.io/projects/elliott-smith-tribute-page/)
 - [Geolocation Weather App](https://leoreeves.github.io/projects/geolocation-weather-app/)
 - [Hex Colour Generator](https://leoreeves.github.io/projects/hex-colour-generator/)
@@ -17,6 +16,7 @@ A collection of personal projects.
 - [Live Code Editor](https://leoreeves.github.io/projects/live-code-editor/)
 - [Matrix Terminal](https://leoreeves.github.io/projects/matrix-terminal/)
 - [nickdraketabs.co.uk](https://leoreeves.github.io/projects/nickdraketabs.co.uk)
+- [Nth Character Finder](https://leoreeves.github.io/projects/nth-character-finder/)
 - [Pomodoro Timer](https://leoreeves.github.io/projects/pomodoro-timer)
 - [Quotes on Design Generator](https://leoreeves.github.io/projects/quotes-on-design-generator/)
 - [React Map Pins](https://react-map-pins.netlify.com/)
@@ -56,9 +56,9 @@ Built using:
 - HTML
 - JavaScript
 
-### [Character Finder](https://leoreeves.github.io/projects/character-finder/)
+### [Nth Character Finder](https://leoreeves.github.io/projects/nth-character-finder/)
 
-Find specific characters in a word.
+Find the nth character in a word.
 
 Built using:
 
