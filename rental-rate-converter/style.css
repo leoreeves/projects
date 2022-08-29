@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 12px;
   font-size: 1.1em;
   background: #3a7bd5; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #3b8db6, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
@@ -32,8 +32,9 @@ h1 {
 .container {
   max-width: 520px;
   background-color: #fff;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   padding: 32px;
+  border-radius: 4px;
 }
 
 .card {
@@ -42,12 +43,12 @@ h1 {
 
 input {
   font-size: 1.1em;
-  margin: 5px 10px 10px 10px;
+  margin: 4px 12px 12px 12px;
   padding: 2px;
   text-align: center;
   border-radius: 4px;
   border: 1px solid rgb(216, 216, 216);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   outline: none;
 }
 
