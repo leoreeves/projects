@@ -14,19 +14,13 @@ body {
   align-items: center;
   padding: 12px;
   font-size: 1.1em;
-  background: #3a7bd5; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3b8db6, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #3b8db6,
-    #3a7bd5
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgb(34, 89, 195);
+  background: linear-gradient(180deg, rgba(34, 89, 195, 1) 0%, rgba(28, 150, 196, 1) 100%);
 }
 
 h1 {
   font-size: 1.7em;
-  font-family: 'Karma', serif;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -45,12 +39,11 @@ h1 {
 input {
   font-size: 1.1em;
   margin: 4px 12px 12px 12px;
-  padding: 2px;
+  padding: 8px;
   text-align: center;
   border-radius: 4px;
   border: 1px solid rgb(216, 216, 216);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  outline: none;
 }
 
 @media screen and (max-width: 600px) {
