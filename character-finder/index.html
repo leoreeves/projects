@@ -13,10 +13,12 @@
       <main class="character-finder">
         <h1>Character Index Finder</h1>
         <p>Find the nth character of any word.</p>
+        <label for="text-input" hidden>Text input</label>
         <input id="text-input" type="text" v-model="textInput" placeholder="Enter your word" />
         <p>Character index:</p>
         <div class="character-number">
           <button v-on:click="incrementCharacterIndex('-')">-</button>
+          <label for="number-input" hidden>Number input</label>
           <input id="number-input" type="number" min="1" v-bind:max="textInput.length" v-model="characterNumber" />
           <button v-on:click="incrementCharacterIndex('+')">+</button>
         </div>
