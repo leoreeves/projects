@@ -5,39 +5,62 @@ const DAYS_IN_A_WEEK = 7
 const DAYS_IN_A_YEAR = 365.25
 const MONTHS_IN_A_YEAR = 12
 
-function formatAmount(amount) {
+/**
+ * Formats amount to two decimal places
+ * @param {number} amount
+ * @returns {number} Formatted amount
+ */
+function formatAmountToTwoDecimalPlaces(amount) {
   return amount.toFixed(2)
 }
 
-function calculateAmountPerMonth(value) {
-  const amountPerMonth = ((value / DAYS_IN_A_WEEK) * DAYS_IN_A_YEAR) / 12
-  return formatAmount(amountPerMonth)
+/**
+ * Calculates rental rate per month
+ * @param {number} value
+ * @returns {number} Formatted monthly rental rate
+ */
+function calculateRentalRatePerMonth(perMonthInputValue) {
+  const rentalRatePerMonth = ((perMonthInputValue / DAYS_IN_A_WEEK) * DAYS_IN_A_YEAR) / 12
+  return formatAmountToTwoDecimalPlaces(rentalRatePerMonth)
 }
 
-function calculateAmountPerWeek(value) {
-  const amountPerWeek = ((value * MONTHS_IN_A_YEAR) / DAYS_IN_A_YEAR) * 7
-  return formatAmount(amountPerWeek)
+/**
+ * Calculates rental rate per week
+ * @param {number} value
+ * @returns {number} Formatted weekly rental rate
+ */
+function calculateRentalRatePerWeek(perWeekInputValue) {
+  const amountPerWeek = ((perWeekInputValue * MONTHS_IN_A_YEAR) / DAYS_IN_A_YEAR) * 7
+  return formatAmountToTwoDecimalPlaces(amountPerWeek)
 }
 
-function handlePerWeekInput(event) {
+/**
+ * Handles perWeekInput events
+ * @param {event} event
+ */
+function handlePerWeekInputEvents(event) {
   return perWeekInput.addEventListener(event, () => {
     if (perWeekInput.value === '') {
       perWeekInput.focus()
     } else {
-      perMonthInput.value = calculateAmountPerMonth(perWeekInput.value)
+      perMonthInput.value = calculateRentalRatePerMonth(perWeekInput.value)
     }
   })
 }
 
-function handlePerMonthInput(event) {
+/**
+ * Handles perMonthInput events
+ * @param {event} event
+ */
+function handlePerMonthInputEvents(event) {
   return perMonthInput.addEventListener(event, () => {
     if (perMonthInput.value === '') {
       perMonthInput.focus()
     } else {
-      perWeekInput.value = calculateAmountPerWeek(perMonthInput.value)
+      perWeekInput.value = calculateRentalRatePerWeek(perMonthInput.value)
     }
   })
 }
 
-eventType.forEach((event) => handlePerWeekInput(event))
-eventType.forEach((event) => handlePerMonthInput(event))
+eventType.forEach((event) => handlePerWeekInputEvents(event))
+eventType.forEach((event) => handlePerMonthInputEvents(event))
