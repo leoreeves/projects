@@ -37,7 +37,7 @@ let soundEnabled = true
 
 function toggleSound() {
   soundEnabled = !soundEnabled
-  speakerImage.src = soundEnabled ? 'img/speaker.svg' : 'img/mute.svg'
+  speakerImage.src = `img/${soundEnabled ? 'speaker' : 'mute'}.svg`
 }
 
 function generateRandomNumberBetweenRange(start, end) {
