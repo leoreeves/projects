@@ -1,11 +1,13 @@
 const characterFinder = new Vue({
   el: '.character-finder',
+
   data: {
     textInput: '',
     characterNumber: 1,
     isActive: false,
     show: false,
   },
+
   methods: {
     incrementCharacterIndex(operator) {
       const originalCharacterIndex = this.characterNumber
@@ -16,6 +18,7 @@ const characterFinder = new Vue({
         this.characterNumber = Number(originalCharacterIndex) + 1
       }
     },
+
     showCopyMessage() {
       if (this.textInput !== '') {
         this.show = true
