@@ -18,15 +18,8 @@
         <!-- Calculator Form -->
         <form v-on:submit.prevent="calculateAmountsAndDisplayResult">
           <span class="currency">£</span>
-          <input
-            class="user-input"
-            type="number"
-            min="0.01"
-            step="0.01"
-            placeholder="Enter an amount"
-            v-model.number="inputAmount"
-            required
-          />
+          <input class="user-input" type="number" min="0.01" step="0.01" placeholder="Enter an amount"
+            v-model.number="inputAmount" required />
           <div class="label-container">
             <label>
               <input id="add-vat" type="radio" name="vat-option" value="plus" v-model="vatOperation" required /> Add VAT
@@ -50,21 +43,24 @@
           <div class="result-section">
             <h3>Net Amount (exc. VAT)</h3>
             <p>{{ netAmount }}</p>
-            <button class="btn-copy net-amount" :data-clipboard-text="netAmount" v-on:click="copyText">Copy</button>
+            <button class="btn-copy net-amount" :data-clipboard-text="netAmount"
+              v-on:click="handleCopiedToastMessage">Copy</button>
           </div>
           <div class="result-section">
             <h3>VAT Amount</h3>
             <p>{{ vatAmount }}</p>
-            <button class="btn-copy vat-amount" :data-clipboard-text="vatAmount" v-on:click="copyText">Copy</button>
+            <button class="btn-copy vat-amount" :data-clipboard-text="vatAmount"
+              v-on:click="handleCopiedToastMessage">Copy</button>
           </div>
           <div class="result-section">
             <h3>Gross Amount (incl. VAT)</h3>
             <p>{{ grossAmount }}</p>
-            <button class="btn-copy gross-amount" :data-clipboard-text="grossAmount" v-on:click="copyText">Copy</button>
+            <button class="btn-copy gross-amount" :data-clipboard-text="grossAmount"
+              v-on:click="handleCopiedToastMessage">Copy</button>
           </div>
         </div>
         <transition name="fade">
-          <div v-cloak v-if="showToastMessage" class="toast-message">
+          <div v-cloak v-if="showCopiedToastMessage" class="toast-message">
             <small>Copied to clipboard</small>
           </div>
         </transition>

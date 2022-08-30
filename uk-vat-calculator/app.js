@@ -1,64 +1,67 @@
-// Vue object
-vatCalculator = new Vue({
-  el: '#vat-calculator',
+const initialiseVatCalculator = () =>
+  new Vue({
+    el: '#vat-calculator',
 
-  data: {
-    inputAmount: '',
-    vatOperation: 'plus',
-    vatRate: 1.2,
-    netAmount: 0,
-    vatAmount: 0,
-    grossAmount: 0,
-    resultCardDisplay: 'none',
-    showToastMessage: false,
-  },
-
-  methods: {
-    calculateAmountsAndDisplayResult() {
-      this.resultCardDisplay = 'block'
-      this.calculateNetAmount()
-      this.calculateVatAmount()
-      this.calculateGrossAmount()
-
-      setTimeout(() => {
-        this.scrollToBottom()
-      }, 1)
+    data: {
+      inputAmount: '',
+      vatOperation: 'plus',
+      vatRate: 1.2,
+      netAmount: 0,
+      vatAmount: 0,
+      grossAmount: 0,
+      resultCardDisplay: 'none',
+      showCopiedToastMessage: false,
     },
 
-    formatAmount(amount) {
-      return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(amount)
-    },
+    methods: {
+      calculateAmountsAndDisplayResult() {
+        this.resultCardDisplay = 'block'
+        this.calculateNetAmount()
+        this.calculateVatAmount()
+        this.calculateGrossAmount()
 
-    calculateNetAmount() {
-      this.netAmount = this.formatAmount(this.inputAmount)
-    },
+        setTimeout(() => {
+          this.scrollToBottom()
+        }, 1)
+      },
 
-    calculateVatAmount() {
-      this.vatAmount = this.formatAmount(this.inputAmount * this.vatRate - this.inputAmount)
-    },
+      formatAmount(amount) {
+        return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(amount)
+      },
 
-    calculateGrossAmount() {
-      if (this.vatOperation === 'plus') {
-        this.grossAmount = this.formatAmount(this.inputAmount * this.vatRate)
-      } else if (this.vatOperation === 'minus') {
-        this.grossAmount = this.formatAmount(this.inputAmount / this.vatRate)
-      }
-    },
+      calculateNetAmount() {
+        this.netAmount = this.formatAmount(this.inputAmount)
+      },
 
-    scrollToBottom() {
-      window.scrollTo(0, document.body.scrollHeight)
-    },
+      calculateVatAmount() {
+        this.vatAmount = this.formatAmount(this.inputAmount * this.vatRate - this.inputAmount)
+      },
 
-    copyText() {
-      this.showToastMessage = true
-      setTimeout(() => {
-        this.showToastMessage = false
-      }, 2000)
-    },
-  },
-})
+      calculateGrossAmount() {
+        if (this.vatOperation === 'plus') {
+          this.grossAmount = this.formatAmount(this.inputAmount * this.vatRate)
+        } else if (this.vatOperation === 'minus') {
+          this.grossAmount = this.formatAmount(this.inputAmount / this.vatRate)
+        }
+      },
 
-// Copy to clipboard
-const netAmountCopy = new ClipboardJS('.net-amount')
-const vatAmountCopy = new ClipboardJS('.vat-amount')
-const grossAmountCopy = new ClipboardJS('.gross-amount')
+      scrollToBottom() {
+        window.scrollTo(0, document.body.scrollHeight)
+      },
+
+      handleCopiedToastMessage() {
+        this.showCopiedToastMessage = true
+        setTimeout(() => {
+          this.showCopiedToastMessage = false
+        }, 2000) // 2 seconds
+      },
+    },
+  })
+
+const initialiseCopyButtons = () => {
+  const buttonTypes = ['net', 'vat', 'gross']
+  buttonTypes.forEach((buttonType) => new ClipboardJS(`.${buttonType}-amount`))
+}
+
+initialiseVatCalculator()
+initialiseCopyButtons()
