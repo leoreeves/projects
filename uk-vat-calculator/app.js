@@ -24,6 +24,7 @@ const initialiseVatCalculator = () =>
         let gross
         if (this.vatOperation === 'plus') {
           gross = this.inputAmount * this.vatRate
+          // TODO: Fix this
         } else if (this.vatOperation === 'minus') {
           gross = this.inputAmount / this.vatRate
         }
