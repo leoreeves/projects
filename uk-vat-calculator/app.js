@@ -3,7 +3,7 @@ const initialiseVatCalculator = () =>
     el: '#vat-calculator',
 
     data: {
-      inputAmount: '',
+      inputAmount: null,
       vatOperation: 'plus',
       vatRate: 1.2,
       resultCardDisplay: 'none',
