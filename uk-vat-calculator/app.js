@@ -1,6 +1,7 @@
 // Vue object
 vatCalculator = new Vue({
   el: '#vat-calculator',
+
   data: {
     inputAmount: '',
     vatOperation: 'plus',
@@ -11,6 +12,7 @@ vatCalculator = new Vue({
     resultCardDisplay: 'none',
     showToastMessage: false,
   },
+
   methods: {
     calculateAmountsAndDisplayResult() {
       this.resultCardDisplay = 'block'
@@ -18,21 +20,23 @@ vatCalculator = new Vue({
       this.calculateVatAmount()
       this.calculateGrossAmount()
 
-      // Jump to bottom on smaller widths to show result
-      // Added delay to allow time to render
       setTimeout(() => {
         this.scrollToBottom()
       }, 1)
     },
+
     formatAmount(amount) {
-      return `£${amount.toFixed(2)}`
+      return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(amount)
     },
+
     calculateNetAmount() {
       this.netAmount = this.formatAmount(this.inputAmount)
     },
+
     calculateVatAmount() {
       this.vatAmount = this.formatAmount(this.inputAmount * this.vatRate - this.inputAmount)
     },
+
     calculateGrossAmount() {
       if (this.vatOperation === 'plus') {
         this.grossAmount = this.formatAmount(this.inputAmount * this.vatRate)
@@ -40,9 +44,11 @@ vatCalculator = new Vue({
         this.grossAmount = this.formatAmount(this.inputAmount / this.vatRate)
       }
     },
+
     scrollToBottom() {
       window.scrollTo(0, document.body.scrollHeight)
     },
+
     copyText() {
       this.showToastMessage = true
       setTimeout(() => {
