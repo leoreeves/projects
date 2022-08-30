@@ -10,13 +10,12 @@ $(document).ready(() => {
       errorMessage('Sorry your browser does not support geolocation!')
     }
 
-    function setLocation(position) {
-      const lat = position.coords.latitude
-      const lng = position.coords.longitude
+    function setLocation({ coords }) {
+      const { latitude, longitude } = coords
       const darkSkyAppId = '3338c55b94a58007e0bf4195c5ab1548/'
-      const darkSkyURL = `https://api.darksky.net/forecast/${darkSkyAppId}${lat},${lng}?units=${unit}`
-      const sunsetSunriseURL = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`
-      const nominatimURL = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`
+      const darkSkyURL = `https://api.darksky.net/forecast/${darkSkyAppId}${latitude},${longitude}?units=${unit}`
+      const sunsetSunriseURL = `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`
+      const nominatimURL = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
 
       function setPlace() {
         $.getJSON(nominatimURL, (json) => {
@@ -25,7 +24,7 @@ $(document).ready(() => {
       }
 
       function setBackground() {
-        $.getJSON(sunsetSunriseURL, (json) => {
+        $.getJSON(sunsetSunriseURL, ({ json }) => {
           const today = new Date()
           const hour = today.getHours()
           const sunrise = new Date(json.results.sunrise)
