@@ -30,6 +30,7 @@ function calculateBirthdayWeekDayAndAge() {
   const enteredYear = birthdayYearInput.value
   dateOfBirth.setFullYear(enteredYear)
 
+  // TODO: Use past tense for birthdays in the past
   if (dateOfBirth >= birthYear) {
     setBirthdayYearInputMinAsBirthYear(birthYear)
     updateBirthdayWeekdayInnerHTML(dateOfBirth)
