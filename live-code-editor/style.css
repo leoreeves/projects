@@ -2,12 +2,14 @@ body {
   text-align: center;
 }
 
+.textarea-wrapper {
+  display: flex;
+}
+
 textarea {
-  width: 32%;
-  float: top;
+  width: 100%;
   min-height: 250px;
   overflow: scroll;
-  margin: auto;
   display: inline-flex;
   background: #f4f4f9;
   outline: none;
