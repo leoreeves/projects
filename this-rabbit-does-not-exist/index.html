@@ -12,7 +12,8 @@
         text-align: center;
       }
 
-      .rabbit-photo {
+      .rabbit-photo-wrapper {
+        margin: 0 auto;
         width: 100%;
         max-width: 512px;
         min-width: 256px;
@@ -22,7 +23,9 @@
   </head>
   <body>
     <h1>This rabbit does not exist</h1>
-    <img class="rabbit-photo" alt="Photo of rabbit">
+    <div class="rabbit-photo-wrapper">
+      <img class="rabbit-photo" alt="Photo of rabbit">
+    </div>
     <p>Generated using <a href="https://github.com/CompVis/stable-diffusion" target="_blank">Stable Diffusion</a></p>
     <script>
       const generateRandomNumberBetweenOneAndTwelve = () => Math.floor(Math.random() * 15) + 1
