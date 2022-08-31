@@ -20,7 +20,7 @@ A collection of personal projects.
 - [Pomodoro Timer](#pomodoro-timer)
 - [Quotes on Design Generator](#quotes-on-design-generator)
 - [React Map Pins](#react-map-pins)
-- [React Wikipedia Search](#react-wikipedia-search))
+- [React Wikipedia Search](#react-wikipedia-search)
 - [Rental Rate Converter](#rental-rate-converter)
 - [Simple Clock](#simple-clock)
 - [This Rabbit Does Not Exist](#this-rabbit-does-not-exist)
