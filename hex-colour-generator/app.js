@@ -1,27 +1,61 @@
-const hexColorHeader = document.querySelector('.container__hex-colour-header')
-const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
-const clipboard = new ClipboardJS(copyToClipboardButton)
+/**
+ * Initialises copy to clipboard button
+ */
+function initialiseCopyToClipboardButton() {
+  const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
+  return new ClipboardJS(copyToClipboardButton)
+}
 
-function generateHexColor() {
+/**
+ * Generates a random hex color
+ * @returns {string} Hex color e.g. #4287f5
+ */
+function generateRandomHexColor() {
   return `#${Math.random().toString(16).slice(2, 8)}`
 }
 
-function setBackgroundColor(color) {
-  document.body.style.backgroundColor = color
+/**
+ * Sets page body background color
+ * @param {string} hexColor e.g. #a53695
+ */
+function setBodyBackgroundColor(hexColor) {
+  document.body.style.backgroundColor = hexColor
 }
 
-function setHexColorHeaderText(color) {
-  hexColorHeader.textContent = color
+/**
+ * Sets hex color header text content
+ * @param {string} hexColor e.g. #3cc78a
+ */
+function setHexColorHeaderTextContent(hexColor) {
+  const hexColorHeader = document.querySelector('.container__hex-colour-header')
+  hexColorHeader.textContent = hexColor
 }
 
-function setDataClipboardTextAttribute(color) {
-  copyToClipboardButton.setAttribute('data-clipboard-text', color)
+/**
+ * Sets data clipboard text attribute
+ * @param {string} hexColor e.g. #8cba49
+ */
+function setDataClipboardTextAttribute(hexColor) {
+  const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
+  copyToClipboardButton.setAttribute('data-clipboard-text', hexColor)
 }
 
-function convertHexColorToHexadecimal(hexColor, firstCharacter, secondCharacter) {
-  return `0x${hexColor[firstCharacter]}${hexColor[secondCharacter]}`
+/**
+ * Converts hex color to hexadecimal
+ * @param {string} hexColor e.g. #8cba49
+ * @param {number} firstCharacterIndex e.g. 1
+ * @param {number} secondCharacterIndex e.g. 2
+ * @returns {string} Hexadecimal e.g. 0x3b
+ */
+function convertHexColorToHexadecimal(hexColor, firstCharacterIndex, secondCharacterIndex) {
+  return `0x${hexColor[firstCharacterIndex]}${hexColor[secondCharacterIndex]}`
 }
 
+/**
+ * Gets RGB values from hex color
+ * @param {string} hexColor e.g. #7dfeba
+ * @returns {object} e.g. { r: '0x3b', g: '0x91', b: '0x98' }
+ */
 function getRGBValuesFromHexColor(hexColor) {
   let r
   let g
@@ -44,15 +78,24 @@ function getRGBValuesFromHexColor(hexColor) {
   return { r, g, b }
 }
 
-function getColorBrightness(color) {
-  // https://en.wikipedia.org/wiki/YIQ#From_RGB_to_YIQ
-  const { r, g, b } = getRGBValuesFromHexColor(color)
+/**
+ * Gets color brightness
+ * Based on: https://en.wikipedia.org/wiki/YIQ#From_RGB_to_YIQ
+ * @param {string} hexColor e.g. #66ff00
+ * @returns {number} e.g. 99.105
+ */
+function getColorBrightness(hexColor) {
+  const { r, g, b } = getRGBValuesFromHexColor(hexColor)
   const [redLuma, greenLuma, blueLuma] = [299, 587, 114]
   return (r * redLuma + g * greenLuma + b * blueLuma) / 1000
 }
 
-function setTextColorBasedOnBrightness(color) {
-  const colorBrightness = getColorBrightness(color)
+/**
+ * Sets text color based on brightness
+ * @param {string} hexColor e.g. #d9d839
+ */
+function setTextColorBasedOnBrightness(hexColor) {
+  const colorBrightness = getColorBrightness(hexColor)
   if (colorBrightness >= 128) {
     document.body.style.color = 'black'
   } else {
@@ -60,11 +103,14 @@ function setTextColorBasedOnBrightness(color) {
   }
 }
 
-function generateHexColorAndUpdatePage() {
-  const color = generateHexColor()
-  ;[setBackgroundColor, setHexColorHeaderText, setDataClipboardTextAttribute, setTextColorBasedOnBrightness].forEach(
-    (func) => func(color)
-  )
+function generateRandomHexColorAndUpdatePage() {
+  const hexColor = generateRandomHexColor()
+  ;[
+    setBodyBackgroundColor,
+    setHexColorHeaderTextContent,
+    setDataClipboardTextAttribute,
+    setTextColorBasedOnBrightness,
+  ].forEach((func) => func(hexColor))
 }
 
 function showAndFadeOutSuccessMessage() {
@@ -72,6 +118,7 @@ function showAndFadeOutSuccessMessage() {
   const successMessageFadeOutClass = 'container__success-message--fade-out'
   successMessageContainer.style.display = 'block'
   successMessageContainer.classList.add(successMessageFadeOutClass)
+  const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
   copyToClipboardButton.blur()
   document.getSelection().removeAllRanges()
   setTimeout(() => {
@@ -81,7 +128,7 @@ function showAndFadeOutSuccessMessage() {
 
 document.body.onkeyup = (event) => {
   if (event.code === 'Space') {
-    generateHexColorAndUpdatePage()
+    generateRandomHexColorAndUpdatePage()
   }
 }
 
@@ -90,7 +137,7 @@ document.addEventListener('click', (event) => {
   if (event.target.className === 'container__copy-to-clipboard-button') {
     showAndFadeOutSuccessMessage()
   } else {
-    generateHexColorAndUpdatePage()
+    generateRandomHexColorAndUpdatePage()
   }
 })
 
@@ -98,3 +145,5 @@ document.addEventListener('click', (event) => {
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(navigator.userAgent)) {
   document.querySelector('.container__instruction-header').textContent = 'Tap to generate a new colour'
 }
+
+initialiseCopyToClipboardButton()
