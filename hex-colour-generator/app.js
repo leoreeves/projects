@@ -18,23 +18,51 @@ function setDataClipboardTextAttribute(color) {
   copyToClipboardButton.setAttribute('data-clipboard-text', color)
 }
 
-function getContrastYIQ(color) {
-  const [r, g, b] = [0, 2, 4].map((p) => parseInt(color.substr(p, 2), 16))
-  return (r * 299 + g * 587 + b * 114) / 1000
+function convertHexColorToHexadecimal(hexColor, firstCharacter, secondCharacter) {
+  return `0x${hexColor[firstCharacter]}${hexColor[secondCharacter]}`
 }
 
-function setTextColorBasedOnContrastYIQ(color) {
-  const colorWithoutHash = color.substring(1)
-  if (getContrastYIQ(colorWithoutHash) >= 128) {
-    document.body.style.color = '#000'
+function getRGBValuesFromHexColor(hexColor) {
+  let r
+  let g
+  let b
+  const threeDigits = hexColor.length === 4
+  const sixDigits = hexColor.length === 7
+  if (threeDigits) {
+    ;[r, g, b] = [
+      convertHexColorToHexadecimal(hexColor, 1, 1),
+      convertHexColorToHexadecimal(hexColor, 2, 2),
+      convertHexColorToHexadecimal(hexColor, 3, 3),
+    ]
+  } else if (sixDigits) {
+    ;[r, g, b] = [
+      convertHexColorToHexadecimal(hexColor, 1, 2),
+      convertHexColorToHexadecimal(hexColor, 3, 4),
+      convertHexColorToHexadecimal(hexColor, 5, 6),
+    ]
+  }
+  return { r, g, b }
+}
+
+function getColorBrightness(color) {
+  // https://en.wikipedia.org/wiki/YIQ#From_RGB_to_YIQ
+  const { r, g, b } = getRGBValuesFromHexColor(color)
+  const [redLuma, greenLuma, blueLuma] = [299, 587, 114]
+  return (r * redLuma + g * greenLuma + b * blueLuma) / 1000
+}
+
+function setTextColorBasedOnBrightness(color) {
+  const colorBrightness = getColorBrightness(color)
+  if (colorBrightness >= 128) {
+    document.body.style.color = 'black'
   } else {
-    document.body.style.color = '#fff'
+    document.body.style.color = 'white'
   }
 }
 
 function generateColorAndUpdatePage() {
   const color = generateColor()
-  ;[setBackgroundColor, setHexColorHeaderText, setDataClipboardTextAttribute, setTextColorBasedOnContrastYIQ].forEach(
+  ;[setBackgroundColor, setHexColorHeaderText, setDataClipboardTextAttribute, setTextColorBasedOnBrightness].forEach(
     (func) => func(color)
   )
 }
