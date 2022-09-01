@@ -5,5 +5,5 @@ Randomly generates a hex colour based on user input.
 Built using:
 
 - HTML
-- CSS
+- CSS (using BEM methodology)
 - JavaScript

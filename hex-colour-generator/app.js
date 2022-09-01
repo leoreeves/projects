@@ -1,12 +1,4 @@
 /**
- * Initialises copy to clipboard button
- */
-function initialiseCopyToClipboardButton() {
-  const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
-  return new ClipboardJS(copyToClipboardButton)
-}
-
-/**
  * Generates a random hex color
  * @returns {string} Hex color e.g. #4287f5
  */
@@ -126,24 +118,44 @@ function showAndFadeOutSuccessMessage() {
   }, 1800)
 }
 
-document.body.onkeyup = (event) => {
-  if (event.code === 'Space') {
-    generateRandomHexColorAndUpdatePage()
+function handleSpacebarPress() {
+  document.body.onkeyup = (event) => {
+    if (event.code === 'Space') {
+      generateRandomHexColorAndUpdatePage()
+    }
   }
 }
 
-// change colour on mouse click
-document.addEventListener('click', (event) => {
-  if (event.target.className === 'container__copy-to-clipboard-button') {
-    showAndFadeOutSuccessMessage()
-  } else {
-    generateRandomHexColorAndUpdatePage()
-  }
-})
-
-// replace text on mobile
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(navigator.userAgent)) {
-  document.querySelector('.container__instruction-header').textContent = 'Tap to generate a new colour'
+function handleDocumentClick() {
+  document.addEventListener('click', (event) => {
+    if (event.target.className === 'container__copy-to-clipboard-button') {
+      showAndFadeOutSuccessMessage()
+    } else {
+      generateRandomHexColorAndUpdatePage()
+    }
+  })
 }
 
+/**
+ * Initialises copy to clipboard button
+ */
+function initialiseCopyToClipboardButton() {
+  const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
+  return new ClipboardJS(copyToClipboardButton)
+}
+
+/**
+ * Changes instruction text from "Press the spacebar" to "Tap to" on mobile
+ */
+function setInstructionTextOnMobile() {
+  const instructionHeader = document.querySelector('.container__instruction-header')
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(navigator.userAgent)
+  if (isMobile) {
+    instructionHeader.textContent = 'Tap to generate a new colour'
+  }
+}
+
+handleSpacebarPress()
+handleDocumentClick()
+setInstructionTextOnMobile()
 initialiseCopyToClipboardButton()

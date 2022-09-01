@@ -97,7 +97,7 @@ Randomly generates a hex colour on user input.
 Built using:
 
 - HTML
-- CSS
+- CSS (using BEM methodology)
 - JavaScript
 
 ### [Ionic Contacts Manager](https://ionic-contacts-manager.netlify.com/)
