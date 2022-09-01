@@ -95,33 +95,36 @@ function setTextColorBasedOnBrightness(hexColor) {
   }
 }
 
-function generateRandomHexColorAndUpdatePage() {
-  const hexColor = generateRandomHexColor()
+function callSetFunctions(hexColor) {
   ;[
     setBodyBackgroundColor,
     setHexColorHeaderTextContent,
     setDataClipboardTextAttribute,
     setTextColorBasedOnBrightness,
-  ].forEach((func) => func(hexColor))
+  ].forEach((fn) => fn(hexColor))
 }
 
-function showAndFadeOutSuccessMessage() {
+function handleCopyColorSuccessMessage() {
   const successMessageContainer = document.querySelector('.container__success-message')
   const successMessageFadeOutClass = 'container__success-message--fade-out'
   successMessageContainer.style.display = 'block'
   successMessageContainer.classList.add(successMessageFadeOutClass)
-  const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
-  copyToClipboardButton.blur()
-  document.getSelection().removeAllRanges()
   setTimeout(() => {
     successMessageContainer.classList.remove(successMessageFadeOutClass)
   }, 1800)
 }
 
+function clearCopyToClipboard() {
+  const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
+  copyToClipboardButton.blur()
+  document.getSelection().removeAllRanges()
+}
+
 function handleSpacebarPress() {
   document.body.onkeyup = (event) => {
     if (event.code === 'Space') {
-      generateRandomHexColorAndUpdatePage()
+      const hexColor = generateRandomHexColor()
+      callSetFunctions(hexColor)
     }
   }
 }
@@ -129,9 +132,11 @@ function handleSpacebarPress() {
 function handleDocumentClick() {
   document.addEventListener('click', (event) => {
     if (event.target.className === 'container__copy-to-clipboard-button') {
-      showAndFadeOutSuccessMessage()
+      handleCopyColorSuccessMessage()
+      clearCopyToClipboard()
     } else {
-      generateRandomHexColorAndUpdatePage()
+      const hexColor = generateRandomHexColor()
+      callSetFunctions(hexColor)
     }
   })
 }
