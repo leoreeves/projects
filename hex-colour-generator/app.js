@@ -95,31 +95,45 @@ function setTextColorBasedOnBrightness(hexColor) {
   }
 }
 
+/**
+ * Calls each set function
+ * @param {string} hexColor e.g. #fcba03
+ */
 function callSetFunctions(hexColor) {
-  ;[
+  const setFunctions = [
     setBodyBackgroundColor,
     setHexColorHeaderTextContent,
     setDataClipboardTextAttribute,
     setTextColorBasedOnBrightness,
-  ].forEach((fn) => fn(hexColor))
+  ]
+  setFunctions.forEach((fn) => fn(hexColor))
 }
 
-function handleCopyColorSuccessMessage() {
+/**
+ * Shows success message and fades out
+ */
+function handleSuccessMessage() {
   const successMessageContainer = document.querySelector('.container__success-message')
   const successMessageFadeOutClass = 'container__success-message--fade-out'
   successMessageContainer.style.display = 'block'
   successMessageContainer.classList.add(successMessageFadeOutClass)
   setTimeout(() => {
     successMessageContainer.classList.remove(successMessageFadeOutClass)
-  }, 1800)
+  }, 1800) // 1.8 seconds
 }
 
+/**
+ * Blurs copy to clipboard button and clears document selection
+ */
 function clearCopyToClipboard() {
   const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
   copyToClipboardButton.blur()
   document.getSelection().removeAllRanges()
 }
 
+/**
+ * Handles spacebar press
+ */
 function handleSpacebarPress() {
   document.body.onkeyup = (event) => {
     if (event.code === 'Space') {
@@ -129,10 +143,13 @@ function handleSpacebarPress() {
   }
 }
 
+/**
+ * Handles document click
+ */
 function handleDocumentClick() {
   document.addEventListener('click', (event) => {
     if (event.target.className === 'container__copy-to-clipboard-button') {
-      handleCopyColorSuccessMessage()
+      handleSuccessMessage()
       clearCopyToClipboard()
     } else {
       const hexColor = generateRandomHexColor()
