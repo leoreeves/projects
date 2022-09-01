@@ -2,7 +2,7 @@ const hexColorHeader = document.querySelector('.container__hex-colour-header')
 const copyToClipboardButton = document.querySelector('.container__copy-to-clipboard-button')
 const clipboard = new ClipboardJS(copyToClipboardButton)
 
-function generateColor() {
+function generateHexColor() {
   return `#${Math.random().toString(16).slice(2, 8)}`
 }
 
@@ -60,8 +60,8 @@ function setTextColorBasedOnBrightness(color) {
   }
 }
 
-function generateColorAndUpdatePage() {
-  const color = generateColor()
+function generateHexColorAndUpdatePage() {
+  const color = generateHexColor()
   ;[setBackgroundColor, setHexColorHeaderText, setDataClipboardTextAttribute, setTextColorBasedOnBrightness].forEach(
     (func) => func(color)
   )
@@ -81,7 +81,7 @@ function showAndFadeOutSuccessMessage() {
 
 document.body.onkeyup = (event) => {
   if (event.code === 'Space') {
-    generateColorAndUpdatePage()
+    generateHexColorAndUpdatePage()
   }
 }
 
@@ -90,7 +90,7 @@ document.addEventListener('click', (event) => {
   if (event.target.className === 'container__copy-to-clipboard-button') {
     showAndFadeOutSuccessMessage()
   } else {
-    generateColorAndUpdatePage()
+    generateHexColorAndUpdatePage()
   }
 })
 
