@@ -49,7 +49,6 @@ function callFunctionsInArray(functions) {
 
 /**
  * Generates bricks arranged into columns and rows
- * @returns {Array} Returns an array of arrays of bricks
  */
 function generateBricks() {
   for (let column = 0; column < brick.columnCount; column += 1) {
@@ -75,8 +74,6 @@ function renderBrick(brickX, brickY) {
 
 /**
  * Renders unbroken bricks on canvas
- * @param {Number} brickX
- * @param {Number} brickY
  */
 function renderUnbrokenBricks() {
   for (let column = 0; column < brick.columnCount; column += 1) {
