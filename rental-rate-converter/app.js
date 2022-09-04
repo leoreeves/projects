@@ -1,8 +1,13 @@
-const perWeekInput = document.querySelector('.per-week')
-const perMonthInput = document.querySelector('.per-month')
-const DAYS_IN_A_WEEK = 7
-const DAYS_IN_A_YEAR = 365.25
-const MONTHS_IN_A_YEAR = 12
+const constants = {
+  DAYS_IN_A_WEEK: 7,
+  DAYS_IN_A_YEAR: 365.25,
+  MONTHS_IN_A_YEAR: 12,
+}
+
+/**
+ * Defines query selector variables
+ */
+const [perWeekInput, perMonthInput] = ['week', 'month'].map((selector) => document.querySelector(`.per-${selector}`))
 
 /**
  * Formats amount to two decimal places
@@ -19,7 +24,7 @@ function formatAmountToTwoDecimalPlaces(amount) {
  * @returns {number} Formatted monthly rental rate
  */
 function calculateRentalRatePerMonth(perMonthInputValue) {
-  const rentalRatePerMonth = ((perMonthInputValue / DAYS_IN_A_WEEK) * DAYS_IN_A_YEAR) / 12
+  const rentalRatePerMonth = ((perMonthInputValue / constants.DAYS_IN_A_WEEK) * constants.DAYS_IN_A_YEAR) / 12
   return formatAmountToTwoDecimalPlaces(rentalRatePerMonth)
 }
 
@@ -29,7 +34,7 @@ function calculateRentalRatePerMonth(perMonthInputValue) {
  * @returns {number} Formatted weekly rental rate
  */
 function calculateRentalRatePerWeek(perWeekInputValue) {
-  const amountPerWeek = ((perWeekInputValue * MONTHS_IN_A_YEAR) / DAYS_IN_A_YEAR) * 7
+  const amountPerWeek = ((perWeekInputValue * constants.MONTHS_IN_A_YEAR) / constants.DAYS_IN_A_YEAR) * 7
   return formatAmountToTwoDecimalPlaces(amountPerWeek)
 }
 
