@@ -1,8 +1,12 @@
-// query elements
-const dateOfBirthInput = document.querySelector('.date-of-birth')
-const birthdayYearInput = document.querySelector('.birthday-year')
-const birthdayDayOfWeekSpan = document.querySelector('.birthday-day-of-week')
-const ageSpan = document.querySelector('.age')
+/**
+ * Defines query selector variables
+ */
+const [dateOfBirthInput, birthdayYearInput, birthdayDayOfWeekSpan, ageSpan] = [
+  'date-of-birth',
+  'birthday-year',
+  'birthday-day-of-week',
+  'age',
+].map((selector) => document.querySelector(`.${selector}`))
 
 /**
  * Sets birthday year input value as current year
