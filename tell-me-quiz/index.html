@@ -34,6 +34,7 @@
         border: 1px solid gray;
         padding: 5px 10px;
       }
+
     </style>
   </head>
 
@@ -50,7 +51,7 @@
       return allowedLetters[Math.floor(Math.random() * allowedLetters.length)]
     }
 
-    function setLetterInnerHtml(randomLetter) {
+    function setLetterElementInnerHTML(randomLetter) {
       letterElement.innerHTML = randomLetter
     }
 
@@ -66,7 +67,7 @@
 
     function handleRandomLetter() {
       const randomLetter = generateRandomLetter()
-      setLetterInnerHtml(randomLetter)
+      setLetterElementInnerHTML(randomLetter)
       speakLetter(randomLetter)
     }
   </script>
