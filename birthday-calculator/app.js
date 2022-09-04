@@ -63,20 +63,42 @@ function setAgeSpanInnerHTML(enteredYear, birthYear) {
   ageSpan.innerHTML = calculatedAge
 }
 
-function calculateBirthdayDayOfWeekAndAge() {
+/**
+ * Checks if entered year is in the present or in the future
+ * @param {number} enteredYear
+ * @param {number} birthYear
+ * @returns {Boolean}
+ */
+function checkIfEnteredYearIsPresentOrFuture(enteredYear, birthYear) {
+  return enteredYear >= birthYear
+}
+
+/**
+ * Handles set functions
+ * @param {number} birthYear
+ * @param {object} dateOfBirth
+ * @param {number} enteredYear
+ */
+function handleSetFunctions(birthYear, dateOfBirth, enteredYear) {
+  setBirthdayYearInputMinAsBirthYear(birthYear)
+  setBirthdayDayOfWeekInnerHTML(dateOfBirth)
+  setAgeSpanInnerHTML(enteredYear, birthYear)
+}
+
+/**
+ * Handles birthday calculation
+ */
+function handleBirthdayCalculation() {
   const dateOfBirth = new Date(dateOfBirthInput.value)
   const birthYear = dateOfBirth.getFullYear()
-  const enteredYear = birthdayYearInput.value
+  const enteredYear = Number(birthdayYearInput.value)
   dateOfBirth.setFullYear(enteredYear)
-
-  // TODO: Use past tense for birthdays in the past
-  if (dateOfBirth >= birthYear) {
-    setBirthdayYearInputMinAsBirthYear(birthYear)
-    setBirthdayDayOfWeekInnerHTML(dateOfBirth)
-    setAgeSpanInnerHTML(enteredYear, birthYear)
+  const enteredYearIsPresentOrFuture = checkIfEnteredYearIsPresentOrFuture(enteredYear, birthYear)
+  if (enteredYearIsPresentOrFuture) {
+    handleSetFunctions(birthYear, dateOfBirth, enteredYear)
   }
 }
 
 // add event listeners
 document.addEventListener('DOMContentLoaded', setBirthdayYearInputValueAsCurrentYear)
-document.addEventListener('input', calculateBirthdayDayOfWeekAndAge)
+document.addEventListener('input', handleBirthdayCalculation)
