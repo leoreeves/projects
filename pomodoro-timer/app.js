@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-function notifyUser() {
+function handleTimerFinishedNotification() {
   if (Notification.permission !== 'granted') {
     Notification.requestPermission()
   } else {
@@ -98,7 +98,7 @@ function countTimer() {
     if (totalSeconds === 0) {
       counting = false
       startButton.innerHTML = 'Start'
-      notifyUser()
+      handleTimerFinishedNotification()
     }
   }
 }
