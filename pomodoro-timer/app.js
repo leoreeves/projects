@@ -1,9 +1,15 @@
-const timer = document.querySelector('.timer')
-const startButton = document.querySelector('.start-button')
-const stopButton = document.querySelector('.stop-button')
-const resetButton = document.querySelector('.reset-button')
-const changeTimerButton = document.querySelector('.change-timer-button')
-const customMinuteInput = document.querySelector('.custom-minute-input')
+/**
+ * Defines query selector variables
+ */
+const [timer, startButton, stopButton, resetButton, changeTimerButton, customMinuteInput] = [
+  'timer',
+  'start-button',
+  'stop-button',
+  'reset-button',
+  'change-timer-button',
+  'custom-minute-input',
+].map((selector) => document.querySelector(`.${selector}`))
+
 let totalSeconds = 1500
 let counting = false
 
