@@ -1,48 +1,85 @@
-const screen = document.querySelector('.screen')
-const allClear = document.querySelector('.all-clear')
-const deleteEntry = document.querySelector('.delete-entry')
-const one = document.querySelector('.one')
-const two = document.querySelector('.two')
-const three = document.querySelector('.three')
-const four = document.querySelector('.four')
-const five = document.querySelector('.five')
-const six = document.querySelector('.six')
-const seven = document.querySelector('.seven')
-const eight = document.querySelector('.eight')
-const nine = document.querySelector('.nine')
-const zero = document.querySelector('.zero')
-const minus = document.querySelector('.minus')
-const plus = document.querySelector('.plus')
-const divide = document.querySelector('.divide')
-const multiply = document.querySelector('.multiply')
-const period = document.querySelector('.period')
-const equals = document.querySelector('.equals')
+/**
+ * Defines query selector variables
+ */
+const [
+  screen,
+  allClear,
+  deleteEntry,
+  zero,
+  one,
+  two,
+  three,
+  four,
+  five,
+  six,
+  seven,
+  eight,
+  nine,
+  minus,
+  plus,
+  divide,
+  multiply,
+  period,
+  equals,
+] = [
+  'screen',
+  'all-clear',
+  'delete-entry',
+  'zero',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'minus',
+  'plus',
+  'divide',
+  'multiply',
+  'period',
+  'equals',
+].map((selector) => document.querySelector(`.${selector}`))
 
 // Arrays for adding event listeners
 const numberButtons = [one, two, three, four, five, six, seven, eight, nine, zero]
 const operatorButtons = [minus, plus, divide, multiply, period]
 
-allClear.addEventListener('click', () => {
+function clearAllValues() {
   screen.innerHTML = 0
-})
+}
 
-deleteEntry.addEventListener('click', () => {
+function deleteValue() {
   if (screen.innerHTML.length === 1) {
-    screen.innerHTML = 0
+    clearAllValues()
   } else {
     screen.innerHTML = screen.innerHTML.slice(0, -1)
   }
+}
+
+function addValue(item) {
+  if (screen.innerHTML === '0') {
+    screen.innerHTML = item.innerHTML
+  } else {
+    screen.innerHTML += item.innerHTML
+  }
+  // need to prevent double clicking
+  item.blur()
+}
+
+allClear.addEventListener('click', () => {
+  clearAllValues()
+})
+
+deleteEntry.addEventListener('click', () => {
+  deleteValue()
 })
 
 numberButtons.forEach((item) => {
   item.addEventListener('click', () => {
-    if (screen.innerHTML === '0') {
-      screen.innerHTML = item.innerHTML
-    } else {
-      screen.innerHTML += item.innerHTML
-    }
-    // Prevent double clicking - unfocus button after click
-    item.blur()
+    addValue(item)
   })
 })
 
