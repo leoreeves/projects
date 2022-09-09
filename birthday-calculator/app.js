@@ -102,3 +102,9 @@ function handleBirthdayCalculation() {
 // add event listeners
 document.addEventListener('DOMContentLoaded', setBirthdayYearInputValueAsCurrentYear)
 document.addEventListener('input', handleBirthdayCalculation)
+
+module.exports = {
+  getBirthdayDayOfWeek,
+  calculateAge,
+  checkIfEnteredYearIsPresentOrFuture,
+}

@@ -23,6 +23,8 @@
     "localStorage": true,
     "ClipboardJS": true,
     "Vue": true,
-    "Notification": true
+    "Notification": true,
+    "it": true,
+    "expect": true
   }
 }
