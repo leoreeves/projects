@@ -107,6 +107,22 @@ function formatCalculation(calculation) {
   return calculation.replace(/[×]/g, '*').replace(/[÷]/g, '/')
 }
 
+function handleCalculation() {
+  let calc = screen.innerHTML
+  calc = formatCalculation(calc)
+  const calculation = eval(calc)
+  // Makes the result fit the screen
+  if (String(calculation).length > 7) {
+    if (String(calculation.toFixed(2)).length > 7) {
+      screen.innerHTML = calculation.toExponential(1)
+    } else {
+      screen.innerHTML = calculation.toFixed(2)
+    }
+  } else {
+    screen.innerHTML = calculation
+  }
+}
+
 function handleError(error) {
   const errorEntry = screen.innerHTML
   screen.innerHTML = `Error: ${error}`
@@ -116,20 +132,8 @@ function handleError(error) {
 }
 
 equals.addEventListener('click', () => {
-  let calc = screen.innerHTML
-  calc = formatCalculation(calc)
   try {
-    const calculation = eval(calc)
-    // Makes the result fit the screen
-    if (String(calculation).length > 7) {
-      if (String(calculation.toFixed(2)).length > 7) {
-        screen.innerHTML = calculation.toExponential(1)
-      } else {
-        screen.innerHTML = calculation.toFixed(2)
-      }
-    } else {
-      screen.innerHTML = calculation
-    }
+    handleCalculation()
   } catch (error) {
     handleError(error)
   }
