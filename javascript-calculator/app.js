@@ -103,9 +103,21 @@ operatorButtons.forEach((item) => {
   })
 })
 
+function formatCalculation(calculation) {
+  return calculation.replace(/[×]/g, '*').replace(/[÷]/g, '/')
+}
+
+function handleError(error) {
+  const errorEntry = screen.innerHTML
+  screen.innerHTML = `Error: ${error}`
+  setTimeout(() => {
+    screen.innerHTML = errorEntry
+  }, 1000)
+}
+
 equals.addEventListener('click', () => {
   let calc = screen.innerHTML
-  calc = calc.replace(/[×]/g, '*').replace(/[÷]/g, '/')
+  calc = formatCalculation(calc)
   try {
     const calculation = eval(calc)
     // Makes the result fit the screen
@@ -118,12 +130,9 @@ equals.addEventListener('click', () => {
     } else {
       screen.innerHTML = calculation
     }
-  } catch (err) {
-    const errorEntry = screen.innerHTML
-    screen.innerHTML = 'Error'
-    setTimeout(() => {
-      screen.innerHTML = errorEntry
-    }, 1000)
+  } catch (error) {
+    handleError(error)
   }
+  // need to prevent double clicking
   equals.blur()
 })
