@@ -17,11 +17,13 @@
         justify-content: center;
         align-items: center;
       }
+
       input {
         font-family: 'PT Sans', sans-serif;
         font-size: 1em;
         margin-top: 10px;
       }
+
       .calculator-card {
         background: #fff;
         padding: 20px;
@@ -29,30 +31,42 @@
         max-width: 450px;
         box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
       }
+
       .calculator-heading {
         font-size: 1.5em;
         font-weight: 600;
         margin-bottom: 10px;
       }
+
+      .calculator-description {
+        line-height: 1.5em;
+        margin-bottom: 15px;
+      }
+
       .calculator-input-label {
         display: flex;
         flex-direction: column;
         font-weight: 600;
       }
+
       .value-label {
         margin-top: 20px;
         margin-bottom: 10px;
         font-weight: 600;
       }
+
       .result {
         margin-top: 10px;
         font-size: 1.8em;
       }
+
     </style>
   </head>
   <body>
     <div class="calculator-card">
       <h1 class="calculator-heading">Microsoft Rewards Calculator</h1>
+      <p class="calculator-description">Calculates the value of Microsoft Reward points compared to redeeming a <a
+          href="https://rewards.bing.com/redeem/000802000057" target="_blank">£10 Amazon gift card</a> (15200 points).</p>
       <label for="calculator-input" class="calculator-input-label">
         Points
         <input id="calculator-input" type="number" />
@@ -61,12 +75,13 @@
       <p class="result">£0.00</p>
     </div>
     <script>
-      const TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST = 29250
+      const AMAZON_GIFT_CARD_POINTS_COST = 15200
+      const GIFT_CARD_VALUE_IN_POUNDS = 10
       const calculatorInput = document.querySelector('#calculator-input')
       const result = document.querySelector('.result')
 
       function calculateRate() {
-        return TWENTY_FIVE_POUNDS_GIFT_CARD_POINTS_COST / 25
+        return AMAZON_GIFT_CARD_POINTS_COST / GIFT_CARD_VALUE_IN_POUNDS
       }
 
       function formatResultValue(resultValue) {
