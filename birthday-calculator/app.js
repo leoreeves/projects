@@ -1,7 +1,7 @@
 /**
- * Defines query selector variables
+ * Defines HTML element object references for user input and display
  */
-const [dateOfBirthInput, birthdayYearInput, birthdayDayOfWeekSpan, ageSpan] = [
+const [dateOfBirthElement, birthdayYearInputElement, birthdayDayOfWeekElement, ageElement] = [
   'date-of-birth',
   'birthday-year',
   'birthday-day-of-week',
@@ -9,102 +9,104 @@ const [dateOfBirthInput, birthdayYearInput, birthdayDayOfWeekSpan, ageSpan] = [
 ].map((selector) => document.querySelector(`.${selector}`))
 
 /**
- * Sets birthday year input value as current year
+ * Initializes the birth year input field's value to the current year
  */
-function setBirthdayYearInputValueAsCurrentYear() {
+function initializeBirthdayYearInput() {
   const currentYear = new Date().getFullYear()
-  birthdayYearInput.value = currentYear
+  birthdayYearInputElement.value = currentYear
 }
 
 /**
- * Sets birthday year input minimum as birth year
+ * Sets the minimum allowable year (birth year) for the year input field
+ * @param {number} birthYear - Year of birth
+ */
+function setBirthYearAsMinimum(birthYear) {
+  birthdayYearInputElement.min = birthYear
+}
+
+/**
+ * Returns the weekday of the provided date
+ * @param {Date} date - Date to determine the weekday for
+ * @returns {string} Weekday as a string (e.g., "Monday")
+ */
+function getWeekday(date) {
+  const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date)
+  return weekday
+}
+
+/**
+ * Updates the 'Day of Week' span element with the weekday of the given date
+ * @param {Date} date - Date to determine the weekday for
+ */
+function displayWeekday(date) {
+  const weekday = getWeekday(date)
+  birthdayDayOfWeekElement.innerHTML = weekday
+}
+
+/**
+ * Returns the difference in years between a chosen year and the year of birth
+ * @param {number} year - Chosen year
+ * @param {number} birthYear - Year of birth
+ * @returns {number} Age
+ */
+function calculateAge(year, birthYear) {
+  const age = year - birthYear
+  return age
+}
+
+/**
+ * Updates the 'Age' span element with the calculated age
+ * @param {number} year - Chosen year
+ * @param {number} birthYear - Year of birth
+ */
+function displayAge(year, birthYear) {
+  const age = calculateAge(year, birthYear)
+  ageElement.innerHTML = age
+}
+
+/**
+ * Checks if the chosen year is later than or equal to the year of birth
+ * @param {number} year - Chosen year
+ * @param {number} birthYear - Year of birth
+ * @returns {Boolean} - True if chosen year is greater than or equal to the year of birth
+ */
+function isYearPresentOrFuture(year, birthYear) {
+  return year >= birthYear
+}
+
+/**
+ * Calls functions to set the minimum input year, display weekday,
+ * and display age based on provided parameters
  * @param {number} birthYear
+ * @param {Date} dateOfBirth
+ * @param {number} year
  */
-function setBirthdayYearInputMinAsBirthYear(birthYear) {
-  birthdayYearInput.min = birthYear
+function executeChanges(birthYear, dateOfBirth, year) {
+  setBirthYearAsMinimum(birthYear)
+  displayWeekday(dateOfBirth)
+  displayAge(year, birthYear)
 }
 
 /**
- * Gets birthday day of the week
- * @param {object} dateOfBirth
- * @returns {string} e.g. Tuesday
+ * Handles and validates user input to calculate and display the desired information
  */
-function getBirthdayDayOfWeek(dateOfBirth) {
-  const birthdayDayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(dateOfBirth)
-  return birthdayDayOfWeek
-}
-
-/**
- * Updates birthday day of week span innerHTML
- * @param {object} dateOfBirth
- */
-function setBirthdayDayOfWeekInnerHTML(dateOfBirth) {
-  const birthdayDayOfWeek = getBirthdayDayOfWeek(dateOfBirth)
-  birthdayDayOfWeekSpan.innerHTML = birthdayDayOfWeek
-}
-
-/**
- * Calculates age
- * @param {number} enteredYear
- * @param {number} birthYear
- */
-function calculateAge(enteredYear, birthYear) {
-  const calculatedAge = enteredYear - birthYear
-  return calculatedAge
-}
-
-/**
- * Sets age span innerHTML
- * @param {number} enteredYear
- * @param {number} birthYear
- */
-function setAgeSpanInnerHTML(enteredYear, birthYear) {
-  const calculatedAge = calculateAge(enteredYear, birthYear)
-  ageSpan.innerHTML = calculatedAge
-}
-
-/**
- * Checks if entered year is in the present or in the future
- * @param {number} enteredYear
- * @param {number} birthYear
- * @returns {Boolean}
- */
-function checkIfEnteredYearIsPresentOrFuture(enteredYear, birthYear) {
-  return enteredYear >= birthYear
-}
-
-/**
- * Handles set functions
- * @param {number} birthYear
- * @param {object} dateOfBirth
- * @param {number} enteredYear
- */
-function handleSetFunctions(birthYear, dateOfBirth, enteredYear) {
-  setBirthdayYearInputMinAsBirthYear(birthYear)
-  setBirthdayDayOfWeekInnerHTML(dateOfBirth)
-  setAgeSpanInnerHTML(enteredYear, birthYear)
-}
-
-/**
- * Handles birthday calculation
- */
-function handleBirthdayCalculation() {
-  const dateOfBirth = new Date(dateOfBirthInput.value)
+function processBirthdayInput() {
+  const dateOfBirth = new Date(dateOfBirthElement.value)
   const birthYear = dateOfBirth.getFullYear()
-  const enteredYear = Number(birthdayYearInput.value)
-  dateOfBirth.setFullYear(enteredYear)
-  const enteredYearIsPresentOrFuture = checkIfEnteredYearIsPresentOrFuture(enteredYear, birthYear)
-  if (enteredYearIsPresentOrFuture) {
-    handleSetFunctions(birthYear, dateOfBirth, enteredYear)
+  const year = Number(birthdayYearInputElement.value)
+  dateOfBirth.setFullYear(year)
+
+  if (isYearPresentOrFuture(year, birthYear)) {
+    executeChanges(birthYear, dateOfBirth, year)
   }
 }
 
-// add event listeners
-document.addEventListener('DOMContentLoaded', setBirthdayYearInputValueAsCurrentYear)
-document.addEventListener('input', handleBirthdayCalculation)
+// Attach event handlers
+document.addEventListener('DOMContentLoaded', initializeBirthdayYearInput)
+document.addEventListener('input', processBirthdayInput)
 
 module.exports = {
-  getBirthdayDayOfWeek,
+  getWeekday,
   calculateAge,
-  checkIfEnteredYearIsPresentOrFuture,
+  isYearPresentOrFuture,
 }
